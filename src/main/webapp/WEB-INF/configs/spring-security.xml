@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<http use-expressions="true">
+
+		<!-- -->
+
+		<csrf disabled="true" />
+		<intercept-url pattern="/" access="permitAll()" />
+		<intercept-url pattern="/admin/*"
+			access="hasRole('ROLE_10')" />
+			
+			<intercept-url pattern="/profile"
+			access="hasRole('ROLE_10') or hasRole('ROLE_1')" />
+
+		<access-denied-handler error-page="/authorized/not-found" />
+
+		<!-- Login Handler -->
+
+		<form-login login-page="/authorized/SignIn"
+			login-processing-url="/authorized/user-signin"
+			authentication-success-handler-ref="authSuccessHandler"
+			authentication-failure-url="/authorized/login-error"
+			username-parameter="txtphone" password-parameter="txtpass" />
+		<logout logout-url="/SignOut" logout-success-url="/"
+			delete-cookies="JSESSIONID" invalidate-session="true" />
+	</http>
+
+	<!-- Filter login with role -->
+	
+		
+
+<!-- Bean implementing AuthenticationProvider of Spring Security -->
+
+
+  <beans:bean id="AuthenProvider" class="com.fpt.service.AuthenProvider" />
+	 
+	<authentication-manager>
+       <authentication-provider ref="AuthenProvider" />
+</authentication-manager>
+
+
+	 <!-- <authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="Select phone ,password,role from Users where phone=? "
+				authorities-by-username-query="Select phone, concat('ROLE_', role) as roles from Users where phone=?" />
+		</authentication-provider>
+	</authentication-manager>  -->
+
+
+	<beans:bean id="authSuccessHandler"
+		class="com.fpt.service.AuthFilterHandler" /> 
+
+	<!-- Connect Database support login -->
+
+
+	
+</beans:beans> 
