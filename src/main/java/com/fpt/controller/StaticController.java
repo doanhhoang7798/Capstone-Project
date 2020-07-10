@@ -26,7 +26,7 @@ public class StaticController {
 	UserDao userDaoimpl;
 
 	@Autowired
-	PostDao postDaoimpl;
+	PostDao postDao;
 
 	@Autowired
 	UploadConfig UploadConfig;
@@ -41,8 +41,8 @@ public class StaticController {
 	public String index(Model model, HttpSession session) {
 		try {
 			session.setAttribute("user", user.getCurrentUsers());
-			model.addAttribute("slides", postDaoimpl.filterHomePage("created_at"));
-			model.addAttribute("suggestions", postDaoimpl.filterHomePage("view_conter"));
+			model.addAttribute("slides", postDao.filterHomePage("created_at"));
+			model.addAttribute("suggestions", postDao.filterHomePage("view_conter"));
 			return "static/index";
 		} catch (Exception e) {
 			return "auth/500";
@@ -53,23 +53,12 @@ public class StaticController {
 	public String list(ModelMap model) {
 		return "static/menu";
 	}
-
+	
 	@GetMapping(value = "/contact")
 	public String contact(ModelMap model) {
 		return "static/contact";
 	}
 
-	@GetMapping(value = "/search")
-	public String search(ModelMap model, @RequestParam("keyword") String keyword) {
-		try {
-			model.addAttribute("title", "Có " + postDaoimpl.seacrhFull(keyword).size() + " kết quả cho: <span> ``"
-					+ keyword + " `` </span> ");
-			model.addAttribute("posts", postDaoimpl.seacrhFull(keyword));
-			return "static/filter";
-		} catch (Exception e) {
-			return "auth/500";
-		}
-	}
 
 	@GetMapping(value = "/profile")
 	public String profile(ModelMap model) {
@@ -90,8 +79,8 @@ public class StaticController {
 		try {
 			if (userDaoimpl.Update(new Users(user.getCurrentUsers().getId(), user.getCurrentUsers().getEmail(), name,
 					user.getCurrentUsers().getPassword(), user.getCurrentUsers().getPhone(), age, gender,
-					user.getCurrentUsers().getRole(), birthday, address, user.getCurrentUsers().getProvider(), bio,
-					photo2, user.getCurrentUsers().getCreated_at(), user.getCurrentUsers().getStatus(),
+					user.getCurrentUsers().getRole(), birthday, address, user.getCurrentUsers().getProvider(), bio, photo2,
+					user.getCurrentUsers().getCreated_at(), user.getCurrentUsers().getStatus(),
 					user.getCurrentUsers().getBlock_date()))) {
 				model.addAttribute("message2", "Cập nhập thông tin thành công.");
 				model.addAttribute("class_name", "msg_success");
@@ -115,12 +104,11 @@ public class StaticController {
 		try {
 			if (userDaoimpl.Update(new Users(user.getCurrentUsers().getId(), user.getCurrentUsers().getEmail(),
 					user.getCurrentUsers().getFullname(), password, user.getCurrentUsers().getPhone(),
-					user.getCurrentUsers().getAge(), user.getCurrentUsers().getGender(),
-					user.getCurrentUsers().getRole(), user.getCurrentUsers().getBirthday(),
-					user.getCurrentUsers().getCountry(), user.getCurrentUsers().getProvider(),
-					user.getCurrentUsers().getBio(), user.getCurrentUsers().getImage(),
-					user.getCurrentUsers().getCreated_at(), user.getCurrentUsers().getStatus(),
-					user.getCurrentUsers().getBlock_date()))) {
+					user.getCurrentUsers().getAge(), user.getCurrentUsers().getGender(), user.getCurrentUsers().getRole(),
+					user.getCurrentUsers().getBirthday(), user.getCurrentUsers().getCountry(),
+					user.getCurrentUsers().getProvider(), user.getCurrentUsers().getBio(),
+					user.getCurrentUsers().getImage(), user.getCurrentUsers().getCreated_at(),
+					user.getCurrentUsers().getStatus(), user.getCurrentUsers().getBlock_date()))) {
 				model.addAttribute("message", "Thay đổi mật khẩu thành công. ");
 				model.addAttribute("class_name", "msg_success");
 				return "static/profile";
@@ -130,8 +118,7 @@ public class StaticController {
 				return "static/profile";
 			}
 		} catch (Exception e) {
-			return "auth/500";
-		}
+			return "auth/500";		}
 
 	}
 
@@ -143,29 +130,10 @@ public class StaticController {
 		int ofset = (limit * page) - limit;
 		model.addAttribute("path", request.getRequestURL() + "?condition=" + cond + "&category=" + category);
 		model.addAttribute("current_page", page);
+		model.addAttribute("title", cond);
 
-		switch (category) {
-		case "level":
-			model.addAttribute("title", "Món ăn từ <span> " + cond + " </span> ");
-			break;
-		case "holiday":
-			model.addAttribute("title", "Các món ngày <span> " + cond + " </span> ");
-			break;
-		case "category":
-			model.addAttribute("title", "Các món <span> " + cond + " </span> ");
-			break;
-		case "kind":
-			model.addAttribute("title", "Các món <span> " + cond + " </span> ");
-			break;
-		case "nation":
-			model.addAttribute("title", "Món ăn <span> " + cond + " </span> ");
-			break;
-		default:
-			model.addAttribute("title", "Món ăn dành cho <span> " + cond + " </span> ");
-		}
-
-		model.addAttribute("totals", postDaoimpl.pagination(category, cond, 0, 100000000).size());
-		model.addAttribute("posts", postDaoimpl.pagination(category, cond, ofset, limit));
+		model.addAttribute("totals", postDao.pagination(category, cond, 0, 100000000).size());
+		model.addAttribute("posts", postDao.pagination(category, cond, ofset, limit));
 
 		return "static/filter";
 	}

@@ -22,6 +22,13 @@ public class ReactionDao {
 		List<Reactions> list = session.createQuery("FROM Reactions WHERE post_id = '" + post_id + "'").list();
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Reactions> all() {
+		Session session = sessionFactory.openSession();
+		List<Reactions> list = session.createQuery("FROM Reactions").list();
+		return list;
+	}
 
 //	@Override
 	public Boolean Create(Reactions reactions) {

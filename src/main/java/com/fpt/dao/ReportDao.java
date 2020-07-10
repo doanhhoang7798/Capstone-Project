@@ -1,35 +1,53 @@
-package com.fpt.model;
+package com.fpt.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fpt.model.Reactions;
+import com.fpt.model.Reports;
 
 @Transactional
 @Repository
-public class ReactionDao {
-
+public class ReportDao {
 	private final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
 	@SuppressWarnings("unchecked")
-	public List<Reactions> counter(int post_id) {
+	public List<Object> list() {
 		Session session = sessionFactory.openSession();
-		List<Reactions> list = session.createQuery("FROM Reactions WHERE post_id = '" + post_id + "'").list();
+		List<Object> list = session.createQuery(
+				"SELECT r.id, c.content, r.type, u.fullname, r.created_at from Reports as r, Users as u, Comments as c  WHERE r.user = u.id AND r.reportable_id = c.id")
+				.list();
 		return list;
 	}
 
-//	@Override
-	public Boolean Create(Reactions reactions) {
+	public boolean deleteMany(int user_id) {
+		Session session = sessionFactory.openSession();
+
+		try {
+			session.getTransaction().begin();
+			Query query = session.createQuery("delete from Reports where reportable_author= '" + user_id + "'");
+			query.executeUpdate();
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			return false;
+		}
+	}
+
+	// @Override
+	public boolean Create(Reports reports) {
 		Session session = sessionFactory.openSession();
 		try {
 			session.getTransaction().begin();
-			session.save(reactions);
+			session.save(reports);
 			session.getTransaction().commit();
+
 			return true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -43,12 +61,12 @@ public class ReactionDao {
 	}
 
 //	@Override
-	public Boolean Delete(int user_id, int post_id) {
+	public Boolean Delete(int id) {
 		Session session = sessionFactory.openSession();
-		Reactions reaction = isLike(user_id, post_id);
+		Reports reports = (Reports) session.get(Reports.class, id);
 		try {
 			session.getTransaction().begin();
-			session.delete(reaction);
+			session.delete(reports);
 			session.getTransaction().commit();
 			return true;
 		} catch (Exception e) {
@@ -60,18 +78,6 @@ public class ReactionDao {
 		} finally {
 			session.close();
 		}
-	}
-
-//	@Override
-	@SuppressWarnings("unchecked")
-	public Reactions isLike(int user_id, int post_id) {
-		Session session = sessionFactory.openSession();
-		Reactions reactions = (Reactions) session
-				.createQuery("FROM Reactions WHERE user_id = '" + user_id + "'" + "and post_id = '" + post_id + "'")
-				.uniqueResult();
-
-		return reactions;
-
 	}
 
 }
