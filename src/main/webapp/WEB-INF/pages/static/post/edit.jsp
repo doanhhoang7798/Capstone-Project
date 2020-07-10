@@ -105,7 +105,7 @@
 
 					</script>
 
-
+					
 
 					<div class="blog-div with20 time">
 						<h3 style="text-align: center; margin-left: 50px;">Thời gian</h3>
@@ -159,7 +159,7 @@
 
 
 
-
+			<input type="hidden" name="user_id" value="${ post.user.id }"/>
 
 
 				<div class="" style="width: 100%;">
@@ -221,18 +221,18 @@
 				<h1 class="w-bot-border">
 					Giới <span> thiệu</span>
 				</h1>
-				<textarea name="overview" cols="122" rows="9" required
+				<textarea name="overview" cols="110" rows="9" required
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea">${post.overview}</textarea>
 				<h1 class="w-bot-border">
 					Cách <span>làm </span>
 				</h1>
-				<textarea name="making" cols="122" rows="9" required placeholder="Chia sẻ cách làm của bạn !! "
+				<textarea name="making" cols="110" rows="9" required placeholder="Chia sẻ cách làm của bạn !! "
 					class="pb-cmnt-textarea">${post.making}</textarea>
 				<h1 class="w-bot-border">
 					Nguyên <span>liệu </span>
 				</h1>
-				<textarea name="material" cols="122" rows="9" required
+				<textarea name="material" cols="110" rows="9" required
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea">${post.material}</textarea>
 		</div>
@@ -244,10 +244,9 @@
 			<span class="w-pet-border"></span>
 
 			<div class="reply" style="margin-left: 353px;">
-				<input type="reset" class="btn btn btn-danger" style="height: 49px; line-height: 37px; width: 66px;"
-					aria-label="Reply to admin">
+				
 
-				<button class="btn btn btn-success" style="height: 49px; line-height: 38px; width: 108px;"
+				<button class="btn btn btn-success" style="height: 49px; margin-left: 50px;line-height: 38px; width: 108px;"
 					aria-label="Reply to admin">Cập nhập </button>
 			</div>
 

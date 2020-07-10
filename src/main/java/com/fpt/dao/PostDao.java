@@ -21,7 +21,8 @@ public class PostDao {
 	@SuppressWarnings("unchecked")
 	public List<Posts> filterHomePage(String condition) {
 		Session session = sessionFactory.openSession();
-		List<Posts> list = session.createQuery("FROM Posts ORDER BY " + condition + " desc").setMaxResults(4).list();
+		List<Posts> list = session.createQuery("FROM Posts where deleted_at = 'NULL' ORDER BY " + condition + " desc")
+				.setMaxResults(4).list();
 		return list;
 	}
 
@@ -33,12 +34,11 @@ public class PostDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Posts> filter4Hight() {
+	public List<Posts> filterOderByLike() {
 		Session session = this.sessionFactory.openSession();
 
 		try {
-			String sql = "select * from Posts join (SELECT count(post_id) as totals, post_id as postID From Reactions GROUP BY post_id  ORDER BY totals DESC limit 2 ) as able on Posts.Id  = able.postID\n"
-					+ "";
+			String sql = "select * from Posts join (SELECT count(post_id) as totals, post_id as postID From Reactions GROUP BY post_id  ORDER BY totals DESC limit 2 ) as able on Posts.Id  = able.postID where deleted_at != 'NULL'";
 			List<Posts> list = session.createSQLQuery(sql).list();
 			return list;
 
@@ -68,7 +68,17 @@ public class PostDao {
 	@SuppressWarnings("unchecked")
 	public List<Posts> refer(String kind) {
 		Session session = sessionFactory.openSession();
-		List<Posts> list = session.createQuery("From Posts where kind ='" + kind + "'").setMaxResults(4).list();
+		List<Posts> list = session.createQuery("From Posts where deleted_at='NULL' and kind ='" + kind + "'")
+				.setMaxResults(4).list();
+		return list;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Posts> pagination(String category, String condition, int ofset, int limit) {
+		Session session = sessionFactory.openSession();
+		List<Posts> list = session
+				.createQuery("From Posts where  deleted_at = 'NULL' and " + category + " = '" + condition + "'")
+				.setFirstResult(ofset).setMaxResults(limit).list();
 		return list;
 	}
 
