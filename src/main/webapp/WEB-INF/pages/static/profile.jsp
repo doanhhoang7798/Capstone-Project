@@ -306,7 +306,8 @@
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="password" name="password" minlength="8"
+											<input id="password" name="password" 
+											pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 												maxlength="20" required type="password" class="width-40"
 												placeholder="Mật khẩu" />
 										</div>
@@ -342,7 +343,7 @@
 								function validatePassword() {
 									if (password.value != confirm_password.value) {
 										confirm_password
-												.setCustomValidity("Passwords Don't Match");
+												.setCustomValidity("Mật khẩu xác nhận không trùng khớp với Mật khẩu");
 									} else {
 										confirm_password.setCustomValidity('');
 									}

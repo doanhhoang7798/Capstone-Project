@@ -10,14 +10,7 @@
 	href="${pageContext.request.contextPath}/resources/css/util.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/main.css">
-<style>
-input::placeholder {
-	font-family: Montserrat-SemiBold;
-	font-size: 16px;
-	color: #555555;
-	line-height: 1.5;
-}
-</style>
+
 </head>
 <body>
 
@@ -32,25 +25,17 @@ input::placeholder {
 					<span style="padding-bottom: 20px;" class="login100-form-title ">Tham
 						gia cùng Yummy </span>
 
-					<div class="p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1"> Họ tên </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input maxlength="40" required minlength="12" class="input100"
+						<input maxlength="40" required minlength="3" class="input100"
 							type="text" name="fullname"> <span class="focus-input100"></span>
 					</div>
 
-					<div class="p-b-9">
-						<span class="txt1"> Địa chỉ </span>
-					</div>
-					<div class="wrap-input100 validate-input"
-						data-validate="Username is required">
-						<input class="input100" type="text" minlength="8" maxlength="100"
-							required name="address"> <span class="focus-input100"></span>
-					</div>
 
-					<div class="p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1">Số điện thoại </span>
 					</div>
 					<div class="wrap-input100 validate-input"
@@ -59,32 +44,23 @@ input::placeholder {
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="p-b-9">
-						<span class="txt1">Email </span>
-					</div>
-					<div class="wrap-input100 validate-input"
-						data-validate="Username is required">
-						<input class="input100" type="email" minlength="8" maxlength="50"
-							required name="email"> <span class="focus-input100"></span>
-					</div>
-
-					<div class="p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1">Mật Khẩu </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
 						<input id="password" class="input100" type="password" type="email"
-							minlength="8" maxlength="20" required name="password"> <span
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20" required name="password"> <span
 							class="focus-input100"></span>
 					</div>
 
-					<div class="p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1">Xác nhận mậtkhẩu </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input id="confirm_password" class="input100" type="password"
-							type="email" minlength="8" maxlength="20" required
+						<input id="confirm_password" class="input100" type="password" 
+							type="email" maxlength="20" required
 							name="cf_password"> <span class="focus-input100"></span>
 					</div>
 
@@ -94,7 +70,7 @@ input::placeholder {
 
 					function validatePassword(){
 					  if(password.value != confirm_password.value) {
-					    confirm_password.setCustomValidity("Passwords Don't Match");
+					    confirm_password.setCustomValidity("Mật khẩu xác nhận không trùng khớp với Mật khẩu");
 					  } else {
 					    confirm_password.setCustomValidity('');
 					  }
@@ -112,7 +88,7 @@ input::placeholder {
 					</div>
 
 					<div class="w-full text-center p-t-30">
-						<span class="txt2">Bạn đã có tài khoản ? </span> <a
+						<span class="txt2">Bạn đã có tài khoản? </span> <a
 							href="${pageContext.request.contextPath}/authorized/SignIn"
 							class="txt2 bo1"> Đăng nhập ngay! </a> </br> <a
 							href="${pageContext.request.contextPath}/" class="txt2 bo1">
