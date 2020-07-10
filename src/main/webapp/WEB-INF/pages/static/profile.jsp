@@ -290,14 +290,6 @@
 										<input class="inputStyle" readonly type="text" placeholder="phone"
 											value="${ user.getPhone() }">
 									</div>
-							<!--  		<div>
-										<label class="col-sm-3 control-label font"
-											style="margin-left: -13px;">Email</label>
-									</div>
-									<div style="float: left; width: 28%;">
-										<input readonly type="text" placeholder="Email "
-											value="${ user.getEmail() }">
-									</div> -->	
 
 								</div>
 								<!-- row -->

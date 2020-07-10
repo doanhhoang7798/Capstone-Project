@@ -27,10 +27,8 @@
 			style="background-image: url('${pageContext.request.contextPath}/resources/images/bg_images_1.jpg');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-25"> Lỗi</span>
-					<span class="login100-form-title p-b-25">Không tìm thấy trang!!!</span>
-
-					
+					<span class="login100-form-title p-b-25"> Lỗi - 500</span>
+	
 				
 
 
