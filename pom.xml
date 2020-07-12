@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.fpt</groupId>
-	<artifactId>FPT-Food_Development</artifactId>
+	<artifactId>YummyProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>FPT-Food_Development Maven Webapp</name>
+	<name>YummyProject Maven Webapp</name>
 	<url>http://www.example.com</url>
 
 	<properties>
@@ -166,7 +166,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>FPT-Food_Development</finalName>
+		<finalName>YummyProject</finalName>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
 				defaults (may be moved to parent pom) -->
 			<plugins>

@@ -79,7 +79,7 @@ input {
 
 
 					<div class="blog-div with20">
-						<h3 style="text-align: center; margin-left: 51px;">Nguyên liệu</h3>
+						<h3 style="text-align: center; margin-left: 51px;">Nguyên liệu chính</h3>
 						<select class="dropdown" name="level" name="" class="space-left">
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>

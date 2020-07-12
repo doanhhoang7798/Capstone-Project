@@ -45,7 +45,7 @@
           <h5 style="text-align: center;">${ post.kind }</h5>
         </div>
         <div class="blog-div with20">
-          <h3 style="text-align: center;">Mức độ</h3>
+          <h3 style="text-align: center;">Nguyên liệu chính</h3>
           <h5 style="text-align: center;">${ post.level }</h5>
         </div>
         <div class="blog-div with20">
