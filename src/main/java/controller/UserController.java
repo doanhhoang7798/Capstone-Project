@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package controller;
 
 import java.sql.Timestamp;
 
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fpt.dao.CommentDao;
-import com.fpt.dao.PostDao;
-import com.fpt.dao.ReactionDao;
-import com.fpt.dao.ReportDao;
-import com.fpt.dao.UserDao;
-import com.fpt.model.Reports;
-import com.fpt.service.CurrentUser;
-import com.fpt.service.TwilioMessageCreator;
+import dao.CommentDao;
+import dao.PostDao;
+import dao.ReactionDao;
+import dao.ReportDao;
+import dao.UserDao;
+import model.Reports;
+import service.CurrentUser;
+import service.TwilioMessageCreator;
 
 @Controller
 

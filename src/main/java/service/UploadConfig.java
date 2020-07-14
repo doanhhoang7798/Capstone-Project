@@ -1,4 +1,4 @@
-package com.fpt.service;
+package service;
 
 import java.io.File;
 

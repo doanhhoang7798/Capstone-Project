@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package  controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fpt.dao.PostDao;
-import com.fpt.dao.ReactionDao;
-import com.fpt.model.Reactions;
-import com.fpt.service.CurrentUser;
+import  dao.PostDao;
+import  dao.ReactionDao;
+import  model.Reactions;
+import  service.CurrentUser;
 
 @RestController
 

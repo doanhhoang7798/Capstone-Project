@@ -1,12 +1,12 @@
-package com.fpt.service;
+package service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.fpt.dao.UserDao;
-import com.fpt.model.Users;
+import dao.UserDao;
+import model.Users;
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;

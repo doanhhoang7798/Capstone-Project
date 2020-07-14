@@ -1,4 +1,4 @@
-package com.fpt.service;
+package service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package  controller;
 
 import java.sql.Timestamp;
 
@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fpt.dao.CommentDao;
-import com.fpt.dao.PostDao;
-import com.fpt.model.Comments;
-import com.fpt.service.CurrentUser;
-import com.fpt.service.UploadConfig;
+import  dao.CommentDao;
+import  dao.PostDao;
+import  model.Comments;
+import  service.CurrentUser;
+import  service.UploadConfig;
 
 @Controller
 public class CommentController {

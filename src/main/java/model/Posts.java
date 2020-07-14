@@ -1,4 +1,4 @@
-package com.fpt.model;
+package model;
 
 import java.sql.Timestamp;
 
@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.fpt.dao.ReactionDao;
+import dao.ReactionDao;
 
 @Entity
 @Table(name = "posts")

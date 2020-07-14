@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package controller;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -13,13 +13,13 @@ import java.util.Random;
 import org.springframework.social.facebook.api.Post;
 import org.springframework.util.DigestUtils;
 
-import com.fpt.dao.CommentDao;
-import com.fpt.dao.PostDao;
-import com.fpt.dao.ReactionDao;
-import com.fpt.dao.ReportDao;
-import com.fpt.dao.UserDao;
-import com.fpt.model.Posts;
-import com.fpt.model.Users;
+import  dao.CommentDao;
+import  dao.PostDao;
+import  dao.ReactionDao;
+import  dao.ReportDao;
+import  dao.UserDao;
+import  model.Posts;
+import  model.Users;
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;

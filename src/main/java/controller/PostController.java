@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package  controller;
 
 import java.sql.Timestamp;
 
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fpt.dao.CommentDao;
-import com.fpt.dao.PostDao;
-import com.fpt.dao.ReactionDao;
-import com.fpt.dao.UserDao;
-import com.fpt.model.Posts;
-import com.fpt.service.CurrentUser;
+import  dao.CommentDao;
+import  dao.PostDao;
+import  dao.ReactionDao;
+import  dao.UserDao;
+import  model.Posts;
+import  service.CurrentUser;
 
 @Controller
 

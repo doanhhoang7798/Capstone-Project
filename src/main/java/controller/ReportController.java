@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package  controller;
 
 import java.sql.Timestamp;
 
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fpt.dao.ReportDao;
-import com.fpt.dao.UserDao;
-import com.fpt.model.Reports;
-import com.fpt.service.CurrentUser;
+import  dao.ReportDao;
+import  dao.UserDao;
+import  model.Reports;
+import  service.CurrentUser;
 
 @Controller
 public class ReportController {

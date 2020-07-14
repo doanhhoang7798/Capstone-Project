@@ -1,4 +1,4 @@
-package com.fpt.dao;
+package dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fpt.model.Users;
+import model.Users;
 
 @Transactional
 @Repository

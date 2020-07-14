@@ -1,4 +1,4 @@
-package com.fpt.controller;
+package  controller;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fpt.dao.PostDao;
-import com.fpt.dao.UserDao;
-import com.fpt.model.Users;
-import com.fpt.service.CurrentUser;
-import com.fpt.service.UploadConfig;
+import  dao.PostDao;
+import  dao.UserDao;
+import  model.Users;
+import  service.CurrentUser;
+import  service.UploadConfig;
 
 @Controller
 public class StaticController {

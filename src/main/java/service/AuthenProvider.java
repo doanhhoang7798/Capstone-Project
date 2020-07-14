@@ -1,4 +1,4 @@
-package com.fpt.service;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
-import com.fpt.dao.UserDao;
+import dao.UserDao;
 
 
 @Service
