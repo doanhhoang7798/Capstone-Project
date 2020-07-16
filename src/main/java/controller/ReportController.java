@@ -62,7 +62,7 @@ public class ReportController {
 					model.addAttribute("msg", " Xoá báo cáo thành công..");
 					model.addAttribute("class_name", "msg_success");
 				} else {
-					model.addAttribute("msg", " Xoá báo cáo thất bại ..");
+					model.addAttribute("msg", " Xoá báo cáo thất bại..");
 					model.addAttribute("class_name", "msg_error");
 				}
 				model.addAttribute("reports", reportDaoimpl.list());
