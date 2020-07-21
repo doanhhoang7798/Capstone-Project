@@ -140,15 +140,20 @@
 						</select>
 					</div>
 
-					<div class="blog-div with20 level">
-						<h3 style="text-align: center; margin-left: 51px;">Mức độ</h3>
-						<select class="dropdown" name="level">
-							<option value="Đơn giản">Đơn giản</option>
-							<option value="Trung bình">Trung bình</option>
-							<option value="Khó">Khó</option>
+					<div class="blog-div with20">
+						<h3 style="text-align: center; margin-left: 51px;">Nguyên liệu chính</h3>
+						<select class="dropdown" name="level" name="" class="space-left">
+							<option value="Thịt bò">Thịt bò</option>
+							<option value="Thịt lợn">Thịt lợn</option>
+							<option value="Thịt gia cầm">Thịt gia cầm</option>
+							<option value="Rau đậu">Rau đậu</option>
+							<option value="Hải sản">Hải sản</option>
+							<option value="Trứng">Trứng</option>
+							<option value="Bún-Phở-Miến">Bún-Phở-Miến</option>
+							<option value="Cơm-Xôi-Cháo">Cơm-Xôi-Cháo</option>
+
 						</select>
 					</div>
-
 					<div class="blog-div with20">
 						<h3 style="text-align: center;">Giá thành</h3>
 						<input type="number" required max="1000" value="${post.price}"

@@ -36,7 +36,7 @@
 <!-- Bean implementing AuthenticationProvider of Spring Security -->
 
 
-  <beans:bean id="AuthenProvider" class="com.fpt.service.AuthenProvider" />
+  <beans:bean id="AuthenProvider" class="service.AuthenProvider" />
 	 
 	<authentication-manager>
        <authentication-provider ref="AuthenProvider" />
@@ -53,7 +53,7 @@
 
 
 	<beans:bean id="authSuccessHandler"
-		class="com.fpt.service.AuthFilterHandler" /> 
+		class="service.AuthFilterHandler" /> 
 
 	<!-- Connect Database support login -->
 

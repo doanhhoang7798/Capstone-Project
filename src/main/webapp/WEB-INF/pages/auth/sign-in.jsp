@@ -149,7 +149,7 @@
 					action="user-signin" method="post">
 
 					<div class="p-b-9">
-						<span class="txt1">Số điện thoại </span>
+						<span class="txt1">Số điện thoại hoặc Email </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
@@ -186,7 +186,7 @@
 					</div>
 
 					<div class="w-full text-center p-t-30">
-						<span class="txt2"> Bạn chưa có tài khoản ? </span> <a
+						<span class="txt2"> Bạn chưa có tài khoản? </span> <a
 							href="${pageContext.request.contextPath}/authorized/SignUp"
 							class="txt2 bo1"> Tạo tài khoản mới </a> </br> <a
 							href="${pageContext.request.contextPath}/" class="txt2 bo1">

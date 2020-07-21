@@ -1,148 +1,167 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
 <html><head>
-<title>Oops 404 for Website Template for free | Home :: w3layouts</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="//fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister" rel="stylesheet" type="text/css">
-<style type="text/css">
-body{
-	font-family: 'Love Ya Like A Sister', cursive;
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Yummy - Error</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+<style>
+	* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-body{
-	background:#eaeaea;
-}	
-.wrap{
-	margin:0 auto;
-	width:1000px;
+
+body {
+  padding: 0;
+  margin: 0;
 }
-.logo{
-	text-align:center;
-	margin-top:200px;
+
+#notfound {
+  position: relative;
+  height: 100vh;
 }
-.logo img{
-	width:350px;
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
-.logo p{
-	color:#272727;
-	font-size:40px;
-	margin-top:1px;
-}	
-.logo p span{
-	color:lightgreen;
-}	
-.sub a{
-	color:#fff;
-	background:#272727;
+
+.notfound {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 240px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 252px;
+  font-weight: 900;
+  margin: 0px;
+  color: #262626;
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+
+.notfound .notfound-404 h1>span {
+  text-shadow: -8px 0px 0px #fff;
+}
+
+.notfound .notfound-404 h3 {
+  font-family: 'Cabin', sans-serif;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  margin: 0px;
+  letter-spacing: 3px;
+  padding-left: 6px;
+}
+
+.notfound h2 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 {
+    height: 200px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 {
+    height: 162px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 162px;
+    height: 150px;
+    line-height: 162px;
+  }
+  .notfound h2 {
+    font-size: 16px;
+  }
+}
+
+.myButton {
+	box-shadow: 2px 4px 0px 0px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:28px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding:10px 47px;
 	text-decoration:none;
-	padding:10px 20px;
-	font-size:13px;
-	font-family: arial, serif;
-	font-weight:bold;
-	-webkit-border-radius:.5em;
-	-moz-border-radius:.5em;
-	-border-radius:.5em;
-}	
-.footer{
-	color:black;
-	position:absolute;
-	right:10px;
-	bottom:10px;
-}	
-.footer a{
-	color:rgb(114, 173, 38);
-}	
-</style>
-<div id="_bsa_srv-CKYI653J_0"></div><div id="_bsa_srv-CKYI627U_1"></div><link id="codefund-style" rel="stylesheet" media="all" href="https://codefund.io/packs/css/code_fund_ad-e33b44c1.css"><script id="codefund-script" type="text/javascript" src="https://codefund.io/packs/js/code_fund_ad-c5122a9eb2cf2a34fc49.js"></script></head>
-
-
-<body style="">
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
-<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
-  	}
-})();
-</script>
-<script>
-(function(){
-if(typeof _bsa !== 'undefined' && _bsa) {
-	// format, zoneKey, segment:value, options
-	_bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+	text-shadow:0px 1px 0px #5b8a3c;
 }
-})();
-</script>
-<script>
-(function(){
-	if(typeof _bsa !== 'undefined' && _bsa) {
-  		// format, zoneKey, segment:value, options
-  		_bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
-  	}
-})();
-</script>
-<!--<script>(function(v,d,o,ai){ai=d.createElement("script");ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, "//a.vdo.ai/core/w3layouts_V2/vdo.ai.js?vdo=34");</script>-->
-<div id="codefund"><!-- fallback content --></div>
-<script src="https://codefund.io/properties/441/funder.js" async="async"></script>
+.myButton:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-149859901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+</style>
+</head>
 
-  gtag('config', 'UA-149859901-1');
-</script>
+<body>
 
-<script>
-     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-     ga('create', 'UA-149859901-1', 'demo.w3layouts.com');
-     ga('require', 'eventTracker');
-     ga('require', 'outboundLinkTracker');
-     ga('require', 'urlChangeTracker');
-     ga('send', 'pageview');
-   </script>
-<script async="" src="/js/autotrack.js"></script>
-
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="/images/demobar_w3_4thDec2019.css">
-	<!-- Demo bar start -->
-  <div id="w3lDemoBar" class="w3l-demo-bar">
-  <a href="https://w3layouts.com/?p=" ga-on="click" ga-event-category=" Template" ga-event-action="view" ga-event-label=" - view">
-    <span class="w3l-icon -back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"></path><path d="M16.62 2.99c-.49-.49-1.28-.49-1.77 0L6.54 11.3c-.39.39-.39 1.02 0 1.41l8.31 8.31c.49.49 1.28.49 1.77 0s.49-1.28 0-1.77L9.38 12l7.25-7.25c.48-.48.48-1.28-.01-1.76z"></path></svg>
-    </span>
-    <span class="w3l-text">Back</span>
-  </a>
-  <a href="https://w3layouts.com/" class="w3l-logo">W3layouts</a>
-  
-</div>
-
-
-<!---728x90--->
-
- <div class="wrap">
-	<div class="logo">
-			<p>OOPS! - Could not Find it</p>
-			<img src="images/404-1.png">
-			
-<!---728x90--->
-
-			<div class="sub">
-			  <p><a href="#">Back </a></p>
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h3>Oops! Đã  xảy ra lỗi </h3>
+				<h1><span>4</span><span>0</span><span>4</span></h1>
 			</div>
+			<h2>Không tìm thấy dữ liệu phù hợp.</h2>
+				<a  href="${pageContext.request.contextPath}"class="myButton">Trang chủ</a>
+			
+		</div>
 	</div>
- </div>	
-	
-<!---728x90--->
 
-	
-	<div class="footer">
-	 � 2012 Oops 404 . All Rights Reserved | Design by<a href="http://w3layouts.com">W3layouts</a>
-	</div>
-	
-</body></html>
+</body>
+
+</html>

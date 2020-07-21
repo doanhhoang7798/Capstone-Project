@@ -19,9 +19,9 @@
         
 
 		
-		<mapping class="com.fpt.model.Users" />
-		<mapping class="com.fpt.model.Posts" />
-		<mapping class="com.fpt.model.Reactions" />
+		<mapping class="model.Users" />
+		<mapping class="model.Posts" />
+		<mapping class="model.Reactions" />
 		
 
 	</session-factory>
