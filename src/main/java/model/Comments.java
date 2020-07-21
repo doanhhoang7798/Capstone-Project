@@ -53,7 +53,7 @@ public class Comments {
 
 	@ManyToOne
 	@JoinColumn(name = "post_id")
-	private Posts post;
+	public Posts post;
 
 	public Comments() {
 		super();

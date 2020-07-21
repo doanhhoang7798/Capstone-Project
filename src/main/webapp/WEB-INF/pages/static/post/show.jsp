@@ -2,6 +2,20 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
+<<<<<<< HEAD
+=======
+  .rate-box {
+  width: 100%;
+  height: 22%;
+  padding: 5px 20px 0 30px;
+  margin: 0 0 25px;
+  background: url(${pageContext.request.contextPath}/resources/static/images/rate-box-bg.png) no-repeat;
+  }
+  pre {
+  white-space: pre-wrap;
+  }
+
+>>>>>>> 8716aeb23a45bba5d472e241a1679d19a9bbc7de
 </style>
 <jsp:include page="../layout/_header.jsp"></jsp:include>
 <!-- <div class="container">
