@@ -146,7 +146,8 @@
 								</button> <a class="btn btn-info"
 								href="${pageContext.request.contextPath}/admin/user/show/${user_detail.id}">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
-							</a></td>
+							</a>
+							</td>
 
 						</tr>
 					</c:forEach>

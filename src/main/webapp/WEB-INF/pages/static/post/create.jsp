@@ -79,7 +79,8 @@ input {
 
 
 					<div class="blog-div with20">
-						<h3 style="text-align: center; margin-left: 51px;">Nguyên liệu chính</h3>
+						<h3 style="text-align: center; margin-left: 51px;">Nguyên
+							liệu chính</h3>
 						<select class="dropdown" name="level" name="" class="space-left">
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>
@@ -137,9 +138,9 @@ input {
 					<h3 style="text-align: center;">Ngày lễ/Kỉ</h3>
 					<select class="dropdown" name="holiday" class="space-left">
 						<option value="Sinh nhật">Sinh nhật</option>
-						<option value="Trung thu">Sinh nhật  </option>
-						<option value="Mâm cỗ">Mâm cỗ   </option>
-						<option value="Tết nguyên đán">Tết nguyên đán </option>
+						<option value="Trung thu">Sinh nhật</option>
+						<option value="Mâm cỗ">Mâm cỗ</option>
+						<option value="Tết nguyên đán">Tết nguyên đán</option>
 					</select>
 				</div>
 

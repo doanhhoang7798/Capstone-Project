@@ -58,11 +58,12 @@
 				method="post" id="form_role">
 				<div class="role" style="margin-top: -12px;">
 
-					<input style="margin-top: 7px" type="radio" id="rd_user"
-						value="1" name="role"> <span
+					<input style="margin-top: 7px" type="radio" id="rd_user" value="1"
+						name="role"> <span
 						class="badge badge-warning center user_role">User</span> <input
 						style="margin-left: 10px" type="radio" value="10" id="rd_admin"
-						name="role"> <span class="badge badge-primary center user_role">Admin</span>
+						name="role"> <span
+						class="badge badge-primary center user_role">Admin</span>
 					<button style="margin-top: -6px; margin-left: 133px;"
 						class="btn btn-success" data-toggle="modal"
 						data-target="#confirm-delete">
@@ -72,7 +73,7 @@
 				</div>
 
 			</form>
-			
+
 			<script type="text/javascript">
 							$(document).ready(function() {
 								var role = ${ user_detail.getRole()};	
@@ -118,13 +119,14 @@
 							<h2
 								style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
 								class="modal-title" id="myModalLabel">Xác phân quyền</h2>
- 
+
 						</div>
 
 
-						<div class="modal-body"> 
+						<div class="modal-body">
 
-							<p style="text-align: center; font-size: 19px;">Đặt quyền người dùng </p>
+							<p style="text-align: center; font-size: 19px;">Đặt quyền
+								người dùng</p>
 							<p
 								style="text-align: center; font-style: italic; font-weight: bold;"
 								id="modal_name"></p>
@@ -144,147 +146,148 @@
 
 		</div>
 
-			<div class="card card-form" style="margin-top: 10px;">
-				<div class="row no-gutters">
-					<div class="col-lg-4 card-body">
+		<div class="card card-form" style="margin-top: 10px;">
+			<div class="row no-gutters">
+				<div class="col-lg-4 card-body">
 
-						<div style="height: 100%; width: 49%; float: left;">
-							<img alt="example image"
-								src="${pageContext.request.contextPath }/resources/${user_detail.getImage()}"
-								style="height: 157px; width: 170px;"> <br> <input
-								style="margin-left: 25px; margin-top: 5px; width: 110px; border-radius: 10px;"
-								class="btn btn-sm  dz-clickable" name="image" type="file" />
-
-
-						</div>
-						<div style="height: 100%; width: 49%; float: right;">
-							<table class="table table-striped table-hover"
-								style="margin-top: 25px;">
-								<tbody>
-									<tr>
-										<td>Trạng thái</td>
-
-										<c:choose>
-											<c:when test="${user_detail.status=='1'}">
-												<td><span class="span_table ">Active</span></td>
-											</c:when>
-											<c:otherwise>
-												<td><span class="span_table btn-danger">Inactive</span></td>
-											</c:otherwise>
-										</c:choose>
-
-									</tr>
-
-									<tr>
-										<td>Bài viết</td>
-										<td>0000</td>
-									</tr>
-
-									<tr>
-										<td>Ngày tham gia</td>
-										<td>Jan 07, 2014</td>
-									</tr>
-								</tbody>
-							</table>
+					<div style="height: 100%; width: 49%; float: left;">
+						<img alt="example image"
+							src="${pageContext.request.contextPath }/resources/${user_detail.getImage()}"
+							style="height: 157px; width: 170px;"> <br> <input
+							style="margin-left: 25px; margin-top: 5px; width: 110px; border-radius: 10px;"
+							class="btn btn-sm  dz-clickable" name="image" type="file" />
 
 
-						</div>
+					</div>
+					<div style="height: 100%; width: 49%; float: right;">
+						<table class="table table-striped table-hover"
+							style="margin-top: 25px;">
+							<tbody>
+								<tr>
+									<td>Trạng thái</td>
+
+									<c:choose>
+										<c:when test="${user_detail.status=='1'}">
+											<td><span class="span_table ">Active</span></td>
+										</c:when>
+										<c:otherwise>
+											<td><span class="span_table btn-danger">Inactive</span></td>
+										</c:otherwise>
+									</c:choose>
+
+								</tr>
+
+								<tr>
+									<td>Bài viết</td>
+									<td>0000</td>
+								</tr>
+
+								<tr>
+									<td>Ngày tham gia</td>
+									<td>Jan 07, 2014</td>
+								</tr>
+							</tbody>
+						</table>
+
 
 					</div>
 
-					<div class="col-lg-8 card-form__body card-body">
-						<div class="row">
-							<div class="col">
-								<div class="form-group">
-									<label for="fname">Email </label> <input id="fname"
-										name="email" type="text" class="form-control"
-										placeholder="Email" value="${user_detail.getEmail() }">
-								</div>
-							</div>
-							<div class="col">
-								<div class="form-group">
-									<label for="lname">Số điện thoại </label> <input id="lname"
-										type="text" class="form-control" name="phone"
-										placeholder="Số điện thoại" value="${user_detail.getPhone() }">
-								</div>
-							</div>
+				</div>
 
-
+				<div class="col-lg-8 card-form__body card-body">
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label for="fname">Email </label> <input id="fname" name="email"
+									type="text" class="form-control" placeholder="Email"
+									value="${user_detail.getEmail() }">
+							</div>
 						</div>
-
-
-
-						<div class="row">
-							<div class="col">
-								<div class="form-group">
-									<label for="fname">Họ tên </label> <input 
-										type="text" id="fullname" name="fullname" class="form-control"
-										placeholder="Họ tên " value="${user_detail.getFullname() }">
-								</div>
+						<div class="col">
+							<div class="form-group">
+								<label for="lname">Số điện thoại </label> <input id="lname"
+									type="text" class="form-control" name="phone"
+									placeholder="Số điện thoại" value="${user_detail.getPhone() }">
 							</div>
-							<div class="col">
-								<div class="form-group">
-									<label for="lname">Ngày sinh </label> <input id="lname"
-										type="date" name="birthday" class="form-control"
-										placeholder="Ngày sinh " value="${user_detail.getBirthday().trim() }">
-								</div>
-							</div>
-
-
 						</div>
 
 
 					</div>
+
+
+
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label for="fname">Họ tên </label> <input type="text"
+									id="fullname" name="fullname" class="form-control"
+									placeholder="Họ tên " value="${user_detail.getFullname() }">
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label for="lname">Ngày sinh </label> <input id="lname"
+									type="date" name="birthday" class="form-control"
+									placeholder="Ngày sinh "
+									value="${user_detail.getBirthday().trim() }">
+							</div>
+						</div>
+
+
+					</div>
+
+
 				</div>
 			</div>
+		</div>
 
-			<hr>
-			<div class="card card-form" style="height: 323px;">
-				<div class="row no-gutters">
-					<div class="col-lg-4 card-body">
-						<p>
-							<strong class="headings-color">Bài Viết </strong>
-						</p>
-						<div class="alert alert-dismissible bg-light border-0 fade show"
-							role="alert">
-							<button type="button" class="close" data-dismiss="alert"
-								aria-label="Close">
-								<span aria-hidden="true">×</span>
-							</button>
-							<strong>Light - </strong> A simple light alert - check it out!
-						</div>
-						<div class="alert alert-dismissible bg-light border-0 fade show"
-							role="alert">
-							<button type="button" class="close" data-dismiss="alert"
-								aria-label="Close">
-								<span aria-hidden="true">×</span>
-							</button>
-							<strong>Light - </strong> A simple light alert - check it out!
-						</div>
-
-
-
+		<hr>
+		<div class="card card-form" style="height: 323px;">
+			<div class="row no-gutters">
+				<div class="col-lg-4 card-body">
+					<p>
+						<strong class="headings-color">Bài Viết </strong>
+					</p>
+					<div class="alert alert-dismissible bg-light border-0 fade show"
+						role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<strong>Light - </strong> A simple light alert - check it out!
 					</div>
-					<div class="col-lg-8 card-form__body card-body">
+					<div class="alert alert-dismissible bg-light border-0 fade show"
+						role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+						<strong>Light - </strong> A simple light alert - check it out!
+					</div>
 
-						<div class="row">
-							<div class="col">
-								<div class="form-group">
-									<label for="fname">Địa chỉ </label> <input id="fname"
-										type="text" name="address" class="form-control"
-										placeholder="Địa chỉ " value="${user_detail.getCountry() }">
-								</div>
+
+
+				</div>
+				<div class="col-lg-8 card-form__body card-body">
+
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label for="fname">Địa chỉ </label> <input id="fname"
+									type="text" name="address" class="form-control"
+									placeholder="Địa chỉ " value="${user_detail.getCountry() }">
 							</div>
-							<div class="col">
-								<div class="form-group">
-									<label for="lname">Tuổi </label> <input id="lname" type="text"
-										class="form-control" name="age" placeholder="Tuổi "
-										value="${user_detail.getAge() }">
-								</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label for="lname">Tuổi </label> <input id="lname" type="text"
+									class="form-control" name="age" placeholder="Tuổi "
+									value="${user_detail.getAge() }">
 							</div>
+						</div>
 
 
-							<script type="text/javascript">
+						<script type="text/javascript">
 							$(document).ready(function() {
 								var gender = ${ user_detail.getGender()};	
 								gender == 0?  $("#rd_nu").prop("checked", true) : $("#rd_nam").prop("checked", true); 
@@ -292,45 +295,45 @@
 							</script>
 
 
-							<div class="col">
-								<div class="form-group">
-
-
-
-									<label for="lname">Giới tính </label> <br> <input
-										style="margin-top: 7px" type="radio" id="rd_nam"
-										value="option3" name="optionsRadios2"> <label>
-										Nam </label> <input style="margin-left: 10px" type="radio"
-										value="option4" id="rd_nu" name="optionsRadios2"> <label>Nữ
-									</label>
-
-
-								</div>
-							</div>
-
-
-
-
-						</div>
-
-
-						<div class="form-group">
+						<div class="col">
 							<div class="form-group">
-								<label for="desc">Mô tả - giới thiệu bản thân </label>
-								<textarea name="bio" id="desc" rows="4" class="form-control"
-									placeholder="Mô tả / giới thiệu bản thân ..."> ${ user_detail.getBio() } </textarea>
+
+
+
+								<label for="lname">Giới tính </label> <br> <input
+									style="margin-top: 7px" type="radio" id="rd_nam"
+									value="option3" name="optionsRadios2"> <label>
+									Nam </label> <input style="margin-left: 10px" type="radio"
+									value="option4" id="rd_nu" name="optionsRadios2"> <label>Nữ
+								</label>
+
+
 							</div>
 						</div>
-
-
-
 
 
 
 
 					</div>
+
+
+					<div class="form-group">
+						<div class="form-group">
+							<label for="desc">Mô tả - giới thiệu bản thân </label>
+							<textarea name="bio" id="desc" rows="4" class="form-control"
+								placeholder="Mô tả / giới thiệu bản thân ..."> ${ user_detail.getBio() } </textarea>
+						</div>
+					</div>
+
+
+
+
+
+
+
 				</div>
 			</div>
+		</div>
 
 
 		<hr>

@@ -13,7 +13,7 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0"> Bình luận </h1>
+			<h1 class="mb-0">Bình luận</h1>
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a> -->
 
@@ -39,15 +39,15 @@
 
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-						class="modal-title" id="myModalLabel">Xác nhận </h2>
+						class="modal-title" id="myModalLabel">Xác nhận</h2>
 
 				</div>
 
 
 				<div class="modal-body">
 
-					<p id="c_content" style="text-align: center;font-size: 19px;"> 
-						</p>
+					<p id="c_content" style="text-align: center; font-size: 19px;">
+					</p>
 					<p
 						style="text-align: center; font-style: italic; font-weight: bold;"
 						id="modal_name"></p>
@@ -92,10 +92,10 @@
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Nội dung </th>
-						<th class="table-th" scope="col">Thời gian </th>
-						<th class="table-th" scope="col">Bài viết </th>
-						<th class="table-th" scope="col">Hình ảnh </th>
+						<th class="table-th" scope="col">Nội dung</th>
+						<th class="table-th" scope="col">Thời gian</th>
+						<th class="table-th" scope="col">Bài viết</th>
+						<th class="table-th" scope="col">Hình ảnh</th>
 						<th class="table-th" scope="col">Thao tác</th>
 
 
@@ -108,20 +108,20 @@
 
 							<td scope="row">${ comment.id }</td>
 							<td class="full_name">${ comment.content }</td>
-							<td >${ comment.created_at.toString().split(" ")[0] }</td>
-							<td class="c_post" >${ comment.post.title }</td>
+							<td>${ comment.created_at.toString().split(" ")[0] }</td>
+							<td class="c_post">${ comment.post.title }</td>
 							<td><img
 								src="${pageContext.request.contextPath}/resources/${ comment.image_url }"></td>
 							<td>
-							
+
 								<button class="btn btn-danger use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/comment/delete/${ comment.id }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-trash"></i>
 								</button> <a class="btn btn-info"
-								href="${pageContext.request.contextPath}/admin/">
-									<span class="menu-icon"><i class="fa fa-eye"></i></span>
-							</a> 
+								href="${pageContext.request.contextPath}/admin/"> <span
+									class="menu-icon"><i class="fa fa-eye"></i></span>
+							</a>
 							</td>
 
 						</tr>

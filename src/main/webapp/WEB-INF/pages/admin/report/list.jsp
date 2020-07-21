@@ -13,7 +13,7 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0"> Báo cáo  </h1>
+			<h1 class="mb-0">Báo cáo</h1>
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a> -->
 
@@ -39,7 +39,7 @@
 
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-						class="modal-title" id="myModalLabel">Xác nhận </h2>
+						class="modal-title" id="myModalLabel">Xác nhận</h2>
 
 				</div>
 
@@ -91,13 +91,13 @@
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Người báo cáo  </th>
-						<th class="table-th" scope="col"> Bình luận  </th>
-						
-						<th class="table-th" scope="col">Loại báo  cáo </th>
-						<th class="table-th" scope="col">Ngày báo cáo   </th>
-						
-						
+						<th class="table-th" scope="col">Người báo cáo</th>
+						<th class="table-th" scope="col">Bình luận</th>
+
+						<th class="table-th" scope="col">Loại báo cáo</th>
+						<th class="table-th" scope="col">Ngày báo cáo</th>
+
+
 						<th class="table-th" scope="col">Thao tác</th>
 
 
@@ -110,39 +110,39 @@
 
 							<td scope="row">${ report[0] }</td>
 							<td scope="row">${ report[3] }</td>
-							<td class="c_comment"  scope="row">${ report[1] }</td>
+							<td class="c_comment" scope="row">${ report[1] }</td>
 							<c:choose>
-						         <c:when test = "${report[2] == 1}">
+								<c:when test="${report[2] == 1}">
 									<td class="full_name" scope="row"></td>
-						         </c:when>
-						         
-						          <c:when test = "${report[2] == 2}">
-									<td class="full_name" scope="row">Bạo lực </td>
-						         </c:when>
-						         
-						        <c:when test = "${report[2] == 3}">
-									<td class="full_name" scope="row">Nội dung đồi truỵ  </td>
-						         </c:when>
-						         <c:when test = "${report[2] == 4}">
-									<td  class="full_name" scope="row">Nội dung khiếm nhã  </td>
-						         </c:when>
-						      
-						         
-						         <c:otherwise>
-									<td class="full_name" scope="row">Gây hiểu nhâm, lừ đảo  </td>
-						         </c:otherwise>
-						      </c:choose>
-						     <td scope="row">${ report[4].toString().split(" ")[0] }</td>
-						      
-						
+								</c:when>
+
+								<c:when test="${report[2] == 2}">
+									<td class="full_name" scope="row">Bạo lực</td>
+								</c:when>
+
+								<c:when test="${report[2] == 3}">
+									<td class="full_name" scope="row">Nội dung đồi truỵ</td>
+								</c:when>
+								<c:when test="${report[2] == 4}">
+									<td class="full_name" scope="row">Nội dung khiếm nhã</td>
+								</c:when>
+
+
+								<c:otherwise>
+									<td class="full_name" scope="row">Gây hiểu nhâm, lừ đảo</td>
+								</c:otherwise>
+							</c:choose>
+							<td scope="row">${ report[4].toString().split(" ")[0] }</td>
+
+
 							<td>
-							
-							
+
+
 								<button class="btn btn-danger use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/report/delete/${ report[0] }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-trash"></i>
-								</button> 
+								</button>
 							</td>
 
 						</tr>

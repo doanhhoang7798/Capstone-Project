@@ -5,25 +5,25 @@
 <jsp:include page="../layout/_header.jsp"></jsp:include>
 
 <style>
-	select {
-		margin-left: 46px;
-		outline: none;
-	}
+select {
+	margin-left: 46px;
+	outline: none;
+}
 
-	select option {
-		padding: 10px;
-	}
+select option {
+	padding: 10px;
+}
 
-	.space-left {
-		margin-left: 71px;
-	}
+.space-left {
+	margin-left: 71px;
+}
 
-	input {
-		border-radius: 25px;
-		border: none;
-		background: #e6e6e6;
-		height: 40px;
-	}
+input {
+	border-radius: 25px;
+	border: none;
+	background: #e6e6e6;
+	height: 40px;
+}
 </style>
 
 <div id="content" class="clearfix"
@@ -31,16 +31,18 @@
 	<div id="left-area" class="clearfix" style="width: 91%;">
 		<div class="post-53 post category-barbeque" id="post-53">
 
-			<form action="${pageContext.request.contextPath}/post-edit/${post.id}" method="POST">
+			<form
+				action="${pageContext.request.contextPath}/post-edit/${post.id}"
+				method="POST">
 
 
-				<h3 style="font-size: 30px; text-align: center; margin: 30px 0px;" class="single-post-title">Sửa bài
-					viết mới</h3>
+				<h3 style="font-size: 30px; text-align: center; margin: 30px 0px;"
+					class="single-post-title">Sửa bài viết mới</h3>
 
-				<input type="hidden" name="user_id" value="${ post.user.id }" />
-
-				<input name="title" style="width: 100%; color: #888;" minlength="15" required maxlength="150"
-					value="${ post.title }" placeholder="Nhập tiêu đề bài viết !!" /> <br> <br> <br>
+				<input type="hidden" name="user_id" value="${ post.user.id }" /> <input
+					name="title" style="width: 100%; color: #888;" minlength="15"
+					required maxlength="150" value="${ post.title }"
+					placeholder="Nhập tiêu đề bài viết !!" /> <br> <br> <br>
 				<div class="post-53 post category-barbeque" style="width: 100%;">
 
 
@@ -105,7 +107,7 @@
 
 					</script>
 
-					
+
 
 					<div class="blog-div with20 time">
 						<h3 style="text-align: center; margin-left: 50px;">Thời gian</h3>
@@ -141,7 +143,8 @@
 					</div>
 
 					<div class="blog-div with20">
-						<h3 style="text-align: center; margin-left: 51px;">Nguyên liệu chính</h3>
+						<h3 style="text-align: center; margin-left: 51px;">Nguyên
+							liệu chính</h3>
 						<select class="dropdown" name="level" name="" class="space-left">
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>
@@ -157,23 +160,25 @@
 					<div class="blog-div with20">
 						<h3 style="text-align: center;">Giá thành</h3>
 						<input type="number" required max="1000" value="${post.price}"
-							style="width: 100px; margin-left: 32px; height: 11px;" name="price" />
+							style="width: 100px; margin-left: 32px; height: 11px;"
+							name="price" />
 					</div>
 				</div>
 
 
 
 
-			<input type="hidden" name="user_id" value="${ post.user.id }"/>
+				<input type="hidden" name="user_id" value="${ post.user.id }" />
 
 
 				<div class="" style="width: 100%;">
-					<a title="Best Bread pairing for Barbeque?"> <embed id="video" src="${ post.video_url }"
-							wmode="transparent" type="application/x-shockwave-flash" width="889" height="400"
+					<a title="Best Bread pairing for Barbeque?"> <embed id="video"
+							src="${ post.video_url }" wmode="transparent"
+							type="application/x-shockwave-flash" width="889" height="400"
 							allowfullscreen="true" title="Adobe Flash Player"></embed>
 
-					</a> <input name="video_url" value="${ post.video_url }" id="input" type="url" required
-						pattern="https?://.+"
+					</a> <input name="video_url" value="${ post.video_url }" id="input"
+						type="url" required pattern="https?://.+"
 						placeholder=" Nhập liên kết video hướng dẫn bắt đầu bằng https:// hoặc http:// !! "
 						style="width: 100%;">
 
@@ -232,8 +237,8 @@
 				<h1 class="w-bot-border">
 					Cách <span>làm </span>
 				</h1>
-				<textarea name="making" cols="110" rows="9" required placeholder="Chia sẻ cách làm của bạn !! "
-					class="pb-cmnt-textarea">${post.making}</textarea>
+				<textarea name="making" cols="110" rows="9" required
+					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea">${post.making}</textarea>
 				<h1 class="w-bot-border">
 					Nguyên <span>liệu </span>
 				</h1>
@@ -249,10 +254,11 @@
 			<span class="w-pet-border"></span>
 
 			<div class="reply" style="margin-left: 353px;">
-				
 
-				<button class="btn btn btn-success" style="height: 49px; margin-left: 50px;line-height: 38px; width: 108px;"
-					aria-label="Reply to admin">Cập nhập </button>
+
+				<button class="btn btn btn-success"
+					style="height: 49px; margin-left: 50px; line-height: 38px; width: 108px;"
+					aria-label="Reply to admin">Cập nhập</button>
 			</div>
 
 

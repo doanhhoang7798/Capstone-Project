@@ -62,23 +62,27 @@
 
 										<div class="col-xs-12" style="margin-top: 70px">
 											<div class="form-img text-aacenter mgbt-xs-15">
-												
-											
-													<c:choose>
-								<c:when test="${user.getImage()  == null}">
 
-										<img style="width: 200px; height: 174px;margin-bottom: 10px" id="blah" alt="example image"
-													src="${pageContext.request.contextPath }/resources/images/null_img.png" />
-								</c:when>
-								<c:otherwise>
-									<img style="width: 208px; height: 174px;margin-bottom: 10px" id="blah" alt="example image"
-													src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
-								</c:otherwise>
-							</c:choose>
-									</div>
-											
-											
-											
+
+												<c:choose>
+													<c:when test="${user.getImage()  == null}">
+
+														<img
+															style="width: 200px; height: 174px; margin-bottom: 10px"
+															id="blah" alt="example image"
+															src="${pageContext.request.contextPath }/resources/images/null_img.png" />
+													</c:when>
+													<c:otherwise>
+														<img
+															style="width: 208px; height: 174px; margin-bottom: 10px"
+															id="blah" alt="example image"
+															src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
+													</c:otherwise>
+												</c:choose>
+											</div>
+
+
+
 											<div class="form-img-action text-center mgbt-xs-20">
 
 												<input onchange="readURL(this);" type="file" name="image"
@@ -101,7 +105,7 @@
 																</c:otherwise>
 															</c:choose>
 
-															
+
 														</tr>
 
 														<tr>
@@ -143,13 +147,13 @@
 									</div>
 
 
-							<script type="text/javascript">
+									<script type="text/javascript">
 							    $(document).ready(function () {
 							        ${user.getGender()} == 0 ? $("#rd_nu").prop("checked", true) : $("#rd_name").prop("checked", true);
 							    });
 							</script>
 
-						
+
 
 
 									<div class="form-group">
@@ -219,14 +223,15 @@
 										<!-- col-sm-10 -->
 									</div>
 
-<!-- Change Email --> 
+									<!-- Change Email -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label font">Email</label>
 										<div class="col-sm-9 controls">
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
-													<input class="inputStyle" type="email" required value="${ user.getEmail() }"
-														name="email" placeholder=" Email" />
+													<input class="inputStyle" type="email" required
+														value="${ user.getEmail() }" name="email"
+														placeholder=" Email" />
 												</div>
 												<!-- col-xs-9 -->
 
@@ -235,7 +240,7 @@
 										</div>
 										<!-- col-sm-10 -->
 									</div>
-<!--  -->
+									<!--  -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label font"> Mô tả </label>
 										<div class="col-sm-9 controls">
@@ -272,11 +277,12 @@
 						<hr>
 
 						<h3 class="mgbt-xs-15"
-							style="margin-top: -26px; margin: 16px 0px;">Thay đổi mật khẩu</h3>
+							style="margin-top: -26px; margin: 16px 0px;">Thay đổi mật
+							khẩu</h3>
 
 
 						<span id="hideMe" class="${class_name}"
-						style="font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">${message}</span>
+							style="font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">${message}</span>
 
 
 
@@ -287,8 +293,8 @@
 							<div class="col-sm-9 controls">
 								<div class="row mgbt-xs-0">
 									<div class="col-xs-9">
-										<input class="inputStyle" readonly type="text" placeholder="phone"
-											value="${ user.getPhone() }">
+										<input class="inputStyle" readonly type="text"
+											placeholder="phone" value="${ user.getPhone() }">
 									</div>
 
 								</div>
@@ -306,9 +312,9 @@
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="password" name="password" 
-											pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-												maxlength="20" required type="password" class="width-40"
+											<input id="password" name="password"
+												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"
+												required type="password" class="width-40"
 												placeholder="Mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->

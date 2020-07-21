@@ -39,15 +39,15 @@
 
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-						class="modal-title" id="myModalLabel">Xác nhận kích hoạt </h2>
+						class="modal-title" id="myModalLabel">Xác nhận kích hoạt</h2>
 
 				</div>
 
 
 				<div class="modal-body">
 
-					<p style="text-align: center; font-size: 19px;">Kích  hoạt  bài viết
-						?</p>
+					<p style="text-align: center; font-size: 19px;">Kích hoạt bài
+						viết ?</p>
 					<p
 						style="text-align: center; font-style: italic; font-weight: bold;"
 						id="modal_name"></p>
@@ -89,7 +89,7 @@
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Tiêu đề </th>
+						<th class="table-th" scope="col">Tiêu đề</th>
 						<th class="table-th" scope="col">Lượt xem</th>
 						<th class="table-th" scope="col">Tác giả</th>
 						<th class="table-th" scope="col">Video</th>
@@ -105,19 +105,19 @@
 
 							<td scope="row">${ post_detail.id }</td>
 							<td style="width: 400px;" class="full_name">${ post_detail.title }</td>
-							<td>${ post_detail.view_conter } đã xem </td>
+							<td>${ post_detail.view_conter }đãxem</td>
 							<td>${post_detail.user.fullname }</td>
-							
-							
-							<td>
-							<embed id="video" src="${ post_detail.video_url }"  type="application/x-shockwave-flash"
-				 			   width="200" height="100"  autostart="true" loop="true" title="Adobe Flash Player"></embed>	
-				     
+
+
+							<td><embed id="video" src="${ post_detail.video_url }"
+									type="application/x-shockwave-flash" width="200" height="100"
+									autostart="true" loop="true" title="Adobe Flash Player"></embed>
+
 							</td>
-						
-								
+
+
 							<td>
-							
+
 								<button class="btn btn-primary">
 									<span class="menu-icon"><i class="fa fa-edit"></i></span>
 								</button>
@@ -129,7 +129,7 @@
 								</button> <a class="btn btn-info"
 								href="${pageContext.request.contextPath}/post-show/${post_detail.id}">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
-							</a> 
+							</a>
 							</td>
 
 						</tr>

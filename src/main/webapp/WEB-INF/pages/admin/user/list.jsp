@@ -118,7 +118,7 @@
 							<td><img
 								src="${pageContext.request.contextPath}/resources/${ user_detail.image }"></td>
 							<td>
-							
+
 								<button class="btn btn-dark use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/user/block/${user_detail.id}"
 									data-toggle="modal" data-target="#confirm-delete">
@@ -126,7 +126,7 @@
 								</button> <a class="btn btn-info"
 								href="${pageContext.request.contextPath}/admin/user/show/${user_detail.id}">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
-							</a> 
+							</a>
 							</td>
 
 						</tr>

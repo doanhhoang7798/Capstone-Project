@@ -1,170 +1,152 @@
-
-
-
-
-
-
 ::-webkit-input-placeholder {
-   text-align: center;
+	text-align: center;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   text-align: center;  
+	text-align: center;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
-   text-align: center;  
+::-moz-placeholder { /* Firefox 19+ */
+	text-align: center;
 }
 
-:-ms-input-placeholder {  
-   text-align: center; 
+:-ms-input-placeholder {
+	text-align: center;
 }
-
-
 
 .dropdown {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  height: 28px;
-  width: 150px;
-  background: #f2f2f2;
-  border: 1px solid;
-  border-color: white #f7f7f7 whitesmoke;
-  border-radius: 3px;
-  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 28px;
+	width: 150px;
+	background: #f2f2f2;
+	border: 1px solid;
+	border-color: white #f7f7f7 whitesmoke;
+	border-radius: 3px;
+	background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+	background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+	background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
 .dropdown:before, .dropdown:after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  top: 9px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 4px dashed;
-  border-color: #888888 transparent;
-  pointer-events: none;
+	content: '';
+	position: absolute;
+	z-index: 2;
+	top: 9px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 4px dashed;
+	border-color: #888888 transparent;
+	pointer-events: none;
 }
 
 .dropdown:before {
-  border-bottom-style: solid;
-  border-top: none;
+	border-bottom-style: solid;
+	border-top: none;
 }
 
 .dropdown:after {
-  margin-top: 7px;
-  border-top-style: solid;
-  border-bottom: none;
+	margin-top: 7px;
+	border-top-style: solid;
+	border-bottom: none;
 }
 
 .dropdown-select {
-  position: relative;
-  width: 130%;
-  margin: 0;
-  padding: 6px 8px 6px 10px;
-  height: 28px;
-  line-height: 14px;
-  font-size: 12px;
-  color: #62717a;
-  text-shadow: 0 1px white;
-  background: #f2f2f2; /* Fallback for IE 8 */
-  background: rgba(0, 0, 0, 0) !important; /* "transparent" doesn't work with Opera */
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
+	position: relative;
+	width: 130%;
+	margin: 0;
+	padding: 6px 8px 6px 10px;
+	height: 28px;
+	line-height: 14px;
+	font-size: 12px;
+	color: #62717a;
+	text-shadow: 0 1px white;
+	background: #f2f2f2; /* Fallback for IE 8 */
+	background: rgba(0, 0, 0, 0) !important;
+	/* "transparent" doesn't work with Opera */
+	border: 0;
+	border-radius: 0;
+	-webkit-appearance: none;
 }
 
 .dropdown-select:focus {
-  z-index: 3;
-  width: 100%;
-  color: #394349;
-  outline: 2px solid #49aff2;
-  outline: 2px solid -webkit-focus-ring-color;
-  outline-offset: -2px;
+	z-index: 3;
+	width: 100%;
+	color: #394349;
+	outline: 2px solid #49aff2;
+	outline: 2px solid -webkit-focus-ring-color;
+	outline-offset: -2px;
 }
 
-.dropdown-select > option {
-  margin: 3px;
-  padding: 6px 8px;
-  text-shadow: none;
-  background: #f2f2f2;
-  border-radius: 3px;
-  cursor: pointer;
+.dropdown-select>option {
+	margin: 3px;
+	padding: 6px 8px;
+	text-shadow: none;
+	background: #f2f2f2;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
 /* Fix for IE 8 putting the arrows behind the select element. */
-
 .lt-ie9 .dropdown {
-  z-index: 1;
+	z-index: 1;
 }
 
 .lt-ie9 .dropdown-select {
-  z-index: -1;
+	z-index: -1;
 }
 
 .lt-ie9 .dropdown-select:focus {
-  z-index: 3;
+	z-index: 3;
 }
 
 /* Dirty fix for Firefox adding padding where it shouldn't. */
-
-@-moz-document url-prefix() {
-  .dropdown-select {
-    padding-left: 6px;
-  }
+@
+-moz-document url-prefix () { .dropdown-select {
+	padding-left: 6px;
 }
 
+}
 .dropdown-dark {
-  background: #444;
-  border-color: #111111 #0a0a0a black;
-  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
-  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
-  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: #444;
+	border-color: #111111 #0a0a0a black;
+	background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
+	background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px
+		rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px
+		rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-dark:before {
-  border-bottom-color: #aaa;
+	border-bottom-color: #aaa;
 }
 
 .dropdown-dark:after {
-  border-top-color: #aaa;
+	border-top-color: #aaa;
 }
 
 .dropdown-dark .dropdown-select {
-  color: #aaa;
-  text-shadow: 0 1px black;
-  background: #444;  /* Fallback for IE 8 */
+	color: #aaa;
+	text-shadow: 0 1px black;
+	background: #444; /* Fallback for IE 8 */
 }
 
 .dropdown-dark .dropdown-select:focus {
-  color: #ccc;
+	color: #ccc;
 }
 
-.dropdown-dark .dropdown-select > option {
-  background: #444;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+.dropdown-dark .dropdown-select>option {
+	background: #444;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /*-----------------------------------------------------------------------------------*/
 /*	0.	CSS Reset & Clearfix - http://meyerweb.com/eric/tools/css/reset/
@@ -211,13 +193,11 @@ table {
 	border-spacing: 0;
 }
 
-
-.msg_success{
-    color: green;
+.msg_success {
+	color: green;
 }
 
-
-.msg_error{
+.msg_error {
 	color: red;
 }
 
@@ -247,7 +227,7 @@ body {
 }
 
 .font {
-	font: 14px , Arial, sans-serif;
+	font: 14px, Arial, sans-serif;
 }
 
 .blog-div {
@@ -281,10 +261,18 @@ opacity
 
 
 
+
+
+
+
 :
 
 
+
+
  
+
+
 
 
 1;
@@ -296,10 +284,18 @@ opacity
 
 
 
+
+
+
+
 :
 
 
+
+
  
+
+
 
 
 0;
@@ -317,10 +313,18 @@ opacity
 
 
 
+
+
+
+
 :
 
 
+
+
  
+
+
 
 
 1;
@@ -332,10 +336,18 @@ opacity
 
 
 
+
+
+
+
 :
 
 
+
+
  
+
+
 
 
 0;
@@ -350,7 +362,6 @@ h1, h2, h3, h4, h5, h6, #left-area .recipe-cat-info li.about, #left-area .recipe
 	form label {
 	/*font-family: "MuseoSlab500", Times, serif;*/
 	font-family: Arial, sans-serif;
-	
 }
 
 #left-area pre {
@@ -521,7 +532,7 @@ input[type="date"], input[type="text"], input[type="password"], input[type="numb
 	padding: 8px;
 	margin: 0 0 0;
 	border: 1px solid #d5d5d5;
-/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
 	font: 14px Arial, sans-serif;
 	color: #888;
 	-moz-border-radius: 5px;
@@ -538,8 +549,8 @@ input[type="date"], input[type="text"], input[type="password"], input[type="numb
 	padding: 8px;
 	margin: 0 0 0;
 	border: 1px solid #d5d5d5;
-/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
-	font: 14px Arial, sans-serif;	
+	/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	font: 14px Arial, sans-serif;
 	color: #888;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -554,7 +565,7 @@ textarea {
 	padding: 8px;
 	border: 1px solid #d5d5d5;
 	/*font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
-	font: 14px Arial, sans-serif;	
+	font: 14px Arial, sans-serif;
 	color: #888;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -1639,8 +1650,9 @@ img {
 	display: inline-block;
 	height: 16px;
 	padding: 7px 17px 7px 9px;
-/* 	background: url(images/pettern-gray-tile.png);
- */	border-radius: 5px;
+	/* 	background: url(images/pettern-gray-tile.png);
+ */
+	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
@@ -2392,7 +2404,7 @@ img {
 }
 
 #left-area blockquote p {
-/*	font: 18px/27px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	/*	font: 18px/27px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
 	font: 18px/27px Arial, sans-serif;
 	font-style: italic;
 	margin-bottom: 0;
@@ -3478,31 +3490,26 @@ img {
 #left-area .post, #left-area .page, #left-area .recipe {
 	padding: 0 0 20px;
 	overflow: hidden;
-/* 	margin: 0 0 35px;
- */	/*     background: url(images/pet-border.png) bottom repeat-x;
+	/* 	margin: 0 0 35px;
+ */ /*     background: url(images/pet-border.png) bottom repeat-x;
  */
 }
 
-
-
 .split-text {
-	   display: inline-block;
-    width: 208px;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
- } 
- 
- 
+	display: inline-block;
+	width: 208px;
+	white-space: nowrap;
+	overflow: hidden !important;
+	text-overflow: ellipsis;
+}
+
 .split-slide {
-
-	height: 50px;  
-	 width: 898px; 
-	 white-space: nowrap; 
-	 overflow: hidden !important; 
-	 text-overflow: ellipsis;
-
-} 
+	height: 50px;
+	width: 898px;
+	white-space: nowrap;
+	overflow: hidden !important;
+	text-overflow: ellipsis;
+}
 
 #left-area .post-title, #left-area .single-post-title {
 	font-size: 18px;
@@ -3930,7 +3937,7 @@ img {
 	height: 18px;
 	margin: 0 0 0;
 	border: 1px solid #d5d5d5;
-/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	/*	font: 14px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
 	font: 14px Arial, sans-serif;
 	color: #888;
 	-moz-border-radius: 5px;
@@ -4146,7 +4153,7 @@ img {
 	height: 45px;
 	background: url(images/faq-num-bg.png) left top no-repeat;
 	font: 24px/45px Arial, sans-serif;
-/*	font: 24px/45px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	/*	font: 24px/45px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
 	text-align: center;
 	color: #999999;
 	position: absolute;
@@ -4491,7 +4498,7 @@ img {
 	height: 25px;
 	padding: 0 0 0 35px;
 	margin: 0 0 7px;
-/*	font: 16px/25px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
+	/*	font: 16px/25px "MuseoSlab500", Arial, Helvetica, sans-serif;*/
 	font: 16px/25px Arial, sans-serif;
 	font-style: italic;
 	background: url(images/sidebar-icons.png) left top no-repeat;

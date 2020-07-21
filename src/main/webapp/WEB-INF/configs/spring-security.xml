@@ -12,11 +12,12 @@
 		<intercept-url pattern="/" access="permitAll()" />
 		<intercept-url pattern="/admin/*"
 			access="hasRole('ROLE_10')" />
-			
-			<intercept-url pattern="/profile"
+
+		<intercept-url pattern="/profile"
 			access="hasRole('ROLE_10') or hasRole('ROLE_1')" />
 
-		<access-denied-handler error-page="/authorized/not-found" />
+		<access-denied-handler
+			error-page="/authorized/not-found" />
 
 		<!-- Login Handler -->
 
@@ -30,33 +31,31 @@
 	</http>
 
 	<!-- Filter login with role -->
-	
-		
-
-<!-- Bean implementing AuthenticationProvider of Spring Security -->
 
 
-  <beans:bean id="AuthenProvider" class="service.AuthenProvider" />
-	 
+
+	<!-- Bean implementing AuthenticationProvider of Spring Security -->
+
+
+	<beans:bean id="AuthenProvider"
+		class="service.AuthenProvider" />
+
 	<authentication-manager>
-       <authentication-provider ref="AuthenProvider" />
-</authentication-manager>
+		<authentication-provider ref="AuthenProvider" />
+	</authentication-manager>
 
 
-	 <!-- <authentication-manager>
-		<authentication-provider>
-			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="Select phone ,password,role from Users where phone=? "
-				authorities-by-username-query="Select phone, concat('ROLE_', role) as roles from Users where phone=?" />
-		</authentication-provider>
-	</authentication-manager>  -->
+	<!-- <authentication-manager> <authentication-provider> <jdbc-user-service 
+		data-source-ref="dataSource" users-by-username-query="Select phone ,password,role 
+		from Users where phone=? " authorities-by-username-query="Select phone, concat('ROLE_', 
+		role) as roles from Users where phone=?" /> </authentication-provider> </authentication-manager> -->
 
 
 	<beans:bean id="authSuccessHandler"
-		class="service.AuthFilterHandler" /> 
+		class="service.AuthFilterHandler" />
 
 	<!-- Connect Database support login -->
 
 
-	
+
 </beans:beans> 

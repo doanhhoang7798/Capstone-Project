@@ -123,28 +123,29 @@ body {
 
 .myButton {
 	box-shadow: 2px 4px 0px 0px #3e7327;
-	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
-	background-color:#77b55a;
-	border-radius:28px;
-	border:1px solid #4b8f29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:18px;
-	padding:10px 47px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
-	background-color:#72b352;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
+	background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color: #77b55a;
+	border-radius: 28px;
+	border: 1px solid #4b8f29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 18px;
+	padding: 10px 47px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #5b8a3c;
 }
 
+.myButton:hover {
+	background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color: #72b352;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
 </style>
 </head>
 
@@ -153,13 +154,14 @@ body {
 	<div id="notfound">
 		<div class="notfound">
 			<div class="notfound-404">
-				<h3>Oops! Đã  xảy ra lỗi </h3>
+				<h3>Oops! Đã xảy ra lỗi</h3>
 				<h1>
 					<span>4</span><span>0</span><span>1</span>
 				</h1>
 			</div>
 			<h2>Bạn không đủ quyền truy cập mục này.</h2>
-			<a  href="${pageContext.request.contextPath}"class="myButton">Trang chủ</a>
+			<a href="${pageContext.request.contextPath}" class="myButton">Trang
+				chủ</a>
 		</div>
 
 	</div>

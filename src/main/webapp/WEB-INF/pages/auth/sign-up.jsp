@@ -16,17 +16,17 @@
 
 	<div class="limiter">
 		<div class="container-login100"
-			style="background-image: url('${pageContext.request.contextPath}/resources/images/bg_images_1.jpg');">
+			style="background-image: url('${pageContext.request.contextPath}/resources/images/login_image.jpg');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
 				<form class="login100-form validate-form flex-sb flex-w"
 					accept-charset="UTF-8"
 					action="${pageContext.request.contextPath}/authorized/SignUp"
 					method="post">
-					<span style="padding-bottom: 20px;" class="login100-form-title ">Tham
+					<span style="padding-bottom: 40px;" class="login100-form-title ">Tham
 						gia cùng Yummy </span>
 
-					<div class="p-b-10 p-l-20">
-						<span class="txt1"> Họ tên </span>
+					<div class="p-b-20 p-l-40">
+						<span class="txt1"> Họ và tên </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
@@ -35,33 +35,34 @@
 					</div>
 
 
-					<div class="p-b-10 p-l-20">
+					<div class="p-b-20 p-l-40">
 						<span class="txt1">Số điện thoại </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input class="input100" type="tel" required pattern="^(03|09)+([0-9]{8})" name="phone">
-						<span class="focus-input100"></span>
+						<input class="input100" type="tel" required
+							pattern="^(03|09)+([0-9]{8})" name="phone"> <span
+							class="focus-input100"></span>
 					</div>
 
-					<div class="p-b-10 p-l-20">
+					<div class="p-b-20 p-l-40">
 						<span class="txt1">Mật Khẩu </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
 						<input id="password" class="input100" type="password" type="email"
-							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20" required name="password"> <span
-							class="focus-input100"></span>
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"
+							required name="password"> <span class="focus-input100"></span>
 					</div>
 
-					<div class="p-b-10 p-l-20">
-						<span class="txt1">Xác nhận mậtkhẩu </span>
+					<div class="p-b-20 p-l-40">
+						<span class="txt1">Xác nhận mật khẩu </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input id="confirm_password" class="input100" type="password" 
-							type="email" maxlength="20" required
-							name="cf_password"> <span class="focus-input100"></span>
+						<input id="confirm_password" class="input100" type="password"
+							type="email" maxlength="20" required name="cf_password">
+						<span class="focus-input100"></span>
 					</div>
 
 					<script>
@@ -70,12 +71,11 @@
 
 					function validatePassword(){
 					  if(password.value != confirm_password.value) {
-					    confirm_password.setCustomValidity("Mật khẩu xác nhận không trùng khớp với Mật khẩu");
+					    confirm_password.setCustomValidity("Mật khẩu không trùng khớp.");
 					  } else {
 					    confirm_password.setCustomValidity('');
 					  }
 					}
-
 					password.onchange = validatePassword;
 					confirm_password.onkeyup = validatePassword;
 					</script>
@@ -88,7 +88,7 @@
 					</div>
 
 					<div class="w-full text-center p-t-30">
-						<span class="txt2">Bạn đã có tài khoản? </span> <a
+						<span class="txt2"> Bạn đã có tài khoản? </span> <a
 							href="${pageContext.request.contextPath}/authorized/SignIn"
 							class="txt2 bo1"> Đăng nhập ngay! </a> </br> <a
 							href="${pageContext.request.contextPath}/" class="txt2 bo1">

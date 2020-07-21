@@ -32,14 +32,14 @@
 			<h2 style="margin-bottom: 24px;">
 				<span>Nguồn cảm hứng</span>
 			</h2>
-			<p style="line-height: 1.7rem;">
-			Lấy cảm hứng từ những món ăn ngon và phổ biến tại Việt Nam và nước ngoài. 
-			Yummy Website xin gửi tới các bạn công thức chế biến kèm video mình họa 
-			 giúp mọi người có thể tự tay chế biến những món ăn ngon độc lạ cho gia đình và bạn bè!</p>
+			<p style="line-height: 1.7rem;">Lấy cảm hứng từ những món ăn ngon
+				và phổ biến tại Việt Nam và nước ngoài. Yummy Website xin gửi tới
+				các bạn công thức chế biến kèm video mình họa giúp mọi người có thể
+				tự tay chế biến những món ăn ngon độc lạ cho gia đình và bạn bè!</p>
 		</div>
-		
-		
-			
+
+
+
 
 
 		<div style="float: right; width: 30%;">
@@ -85,8 +85,8 @@
 
 <div id="footer-wrap">
 	<div id="footer">
-		<p class="copyright">Copyright © 2020, Yummy-PekopekoTeam
-			Vietnam. All rights reserved</p>
+		<p class="copyright">Copyright © 2020, Yummy-PekopekoTeam Vietnam.
+			All rights reserved</p>
 		<p class="dnd">
 			Developed by <a href="">FPT </a>
 		</p>

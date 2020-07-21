@@ -74,52 +74,51 @@
 						style="color: rgb(255, 255, 255);">Giới thiệu - Liên hệ</a></li>
 
 					<c:choose>
-                     <c:when test="${user == null}">
-                        <li style="margin-left: 200px;" class="facebook"><a
-                           href="${pageContext.request.contextPath}/authorized/SignIn"
-                           style="color: rgb(255, 255, 255);">Đăng nhập </a>
-                        <li>
-                           <a
-                              href="${pageContext.request.contextPath}/authorized/SignUp"
-                              style="color: rgb(255, 255, 255);">Đăng ký </a>
-                     </c:when>
-                     <c:otherwise>
-                     <c:choose>
-                     <c:when test="${user.getImage()  == null}">
-                     <li style="margin-left: 250px;"><img class="image_profile"
-                        style="margin-top: 3px; width: 35px; height: 35px;"
-                        src='${pageContext.request.contextPath}/resources/images/null_img.png' />
-                     </li>
-                     </c:when>
-                     <c:otherwise>
-                     <li style="margin-left: 250px;"><img class="image_profile"
-                        style="margin-top: 3px; width: 35px; height: 35px;"
-                        src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
-                     </li>
-                     </c:otherwise>
-                     </c:choose>
-                     <li><a style="color: rgb(255, 255, 255);">${ user.getFullname().split(" ")[0] }</a>
-                     <ul class="sub-menu" style="display: none;">
-                     <li style="background: none;"><a
-                        href="${pageContext.request.contextPath}/profile"
-                        style="color: rgb(255, 255, 255);">Cá nhân</a></li>
-                     <li><a href="typography.html"
-                        style="color: rgb(255, 255, 255);">Bài viết yêu thích</a></li>
-                     <c:choose>
-                     <c:when test="${ user.getRole() == 10 }">
-                     <li><a
-                        href="${pageContext.request.contextPath}/admin/Dashboard"
-                        style="color: rgb(255, 255, 255);">Admin</a></li>
-                     </c:when>
-                     <c:otherwise>
-                     <li></li>
-                     </c:otherwise>
-                     </c:choose>
-                     <li><a href="${pageContext.request.contextPath}/SignOut"
-                        style="color: rgb(255, 255, 255);">Đăng xuất</a></li>
-                     </ul></li>
-                     </c:otherwise>
-                  </c:choose>
+						<c:when test="${user == null}">
+							<li style="margin-left: 200px;" class="facebook"><a
+								href="${pageContext.request.contextPath}/authorized/SignIn"
+								style="color: rgb(255, 255, 255);">Đăng nhập </a>
+							<li><a
+								href="${pageContext.request.contextPath}/authorized/SignUp"
+								style="color: rgb(255, 255, 255);">Đăng ký </a>
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${user.getImage()  == null}">
+									<li style="margin-left: 250px;"><img class="image_profile"
+										style="margin-top: 3px; width: 35px; height: 35px;"
+										src='${pageContext.request.contextPath}/resources/images/null_img.png' />
+									</li>
+								</c:when>
+								<c:otherwise>
+									<li style="margin-left: 250px;"><img class="image_profile"
+										style="margin-top: 3px; width: 35px; height: 35px;"
+										src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
+									</li>
+								</c:otherwise>
+							</c:choose>
+							<li><a style="color: rgb(255, 255, 255);">${ user.getFullname().split(" ")[0] }</a>
+								<ul class="sub-menu" style="display: none;">
+									<li style="background: none;"><a
+										href="${pageContext.request.contextPath}/profile"
+										style="color: rgb(255, 255, 255);">Cá nhân</a></li>
+									<li><a href="typography.html"
+										style="color: rgb(255, 255, 255);">Bài viết yêu thích</a></li>
+									<c:choose>
+										<c:when test="${ user.getRole() == 10 }">
+											<li><a
+												href="${pageContext.request.contextPath}/admin/Dashboard"
+												style="color: rgb(255, 255, 255);">Admin</a></li>
+										</c:when>
+										<c:otherwise>
+											<li></li>
+										</c:otherwise>
+									</c:choose>
+									<li><a href="${pageContext.request.contextPath}/SignOut"
+										style="color: rgb(255, 255, 255);">Đăng xuất</a></li>
+								</ul></li>
+						</c:otherwise>
+					</c:choose>
 
 				</ul>
 			</div>
@@ -141,15 +140,15 @@
 					id="searchform">
 					<p>
 						<input type="text" name="keyword" id="s" class="field"
-							placeholder="Từ khóa" /> <input type="submit"
-							id="s-submit" value="" />
+							placeholder="Từ khóa" /> <input type="submit" id="s-submit"
+							value="" />
 					</p>
 				</form>
 				<p class="statement">
-					<span class="fireRed">Một số gợi ý:</span> <a href="#">Thịt bò</a> , <a
-						href="#">Thịt gà</a> , <a href="#">Bánh ngọt</a> , <a href="#">Cá</a>
-					, <a href="#">Mẹo hay</a> , <a href="#">Pizzas</a>, <a href="#">Khoai tây</a>,
-					<a href="#">Phở</a>
-				
+					<span class="fireRed">Một số gợi ý:</span> <a href="#">Thịt bò</a>
+					, <a href="#">Thịt gà</a> , <a href="#">Bánh ngọt</a> , <a href="#">Cá</a>
+					, <a href="#">Mẹo hay</a> , <a href="#">Pizzas</a>, <a href="#">Khoai
+						tây</a>, <a href="#">Phở</a>
+
 				</p>
 			</div>
