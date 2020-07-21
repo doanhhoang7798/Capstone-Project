@@ -37,17 +37,16 @@ public class CommentController {
 
 	@PostMapping(value = "comment/create/{id}")
 	@ResponseBody
-	public Integer create(ModelMap mode, @PathVariable("id") int id, @RequestParam("image") MultipartFile image,
+	public Integer create(ModelMap mode, @PathVariable("id") int p_id, @RequestParam("image") MultipartFile image,
 			@RequestParam("content") String content) {
 		String image_path = upload.uploadImage(mode, image);
-
 		try {
-			commentDaoimpl.Create(new Comments(postDaoimpl.findByID(id), user.getCurrentUsers(), content, image_path,
+			commentDaoimpl.Create(new Comments(postDaoimpl.findByID(p_id), user.getCurrentUsers(), content, image_path,
 					"NULL", timestamp.toString()));
 
-			return commentDaoimpl.list().size();
+			return size(p_id, "Post");
 		} catch (Exception e) {
-			return commentDaoimpl.list().size();
+			return size(p_id, "Post");
 		}
 	}
 
@@ -56,15 +55,14 @@ public class CommentController {
 	public Integer update(ModelMap mode, @PathVariable("id") int id, @RequestParam("image") MultipartFile image,
 			@RequestParam("content") String content, @RequestParam("c_id") int c_id,
 			@RequestParam("c_user") int c_user) {
-
 		if (user.userID() == c_user) {
-			String image_path = upload.uploadImage(mode, image);
-
+			String url = upload.uploadImage(mode, image);
+			String image_path = url.equals("") ? commentDaoimpl.findByID(c_id).getImage_url() : url;
 			commentDaoimpl.Update(new Comments(c_id, postDaoimpl.findByID(id), user.getCurrentUsers(), content,
 					image_path, "NULL", timestamp.toString()));
-			return commentDaoimpl.list().size();
+			return size(c_id, "Comment");
 		} else {
-			return commentDaoimpl.list().size();
+			return size(c_id, "Comment");
 		}
 
 	}
@@ -72,12 +70,12 @@ public class CommentController {
 	@PostMapping(value = "comment/delete/{id}")
 	@ResponseBody
 	public Integer Delete(ModelMap mode, @PathVariable("id") int id, @RequestParam("c_user") int c_user) {
-
+		int size = postDaoimpl.findByID(commentDaoimpl.findByID(id).post.getId()).comments.size();
 		if (user.userID() == c_user) {
 			commentDaoimpl.Delete(id);
-			return commentDaoimpl.list().size();
+			return (size - 1);
 		} else {
-			return commentDaoimpl.list().size();
+			return (size - 1);
 		}
 
 	}
@@ -98,10 +96,10 @@ public class CommentController {
 
 		if (user.isAdminOrMod()) {
 			if (commentDaoimpl.Delete(id)) {
-				mode.addAttribute("msg", "Xoá thành công.");
+				mode.addAttribute("msg", "Thao tác thành công.");
 				mode.addAttribute("class_name", "msg_success");
 			} else {
-				mode.addAttribute("msg", "Xoá thất bại.");
+				mode.addAttribute("msg", "Thao tác thất bại.");
 				mode.addAttribute("class_name", "msg_error");
 			}
 			mode.addAttribute("comments", commentDaoimpl.list());
@@ -110,6 +108,13 @@ public class CommentController {
 			return "auth/401";
 		}
 
+	}
+
+	public int size(int p_id, String type) {
+		int rls = type.equals("Comment")
+				? postDaoimpl.findByID(commentDaoimpl.findByID(p_id).post.getId()).comments.size()
+				: postDaoimpl.findByID(p_id).comments.size();
+		return rls;
 	}
 
 }

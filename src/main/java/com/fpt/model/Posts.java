@@ -1,7 +1,9 @@
 package com.fpt.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,6 +76,14 @@ public class Posts {
 	@Column
 	private Timestamp created_at;
 	
+	public List<Comments> getComments() {
+		return comments;
+	}
+	
+	public void setComments(List<Comments> comments) {
+		this.comments = comments;
+	}
+	
 	@Column
 	private String deleted_at;
 	
@@ -81,7 +92,10 @@ public class Posts {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private Users user;
-
+	
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	public List<Comments> comments;
+	
 	public Posts() {
 		super();
 	}
