@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import  dao.UserDao;
-import  model.Users;
-import  service.TwilioMessageCreator;
+import  dao.*;
+import  model.*;
+import  service.*;
 
 @Controller
 
@@ -21,7 +21,7 @@ import  service.TwilioMessageCreator;
 public class AuthController {
 
 	@Autowired
-	UserDao userDaoimpl;/////// test comflict
+	UserDao userDaoimpl;
 
 	@Autowired
 	TwilioMessageCreator twilioMessageCreator;
