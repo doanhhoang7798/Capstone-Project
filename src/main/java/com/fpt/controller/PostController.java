@@ -43,6 +43,7 @@ public class PostController {
 	@GetMapping(value = "/post-show/{id}")
 	public String show(ModelMap model, @PathVariable("id") int id) {
 		try {
+			//////////////////////////////////////////
 			postDaoimpl.viewCount(id);
 			boolean checkLike = user.exist() ? reactionDaoimpl.isLike(user.userID(), id) == null ? false : true : false;
 			model.addAttribute("isLike", checkLike);
