@@ -147,5 +147,22 @@ public class UserDao {
 			return null;
 		}
 	}
+	public Boolean ChangePassword(int id, String password, String code) {
+		Session ses = sessionFactory.openSession();
+
+		try {
+			ses.getTransaction().begin();
+			Query query = (Query) ses
+					.createQuery("UPDATE Users SET password = '" + password + "', confirm_code = '"+ code+"' WHERE (id = '" + id + "')");
+			query.executeUpdate();
+			ses.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
+
+	}
+
 
 }
