@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import  dao.CommentDao;
-import  dao.PostDao;
-import  dao.ReactionDao;
-import  dao.UserDao;
+import dao.*;
 import  model.Posts;
 import  service.CurrentUser;
 
