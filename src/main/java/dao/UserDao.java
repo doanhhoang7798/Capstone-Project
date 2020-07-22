@@ -9,6 +9,10 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.common.base.Charsets;
+import com.google.common.hash.HashCode;
+import com.google.common.hash.Hashing;
+
 import model.Users;
 
 @Transactional
@@ -164,5 +168,10 @@ public class UserDao {
 
 	}
 
-
+	public String encode(String clear_password) {   
+		HashCode hash = Hashing.md5()
+				.hashString(clear_password, Charsets.UTF_8);
+		String password = hash.toString() + hash.toString() + hash.toString();
+	        return password;
+	}
 }
