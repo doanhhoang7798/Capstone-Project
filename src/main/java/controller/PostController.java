@@ -43,7 +43,6 @@ public class PostController {
 	@GetMapping(value = "/post-show/{id}")
 	public String show(ModelMap model, @PathVariable("id") int id) {
 		try {
-			//////////////////////////////////////////
 			postDaoimpl.viewCount(id);
 			boolean checkLike = user.exist() ? reactionDaoimpl.isLike(user.userID(), id) == null ? false : true : false;
 			model.addAttribute("isLike", checkLike);
@@ -76,7 +75,37 @@ public class PostController {
 		if (user.exist()) {
 			return "static/post/create";
 		} else {
-			return "auth/401";
+			return "auth/sign-in";
+		}
+
+	}
+	
+	@PostMapping(value = "/post-create")
+	public String create(ModelMap model, @RequestParam("video_url") String video_url,
+			@RequestParam("title") String title, @RequestParam("overview") String overview,
+			@RequestParam("making") String making, @RequestParam("ration") int ration,
+			@RequestParam("kind") String kind, @RequestParam("level") String level,
+			@RequestParam("nation") String nation, @RequestParam("holiday") String holiday,
+			@RequestParam("category") String category, @RequestParam("suitable") String suitable,
+			@RequestParam("price") int price, @RequestParam("material") String material,
+			@RequestParam("time") int time) {
+
+		try {
+
+			if (user.exist()) {
+
+				String url = "https://www.youtube.com/v/" + video_url.split("v=")[1];
+
+				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.getCurrentUsers().getId()), url, title,
+						overview, making, material, time, ration, kind, level, price, nation, holiday, category,
+						suitable, timestamp, "NULL"));
+
+				return "redirect: post-show/" + id + "";
+			} else {
+				return "auth/401";
+			}
+		} catch (Exception e) {
+			return "auth/500";
 		}
 
 	}
@@ -111,35 +140,6 @@ public class PostController {
 
 	}
 
-	@PostMapping(value = "/post-create")
-	public String create(ModelMap model, @RequestParam("video_url") String video_url,
-			@RequestParam("title") String title, @RequestParam("overview") String overview,
-			@RequestParam("making") String making, @RequestParam("ration") int ration,
-			@RequestParam("kind") String kind, @RequestParam("level") String level,
-			@RequestParam("nation") String nation, @RequestParam("holiday") String holiday,
-			@RequestParam("category") String category, @RequestParam("suitable") String suitable,
-			@RequestParam("price") int price, @RequestParam("material") String material,
-			@RequestParam("time") int time) {
-
-		try {
-
-			if (user.exist()) {
-
-				String url = "https://www.youtube.com/v/" + video_url.split("v=")[1];
-
-				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.getCurrentUsers().getId()), url, title,
-						overview, making, material, time, ration, kind, level, price, nation, holiday, category,
-						suitable, timestamp, "NULL"));
-
-				return "redirect: post-show/" + id + "";
-			} else {
-				return "auth/401";
-			}
-		} catch (Exception e) {
-			return "auth/500";
-		}
-
-	}
 
 	@GetMapping(value = "/admin/post/list")
 	public String list(ModelMap model) {

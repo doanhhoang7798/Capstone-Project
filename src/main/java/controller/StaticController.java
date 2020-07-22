@@ -59,13 +59,18 @@ public class StaticController {
 		return "static/contact";
 	}
 
-
+//////////////////////////////////
 	@GetMapping(value = "/profile")
 	public String profile(ModelMap model) {
-		if (user.exist()) {
-			return "static/profile";
-		} else {
-			return "auth/401";
+
+		try {
+			if (user.exist()) {
+				return "static/profile";
+			} else {
+				return "auth/sign-in";
+			}
+		} catch (Exception e) {
+			return "auth/500";
 		}
 	}
 
