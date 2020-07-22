@@ -136,5 +136,16 @@ public class UserDao {
 			return null;
 		}
 	}
+	
+	public Users findByPhone(String phone) {
+		try {
+			Session session = sessionFactory.openSession();
+			Users user = (Users) session.createQuery("FROM Users WHERE phone ='" + phone + "'").uniqueResult();
+			return user;
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+	}
 
 }
