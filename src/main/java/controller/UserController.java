@@ -22,7 +22,7 @@ import dao.ReportDao;
 import dao.UserDao;
 import model.Reports;
 import service.CurrentUser;
-import service.TwilioMessageCreator;
+import utils.TwilioMessageCreator;
 
 @Controller
 
