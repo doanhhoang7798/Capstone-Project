@@ -16,7 +16,8 @@ import  dao.CommentDao;
 import  dao.PostDao;
 import  model.Comments;
 import  service.CurrentUser;
-import  service.UploadConfig;
+import utils.UploadConfig;
+
 
 @Controller
 public class CommentController {
