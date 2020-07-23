@@ -1,5 +1,11 @@
 package service;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +19,11 @@ import com.google.common.hash.Hashing;
 
 @Service
 public class CurrentUser {
+	public Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	public Date now = new Date();
+	public Random random = new Random();
+	public SimpleDateFormat fomart = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+
 
 	@Autowired
 	UserDao userDaoimpl;
