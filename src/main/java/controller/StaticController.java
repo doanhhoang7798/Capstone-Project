@@ -17,7 +17,7 @@ import  dao.PostDao;
 import  dao.UserDao;
 import  model.Users;
 import  service.CurrentUser;
-import  service.UploadConfig;
+import utils.UploadConfig;
 
 @Controller
 public class StaticController {
