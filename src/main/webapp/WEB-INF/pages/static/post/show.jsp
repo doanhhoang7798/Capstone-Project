@@ -15,103 +15,92 @@
   white-space: pre-wrap;
   }
 
->>>>>>> 8716aeb23a45bba5d472e241a1679d19a9bbc7de
+>>>>>>> 
 </style>
 <jsp:include page="../layout/_header.jsp"></jsp:include>
-<!-- <div class="container">
-	<div id=" modal fade" class="report-dialog" role="dialog">
-		<div class="modal-dialog" id="modal-dialog-report" style="top: 15px;">
-			<div style="padding: 8px;" class="modal-content">
-
-				<div style="padding: 8px;" class="modal-body">
-					<h3 style="text-align: center; color: black;" id="r_msg">Báo
-						cáo được gửi thành công.</h3>
-				</div>
-				<div class="modal-footer dialog-center">
-					<button type="button" class="btn btn-default r-close"
-						data-dismiss="modal">Thoát</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-
-
+<div class="container">
+  <div id=" modal fade" class="report-dialog" role="dialog">
+    <div class="modal-dialog" id="modal-dialog-report" style="top: 15px;">
+      <div style="padding: 8px;" class="modal-content">
+        <div style="padding: 8px;" class="modal-body">
+          <h3 style="text-align: center; color: black;" id="r_msg"></h3>
+        </div>
+        <div class="modal-footer dialog-center">
+          <button type="button" class="btn btn-default r-close"
+            data-dismiss="modal">Thoát</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div id="content" class="clearfix " style="width: 100%;">
 	<div id="left-area" class="clearfix" style="width: 91%;">
 		<div class="post-53 post category-barbeque" id="post-53">
-			<h3 style="font-size: 30px; text-align: center; margin: 30px 0px;"
-				class="single-post-title">${ post.title }</h3>
-			<div class="post-53 post category-barbeque" style="width: 100%;">
-				<div class="blog-div with20">
-					<h3 style="text-align: center;">Thời gian</h3>
-					<h5 style="text-align: center;">${ post.time }Phút</h5>
-				</div>
-				<div class="blog-div with20">
-					<h3 style="text-align: center;">Khẩu phần</h3>
-					<h5 style="text-align: center;">${ post.ration }người</h5>
-				</div>
-				<div class="blog-div with20">
-					<h3 style="text-align: center;">Cách thức</h3>
-					<h5 style="text-align: center;">${ post.kind }</h5>
-				</div>
-				<div class="blog-div with20">
-					<h3 style="text-align: center;">Nguyên liệu chính</h3>
-					<h5 style="text-align: center;">${ post.level }</h5>
-				</div>
-				<div class="blog-div with20">
-					<h3 style="text-align: center;">Giá thành</h3>
-					<h4 style="text-align: center;">${ post.price }K</h4>
-				</div>
-			</div>
-			<div class="post-thumb single-img-box" style="width: 100%;">
-				<a title="Best Bread pairing for Barbeque?"> <embed id="video"
-						src="${ post.video_url }" type="application/x-shockwave-flash"
-						width="889" height="400" autostart="true" loop="true"
-						title="Adobe Flash Player"></embed>
-				</a>
-			</div>
-			<div style="width: 100%; height: 60px;">
-				<div id="show_view" style="width: 50%; float: left; height: 40px;">
-					<c:choose>
-						<c:when test="${user.getFullname()  == null}">
-							<a href="${pageContext.request.contextPath}/authorized/SignIn">
-								<i class="fa fa-heart fa-3x icon-inline" aria-hidden="true"></i>
-							</a>
-						</c:when>
-						<c:otherwise>
-							<a id="send-like" style="background: white; border: aliceblue;"
-								type="submit"> <i class="fa fa-heart fa-3x icon-inline"
-								aria-hidden="true"></i>
-							</a>
-						</c:otherwise>
-					</c:choose>
+			<!-- Starting Default Loop -->
+    <h1 class="title fn" >${post.title }</h1>
+    <span class="published">2013-02-06</span>
+    <!-- Recipe Categorization Information -->
+    <ul class="recipe-cat-info clearfix">
+      <li> Xuất xứ: <a href="${pageContext.request.contextPath}/filter?condition=${ post.nation }&category=nation" rel="tag">${ post.nation } </a> </li>
+      <li> Nguyên liệu: <a href="${pageContext.request.contextPath}/filter?condition=${ post.level }&category=level" rel="tag">${ post.level } </a> </li>
+      <li> Thể loại: <a href="${pageContext.request.contextPath}/filter?condition=${ post.category }&category=category" rel="tag">${ post.category }</a> </li>
+      <li> Giá thành: <a style="color: #5b5b5b" rel="tag">${ post.price }k</a> </li>
+    </ul>
+    <!-- Recipe Single Image -->
+    <div class="single-img-box ">
+      <div class="single-slider cycle-slideshow " data-cycle-pager=".cycle-pager" style="position: relative;">
+        <a title="Best Bread pairing for Barbeque?">
+          <embed id="video"
+            src="${ post.video_url }" type="application/x-shockwave-flash"
+            style="    margin-left: 0.5%;border-radius: 5px;"
+            width="99%" height="40%" autostart="true" loop="true"
+            title="Adobe Flash Player"></embed>
+        </a>
+      </div>
+    </div>
+    <!-- Recipe Information -->
+    <ul class="recipe-info clearfix">
+      <li class="yield">
+        <strong style="color: #5b5b5b" class="name">Cách thức :</strong>
+        <a class="value" href="${pageContext.request.contextPath}/filter?condition=${ post.kind }&category=kind" > ${ post.kind } </a>
+      </li>
+      <li class="servings">
+        <strong style="color: #5b5b5b" class="name">Khẩu phần  :</strong>
+        <span class="value">${ post.ration } </span>
+      </li>
+      <li class="prep-time">
+        <strong style="color: #5b5b5b" class="name">Thời gian :</strong>
+        <span class="value">${ post.time } h</span>
+      </li>
+    </ul>
+    <ul class="recipe-info clearfix">
+      <li class="cook-time">
+        <strong style="color: #5b5b5b" class="name">Phù hợp :</strong>
+        <a class="value" href="${pageContext.request.contextPath}/filter?condition=${ post.suitable }&category=suitable">${ post.suitable }</a>
+      </li>
+      <li class="ready-in">
+        <strong style="color: #5b5b5b" class="name">Ngày lễ/Kỉ niệm: </strong>
+        <a class="value" href="${pageContext.request.contextPath}/filter?condition=${ post.holiday }&category=holiday">${ post.holiday } </a>
+      </li>
+      <c:choose>
 
-				</div>
-				<div style="width: 50%; float: left; height: 40px;">
-					<i class="fa fa-eye fa-3x icon-inline-left" aria-hidden="true"></i>
-					<span class="span-inline"> &nbsp; ${ post.view_conter }
-						&nbsp; Lượt xem </span>
-				</div>
-			</div>
-			<div class="blog-div with30">
-				<h3 style="text-align: center;">Xuất xứ</h3>
-				<h5 style="text-align: center;">${ post.nation }</h5>
-			</div>
-			<div class="blog-div with30">
-				<h3 style="text-align: center;">Ngày lễ/Kỉ</h3>
-				<h5 style="text-align: center;">${ post.holiday }</h5>
-			</div>
-			<div class="blog-div with30">
-				<h3 style="text-align: center;">Thể loại</h3>
-				<h5 style="text-align: center;">${ post.category }</h5>
-			</div>
-			<div class="blog-div with30">
-				<h3 style="text-align: center;">Phù hợp</h3>
-				<h5 style="text-align: center;">${ post.suitable }</h5>
-			</div>
+        <c:when test="${user.getFullname()  == null}">
+          <a href="${pageContext.request.contextPath}/authorized/SignIn">
+          <i style=" position: absolute;margin-left: 110px; margin-top: -27px;" class="fa fa-heart fa-3x icon-inline" aria-hidden="true"></i>
+          </a>
+        </c:when>
+
+        <c:otherwise>
+          <a id="send-like" style="background: white; border: aliceblue;"
+            type="submit"> <i style=" position: absolute;margin-left: 110px; margin-top: -27px;" class="fa fa-heart fa-3x icon-inline"
+            aria-hidden="true"></i>
+          </a>
+        </c:otherwise>
+      </c:choose>
+    </ul>
+				
 			<h1 class="w-bot-border">
 				Giới <span> thiệu</span>
 			</h1>
@@ -125,8 +114,6 @@
 			</h1>
 			<p style="text-align: justify">${ post.material }</p>
 		</div>
-
-
 
 		<script>
                // Check user login and return button edit post
