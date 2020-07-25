@@ -21,7 +21,7 @@ import  service.CurrentUser;
 public class PostController {
 
 	@Autowired
-	PostDao postDaoimpl;
+	PostDao postDaoimpl = new PostDao();
 
 	@Autowired
 	CurrentUser user;
@@ -35,14 +35,15 @@ public class PostController {
 	@Autowired
 	CommentDao commentDaoimpl;
 
-	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	@GetMapping(value = "/post-show/{id}")
 	public String show(ModelMap model, @PathVariable("id") int id) {
 		try {
 			postDaoimpl.viewCount(id);
-			boolean checkLike = user.exist() ? reactionDaoimpl.isLike(user.userID(), id) == null ? false : true : false;
+			boolean checkLike = user.exist() ? (reactionDaoimpl.isLike(user.userID(), id) == null ? false : true) : false;
 			model.addAttribute("isLike", checkLike);
+			model.addAttribute("news",postDaoimpl.filterHomePage("created_at"));
+			
 			model.addAttribute("post", postDaoimpl.findByID(id));
 			model.addAttribute("refer", postDaoimpl.refer(postDaoimpl.findByID(id).getKind()));
 			return "static/post/show";
@@ -95,7 +96,7 @@ public class PostController {
 
 				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.getCurrentUsers().getId()), url, title,
 						overview, making, material, time, ration, kind, level, price, nation, holiday, category,
-						suitable, timestamp, "NULL"));
+						suitable, user.timestamp, "NULL"));
 
 				return "redirect: post-show/" + id + "";
 			} else {
@@ -123,7 +124,7 @@ public class PostController {
 				String url = video_url.contains(parent) ? video_url : parent + video_url.split("v=")[1];
 				postDaoimpl.Update(
 						new Posts(post_id, userDaoimpl.findByID(user_id), url, title, overview, making, material, time,
-								ration, kind, level, price, nation, holiday, category, suitable, timestamp, "NULL"));
+								ration, kind, level, price, nation, holiday, category, suitable, user.timestamp, "NULL"));
 
 				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";
 
@@ -166,16 +167,16 @@ public class PostController {
 
 		try {
 			if (user.isAdminOrMod()) {
-				if (postDaoimpl.setStatus(id, timestamp.toString())) {
+				if (postDaoimpl.setStatus(id, user.timestamp.toString())) {
 
 					model.addAttribute("posts", postDaoimpl.list("!= 'NULL'"));
-					model.addAttribute("msg", "Khoá bài viết thành công.");
+					model.addAttribute("msg", "Thao tác thành công.");
 					model.addAttribute("class_name", "msg_success");
 
 					return "admin/post/block";
 
 				} else {
-					model.addAttribute("msg", "Khoá bài viết thất bại.");
+					model.addAttribute("msg", "Thao tác thất bại.");
 					model.addAttribute("class_name", "msg_error");
 
 					return "admin/post/list";
@@ -195,13 +196,13 @@ public class PostController {
 			if (user.isAdminOrMod()) {
 				if (postDaoimpl.setStatus(id, "NULL")) {
 					model.addAttribute("posts", postDaoimpl.list("= 'NULL'"));
-					model.addAttribute("msg", "Huỷ k hoá bài viết thành công.");
+					model.addAttribute("msg", "Thao tác thành công.");
 					model.addAttribute("class_name", "msg_success");
 
 					return "admin/post/list";
 
 				} else {
-					model.addAttribute("msg", "Huỷ khoá bài viết thất bại.");
+					model.addAttribute("msg", "Thao tác thất bại.");
 					model.addAttribute("class_name", "msg_error");
 
 					return "admin/post/block";
