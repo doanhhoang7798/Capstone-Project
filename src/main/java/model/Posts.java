@@ -12,11 +12,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 
-import dao.ReactionDao;
+
+//import dao.ReactionDao;
 
 @Entity
 @Table(name = "posts")
@@ -73,8 +75,14 @@ public class Posts {
 	@Column
 
 	private int view_conter;
+	
 	@Column
 	private Timestamp created_at;
+	
+	public List<Comments> comments;
+	
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OrderBy("created_at ASC")
 	
 	public List<Comments> getComments() {
 		return comments;
@@ -87,14 +95,21 @@ public class Posts {
 	@Column
 	private String deleted_at;
 	
-
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	public List<Reactions> reactions;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private Users user;
 	
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-	public List<Comments> comments;
+	public List<Reactions> getReactions(){
+		return reactions;
+	}
+	
+	public void setReactions(List<Reactions> reactions) {
+		this.reactions = reactions;
+	}
+	
 	
 	public Posts() {
 		super();
