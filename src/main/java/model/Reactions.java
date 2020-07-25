@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "reactions")
 public class Reactions {
@@ -21,18 +22,18 @@ public class Reactions {
 	@JoinColumn(name = "post_id")
 	private Posts post;
 
-	@Column
-
-	private int user_id;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	public Users user;
 
 	public Reactions() {
 		super();
 	}
 
-	public Reactions(Posts post_id, int user_id) {
+	public Reactions(Posts post_id, Users user_id) {
 		super();
 		this.post = post_id;
-		this.user_id = user_id;
+		this.user = user_id;
 	}
 
 	public Integer getId() {
@@ -51,12 +52,12 @@ public class Reactions {
 		this.post = post;
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public Users getUser() {
+		return user;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUser(Users user) {
+		this.user = user;
 	}
 
 }
