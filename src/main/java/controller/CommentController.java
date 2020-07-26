@@ -50,6 +50,23 @@ public class CommentController {
 			return size(p_id, "Post");
 		}
 	}
+	
+	@PostMapping(value = "comment/edit/{id}")
+	@ResponseBody
+	public Integer update(ModelMap mode, @PathVariable("id") int id, @RequestParam("image") MultipartFile image,
+			@RequestParam("content") String content, @RequestParam("c_id") int c_id,
+			@RequestParam("c_user") int c_user) {
+		if (user.userID() == c_user) {
+			String url = upload.uploadImage(mode, image);
+			String image_path = url.equals("") ? commentDaoimpl.findByID(c_id).getImage_url() : url;
+			commentDaoimpl.Update(new Comments(c_id, postDaoimpl.findByID(id), user.getCurrentUsers(), content,
+					image_path, "NULL", timestamp.toString()));
+			return size(c_id, "Comment");
+		} else {
+			return size(c_id, "Comment");
+		}
+
+	}
 
 	
 	public int size(int p_id, String type) {
