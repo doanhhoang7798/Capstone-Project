@@ -101,79 +101,75 @@
       </c:choose>
     </ul>
 				
-			<h1 class="w-bot-border">
-				Giới <span> thiệu</span>
-			</h1>
-			<p style="text-align: justify">${ post.overview }</p>
-			<h1 class="w-bot-border">
-				Cách <span>làm </span>
-			</h1>
-			<p style="text-align: justify">${ post.making }</p>
-			<h1 class="w-bot-border">
-				Nguyên <span>liệu </span>
-			</h1>
-			<p style="text-align: justify">${ post.material }</p>
-		</div>
-
-		<script>
-               // Check user login and return button edit post
-               var user_role = '${user.role }';
-               var user_id = '${user.id }';
-               var post_user = '${post.user.id}'
-               
-               console.log("hello", '${user.role }')
-               
-               if (user_role == 10 || user_role == 5 || user_id == post_user) {
-               
-               	$("#edit-button").css("display", "inline-block");
-               } else {
-               	$("#edit-button").css("display", "none");
-               
-               }
-            </script>
-
-
-		<a class="btn btn btn-info" style="float: right;" id="edit-button"
-			href="${pageContext.request.contextPath}/post-edit/${post.id}"><i
-			class="fa fa-edit" aria-hidden="true"></i> Sửa </a>
-
-
-		<!-- ============================================== Ref Post ======================================================== -->
-		<!-- end of post div -->
-		<div class="comments">
-			<div id="whats-hot">
-				<h1 style="margin: 20px 0px">
-					Các món liên quan <span> </span>
-				</h1>
-				<span class="w-pet-border"></span>
-				<div style="height: 259px;">
-					<ul class="cat-list">
-						<c:forEach items="${ refer }" var="item">
-							<li class="img-box-2">
-								<h3>
-									<a style="margin-left: 5px;" href="recipe-single-1.html">${ item.kind }
-									</a> &nbsp; &nbsp; &nbsp; &nbsp; ${ item.created_at.toString().split(" ")[0] }
-								</h3> <a
-								href="${pageContext.request.contextPath}/post-show/${item.id }"
-								class="img-box"> <embed id="video" wmode="transparent"
-										title="#caption_${item.id }" src="${item.video_url }"
-										type="application/x-shockwave-flash" width="216" height="135"
-										loop="true" title="Adobe Flash Player"></embed>
-							</a>
-
-								<h5 class="split-text">
-									<a
-										href="${pageContext.request.contextPath}/post-show/${item.id }"
-										class="split-text"> ${ item.title } </a>
-								</h5>
-								<p class="split-text">
-									${ item.overview } <a href="recipe-single-1.html">...more </a>
-								</p>
-							</li>
-						</c:forEach>
-					</ul>
-				</div>
-			</div>
+			<span class="w-pet-border"></span>
+    <div class="info-left instructions" style="width: 100%;">
+      <div itemprop="description">
+        <h3 class="blue">Method</h3>
+        <h1 class="w-bot-border">
+          Giới <span> thiệu</span>
+        </h1>
+        <pre>${ post.overview }</pre>
+        <h1 class="w-bot-border">
+          Cách <span>làm </span>
+        </h1>
+        <pre>${ post.making }</pre>
+        <h1 class="w-bot-border">
+          Nguyên liệu <span> & thành phần  </span>
+        </h1>
+        <pre>${ post.material }</pre>
+      </div>
+      <div>
+        <h1 style="float: left;">
+          Comment <span id="c-count"> ( ${ post.comments.size() } ) </span>
+        </h1>
+        <a class="btn btn btn-info"
+          style="float: right;margin-top: 1%; margin-right: 13%;" id="p-e-button"
+          href="${pageContext.request.contextPath}/post-edit/${post.id}"><i
+          class="fa fa-edit" aria-hidden="true"></i> Sửa </a>
+      </div>
+      <span class="w-pet-border"></span>
+      <c:choose>
+        <c:when test="${user.getStatus()  == null}">
+          <h1>Vui lòng đăng nhập để bình luận .</h1>
+        </c:when>
+        <c:when test="${user.getStatus()  == 5}">
+          <h1>Tài khoản của bạn đã bị khoá chức năng bình luận.</h1>
+        </c:when>
+        <c:otherwise>
+          <div id="comment-box-display" class="container pb-cmnt-container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="panel panel-info">
+                  <div class="panel-body">
+                    <form class="form-inline" id="f-c-c" method="POST">
+                      <textarea id="c-c-content" name="content" class="col-md-12"
+                        placeholder="Viết bình luận của bạn!"
+                        class="pb-cmnt-textarea"></textarea>
+                      <div class="btn-group">
+                        <div class="btn"
+                          style="background-color: #EFEFEFEF; margin-left: -20px; margin-left: -120px; margin-top: 8px;">
+                          <input onchange="readURL2(this);"  style="width: 17px; height: 24px;"
+                            class="fas fa-cloud-upload-alt" id="c-c-image" type="file" />
+                          <button class="btn btn-primary pull-right"
+                            style="margin-left: 65%; position: absolute; margin-top: -76.5%; height: 38px;"
+                            id="comment-create" type="submit"><i class="fas fa-paper-plane"></i>
+</button>
+                        </div>
+                      </div>
+                      <c:choose>
+                        <c:when test = "${ comment.image_url == null}">
+                          <img class="blah2" style="margin-top: 10px;margin-left: 42px;"
+                            src="">
+                        </c:when>
+                      </c:choose> 
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </c:otherwise>
+      </c:choose>
 			<!-- ============================================== Ref Post ======================================================== -->
 			<div>
 				<h1>
