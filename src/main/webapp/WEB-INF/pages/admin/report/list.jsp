@@ -13,17 +13,12 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0">Báo cáo</h1>
+			<h1 class="mb-0"> Báo cáo </h1>
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a> -->
-
-
 			<span id="hideMe" class="${class_name}"
 				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${ msg }</span>
-
 		</div>
-
-
 	</div>
 
 
@@ -32,17 +27,13 @@
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div style="top: 25%;" class="modal-dialog">
 			<div style="border-radius: 10px" class="modal-content">
-
 				<div
 					style="padding: 10px 40px 10px 20px; background-color: #212529; border-top-left-radius: 10px; border-top-right-radius: 10px;"
 					class="modal-header">
-
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
 						class="modal-title" id="myModalLabel">Xác nhận</h2>
-
 				</div>
-
 
 				<div class="modal-body">
 
@@ -62,8 +53,6 @@
 		</div>
 	</div>
 
-
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".use-block").click(function() {
@@ -72,36 +61,23 @@
 			    var comment = $row.find(".c_comment").text(); // Find the text
 				thisdata = $(this).attr('data-href');
 				$("#confirm_url").attr("href", thisdata);
-			    $('#c_report').text("Xoá báo cáo: " +name+ " ?");
-
-			    $('#modal_name').text("Bình luận: " + comment );
-			    
+			    $('#c_report').text("Xoá báo cáo này: " +name+ " ?");
+			    $('#modal_name').text("Bình luận: " + comment );			    
 			});
 		});
 	</script>
 
 	<div class="container-fluid page__container">
-
-
 		<div class="row">
-
-
-
 			<table id="example" class="table table-striped">
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Người báo cáo</th>
+						<th class="table-th" scope="col">Báo cáo</th>
 						<th class="table-th" scope="col">Bình luận</th>
-
 						<th class="table-th" scope="col">Loại báo cáo</th>
 						<th class="table-th" scope="col">Ngày báo cáo</th>
-
-
 						<th class="table-th" scope="col">Thao tác</th>
-
-
-
 					</tr>
 				</thead>
 				<tbody>
@@ -133,11 +109,8 @@
 								</c:otherwise>
 							</c:choose>
 							<td scope="row">${ report[4].toString().split(" ")[0] }</td>
-
-
+							
 							<td>
-
-
 								<button class="btn btn-danger use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/report/delete/${ report[0] }"
 									data-toggle="modal" data-target="#confirm-delete">
@@ -151,14 +124,7 @@
 				</tbody>
 			</table>
 
-
-
-
 		</div>
 	</div>
 </div>
-
-
-
-
 <jsp:include page="../layout/_footer.jsp"></jsp:include>
