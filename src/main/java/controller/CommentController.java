@@ -67,6 +67,19 @@ public class CommentController {
 		}
 
 	}
+	
+	@PostMapping(value = "comment/delete/{id}")
+	@ResponseBody
+	public Integer Delete(ModelMap mode, @PathVariable("id") int id, @RequestParam("c_user") int c_user) {
+		int size = postDaoimpl.findByID(commentDaoimpl.findByID(id).post.getId()).comments.size();
+		if (user.userID() == c_user) {
+			commentDaoimpl.Delete(id);
+			return (size - 1);
+		} else {
+			return (size - 1);
+		}
+
+	}
 
 	
 	public int size(int p_id, String type) {
