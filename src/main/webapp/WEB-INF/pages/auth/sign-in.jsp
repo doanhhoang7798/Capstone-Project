@@ -148,16 +148,16 @@
 				<form class="login100-form validate-form flex-sb flex-w"
 					action="user-signin" method="post">
 
-					<div class="p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1">Số điện thoại hoặc Email </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input class="input100" type="text" max="9999999999" required
+						<input class="input100" type="text" required
 							name="txtphone"> <span class="focus-input100"></span>
 					</div>
 
-					<div class="p-t-13 p-b-9">
+					<div class="p-b-10 p-l-20">
 						<span class="txt1"> Mật khẩu </span> <a
 							href="${pageContext.request.contextPath}/authorized/forgot-password"
 							class="txt2 bo1 m-l-5"> Quên mật khẩu? </a>

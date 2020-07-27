@@ -174,4 +174,21 @@ public class UserDao {
 		String password = hash.toString() + hash.toString() + hash.toString();
 	        return password;
 	}
+
+	public Boolean setConfirmCode(int id, String code) {
+	Session ses = sessionFactory.openSession();
+
+	try {
+		ses.getTransaction().begin();
+		Query query = (Query) ses
+				.createQuery("UPDATE Users SET confirm_code = '" + code + "' WHERE (id = '" + id + "')");
+		query.executeUpdate();
+		ses.getTransaction().commit();
+		return true;
+	} catch (Exception e) {
+		System.out.println(e);
+		return false;
+	}
+
+}
 }

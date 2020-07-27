@@ -73,6 +73,10 @@ public class Users implements Serializable {
 	@Column
 
 	private String block_date;
+	
+	@Column
+
+	private String confirm_code;
 
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
 	    private List<Posts> posts;
@@ -127,6 +131,14 @@ public class Users implements Serializable {
 		this.block_date = block_date;
 	}
 
+	public String getConfirm_code() {
+		return confirm_code;
+	}
+
+	public void setConfirm_code(String confirm_code) {
+		this.confirm_code = confirm_code;
+	}
+	
 	public Users(Integer id, String password) {
 		super();
 		this.id = id;
