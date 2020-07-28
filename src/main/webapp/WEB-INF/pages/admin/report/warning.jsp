@@ -1,20 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../layout/_header.jsp"></jsp:include>
 <!-- // END Header -->
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <div
 	class="mdk-header-layout__content mdk-header-layout__content--fullbleed mdk-header-layout__content--scrollable page"
-	style="padding-top: 60px;">
-	<div class="page__heading border-bottom">
-		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0">Cảnh báo</h1>
-			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
-            class="material-icons">add</i>Viết bài</a> -->
-			<span id="hideMe" class="${class_name}"
-				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${ msg }</span>
-		</div>
-	</div>
+   style="padding-top: 60px;">
+   <div class="page__heading border-bottom">
+      <div class="container-fluid page__container d-flex align-items-center">
+         <h1 class="mb-0">Cảnh báo </h1>
+         			<span id="hideMe" class="${class_name}">${ msg }</span>
+      </div>
+   </div>
+   
 	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div style="top: 25%;" class="modal-dialog">
@@ -72,39 +71,44 @@
 						<c:choose>
 							<c:when test="${user_detail.reports.size() >= 5}">
 								<tr>
-									<th scope="row">${ user_detail.id }</th>
-									<td class="full_name">${ user_detail.fullname }</td>
-									<td>${ user_detail.phone }</td>
-									<td><c:forEach items="${user_detail.reports }"
-											var="report">
-											<c:choose>
-												<c:when test="${report.type  == 1}">
-													<p></p>
-												</c:when>
-												<c:when test="${report.type  == 2}">
-													<p>Bạo lực</p>
-												</c:when>
-												<c:when test="${report.type  == 3}">
-													<p>Nội dung đồi truỵ</p>
-												</c:when>
-												<c:when test="${report.type  == 4}">
-													<p>Nội dung khiếm nhã</p>
-												</c:when>
-												<c:otherwise>
-													<p>Gây hiểu nhâm, lừ đảo</p>
-												</c:otherwise>
-											</c:choose>
-										</c:forEach></td>
-									<td><img
-										src="${pageContext.request.contextPath}/resources/${ user_detail.image }"></td>
-									<td>
-										<button class="btn btn-dark use-block" id="test"
-											data-href="${pageContext.request.contextPath}/admin/user/block/${user_detail.id}"
-											data-toggle="modal" data-target="#confirm-delete">
-											<i class="fa fa-lock"></i>
-										</button>
-									</td>
-								</tr>
+                           <td scope="row">${ user_detail[0] }</td>
+                           <td class="full_name">${ user_detail[1] }</td>
+                           <td>${ user_detail[2] }</td>
+                           
+                           <td>
+                              <c:forEach items="${user_detail[5].split(',') }" begin="0" end="${fn:length(user_detail[5].split(',')) }" var="i">
+                                 <c:choose>
+                                    <c:when test = "${ i == 1}">
+                                       <p>Spam</p>
+                                    </c:when>
+                                    <c:when test = "${ i  == 2}">
+                                       <p >Bạo lực </p>
+                                    </c:when>
+                                    <c:when test = "${ i  == 3}">
+                                       <p  >Nội dung đồi truỵ  </p>
+                                    </c:when>
+                                    <c:when test = "${ i  == 4}">
+                                       <p   >Nội dung khiếm nhã  </p>
+                                    </c:when>
+                                    <c:otherwise>
+                                       <p  >Gây hiểu nhâm & lừ đảo  </p>
+                                    </c:otherwise>
+                                 </c:choose>
+                              </c:forEach>
+                           </td> 
+                           
+                           
+                           
+                           <td><img
+                              src="${pageContext.request.contextPath}/resources/${ user_detail[3] }"></td>
+                           <td>
+                              <button class="btn btn-dark use-block" id="test"
+                                 data-href="${pageContext.request.contextPath}/admin/user/_block?user_id=${user_detail[0]}&&comment_id=${user_detail[6]}"
+                                 data-toggle="modal" data-target="#confirm-delete">
+                              <i class="fa fa-lock"></i>
+                              </button> 
+                           </td>
+                        </tr>
 							</c:when>
 						</c:choose>
 					</c:forEach>
