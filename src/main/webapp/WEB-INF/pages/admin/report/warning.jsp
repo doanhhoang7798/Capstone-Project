@@ -74,7 +74,7 @@
                            <td scope="row">${ user_detail[0] }</td>
                            <td class="full_name">${ user_detail[1] }</td>
                            <td>${ user_detail[2] }</td>
-                           
+           
                            <td>
                               <c:forEach items="${user_detail[5].split(',') }" begin="0" end="${fn:length(user_detail[5].split(',')) }" var="i">
                                  <c:choose>
