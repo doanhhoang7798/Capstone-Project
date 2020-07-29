@@ -80,6 +80,17 @@ public class CommentController {
 		}
 
 	}
+	
+	@GetMapping(value = "admin/comment/list")
+	public String list(ModelMap model) {
+
+		if (user.isAdminOrMod()) {
+			model.addAttribute("comments", commentDaoimpl.list());
+			return "admin/comment/list";
+		} else {
+			return "auth/401";
+		}
+	}
 
 	
 	public int size(int p_id, String type) {
