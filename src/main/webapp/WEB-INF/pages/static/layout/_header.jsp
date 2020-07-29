@@ -50,8 +50,8 @@
 	<div id="header-wrapper" class="clearfix">
 		<div id="header" class="clearfix">
 			<!-- WEBSITE LOGO -->
-			<a class="responsive_logo" href="index.html"><img
-				src="${pageContext.request.contextPath}/resources/static/images/logo3.png"
+			<a class="responsive_logo" href="${pageContext.request.contextPath}/"><img
+				src="${pageContext.request.contextPath}/resources/static/images/yummyy.png"
 				alt="" class="logo" /></a> <a href="index.html">
 		</div>
 		<!-- end of header div -->
