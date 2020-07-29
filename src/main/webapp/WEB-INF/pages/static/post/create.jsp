@@ -102,12 +102,6 @@ input {
 					</div>
 				</div>
 
-
-
-
-
-
-
 				<div class="" style="width: 100%;">
 					<a title="Best Bread pairing for Barbeque?"> <embed id="video"
 							src="" wmode="transparent" type="application/x-shockwave-flash"
@@ -121,9 +115,6 @@ input {
 
 				</div>
 
-
-
-
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Xuất xứ</h3>
 					<select class="dropdown" name="nation" class="space-left">
@@ -135,10 +126,10 @@ input {
 				</div>
 
 				<div class="blog-div with30">
-					<h3 style="text-align: center;">Ngày lễ/Kỉ</h3>
+					<h3 style="text-align: center;">Ngày lễ/Kỉ niệm</h3>
 					<select class="dropdown" name="holiday" class="space-left">
 						<option value="Sinh nhật">Sinh nhật</option>
-						<option value="Trung thu">Sinh nhật</option>
+						<option value="Trung thu">Trung Thu</option>
 						<option value="Mâm cỗ">Mâm cỗ</option>
 						<option value="Tết nguyên đán">Tết nguyên đán</option>
 					</select>
@@ -176,16 +167,17 @@ input {
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">
-					Cách <span>làm </span>
-				</h1>
-				<textarea name="making" cols="110" rows="9" required
-					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea"></textarea>
-				<h1 class="w-bot-border">
 					Nguyên <span>liệu </span>
 				</h1>
 				<textarea name="material" cols="110" rows="9" required
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea"></textarea>
+				<h1 class="w-bot-border">
+					Cách <span>làm </span>
+				</h1>
+				<textarea name="making" cols="110" rows="9" required
+					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea"></textarea>
+				
 		</div>
 		<!-- end of post div -->
 
