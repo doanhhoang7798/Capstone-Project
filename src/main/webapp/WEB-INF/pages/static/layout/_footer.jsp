@@ -52,7 +52,7 @@
 						class="flaticon"
 						src="https://www.flaticon.com/premium-icon/icons/svg/3015/3015799.svg">
 					</a> <span
-						style="font-weight: bold; margin-left: 9px; color: antiquewhite;">Facebook</span>
+						style="font-weight: bold; margin-left: 9px; color: #c5bdbd;">Facebook</span>
 				</div>
 
 				<div style="text-align: center;">
@@ -61,7 +61,7 @@
 						class="flaticon"
 						src="https://image.flaticon.com/icons/svg/2965/2965306.svg">
 					</a> <span
-						style="font-weight: bold; margin-left: 9px; color: antiquewhite;">Email</span>
+						style="font-weight: bold; margin-left: 9px; color: #c5bdbd;">Email</span>
 				</div>
 
 
@@ -72,7 +72,7 @@
 						class="flaticon"
 						src="https://as1.ftcdn.net/jpg/00/92/96/00/500_F_92960039_UL8jNieZo0fUEsHVG9jYSEeONXqDdhhx.jpg">
 					</a> <span
-						style="font-weight: bold; margin-left: 9px; color: antiquewhite;">Phone</span>
+						style="font-weight: bold; margin-left: 9px; color: #c5bdbd;">Phone</span>
 				</div>
 
 			</div>

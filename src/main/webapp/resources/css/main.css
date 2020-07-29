@@ -3,62 +3,21 @@
 	animation: cssAnimation 5s forwards;
 }
 
-@
-keyframes cssAnimation { 0% {
-	opacity: 1;
+.msg_success {
+	color: #75f484;
 }
 
-90%
-{
-opacity
-
-
-:
-
- 
-
-1;
-}
-100%
-{
-opacity
-
-
-:
-
- 
-
-0;
-}
-}
-@
--webkit-keyframes cssAnimation { 0% {
-	opacity: 1;
+.msg_error {
+	color: #f65150;
 }
 
-90%
-{
-opacity
-
-
-:
-
- 
-
-1;
+::placeholder {
+	opacity: 0.5;
+	color: deeppink;
+	text-transform: uppercase;
+	text-align: center;
 }
-100%
-{
-opacity
 
-
-:
-
- 
-
-0;
-}
-}
 @font-face {
 	font-family: Poppins-Regular;
 	src: url('../fonts/poppins/Poppins-Regular.ttf');
@@ -279,7 +238,7 @@ iframe {
 
 .wrap-login100 {
 	width: 680px;
-	background: menu;
+	background: #fff;
 	border-radius: 10px;
 	position: relative;
 }

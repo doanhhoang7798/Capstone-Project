@@ -5,7 +5,7 @@
 <!-- ============= CONTENT AREA STARTS HERE ============== -->
 <style>
 .active {
-	background: #68AA10 !important;
+	background: #c33 !important;
 }
 </style>
 <div id="content" class="clearfix homepage">
@@ -48,7 +48,6 @@
 									<a
 										href="${pageContext.request.contextPath}/post-show/${post.id }">${post.title}</a>
 								</h3>
-								<p class="split-text">${post.overview }</p>
 							</div>
 						</div>
 					</c:forEach>
@@ -79,13 +78,13 @@
 	<!-- SLIDER AREA ENDS HERE -->
 	<div id="whats-hot">
 		<h3 class="boder_title">
-			Có thể <span> bạn quan tâm </span>
+			Có thể bạn quan tâm 
 		</h3>
 		<ul class="cat-list clearfix">
 			<c:forEach items="${ suggestions }" var="post">
 				<li>
 					<h4 style="margin-bottom: -2px;">
-						<a style="margin-bottom: -6px;" href="recipe-single-1.html">${post.category }</a>
+						<a style="margin-bottom: -6px; color: #cc3333;" href="recipe-single-1.html">${post.category }</a>
 						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${ post.created_at.toString().split(" ")[0] }
 					</h4> <a href="${pageContext.request.contextPath}/post-show/${post.id }"
 					class="img-box"> <embed id="video" wmode="transparent"
