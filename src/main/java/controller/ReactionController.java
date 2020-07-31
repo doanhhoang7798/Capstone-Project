@@ -30,10 +30,10 @@ public class ReactionController {
 	public Integer reactionString(ModelMap model, @PathVariable("id") int id, HttpServletRequest request) {
 
 		if (reactionDaoimpl.isLike(user.userID(), id) == null) {
-			reactionDaoimpl.Create(new Reactions(postDaoimpl.findByID(id), user.userID()));
+			reactionDaoimpl.Create(new Reactions(postDaoimpl.findByID(id), user.current()));
 
 		} else {
-			reactionDaoimpl.Delete(user.getCurrentUsers().getId(), id);
+			reactionDaoimpl.Delete(user.current().getId(), id);
 		}
 
 		return reactionDaoimpl.counter(id).size();
