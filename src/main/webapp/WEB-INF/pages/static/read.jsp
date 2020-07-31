@@ -19,7 +19,6 @@
 			<div class="post-53 post category-barbeque" id="post-53">
 				<h1 class="single-post-title">${ record.title }</h1>
 				<p class="meta">
-					Người đăng : <a href="#" title="Posts by admin" rel="author">${record.user.fullname}</a>
 					<span>|</span> Ngày viết : ${ record.created_at.toString().split(' ')[0] }
 					<span>|</span> Danh mục : <span class="cats"><a href="#"
 						rel="category tag">${record.type}</a></span>
@@ -40,12 +39,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- end of post div -->
-
-
-
-			<!-- end of comments div -->
-
 
 		</div>
 		<!-- end of left-area -->
@@ -55,16 +48,14 @@
 		<div id="sidebar">
 			<div class="widget fav-recipes nostylewt">
 				<h3 class="w-bot-border">
-					<span>Bài viết </span> Mới
+					<span>Bài viết mới</span>
 				</h3>
 
 				<div class="tabed">
 					<ul class="tabs clearfix">
-						<li class="current">Top 7<span></span></li>
-
+						<li class="current">Top 5<span></span></li>
 					</ul>
-
-
+					
 					<div class="block">
 						<ul class="highest">
 
@@ -89,31 +80,26 @@
 				</div>
 			</div>
 
-
-
-
 			<div id="recent-posts-2"
 				class="widget nostylewt widget_recent_entries clearfix">
 				<h3 class="w-bot-border">
-					<span>Mẹo </span> Hay 
+					<span>Mẹo Hay </span> 
 				</h3>
+				<ul>
+					<li><a href="${pageContext.request.contextPath }/filter?condition=Mẹo hay chế biến nguyên liệu&category=Mẹo hay"> Mẹo hay chế biến nguyên liệu </a></li>
+					<li><a href="${pageContext.request.contextPath }/filter?condition=Bí quyết nấu nướng&category=Mẹo hay">Bí quyết nấu nướng </a></li>
+					<li><a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kỵ nhau&category=Mẹo hay"> Các thực phẩm kỵ nhau</a></li>
+					
+				</ul>
 				
+				<h3 class="w-bot-border">
+					<span>Dinh Dưỡng </span> 
+				</h3>
 				<ul>
 					<li><a href="${pageContext.request.contextPath }/filter?condition=Dinh dưỡng cho trẻ&category=Dinh dưỡng">Dinh dưỡng cho trẻ </a></li>
 					<li><a href="${pageContext.request.contextPath }/filter?condition=Chế độ ăn cho người bệnh&category=Dinh dưỡng">Chế độ ăn cho người bệnh</a></li>
 					<li><a href="${pageContext.request.contextPath }/filter?condition=Dinh Dưỡng cho người cao tuổi&category=Dinh dưỡng">Dinh Dưỡng cho người cao tuổi </a></li>
 					
-
-				</ul>
-				<h3 class="w-bot-border">
-					<span>Dinh </span> Dưỡng 
-				</h3>
-				<ul>
-					
-					<li><a href="${pageContext.request.contextPath }/filter?condition=Bí quyết nấu nướng&category=Mẹo hay">Bí quyết nấu nướng </a></li>
-					<li><a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kỵ nhau&category=Mẹo hay"> Các thực phẩm kỵ nhau</a></li>
-					<li><a href="${pageContext.request.contextPath }/filter?condition=Mẹo hay chế biến nguyên liệu&category=Mẹo hay"> Mẹo hay chế biến nguyên liệu </a></li>
-
 				</ul>
 			</div>
 		</div>
