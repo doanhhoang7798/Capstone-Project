@@ -8,7 +8,8 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.*;;
+import model.*;
+
 
 @Transactional
 @Repository
@@ -50,6 +51,24 @@ public class TipNutriDao {
 			System.out.println(e);
 			return null;
 		}
+	}
+	
+	public boolean Create(TipNutri TipNutri) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(TipNutri);
+			session.getTransaction().commit();
 
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
 	}
 }

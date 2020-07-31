@@ -65,6 +65,48 @@ public class TipNutriController {
 		}
 
 	}
+	
+	@GetMapping(value = "admin/common/create")
+	public String create(ModelMap model) {
+
+		if (user.isAdminOrMod()) {
+			return "admin/common/create";
+		} else {
+			return "auth/401";
+		}
+	}
+	
+
+	@PostMapping(value = "admin/common/create")
+	public String created(ModelMap model, @RequestParam("author") String author, @RequestParam("title") String title,
+			@RequestParam("content") String content, @RequestParam("type") String type,
+			@RequestParam("kind") String kind, @RequestParam("image") MultipartFile image) {
+
+		String path_img = UploadConfig.uploadImage(model, image);
+
+		try {
+			if (user.isAdminOrMod()) {
+				if (TipNutriDaoimpl
+						.Create(new TipNutri(title, content, type, author, user.timestamp.toString(), kind, path_img, user.current()))) {
+					model.addAttribute("msg", "Thao tác thành công.");
+					model.addAttribute("class_name", "msg_success");
+
+				} else {
+					model.addAttribute("msg", "Thao tác thất bại.");
+					model.addAttribute("class_name", "msg_error");
+
+				}
+				model.addAttribute("commons", TipNutriDaoimpl.list());
+				return "admin/common/list";
+			} else {
+				return "auth/401";
+			}
+		} catch (Exception e) {
+			return "auth/500";
+		}
+
+	}
+
 
 
 }
