@@ -28,7 +28,7 @@ public class CurrentUser {
 	@Autowired
 	UserDao userDaoimpl;
 
-	public Users getCurrentUsers() {
+	public Users current() {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -42,7 +42,7 @@ public class CurrentUser {
 
 	public boolean exist() {
 
-		if (getCurrentUsers() == null) {
+		if (current() == null) {
 			return false;
 		} else {
 			return true;
@@ -52,7 +52,7 @@ public class CurrentUser {
 
 	public boolean isAdminOrMod() {
 
-		if (getCurrentUsers().getRole() == 10 | getCurrentUsers().getRole() == 5) {
+		if (current().getRole() == 10 | current().getRole() == 5) {
 			return true;
 		} else {
 			return false;
@@ -61,12 +61,12 @@ public class CurrentUser {
 	}
 
 	public int userID() {
-		return getCurrentUsers().getId();
+		return current().getId();
 
 	}
 	
 	public int userRole() {
-		return getCurrentUsers().getRole();
+		return current().getRole();
 
 	}
 	
