@@ -81,7 +81,7 @@ public class ReportController {
 		try {
 			if (user.exist()) {
 				if (reportDaoimpl.Create(
-						new Reports("Comment", reportable_id, report_type, user.getCurrentUsers(), timestamp.toString(),reportable_author))) {
+						new Reports("Comment", reportable_id, report_type, user.current(), timestamp.toString(),reportable_author))) {
 					model.addAttribute("report_msg", "Báo cáo được gửi thành công..");
 					model.addAttribute("r_class_name", "msg_success");
 				}

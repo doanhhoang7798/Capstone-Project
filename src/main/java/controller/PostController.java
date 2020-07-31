@@ -57,7 +57,7 @@ public class PostController {
 	@GetMapping(value = "post-edit/{id}")
 	public String edit(ModelMap model, @PathVariable("id") int id) {
 
-		if (user.isAdminOrMod() | user.getCurrentUsers().getId() == postDaoimpl.findByID(id).getUser().getId()) {
+		if (user.isAdminOrMod() | user.current().getId() == postDaoimpl.findByID(id).getUser().getId()) {
 			model.addAttribute("post", postDaoimpl.findByID(id));
 			return "static/post/edit";
 		} else {
@@ -94,7 +94,7 @@ public class PostController {
 
 				String url = "https://www.youtube.com/v/" + video_url.split("v=")[1];
 
-				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.getCurrentUsers().getId()), url, title,
+				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.current().getId()), url, title,
 						overview, making, material, time, ration, kind, level, price, nation, holiday, category,
 						suitable, user.timestamp, "NULL"));
 
@@ -119,7 +119,7 @@ public class PostController {
 			@RequestParam("user_id") int user_id, HttpServletRequest request) {
 
 		try {
-			if (user.isAdminOrMod() | user.getCurrentUsers().getId() == user_id) {
+			if (user.isAdminOrMod() | user.current().getId() == user_id) {
 				String parent = "https://www.youtube.com/v/";
 				String url = video_url.contains(parent) ? video_url : parent + video_url.split("v=")[1];
 				postDaoimpl.Update(
