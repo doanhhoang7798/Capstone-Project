@@ -15,11 +15,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-//import org.springframework.beans.factory.annotation.Autowired;
-
-
-//import dao.ReactionDao;
-
 @Entity
 @Table(name = "posts")
 public class Posts {
