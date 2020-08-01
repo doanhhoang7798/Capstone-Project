@@ -322,6 +322,100 @@
 			<!-- ============================================== comment list ======================================================== -->
 		</div>
 	</div>
+	
+	 <!-- end of info-left div -->
+    <!-- Default Comments -->
+  </div>
+  <!-- end of left-area -->
+  <!-- LEFT AREA ENDS HERE -->
+
+  <div id="sidebar" style="width: 288px;">
+    <div class="widget fav-recipes nostylewt">
+      <h3 class="w-bot-border"><span> Món </span> liên quan </h3>
+      <div class="tabed">
+        <ul class="tabs clearfix">
+          <li class="current">${post.kind }<span></span></li>
+        </ul>
+        <div class="block current">
+          <ul class="highest">
+            <c:forEach items="${ refer }" var="item">
+              <li>
+                <a href="" class="img-box">
+                  <embed id="video"
+                    src="${ post.video_url }" type="application/x-shockwave-flash"
+                    style="border-radius: 5px;"
+                    width="99%" height="100%" autostart="true" loop="true"
+                    title="Adobe Flash Player"></embed>
+                </a>
+                <h5> <a href="${pageContext.request.contextPath}/post-show/${ item.id}">${ item.title}</a></h5>
+                <p class="rate">
+<!--                 /// -->
+                 <p > ${item.reactions.size()  } lượt thích   <span>//</span> ${ item.view_conter } lượt xem </p>
+              </li>
+            </c:forEach>
+          </ul>
+        </div>
+        <!-- end of block div -->
+        <!-- end of block div -->
+        <!-- end of block div -->
+        <div class="bot-border"></div>
+      </div>
+      <!-- end of tabed div -->
+    </div>
+    <div id="recipes-from-recipe-type-2" class="widget nostylewt Recipes_from_Recipe_Type clearfix">
+      <div class="recipes-slider-widget rt">
+        <h3 class="w-bot-border"><span>Thông tin </span> &amp; bài viết</h3>
+        <div class="cookname">
+          <div class="img-box">
+            <a  class="imgc" href="#">
+            <img class="auth-photo" src="${pageContext.request.contextPath}/resources/${ post.user.image }" alt="admin" style="opacity: 1;">
+            </a>
+            <div class="share"> </div>
+          </div>
+          <div class="cook-info author vcard">
+            <h5  class="fn given-name url">
+              <a href="#" title="Posts by admin" rel="author">${ post.user.fullname }</a>
+            </h5>
+            <p ></p>
+            <a  class="url" href="${pageContext.request.contextPath}/filter?condition=${ post.user.id }&category=user_id">Bài khác của ${ post.user.fullname.split(' ')[0] } &nbsp;  »</a>
+          </div>
+        </div>
+        <div style="
+          " class="rate-box">
+          <h6>Lượt thích </h6>
+          <p id="output"></p>
+          <p class="status"> <i class="fa fa-heart " aria-hidden="true"></i>&nbsp;&nbsp;<span id="couter_like">${ post.reactions.size()} lượt thích </span> </p>
+          <h6>Lượt xem  </h6>
+          <p class="status"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp; &nbsp;<span >${post.view_conter } lượt xem </span>  </p>
+          <h6>Bình luận  </h6>
+          <p class="status"><i class="fa fa-comment" aria-hidden="true"></i>&nbsp;&nbsp;<span id="sub-comment">${post.comments.size() } bình luận </span>  </p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="widget nostylewt Weekly_Special_Widget wk-special clearfix">
+      <h2 class="w-bot-border"><span>bài viết </span> mới </h2>
+      <c:forEach items="${ news }" var="item">
+        <div class="img-box for-all">
+          <a href="" class="img-box">
+            <embed id="video"
+              src="${ item.video_url }" type="application/x-shockwave-flash"
+              style="border-radius: 5px;"
+              width="100%" height="15%" autostart="true" loop="true"
+              title="Adobe Flash Player"></embed>
+          </a>
+        </div>
+        <div class="for-res">
+        </div>
+        <h4> <a  href="${pageContext.request.contextPath}/post-show/${item.id }">${ item.title }</a></h4>
+        <p class="split-text" >${ item.overview }
+          <a href="${pageContext.request.contextPath}/post-show/${item.id }"> Xem thêm...</a>
+        </p>
+      </c:forEach>
+    </div>
+  </div>
+</div>
+
 	<!-- ============================================== Comfirm diaglog ======================================================== -->
 	<div class="container">
 		<div class="modal fade" id="c-e-modal" role="dialog">

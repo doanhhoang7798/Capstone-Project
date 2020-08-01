@@ -197,7 +197,7 @@ input {
 				</div>
 
 				<div class="blog-div with30 holiday">
-					<h3 style="text-align: center;">Ngày lễ/Kỉ</h3>
+					<h3 style="text-align: center;">Ngày lễ/Kỉ niệm</h3>
 					<select class="dropdown" name="holiday" class="space-left">
 						<option value="Sinh nhật">Sinh nhật</option>
 					</select>
@@ -208,7 +208,7 @@ input {
 					<select class="dropdown" name="category" class="space-left">
 						<option value="Bánh">Bánh</option>
 						<option value="Lẩu">Lẩu</option>
-						<option value="Salad">Sala</option>
+						<option value="Salad">Salad</option>
 						<option value="Ăn sáng">Ăn sáng</option>
 						<option value="Ăn vặt">Ăn vặt</option>
 						<option value="Khai vị">Khai vị</option>

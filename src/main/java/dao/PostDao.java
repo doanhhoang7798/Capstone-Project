@@ -98,7 +98,6 @@ public class PostDao {
 		return true;
 	}
 
-//	@Override
 	public Posts findByID(int id) {
 		try {
 			Session session = sessionFactory.openSession();
@@ -127,7 +126,7 @@ public class PostDao {
 		return true;
 	}
 
-//	@Override
+
 	public Integer Create(Posts post) {
 		Session session = sessionFactory.openSession();
 		try {
@@ -147,7 +146,7 @@ public class PostDao {
 		}
 	}
 
-//	@Override
+	
 	public boolean Update(Posts post) {
 		Session session = sessionFactory.openSession();
 		try {

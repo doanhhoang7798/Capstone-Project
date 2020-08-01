@@ -40,7 +40,7 @@ public class StaticController {
 	@GetMapping(value = "/")
 	public String index(Model model, HttpSession session) {
 		try {
-			session.setAttribute("user", user.getCurrentUsers());
+			session.setAttribute("user", user.current());
 			model.addAttribute("slides", postDao.filterHomePage("created_at"));
 			model.addAttribute("suggestions", postDao.filterHomePage("view_conter"));
 			return "static/index";
@@ -80,13 +80,13 @@ public class StaticController {
 			@RequestParam("birthday") String birthday, @RequestParam("address") String address,
 			@RequestParam("bio") String bio) {
 		String photo = UploadConfig.uploadImage(model, image);
-		String photo2 = photo.equals("") ? user.getCurrentUsers().getImage() : photo;
+		String photo2 = photo.equals("") ? user.current().getImage() : photo;
 		try {
-			if (userDaoimpl.Update(new Users(user.getCurrentUsers().getId(), user.getCurrentUsers().getEmail(), name,
-					user.getCurrentUsers().getPassword(), user.getCurrentUsers().getPhone(), age, gender,
-					user.getCurrentUsers().getRole(), birthday, address, user.getCurrentUsers().getProvider(), bio, photo2,
-					user.getCurrentUsers().getCreated_at(), user.getCurrentUsers().getStatus(),
-					user.getCurrentUsers().getBlock_date()))) {
+			if (userDaoimpl.Update(new Users(user.current().getId(), user.current().getEmail(), name,
+					user.current().getPassword(), user.current().getPhone(), age, gender,
+					user.current().getRole(), birthday, address, user.current().getProvider(), bio, photo2,
+					user.current().getCreated_at(), user.current().getStatus(),
+					user.current().getBlock_date()))) {
 				model.addAttribute("message2", "Cập nhập thông tin thành công.");
 				model.addAttribute("class_name", "msg_success");
 			} else {
@@ -94,7 +94,7 @@ public class StaticController {
 				model.addAttribute("class_name", "msg_success");
 			}
 
-			session.setAttribute("user", user.getCurrentUsers());
+			session.setAttribute("user", user.current());
 			return "static/profile";
 		} catch (Exception e) {
 			return "auth/500";
@@ -107,13 +107,13 @@ public class StaticController {
 	public String changepassword(ModelMap model, @RequestParam("password") String password) {
 
 		try {
-			if (userDaoimpl.Update(new Users(user.getCurrentUsers().getId(), user.getCurrentUsers().getEmail(),
-					user.getCurrentUsers().getFullname(), password, user.getCurrentUsers().getPhone(),
-					user.getCurrentUsers().getAge(), user.getCurrentUsers().getGender(), user.getCurrentUsers().getRole(),
-					user.getCurrentUsers().getBirthday(), user.getCurrentUsers().getCountry(),
-					user.getCurrentUsers().getProvider(), user.getCurrentUsers().getBio(),
-					user.getCurrentUsers().getImage(), user.getCurrentUsers().getCreated_at(),
-					user.getCurrentUsers().getStatus(), user.getCurrentUsers().getBlock_date()))) {
+			if (userDaoimpl.Update(new Users(user.current().getId(), user.current().getEmail(),
+					user.current().getFullname(), password, user.current().getPhone(),
+					user.current().getAge(), user.current().getGender(), user.current().getRole(),
+					user.current().getBirthday(), user.current().getCountry(),
+					user.current().getProvider(), user.current().getBio(),
+					user.current().getImage(), user.current().getCreated_at(),
+					user.current().getStatus(), user.current().getBlock_date()))) {
 				model.addAttribute("message", "Thay đổi mật khẩu thành công. ");
 				model.addAttribute("class_name", "msg_success");
 				return "static/profile";

@@ -13,11 +13,29 @@
 }
 
 .msg_success {
-	color: green;
+	color: #909090;
+	margin-left: 38%;
+	font-size: larger;
+	background-color: #d6f9e4;
+	display: block;
+	width: 18%;
+	margin-left: 51%;
+	border: 6px solid #fff;
+	padding: 0 0 0 22px;
+	line-height: 32px;
 }
 
 .msg_error {
-	color: red;
+	color: #909090;
+	margin-left: 38%;
+	font-size: larger;
+	background-color: #fad7d7;
+	display: block;
+	width: 18%;
+	margin-left: 51%;
+	border: 6px solid #fff;
+	padding: 0 0 0 22px;
+	line-height: 32px;
 }
 
 .role {
@@ -31,67 +49,12 @@
 	font-family: "Source Sans Pro", sans-serif;
 }
 
-#hideMe {
+/* #hideMe {
 	-webkit-animation: cssAnimation 5s forwards;
 	animation: cssAnimation 5s forwards;
-}
-
-@
-keyframes cssAnimation { 0% {
-	opacity: 1;
-}
-
-90%
-{
-opacity
+} */
 
 
-:
-
- 
-
-1;
-}
-100%
-{
-opacity
-
-
-:
-
- 
-
-0;
-}
-}
-@
--webkit-keyframes cssAnimation { 0% {
-	opacity: 1;
-}
-
-90%
-{
-opacity
-
-
-:
-
- 
-
-1;
-}
-100%
-{
-opacity
-
-
-:
-
- 
-
-0;
-}
-}
 :root { -
 	-blue: #007bff; -
 	-indigo: #6610f2; -
@@ -12189,6 +12152,10 @@ px
 
 .page__heading h1 {
 	line-height: 1;
+	line-height: 1;
+	color: dimgrey;
+	/* background: #FFFFFF; */
+	text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .page__heading .lead {
@@ -16744,6 +16711,7 @@ code.django .hljs-template-tag {
 
 .page__heading {
 	background: none;
+	padding: 20px;
 }
 
 .page__heading nav {

@@ -53,7 +53,7 @@ public class UserController {
 
 	@GetMapping(value = "Dashboard")
 	public String dashboard(ModelMap model, HttpSession session) {
-		session.setAttribute("user", user.getCurrentUsers());
+		session.setAttribute("user", user.current());
 		model.addAttribute("total_user", userDaoimpl.all().size());
 		model.addAttribute("total_post", postDaoimpl.all().size());
 		model.addAttribute("total_view", postDaoimpl.viewCountAll());

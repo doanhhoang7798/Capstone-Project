@@ -1,6 +1,6 @@
 package model;
 
-import javax.persistence.Column;
+//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name = "reactions")
@@ -20,8 +19,8 @@ public class Reactions {
 
 	@ManyToOne
 	@JoinColumn(name = "post_id")
-	private Posts post;
-
+	public Posts post;
+	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	public Users user;
@@ -35,6 +34,15 @@ public class Reactions {
 		this.post = post_id;
 		this.user = user_id;
 	}
+	
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
 
 	public Integer getId() {
 		return id;
@@ -52,12 +60,5 @@ public class Reactions {
 		this.post = post;
 	}
 
-	public Users getUser() {
-		return user;
-	}
-
-	public void setUser(Users user) {
-		this.user = user;
-	}
 
 }

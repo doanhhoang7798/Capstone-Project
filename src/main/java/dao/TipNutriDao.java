@@ -8,74 +8,67 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.Reactions;
+import model.*;
+
 
 @Transactional
 @Repository
-public class ReactionDao {
+
+public class TipNutriDao {
 
 	private final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
 	@SuppressWarnings("unchecked")
-	public List<Reactions> counter(int post_id) {
+	public List<TipNutri> list() {
 		Session session = sessionFactory.openSession();
-		List<Reactions> list = session.createQuery("FROM Reactions WHERE post_id = '" + post_id + "'").list();
+		List<TipNutri> list = session.createQuery("From TipNutri").list();
 		return list;
 	}
-	
+
+
 	@SuppressWarnings("unchecked")
-	public List<Reactions> all() {
+	public List<TipNutri> findByTypeKind(String type, String kind, int ofset, int limit) {
 		Session session = sessionFactory.openSession();
-		List<Reactions> list = session.createQuery("FROM Reactions").list();
+		List<TipNutri> list = session.createQuery("From TipNutri where type= '" + type + "' and kind= '" + kind + "'")
+				.setFirstResult(ofset).setMaxResults(limit).list();
 		return list;
 	}
 
-	public Boolean Create(Reactions reactions) {
+	@SuppressWarnings("unchecked")
+	public List<Posts> filterByType(String type) {
 		Session session = sessionFactory.openSession();
-		try {
-			session.getTransaction().begin();
-			session.save(reactions);
-			session.getTransaction().commit();
-			return true;
-		} catch (Exception e) {
-			System.out.println(e);
-			if (session.getTransaction() != null) {
-				session.getTransaction().rollback();
-			}
-			return false;
-		} finally {
-			session.close();
-		}
+		List<Posts> list = session.createQuery("FROM Commons where  type= '" + type + "' ORDER BY created_at desc")
+				.setMaxResults(6).list();
+		return list;
 	}
 
-	public Boolean Delete(int user_id, int post_id) {
-		Session session = sessionFactory.openSession();
-		Reactions reaction = isLike(user_id, post_id);
+	public TipNutri findByID(int id) {
 		try {
-			session.getTransaction().begin();
-			session.delete(reaction);
-			session.getTransaction().commit();
-			return true;
+			Session session = sessionFactory.openSession();
+			TipNutri TipNutri = (TipNutri) session.get(TipNutri.class, id);
+			return TipNutri;
 		} catch (Exception e) {
 			System.out.println(e);
-			if (session.getTransaction() != null) {
-				session.getTransaction().rollback();
-			}
-			return false;
-		} finally {
-			session.close();
+			return null;
 		}
-	}
-
-	public Reactions isLike(int user_id, int post_id) {
-		Session session = sessionFactory.openSession();
-		Reactions reactions = (Reactions) session
-				.createQuery("FROM Reactions WHERE user_id = '" + user_id + "'" + "and post_id = '" + post_id + "'")
-				.uniqueResult();
-
-		return reactions;
-
 	}
 	
+	public boolean Create(TipNutri TipNutri) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(TipNutri);
+			session.getTransaction().commit();
 
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
 }
