@@ -30,7 +30,6 @@ public class ReactionDao {
 		return list;
 	}
 
-//	@Override
 	public Boolean Create(Reactions reactions) {
 		Session session = sessionFactory.openSession();
 		try {
@@ -49,7 +48,6 @@ public class ReactionDao {
 		}
 	}
 
-//	@Override
 	public Boolean Delete(int user_id, int post_id) {
 		Session session = sessionFactory.openSession();
 		Reactions reaction = isLike(user_id, post_id);
@@ -69,8 +67,6 @@ public class ReactionDao {
 		}
 	}
 
-//	@Override
-	@SuppressWarnings("unchecked")
 	public Reactions isLike(int user_id, int post_id) {
 		Session session = sessionFactory.openSession();
 		Reactions reactions = (Reactions) session
@@ -80,5 +76,6 @@ public class ReactionDao {
 		return reactions;
 
 	}
+	
 
 }
