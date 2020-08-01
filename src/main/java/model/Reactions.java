@@ -1,6 +1,6 @@
 package model;
 
-import javax.persistence.Column;
+//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,11 +24,6 @@ public class Reactions {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	public Users user;
-
-
-	
-	
-	
 
 	public Reactions() {
 		super();
