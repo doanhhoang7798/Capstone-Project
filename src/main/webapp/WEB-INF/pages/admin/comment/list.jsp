@@ -14,16 +14,8 @@
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
 			<h1 class="mb-0">Bình luận</h1>
-			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
-				class="material-icons">add</i>Viết bài</a> -->
-
-
-			<span id="hideMe" class="${class_name}"
-				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${ msg }</span>
-
+			<span id="hideMe" class="${class_name}">${ msg }</span>
 		</div>
-
-
 	</div>
 
 
@@ -40,7 +32,6 @@
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
 						class="modal-title" id="myModalLabel">Xác nhận</h2>
-
 				</div>
 
 
@@ -68,15 +59,15 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".use-block").click(function() {
-			    var $row = $(this).closest("tr");    // Find the row
-			    var name = $row.find(".full_name").text(); // Find the text
-			    var c_post = $row.find(".c_post").text();
+				var $row = $(this).closest("tr"); // Find the row
+				var name = $row.find(".full_name").text(); // Find the text
+				var c_post = $row.find(".c_post").text();
 				thisdata = $(this).attr('data-href');
 				$("#confirm_url").attr("href", thisdata);
-			    $('#c_content').text("Xoá bình luận: " + name +  "?");
+				$('#c_content').text("Xoá bình luận: " + name + "?");
 
-			    $('#modal_name').text("Trên bài viết:  " + c_post);
-			    
+				$('#modal_name').text("Trên bài viết:  " + c_post);
+
 			});
 		});
 	</script>
@@ -97,11 +88,9 @@
 						<th class="table-th" scope="col">Bài viết</th>
 						<th class="table-th" scope="col">Hình ảnh</th>
 						<th class="table-th" scope="col">Thao tác</th>
-
-
-
 					</tr>
 				</thead>
+				
 				<tbody>
 					<c:forEach items="${comments}" var="comment">
 						<tr>
@@ -129,9 +118,6 @@
 
 				</tbody>
 			</table>
-
-
-
 
 		</div>
 	</div>
