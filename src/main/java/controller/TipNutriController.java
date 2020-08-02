@@ -66,18 +66,18 @@ public class TipNutriController {
 
 	}
 	
-	@GetMapping(value = "admin/common/create")
+	@GetMapping(value = "admin/tipNutri/create")
 	public String create(ModelMap model) {
 
 		if (user.isAdminOrMod()) {
-			return "admin/common/create";
+			return "admin/tipNutri/create";
 		} else {
 			return "auth/401";
 		}
 	}
 	
 
-	@PostMapping(value = "admin/common/create")
+	@PostMapping(value = "admin/tipNutri/create")
 	public String created(ModelMap model, @RequestParam("author") String author, @RequestParam("title") String title,
 			@RequestParam("content") String content, @RequestParam("type") String type,
 			@RequestParam("kind") String kind, @RequestParam("image") MultipartFile image) {
@@ -96,8 +96,8 @@ public class TipNutriController {
 					model.addAttribute("class_name", "msg_error");
 
 				}
-				model.addAttribute("commons", TipNutriDaoimpl.list());
-				return "admin/common/list";
+				model.addAttribute("tipNutri", TipNutriDaoimpl.list());
+				return "admin/tipNutri/list";
 			} else {
 				return "auth/401";
 			}
@@ -107,6 +107,14 @@ public class TipNutriController {
 
 	}
 
-
+	@GetMapping(value = "admin/tipNutri/list")
+	public String list(ModelMap model) {
+		if (user.isAdminOrMod()) {
+			model.addAttribute("tipNutri", TipNutriDaoimpl.list());
+			return "admin/tipNutri/list";
+		} else {
+			return "auth/401";
+		}
+	}
 
 }
