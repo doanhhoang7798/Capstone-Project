@@ -27,7 +27,7 @@
       }
    </script>
    <div class="container-fluid page__container">
-      <form action="${pageContext.request.contextPath}/admin/common/create"
+      <form action="${pageContext.request.contextPath}/admin/tipNutri/create"
          enctype="multipart/form-data" method="post">
          <div class="col-lg-12 card-form__body card-body">
             <div class="row">
