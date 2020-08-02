@@ -91,6 +91,25 @@ public class CommentController {
 			return "auth/401";
 		}
 	}
+	
+	@GetMapping(value = "admin/comment/delete/{id}")
+	public String DeleteAdmin(ModelMap mode, @PathVariable("id") int id) {
+
+		if (user.isAdminOrMod()) {
+			if (commentDaoimpl.Delete(id)) {
+				mode.addAttribute("msg", "Thao tác thành công.");
+				mode.addAttribute("class_name", "msg_success");
+			} else {
+				mode.addAttribute("msg", "Thao tác thất bại.");
+				mode.addAttribute("class_name", "msg_error");
+			}
+			mode.addAttribute("comments", commentDaoimpl.list());
+			return "admin/comment/list";
+		} else {
+			return "auth/401";
+		}
+
+	}
 
 	
 	public int size(int p_id, String type) {
