@@ -132,5 +132,38 @@ public class TipNutriController {
 		}
 
 	}
+	
+	@PostMapping(value = "admin/tipNutri/edit/{id}")
+	public String editProcess(ModelMap model, @PathVariable("id") int id, @RequestParam("author") String author,
+			@RequestParam("title") String title, @RequestParam("content") String content,
+			@RequestParam("type") String type, @RequestParam("kind") String kind,
+			@RequestParam("image") MultipartFile image) {
+		String path = UploadConfig.uploadImage(model, image);
+		String path_img = path.equals("") ? TipNutriDaoimpl.findByID(id).getImage() : path;
+
+
+		try {
+			if (user.isAdminOrMod()) {
+				if (TipNutriDaoimpl
+						.Update(new TipNutri(id, title, content, type, author, user.timestamp.toString(), kind, path_img, user.current()))) {
+					model.addAttribute("msg", "Thao tác thành công.");
+					model.addAttribute("class_name", "msg_success");
+
+				} else {
+					model.addAttribute("msg", "Thao tác thất bại.");
+					model.addAttribute("class_name", "msg_error");
+
+				}
+				model.addAttribute("commons", TipNutriDaoimpl.list());
+				return "admin/tipNutri/list";
+			} else {
+				return "auth/401";
+			}
+		} catch (Exception e) {
+			return "auth/500";
+		}
+
+	}
+
 
 }
