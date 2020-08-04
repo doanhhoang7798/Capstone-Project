@@ -71,4 +71,23 @@ public class TipNutriDao {
 			session.close();
 		}
 	}
+	
+	public boolean Update(TipNutri TipNutri) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.update(TipNutri);
+			session.getTransaction().commit();
+
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
 }
