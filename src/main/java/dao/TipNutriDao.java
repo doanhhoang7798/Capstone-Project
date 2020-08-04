@@ -90,4 +90,23 @@ public class TipNutriDao {
 			session.close();
 		}
 	}
+	
+	public Boolean Delete(int id) {
+		Session session = sessionFactory.openSession();
+		TipNutri TipNutri = (TipNutri) session.get(TipNutri.class, id);
+		try {
+			session.getTransaction().begin();
+			session.delete(TipNutri);
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
 }
