@@ -22,6 +22,9 @@
 		<mapping class="model.Users" />
 		<mapping class="model.Posts" />
 		<mapping class="model.Reactions" />
+		<mapping class="model.Comments" />
+		<mapping class=".model.Reports" />
+		<mapping class="model.TipNutri" />
 
 
 	</session-factory>
