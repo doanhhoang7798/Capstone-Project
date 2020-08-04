@@ -141,7 +141,6 @@ public class TipNutriController {
 		String path = UploadConfig.uploadImage(model, image);
 		String path_img = path.equals("") ? TipNutriDaoimpl.findByID(id).getImage() : path;
 
-
 		try {
 			if (user.isAdminOrMod()) {
 				if (TipNutriDaoimpl
@@ -163,6 +162,28 @@ public class TipNutriController {
 			return "auth/500";
 		}
 
+	}
+	
+	@GetMapping(value = "admin/tipNutri/delete/{id}")
+	public String delete(ModelMap model, @PathVariable("id") int id) {
+
+		try {
+			if (user.isAdminOrMod()) {
+				if (TipNutriDaoimpl.Delete(id)) {
+					model.addAttribute("msg", "Thao tác thành công.");
+					model.addAttribute("class_name", "msg_success");
+				} else {
+					model.addAttribute("msg", "Thao tác thất bại.");
+					model.addAttribute("class_name", "msg_error");
+				}
+				model.addAttribute("tipNutri", TipNutriDaoimpl.list());
+				return "admin/tipNutri/list";
+			} else {
+				return "auth/401";
+			}
+		} catch (Exception e) {
+			return "auth/500";
+		}
 	}
 
 
