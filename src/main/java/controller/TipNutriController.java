@@ -116,5 +116,21 @@ public class TipNutriController {
 			return "auth/401";
 		}
 	}
+	
+	@GetMapping(value = "admin/tipNutri/edit/{id}")
+	public String edit(ModelMap model, @PathVariable("id") int id) {
+
+		try {
+			if (user.isAdminOrMod()) {
+				model.addAttribute("record", TipNutriDaoimpl.findByID(id));
+				return "admin/tipNutri/edit";
+			} else {
+				return "auth/401"; 
+			}
+		} catch (Exception e) {
+			return "auth/500";
+		}
+
+	}
 
 }
