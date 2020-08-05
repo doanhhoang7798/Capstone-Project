@@ -6,20 +6,44 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<http use-expressions="true">
 
-		<!-- -->
 
 		<csrf disabled="true" />
 		<intercept-url pattern="/" access="permitAll()" />
-		<intercept-url pattern="/admin/*"
+
+		<intercept-url pattern="/admin/user/*"
 			access="hasRole('ROLE_10')" />
 
-		<intercept-url pattern="/profile"
-			access="hasRole('ROLE_10') or hasRole('ROLE_1')" />
 
+		<intercept-url pattern="/admin/Dashboard"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+
+
+		<intercept-url pattern="/admin/comment/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+		<intercept-url pattern="/admin/post/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+		<intercept-url pattern="/admin/tipNutri/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+		<intercept-url pattern="/admin/report/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+		<intercept-url pattern="/admin/reaction/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_5')" />
+
+
+		<intercept-url pattern="/post-edit/*"
+			access="hasRole('ROLE_10') 
+			or hasRole('ROLE_1') or hasRole('ROLE_5')" />
+		
+		
 		<access-denied-handler
-			error-page="/authorized/not-found" />
+			error-page="/authorized/authenticated" />
 
-		<!-- Login Handler -->
 
 		<form-login login-page="/authorized/SignIn"
 			login-processing-url="/authorized/user-signin"
@@ -30,12 +54,6 @@
 			delete-cookies="JSESSIONID" invalidate-session="true" />
 	</http>
 
-	<!-- Filter login with role -->
-
-
-
-	<!-- Bean implementing AuthenticationProvider of Spring Security -->
-
 
 	<beans:bean id="AuthenProvider"
 		class="service.AuthenProvider" />
@@ -44,18 +62,8 @@
 		<authentication-provider ref="AuthenProvider" />
 	</authentication-manager>
 
-
-	<!-- <authentication-manager> <authentication-provider> <jdbc-user-service 
-		data-source-ref="dataSource" users-by-username-query="Select phone ,password,role 
-		from Users where phone=? " authorities-by-username-query="Select phone, concat('ROLE_', 
-		role) as roles from Users where phone=?" /> </authentication-provider> </authentication-manager> -->
-
-
 	<beans:bean id="authSuccessHandler"
 		class="service.AuthFilterHandler" />
-
-	<!-- Connect Database support login -->
-
 
 
 </beans:beans> 
