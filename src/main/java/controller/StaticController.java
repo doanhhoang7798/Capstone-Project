@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import  dao.PostDao;
+import dao.TipNutriDao;
 import  dao.UserDao;
 import  model.Users;
 import  service.CurrentUser;
@@ -27,6 +29,9 @@ public class StaticController {
 
 	@Autowired
 	PostDao postDao;
+	
+	@Autowired
+	TipNutriDao TipNutriDaoimpl;
 
 	@Autowired
 	UploadConfig UploadConfig;
@@ -129,18 +134,82 @@ public class StaticController {
 
 	@GetMapping(value = "filter")
 	public String filter(ModelMap model, HttpServletRequest request, @RequestParam("condition") String cond,
-			@RequestParam("category") String category, @RequestParam(name = "page", defaultValue = "1") int page) {
+			@RequestParam(value = "category", defaultValue = "search") String category,
+			@RequestParam(name = "page", defaultValue = "1") int page) {
 
-		int limit = 2;
+		int limit = 12;
 		int ofset = (limit * page) - limit;
 		model.addAttribute("path", request.getRequestURL() + "?condition=" + cond + "&category=" + category);
 		model.addAttribute("current_page", page);
-		model.addAttribute("title", cond);
+		try {
+			switch (category) {
+			case "search":
+				model.addAttribute("title", "Có " + postDao.seacrhFull(cond, 0, 10000000).size()
+						+ " kết quả cho: <span> ``" + cond + " `` </span> ");
 
-		model.addAttribute("totals", postDao.pagination(category, cond, 0, 100000000).size());
-		model.addAttribute("posts", postDao.pagination(category, cond, ofset, limit));
+				model.addAttribute("posts", postDao.seacrhFull(cond, ofset, limit));
+				model.addAttribute("page_size", page_size(postDao.seacrhFull(cond, 0, 10000000).size(), limit));
+				break;
+			case "likes":
+				model.addAttribute("title", " Bài viết <span> đã thích  </span> ");
+				int begin = ofset ;
+				int end = (begin + limit) < mapping().size() ? (begin + limit) : ((mapping().size() - ofset) + begin );
+				if (mapping().size() == 0) {
+					model.addAttribute("posts", mapping());
+					model.addAttribute("page_size", 0);
 
-		return "static/filter";
+				} else {
+					model.addAttribute("posts", mapping().subList(ofset, end));
+					model.addAttribute("page_size", page_size(mapping().size(), limit));
+				}
+
+				break;
+
+			case "user_id":
+				model.addAttribute("s_user", userDaoimpl.findByID(Integer.parseInt(cond)));
+				model.addAttribute("posts", postDao.pagination("user_id", cond, ofset, limit));
+				model.addAttribute("page_size", page_size(userDaoimpl.findByID(Integer.parseInt(cond)).posts.size(), limit));
+				break;
+			case "level":
+				model.addAttribute("title", "Món ăn từ <span> " + cond + " </span> ");
+				break;
+			case "holiday":
+				model.addAttribute("title", "Các món ngày <span> " + cond + " </span> ");
+				break;
+			case "category":
+				model.addAttribute("title", "Các món <span> " + cond + " </span> ");
+				break;
+			case "kind":
+				model.addAttribute("title", "Các món <span> " + cond + " </span> ");
+				break;
+			case "nation":
+				model.addAttribute("title", "Món ăn <span> " + cond + " </span> ");
+				break;
+			case "suitable":
+				model.addAttribute("title", "Món ăn dành cho <span> " + cond + " </span> ");
+				break;
+			default:
+				model.addAttribute("title", cond );
+				model.addAttribute("check", true );
+			}
+			
+			if (category.equals("Mẹo hay") || category.equals("Dinh dưỡng") ) {
+				model.addAttribute("posts", TipNutriDaoimpl.findByTypeKind(category, cond, ofset, limit));
+				model.addAttribute("page_size",
+						page_size(TipNutriDaoimpl.findByTypeKind(category, cond, 0, 10000000).size(), limit));
+			}
+			
+			else if (!category.equals("likes") && !category.equals("search") && !category.equals("user_id")) {
+				model.addAttribute("posts", postDao.pagination(category, cond, ofset, limit));
+				model.addAttribute("page_size",
+						page_size(postDao.pagination(category, cond, 0, 10000000).size(), limit));
+			}
+
+			String page_return =  category.equals("user_id") ? "static/viewer" : "static/filter";
+			return page_return;
+		} catch (Exception e) {
+			return "auth/500";
+		}
 	}
 
 	@GetMapping(value = "undefined")
