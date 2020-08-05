@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import dao.*;
 import model.*;
 import service.*;
-import utils.*;
+import utils.UploadConfig;
 
 @Controller
 public class TipNutriController {
