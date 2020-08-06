@@ -1,5 +1,8 @@
 package  controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -13,11 +16,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import  dao.PostDao;
-import dao.TipNutriDao;
+import  dao.TipNutriDao;
 import  dao.UserDao;
 import  model.Users;
+import  model.Posts;
+import  model.Reactions;
 import  service.CurrentUser;
 import utils.UploadConfig;
 
@@ -64,7 +68,6 @@ public class StaticController {
 		return "static/contact";
 	}
 
-//////////////////////////////////
 	@GetMapping(value = "/profile")
 	public String profile(ModelMap model) {
 
@@ -216,5 +219,30 @@ public class StaticController {
 	public String handle() {
 		return "auth/404";
 	}
+	
+
+	public int page_size(int totals, int limit) {
+		int page_size = totals / limit + (totals % limit == 0 ? 0 : 1);
+		return page_size;
+	}
+
+	public List<Posts> mapping() {
+
+		List<Posts> posts = new ArrayList<Posts>();
+
+		for (Reactions rc : userDaoimpl.findByID(user.userID()).reactions) {
+			Posts post = new Posts();
+			post.setId(rc.getPost().getId());
+			post.setVideo_url(rc.getPost().getVideo_url());
+			post.setTitle(rc.getPost().getTitle());
+			post.setOverview(rc.getPost().getOverview());
+			post.setCreated_at(rc.getPost().getCreated_at());
+			post.setCategory(rc.getPost().getCategory());
+			posts.add(post);
+		}
+
+		return posts;
+	}
+
 
 }
