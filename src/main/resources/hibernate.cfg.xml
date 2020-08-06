@@ -8,7 +8,7 @@
 	<session-factory>
 
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/fpt-food-development?useSSL=false</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/yummy?useSSL=false</property>
 		<property name="hibernate.connection.username">fpt-web-development</property>
 		<property name="hibernate.connection.password">fpt-web-development</property>
 		<property name="hibernate.connection.pool_size">1</property>
