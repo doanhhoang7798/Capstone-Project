@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "users")
 public class Users implements Serializable {
@@ -79,10 +80,43 @@ public class Users implements Serializable {
 	private String confirm_code;
 
 	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-	    private List<Posts> posts;
+	 	public List<Posts> posts;
 	 
-	 
+	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+		public List<Comments> comments;
 
+	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+		public List<Reports> reports;
+		
+		
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+		public List<Reactions> reactions;
+		
+
+	public List<Reactions> getReactions() {
+		return reactions;
+	}
+
+	public void setReactions(List<Reactions> reactions) {
+		this.reactions = reactions;
+	}
+
+	public List<Comments> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comments> comments) {
+		this.comments = comments;
+	}
+
+	public List<Reports> getReports() {
+		return reports;
+	}
+
+	public void setReports(List<Reports> reports) {
+		this.reports = reports;
+	}
+	
 	public List<Posts> getPosts() {
 		return posts;
 	}

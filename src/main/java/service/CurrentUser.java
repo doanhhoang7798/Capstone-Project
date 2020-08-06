@@ -13,9 +13,7 @@ import org.springframework.stereotype.Service;
 
 import dao.UserDao;
 import model.Users;
-import com.google.common.base.Charsets;
-import com.google.common.hash.HashCode;
-import com.google.common.hash.Hashing;
+
 
 @Service
 public class CurrentUser {
