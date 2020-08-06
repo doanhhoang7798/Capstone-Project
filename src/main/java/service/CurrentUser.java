@@ -14,14 +14,13 @@ import org.springframework.stereotype.Service;
 import dao.UserDao;
 import model.Users;
 
-
 @Service
 public class CurrentUser {
+
 	public Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	public Date now = new Date();
 	public Random random = new Random();
 	public SimpleDateFormat fomart = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
-
 
 	@Autowired
 	UserDao userDaoimpl;
@@ -62,12 +61,10 @@ public class CurrentUser {
 		return current().getId();
 
 	}
-	
+
 	public int userRole() {
 		return current().getRole();
 
 	}
-	
-
 
 }

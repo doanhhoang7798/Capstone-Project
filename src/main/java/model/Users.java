@@ -23,25 +23,26 @@ public class Users implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
 
 	@Column
 	private String email;
 
 	@Column
-
 	private String fullname;
 	@Column
 
 	private String password;
-	@Column
+	
 
+	@Column
 	private String phone;
-	@Column
+	
 
+	@Column
 	private Integer age;
 
 	@Column
-
 	private Integer gender;
 
 	@Column
@@ -75,23 +76,25 @@ public class Users implements Serializable {
 
 	private String block_date;
 	
+	
 	@Column
 
 	private String confirm_code;
 
-	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-	 	public List<Posts> posts;
-	 
-	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-		public List<Comments> comments;
-
-	 @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-		public List<Reports> reports;
-		
-		
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-		public List<Reactions> reactions;
-		
+	public List<Posts> posts;
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	public List<Comments> comments;
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	public List<Reports> reports;
+	
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	public List<Reactions> reactions;
+	
+	
 
 	public List<Reactions> getReactions() {
 		return reactions;
@@ -116,7 +119,7 @@ public class Users implements Serializable {
 	public void setReports(List<Reports> reports) {
 		this.reports = reports;
 	}
-	
+
 	public List<Posts> getPosts() {
 		return posts;
 	}
@@ -130,8 +133,9 @@ public class Users implements Serializable {
 	}
 
 	public Users(String email, String fullname, String password, String phone, String country, Timestamp created_at,
-			Integer status, Integer gender, Integer role) {
+			Integer status, Integer gender, Integer role, String image) {
 		super();
+		this.image = image;
 		this.email = email;
 		this.fullname = fullname;
 		this.password = password;
@@ -142,6 +146,20 @@ public class Users implements Serializable {
 		this.created_at = created_at;
 		this.status = status;
 	}
+	
+	public Users(String fullname, String password, String phone, Timestamp created_at,
+			Integer status, Integer gender, Integer role, String image) {
+		super();
+		this.image = image;
+		this.fullname = fullname;
+		this.password = password;
+		this.phone = phone;
+		this.gender = gender;
+		this.role = role;
+		this.created_at = created_at;
+		this.status = status;
+	}
+
 
 	public Users(Integer id, String email, String fullname, String password, String phone, Integer age, Integer gender,
 			Integer role, String birthday, String country, String provider, String bio, String image,
@@ -165,6 +183,8 @@ public class Users implements Serializable {
 		this.block_date = block_date;
 	}
 
+	
+	
 	public String getConfirm_code() {
 		return confirm_code;
 	}
@@ -172,7 +192,7 @@ public class Users implements Serializable {
 	public void setConfirm_code(String confirm_code) {
 		this.confirm_code = confirm_code;
 	}
-	
+
 	public Users(Integer id, String password) {
 		super();
 		this.id = id;

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import  dao.*;
 import  model.*;
 import  service.*;
@@ -50,11 +51,12 @@ public class AuthController {
 			@RequestParam("password") String password, @RequestParam("address") String address,
 			@RequestParam("email") String email) {
 
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		if (userDaoimpl.Create(new Users(email, name, password, phone, address, timestamp, 1, 1, 1))) {
+		if (userDaoimpl.Create(new Users(name, userDaoimpl.encode(password), phone, user.timestamp, 1, 1, 1,
+				"default-avatart.png"))) {
 
 			try {
-				twilioMessageCreator.sendSMS("Đăng ký tài khoản thành công. Chào mừng bạn tham gia cùng Yummy. ", phone);
+				twilioMessageCreator.sendSMS("Đăng ký tài khoản thành công. Chào mừng bạn tham gia cùng Yummy. ",
+						phone);
 
 				model.addAttribute("Msg", "Đăng ký thành công. ");
 				model.addAttribute("class_name", "msg_success");

@@ -21,20 +21,16 @@ public class AuthenProvider implements AuthenticationProvider {
   @Autowired
   UserDao userDaoiplm;
   
-//  UserDao userDaoiplm = new UserDao()
-
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-		// TODO Auto-generated method stub
 		String username = authentication.getName();
-        // You can get the password here
         String password = authentication.getCredentials().toString();
         
         String key = username.contains("@") ? "email" : "phone";
      
-        if (userDaoiplm.checkLogin(username, password, key) != null ) {
+        if (userDaoiplm.checkLogin(username, userDaoiplm.encode(password), key) != null ) {
             List<GrantedAuthority> grantedAuths = new ArrayList<>();
-            grantedAuths.add(new SimpleGrantedAuthority("ROLE_"+userDaoiplm.checkLogin(username, password,key).getRole()));
+            grantedAuths.add(new SimpleGrantedAuthority("ROLE_"+userDaoiplm.checkLogin(username, userDaoiplm.encode(password),key).getRole()));
             return new UsernamePasswordAuthenticationToken(username, password, grantedAuths);
         }
         return null;

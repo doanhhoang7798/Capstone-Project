@@ -9,11 +9,10 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import model.Users;
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
-
-import model.Users;
 
 @Transactional
 @Repository
@@ -24,16 +23,14 @@ public class UserDao {
 	@SuppressWarnings("unchecked")
 
 
-//	@Override
-	public List<Users> all() {
+		public List<Users> all() {
 		Session session = sessionFactory.openSession();
-		List<Users> list = session.createQuery("select count(*) from Users").list();
+		List<Users> list = session.createQuery("From Users").list();
 		return list;
 	}
 
 	@SuppressWarnings("unchecked")
-//	@Override
-	public List<Users> filterByStatus(int value) {
+		public List<Users> filterByStatus(int value) {
 		Session session = sessionFactory.openSession();
 		List<Users> list = session.createQuery("From Users where status ='" + value + "'").list();
 		return list;
@@ -47,8 +44,7 @@ public class UserDao {
 		return user;
 	}
 
-//	@Override
-	public Users findByID(int id) {
+		public Users findByID(int id) {
 		try {
 			Session session = sessionFactory.openSession();
 			Users user = (Users) session.get(Users.class, id);
@@ -91,8 +87,7 @@ public class UserDao {
 		return true;
 	}
 
-//	@Override
-	public Boolean Update(Users user) {
+		public Boolean Update(Users user) {
 		Session session = sessionFactory.openSession();
 		try {
 			session.getTransaction().begin();
@@ -110,8 +105,7 @@ public class UserDao {
 		}
 	}
 
-//	@Override
-	public Boolean Create(Users user) {
+		public Boolean Create(Users user) {
 		Session session = sessionFactory.openSession();
 		try {
 			session.getTransaction().begin();
@@ -129,11 +123,10 @@ public class UserDao {
 		}
 	}
 
-//	@Override
-	public Users setCurrent(String phone, String key) {
+		public Users setCurrent(String mail_phone, String key) {
 		try {
 			Session session = sessionFactory.openSession();
-			Users user = (Users) session.createQuery("FROM Users WHERE " + key + " ='" + phone + "'").uniqueResult();
+			Users user = (Users) session.createQuery("FROM Users WHERE " + key + " ='" + mail_phone + "'").uniqueResult();
 			return user;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -141,7 +134,7 @@ public class UserDao {
 		}
 	}
 	
-	public Users findByPhone(String phone) {
+		public Users findByPhone(String phone) {
 		try {
 			Session session = sessionFactory.openSession();
 			Users user = (Users) session.createQuery("FROM Users WHERE phone ='" + phone + "'").uniqueResult();
@@ -151,7 +144,11 @@ public class UserDao {
 			return null;
 		}
 	}
-	public Boolean ChangePassword(int id, String password, String code) {
+
+
+	
+	
+		public Boolean ChangePassword(int id, String password, String code) {
 		Session ses = sessionFactory.openSession();
 
 		try {
@@ -167,7 +164,29 @@ public class UserDao {
 		}
 
 	}
+	
+	
+		public Boolean setConfirmCode(int id, String code) {
+		Session ses = sessionFactory.openSession();
 
+		try {
+			ses.getTransaction().begin();
+			Query query = (Query) ses
+					.createQuery("UPDATE Users SET confirm_code = '" + code + "' WHERE (id = '" + id + "')");
+			query.executeUpdate();
+			ses.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			return false;
+		}
+
+	}
+
+
+	
+	
+	
 	public String encode(String clear_password) {   
 		HashCode hash = Hashing.md5()
 				.hashString(clear_password, Charsets.UTF_8);
@@ -175,20 +194,5 @@ public class UserDao {
 	        return password;
 	}
 
-	public Boolean setConfirmCode(int id, String code) {
-	Session ses = sessionFactory.openSession();
 
-	try {
-		ses.getTransaction().begin();
-		Query query = (Query) ses
-				.createQuery("UPDATE Users SET confirm_code = '" + code + "' WHERE (id = '" + id + "')");
-		query.executeUpdate();
-		ses.getTransaction().commit();
-		return true;
-	} catch (Exception e) {
-		System.out.println(e);
-		return false;
-	}
-
-}
 }
