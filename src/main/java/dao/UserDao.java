@@ -23,11 +23,22 @@ public class UserDao {
 	@SuppressWarnings("unchecked")
 
 
-		public List<Users> all() {
-		Session session = sessionFactory.openSession();
-		List<Users> list = session.createQuery("From Users").list();
-		return list;
+	public List<Users> all() {
+	Session session = sessionFactory.openSession();
+	
+			try {
+			List<Users> list = session.createQuery("From Users").list();
+	return list;
+	} catch (Exception e) {
+		System.out.println(e);
+		if (session.getTransaction() != null) {
+			session.getTransaction().rollback();
+		}
+		return null;
+	} finally {
+		session.close();
 	}
+}
 
 	@SuppressWarnings("unchecked")
 		public List<Users> filterByStatus(int value) {
