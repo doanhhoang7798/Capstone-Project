@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import model.Reports;
+import model.Users;
 
 @Transactional
 @Repository
@@ -20,16 +21,37 @@ public class ReportDao {
 	public List<Object> list() {
 		Session session = sessionFactory.openSession();
 		List<Object> list = session.createQuery(
-				"SELECT r.id, c.content, r.type, u.fullname, r.created_at from Reports as r, Users as u, Comments as c  WHERE r.user = u.id AND r.reportable_id = c.id")
+				"SELECT r.id, c.content, r.type, u.fullname, r.created_at, r.reportable_author   from Reports as r, Users as u, Comments as c  WHERE r.reportable_author = u.id AND r.reportable_id = c.id")
 				.list();
 		return list;
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Object> reported(int user_id, int reportable_id) {
 		Session session = sessionFactory.openSession();
 		List<Object> list = session.createQuery(
 				"from Reports r WHERE r.user = "+user_id+" AND r.reportable_id = "+reportable_id+ "")
+				.list();
+		return list;
+	}
+	
+	
+//	@SuppressWarnings("unchecked")
+//	public List<Users> waring() {
+//		Session session = sessionFactory.openSession();
+//		List<Users> list = session.createSQLQuery(
+//				"select * from Users u join (select count(reportable_author) as totals, reportable_author as r_user, group_concat(type) as type from Reports group by reportable_author ) r  on u.id =  r .r_user where r.totals >= 5")
+//				.list();
+//		return list;
+//	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Users> waring() {
+		Session session = sessionFactory.openSession();
+		List<Users> list = session.createSQLQuery(
+				"select u.id, u.fullname, u.phone, u.image, r.totals , r.type, r.c_id, u.status from Users u join ( select reportable_author as r_user,ANY_VALUE(reportable_id) as c_id, count(*) as totals,group_concat(type) as type from Reports group by reportable_author) r  on u.id =  r .r_user  where r.totals >= 5 and u.status = 1")
 				.list();
 		return list;
 	}
@@ -49,8 +71,7 @@ public class ReportDao {
 		}
 	}
 
-	// @Override
-	public boolean Create(Reports reports) {
+	 	public boolean Create(Reports reports) {
 		Session session = sessionFactory.openSession();
 		try {
 			session.getTransaction().begin();
@@ -69,8 +90,7 @@ public class ReportDao {
 		}
 	}
 
-//	@Override
-	public Boolean Delete(int id) {
+		public Boolean Delete(int id) {
 		Session session = sessionFactory.openSession();
 		Reports reports = (Reports) session.get(Reports.class, id);
 		try {

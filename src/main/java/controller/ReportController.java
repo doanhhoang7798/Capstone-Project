@@ -1,6 +1,4 @@
-package  controller;
-
-import java.sql.Timestamp;
+package controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,13 +8,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import  dao.ReportDao;
-import  dao.UserDao;
-import  model.Reports;
-import  service.CurrentUser;
+import dao.ReportDao;
+import dao.UserDao;
+import model.Reports;
+import service.CurrentUser;
 
 @Controller
 public class ReportController {
@@ -30,7 +27,6 @@ public class ReportController {
 	@Autowired
 	UserDao userDaoimplDao;
 
-	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	@GetMapping(value = "admin/report/list")
 	public String list(ModelMap model) {
@@ -46,7 +42,7 @@ public class ReportController {
 	public String warning(ModelMap model) {
 
 		if (user.isAdminOrMod()) {
-			model.addAttribute("users", userDaoimplDao.all());
+			model.addAttribute("users", reportDaoimpl.waring());
 			return "admin/report/warning";
 		} else {
 			return "auth/401";
@@ -62,7 +58,7 @@ public class ReportController {
 					model.addAttribute("msg", " Xoá báo cáo thành công..");
 					model.addAttribute("class_name", "msg_success");
 				} else {
-					model.addAttribute("msg", " Xoá báo cáo thất bại..");
+					model.addAttribute("msg", " Xoá báo cáo thất bại ..");
 					model.addAttribute("class_name", "msg_error");
 				}
 				model.addAttribute("reports", reportDaoimpl.list());
@@ -79,19 +75,21 @@ public class ReportController {
 	public String reportComment(ModelMap model, HttpServletRequest request, @PathVariable("id") int post_id,
 			@RequestParam("report_type") int report_type, @RequestParam("reportable_id") int reportable_id, @RequestParam("reportable_author") int reportable_author) {
 		try {
-			if (user.exist()) {
+			
+			if (user.exist() && reportDaoimpl.reported(user.userID(), reportable_id).size() == 0) {
 				if (reportDaoimpl.Create(
-						new Reports("Comment", reportable_id, report_type, user.current(), timestamp.toString(),reportable_author))) {
+						new Reports("Comment", reportable_id, report_type, user.current(), user.timestamp.toString(),reportable_author))) {
 					model.addAttribute("report_msg", "Báo cáo được gửi thành công..");
-					model.addAttribute("r_class_name", "msg_success");
 				}
 				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";
 			} else {
-				return "auth/401";
+				model.addAttribute("report_msg", "Bạn đã báo cáo bình luận này trước đây");
+
+				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";
 			}
 		} catch (Exception e) {
-			return "auth/500";		}
-
+			return "auth/500";		
+			}
 	}
-
 }
+	
