@@ -22,8 +22,7 @@
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a>  -->
 
-			<span id="hideMe" class="${class_name}"
-				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${msg}</span>
+			<span id="hideMe" class="${class_name}">${msg}</span>
 
 
 		</div>
@@ -130,8 +129,11 @@
 									<c:when test="${user_detail.role=='10'}">
 										<span class="badge badge-primary">Admin</span>
 									</c:when>
+									<c:when test="${user_detail.role=='5'}">
+										<span class="badge badge-warning">Mod</span>
+									</c:when>
 									<c:otherwise>
-										<span class="badge badge-warning">User</span>
+										<span class="badge badge-secondary">User</span>
 									</c:otherwise>
 								</c:choose></td>
 
@@ -143,8 +145,11 @@
 									data-href="${pageContext.request.contextPath}/admin/user/list/${user_detail.id }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-unlock"></i>
-								</button> <a class="btn btn-info"
+								</button> <a class="btn btn-success"
 								href="${pageContext.request.contextPath}/admin/user/show/${user_detail.id}">
+									<span class="menu-icon"><i class="fa fa-cog"></i></span>
+							</a> <a class="btn btn-info"
+								href="${pageContext.request.contextPath}/filter?condition=${ user_detail.id }&category=user_id">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
 							</a>
 							</td>

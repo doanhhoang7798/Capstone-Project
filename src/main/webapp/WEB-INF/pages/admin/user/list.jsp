@@ -18,8 +18,7 @@
 				class="material-icons">add</i>Viết bài</a> -->
 
 
-			<span id="hideMe" class="${class_name}"
-				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${ msg }</span>
+			<span id="hideMe" class="${class_name}">${ msg }</span>
 
 		</div>
 
@@ -68,12 +67,12 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".use-block").click(function() {
-			    var $row = $(this).closest("tr");    // Find the row
-			    var name = $row.find(".full_name").text(); // Find the text
+				var $row = $(this).closest("tr"); // Find the row
+				var name = $row.find(".full_name").text(); // Find the text
 				thisdata = $(this).attr('data-href');
 				$("#confirm_url").attr("href", thisdata);
-			    $('#modal_name').text(name);
-			    
+				$('#modal_name').text(name);
+
 			});
 		});
 	</script>
@@ -111,8 +110,11 @@
 									<c:when test="${user_detail.role=='10'}">
 										<span class="badge badge-primary">Admin</span>
 									</c:when>
+									<c:when test="${user_detail.role=='5'}">
+										<span class="badge badge-warning">Mod</span>
+									</c:when>
 									<c:otherwise>
-										<span class="badge badge-warning">User</span>
+										<span class="badge badge-secondary">User</span>
 									</c:otherwise>
 								</c:choose></td>
 							<td><img
@@ -120,11 +122,14 @@
 							<td>
 
 								<button class="btn btn-dark use-block" id="test"
-									data-href="${pageContext.request.contextPath}/admin/user/block/${user_detail.id}"
+									data-href="${pageContext.request.contextPath}/admin/user/_block?user_id=${user_detail.id}&comment_id=0"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-lock"></i>
-								</button> <a class="btn btn-info"
+								</button> <a class="btn btn-success"
 								href="${pageContext.request.contextPath}/admin/user/show/${user_detail.id}">
+									<span class="menu-icon"><i class="fa fa-cog"></i></span>
+							</a> <a class="btn btn-info"
+								href="${pageContext.request.contextPath}/filter?condition=${ user_detail.id }&category=user_id">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
 							</a>
 							</td>
