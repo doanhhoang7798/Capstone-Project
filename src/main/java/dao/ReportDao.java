@@ -24,6 +24,15 @@ public class ReportDao {
 				.list();
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Object> reported(int user_id, int reportable_id) {
+		Session session = sessionFactory.openSession();
+		List<Object> list = session.createQuery(
+				"from Reports r WHERE r.user = "+user_id+" AND r.reportable_id = "+reportable_id+ "")
+				.list();
+		return list;
+	}
 
 	public boolean deleteMany(int user_id) {
 		Session session = sessionFactory.openSession();

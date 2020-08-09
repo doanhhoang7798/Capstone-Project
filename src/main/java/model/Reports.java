@@ -35,7 +35,7 @@ public class Reports {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private Users user;
+	public Users user;
 
 	public Reports() {
 		super();
