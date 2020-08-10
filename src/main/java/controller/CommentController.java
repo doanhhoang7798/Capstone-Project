@@ -43,7 +43,7 @@ public class CommentController {
 		String image_path = upload.uploadImage(mode, image);
 		try {
 			commentDaoimpl.Create(new Comments(postDaoimpl.findByID(p_id), user.current(), content, image_path,
-					"NULL", timestamp.toString()));
+					timestamp.toString()));
 
 			return size(p_id, "Post");
 		} catch (Exception e) {
@@ -60,7 +60,7 @@ public class CommentController {
 			String url = upload.uploadImage(mode, image);
 			String image_path = url.equals("") ? commentDaoimpl.findByID(c_id).getImage_url() : url;
 			commentDaoimpl.Update(new Comments(c_id, postDaoimpl.findByID(id), user.current(), content,
-					image_path, "NULL", timestamp.toString()));
+					image_path, timestamp.toString()));
 			return size(c_id, "Comment");
 		} else {
 			return size(c_id, "Comment");

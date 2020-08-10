@@ -81,7 +81,7 @@ input {
 					<div class="blog-div with20">
 						<h3 style="text-align: center; margin-left: 51px;">Nguyên
 							liệu chính</h3>
-						<select class="dropdown" name="level" name="" class="space-left">
+						<select class="dropdown" name="main_meterial" name="" class="space-left">
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>
 							<option value="Thịt gia cầm">Thịt gia cầm</option>
@@ -169,7 +169,7 @@ input {
 				<h1 class="w-bot-border">
 					Nguyên <span>liệu </span>
 				</h1>
-				<textarea name="material" cols="110" rows="9" required
+				<textarea name="material_detail" cols="110" rows="9" required
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">

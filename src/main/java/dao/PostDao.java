@@ -154,7 +154,7 @@ public class PostDao {
 		Session session = sessionFactory.openSession();
 		List<Posts> list = session
 				.createQuery("from Posts where title like '%" + keyword + "%' or kind like '%" + keyword
-						+ "%' or created_at like '%" + keyword + "%' or level like '%" + keyword
+						+ "%' or created_at like '%" + keyword + "%' or main_material like '%" + keyword
 						+ "%' or  nation like '%" + keyword + "%' or holiday like '%" + keyword
 						+ "%'  or category like '%" + keyword + "%'  or suitable like '%" + keyword + "%'")
 				.setFirstResult(ofset).setMaxResults(limit).list();

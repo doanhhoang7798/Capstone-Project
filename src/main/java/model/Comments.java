@@ -25,19 +25,10 @@ public class Comments {
 
 	private String image_url;
 
-	@Column
-	private String deleted_at;
 
 	@Column
 	private String created_at;
 
-	public String getDeleted_at() {
-		return deleted_at;
-	}
-
-	public void setDeleted_at(String deleted_at) {
-		this.deleted_at = deleted_at;
-	}
 
 	public String getCreated_at() {
 		return created_at;
@@ -59,23 +50,20 @@ public class Comments {
 		super();
 	}
 
-	public Comments(Integer id, Posts post, Users user, String content, String image_url, String deleted_at,
-			String created_at) {
+	public Comments(Integer id, Posts post, Users user, String content, String image_url, String created_at) {
 		super();
 		this.id = id;
 		this.content = content;
 		this.image_url = image_url;
-		this.deleted_at = deleted_at;
 		this.created_at = created_at;
 		this.user = user;
 		this.post = post;
 	}
 
-	public Comments(Posts post, Users user, String content, String image_url, String deleted_at, String created_at) {
+	public Comments(Posts post, Users user, String content, String image_url, String created_at) {
 		super();
 		this.post = post;
 		this.content = content;
-		this.deleted_at = deleted_at;
 		this.created_at = created_at;
 		this.user = user;
 		this.image_url = image_url;

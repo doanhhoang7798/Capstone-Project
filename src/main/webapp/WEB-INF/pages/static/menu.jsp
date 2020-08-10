@@ -6,159 +6,159 @@
 <div id="content" class="clearfix homepage">
    <div id="whats-hot">
       <h3 class="boder_title">
-         Nguyên liệu <span> </span>
+         Nguyên liệu 
       </h3>
       <span class="w-pet-border"></span>
       <ul class="cat-list clearfix">
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
-               src="${pageContext.request.contextPath}/resources/static//images/category/thit_lon.jpg"
+               src="${pageContext.request.contextPath}/resources/static/images/category/thit_lon.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial">
                Thịt lợn </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/thit_gicam.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial">
                Thịt gia cầm </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/thit_bo.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial">
                Thịt Bò </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt bò&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt bò&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/rau_dau.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial">
                Rau Đậu </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/haisan.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Hải Sản&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Hải Sản&category=main_meterial">
                Hải sản </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Trứng&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/trung.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial">
                Trứng </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/bun.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial">
                Bún-Phở-Miến </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=level"
+               href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/xoi.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=level">
+                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial">
                Cơm-Xôi-Cháo </a>
             </h4>
             <p>
                Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
                augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=level">...
+                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial">...
                Xem thêm </a>
             </p>
          </li>
@@ -289,7 +289,7 @@
    </div>
    <div id="whats-hot">
       <h3 class="boder_title">
-         Xuất xứ <span> </span>
+         Xuất xứ 
       </h3>
       <span class="w-pet-border"></span>
       <ul class="cat-list clearfix">
@@ -333,7 +333,7 @@
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Việt Nam&category=nation"
+               href="${pageContext.request.contextPath}/filter?condition=Trung Quốc&category=nation"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/trungquoc.png"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
@@ -359,7 +359,7 @@
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Việt Nam&category=nation">
+                  href="${pageContext.request.contextPath}/filter?condition=Nhật Bản&category=nation">
                Nhật Bản </a>
             </h4>
             <p>
@@ -373,7 +373,7 @@
    </div>
    <div id="whats-hot">
       <h3 class="boder_title">
-         Ngày lễ - <span>kỉ niệm </span>
+         Ngày lễ - kỉ niệm
       </h3>
       <span class="w-pet-border"></span>
       <ul class="cat-list clearfix">

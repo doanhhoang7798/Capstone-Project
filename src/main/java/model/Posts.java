@@ -39,7 +39,7 @@ public class Posts {
 	private String making;
 	@Column
 
-	private String material;
+	private String material_detail;
 	@Column
 
 	private int time;
@@ -51,7 +51,7 @@ public class Posts {
 	private String kind;
 	@Column
 
-	private String level;
+	private String main_meterial;
 	@Column
 
 	private int price;
@@ -108,8 +108,8 @@ public class Posts {
 		super();
 	}
 
-	public Posts(Users user_id, String video_url, String title, String overview, String making, String material,
-			int time, int ration, String kind, String level, int price, String nation, String holiday, String category,
+	public Posts(Users user_id, String video_url, String title, String overview, String making, String material_detail,
+			int time, int ration, String kind, String main_meterial, int price, String nation, String holiday, String category,
 			String suitable, Timestamp created_at, String deleted_at) {
 		super();
 		this.user = user_id;
@@ -117,11 +117,11 @@ public class Posts {
 		this.title = title;
 		this.overview = overview;
 		this.making = making;
-		this.material = material;
+		this.material_detail = material_detail;
 		this.time = time;
 		this.ration = ration;
 		this.kind = kind;
-		this.level = level;
+		this.main_meterial = main_meterial;
 		this.price = price;
 		this.nation = nation;
 		this.holiday = holiday;
@@ -132,7 +132,7 @@ public class Posts {
 	}
 
 	public Posts(Integer id, Users user_id, String video_url, String title, String overview, String making,
-			String material, int time, int ration, String kind, String level, int price, String nation, String holiday,
+			String material_detail, int time, int ration, String kind, String main_meterial, int price, String nation, String holiday,
 			String category, String suitable, Timestamp created_at, String deleted_at) {
 		super();
 		this.id = id;
@@ -141,11 +141,11 @@ public class Posts {
 		this.title = title;
 		this.overview = overview;
 		this.making = making;
-		this.material = material;
+		this.material_detail = material_detail;
 		this.time = time;
 		this.ration = ration;
 		this.kind = kind;
-		this.level = level;
+		this.main_meterial = main_meterial;
 		this.price = price;
 		this.nation = nation;
 		this.holiday = holiday;
@@ -203,12 +203,12 @@ public class Posts {
 		this.making = making;
 	}
 
-	public String getMaterial() {
-		return material;
+	public String getmaterial_detail() {
+		return material_detail;
 	}
 
-	public void setMaterial(String material) {
-		this.material = material;
+	public void setmaterial_detail(String material_detail) {
+		this.material_detail = material_detail;
 	}
 
 	public int getTime() {
@@ -235,12 +235,12 @@ public class Posts {
 		this.kind = kind;
 	}
 
-	public String getLevel() {
-		return level;
+	public String getmain_meterial() {
+		return main_meterial;
 	}
 
-	public void setLevel(String level) {
-		this.level = level;
+	public void setmain_meterial(String main_meterial) {
+		this.main_meterial = main_meterial;
 	}
 
 	public int getPrice() {

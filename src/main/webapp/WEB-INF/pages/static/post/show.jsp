@@ -38,7 +38,7 @@ pre {
 
 
 <div id="content" class="clearfix " style="width: 100%;">
-	<div id="left-area" class="clearfix" style="width: 91%;">
+	<div id="left-area" class="clearfix" style="width: 60%;">
 		<div class="post-53 post category-barbeque" id="post-53">
 			<!-- Starting Default Loop -->
 			<h1 class="title fn">${post.title }</h1>
@@ -50,8 +50,8 @@ pre {
 					rel="tag">${ post.nation } </a>
 				</li>
 				<li>Nguyên liệu: <a
-					href="${pageContext.request.contextPath}/filter?condition=${ post.level }&category=level"
-					rel="tag">${ post.level } </a>
+					href="${pageContext.request.contextPath}/filter?condition=${ post.main_meterial }&category=main_meterial"
+					rel="tag">${ post.main_meterial } </a>
 				</li>
 				<li>Thể loại: <a
 					href="${pageContext.request.contextPath}/filter?condition=${ post.category }&category=category"
@@ -117,23 +117,22 @@ pre {
 			<span class="w-pet-border"></span>
 			<div class="info-left instructions" style="width: 100%;">
 				<div itemprop="description">
-					<h3 class="blue">Method</h3>
 					<h1 class="w-bot-border">
-						Giới <span> thiệu</span>
+						 <span>Giới thiệu</span>
 					</h1>
 					<pre>${ post.overview }</pre>
 					<h1 class="w-bot-border">
-						Cách <span>làm </span>
+						<span>Cách làm </span>
 					</h1>
 					<pre>${ post.making }</pre>
 					<h1 class="w-bot-border">
-						Nguyên liệu <span> & thành phần </span>
+						<span>Nguyên liệu & thành phần </span>
 					</h1>
-					<pre>${ post.material }</pre>
+					<pre>${ post.main_meterial }</pre>
 				</div>
 				<div>
 					<h1 style="float: left;">
-						Comment <span id="c-count"> ( ${ post.comments.size() } ) </span>
+						 <span id="c-count">Comment </span>( ${ post.comments.size() } ) 
 					</h1>
 					<a class="btn btn btn-info"
 						style="float: right; margin-top: 1%; margin-right: 13%;"
@@ -144,7 +143,7 @@ pre {
 				<span class="w-pet-border"></span>
 				<c:choose>
 					<c:when test="${user.getStatus()  == null}">
-						<h1>Vui lòng đăng nhập để bình luận .</h1>
+						<h1>Vui lòng đăng nhập để bình luận.</h1>
 					</c:when>
 					<c:when test="${user.getStatus()  == 5}">
 						<h1>Tài khoản của bạn đã bị khoá chức năng bình luận.</h1>
@@ -190,14 +189,14 @@ pre {
 				<!-- ============================================== Ref Post ======================================================== -->
 				<div>
 					<h1>
-						Comment <span id="c-count"> ( ${ post.comments.size() } ) </span>
+						<span id="c-count"> Comment </span>( ${ post.comments.size() } )
 					</h1>
 				</div>
 				<!-- ============================================== Create Comment ======================================================== -->
 				<span class="w-pet-border"></span>
 				<c:choose>
 					<c:when test="${user.getStatus()  == null}">
-						<h1>Vui lòng đăng nhập để bình luận .</h1>
+						<h1>Vui lòng đăng nhập để bình luận.</h1>
 					</c:when>
 					<c:when test="${user.getStatus()  == 5}">
 						<h1>Tài khoản của bạn đã bị khoá chức năng bình luận.</h1>
@@ -369,7 +368,7 @@ pre {
 	<div id="sidebar" style="width: 288px;">
 		<div class="widget fav-recipes nostylewt">
 			<h3 class="w-bot-border">
-				<span> Món </span> liên quan
+				<span> Món liên quan</span>
 			</h3>
 			<div class="tabed">
 				<ul class="tabs clearfix">
@@ -407,7 +406,7 @@ pre {
 			class="widget nostylewt Recipes_from_Recipe_Type clearfix">
 			<div class="recipes-slider-widget rt">
 				<h3 class="w-bot-border">
-					<span>Thông tin </span> &amp; bài viết
+					<span>Thông tin  &amp; bài viết</span>
 				</h3>
 				<div class="cookname">
 					<div class="img-box">
@@ -451,7 +450,7 @@ pre {
 		<div
 			class="widget nostylewt Weekly_Special_Widget wk-special clearfix">
 			<h2 class="w-bot-border">
-				<span>bài viết </span> mới
+				<span>Bài viết mới</span>
 			</h2>
 			<c:forEach items="${ news }" var="item">
 				<div class="img-box for-all">
@@ -525,22 +524,22 @@ pre {
 					method="post">
 					<div style="padding: 8px;" class="modal-body">
 						<input type="hidden" name="reportable_id" id="reportable_id">
-						<input type="hidden" name="reportable_author"
-							id="reportable_author">
+						<input type="hidden" name="report_author"
+							id="report_author">
 						<ul class="ks-cboxtags">
 							<li><input type="checkbox" id="checkboxFive"
-								name="report_type" value="1" /><label for="checkboxFive">Spam</label></li>
+								name="type" value="1" /><label for="checkboxFive">Spam</label></li>
 							<li><input type="checkbox" id="checkboxSix"
-								name="report_type" value="2" /><label for="checkboxSix">Bạo
+								name="type" value="2" /><label for="checkboxSix">Bạo
 									lực</label></li>
 							<li><input type="checkbox" id="checkboxSeven"
-								name="report_type" value="3" /><label for="checkboxSeven">Nội
+								name="type" value="3" /><label for="checkboxSeven">Nội
 									dung đồi truỵ</label></li>
 							<li><input type="checkbox" id="checkboxEight"
-								name="report_type" value="4" /><label for="checkboxEight">Nội
+								name="type" value="4" /><label for="checkboxEight">Nội
 									dung khiếm nhã </label></li>
 							<li><input type="checkbox" id="checkboxNine"
-								name="report_type" value="5" /><label for="checkboxNine">
+								name="type" value="5" /><label for="checkboxNine">
 									Gây hiểu nhầm hoặc lừa đảo</label></li>
 						</ul>
 					</div>
@@ -608,8 +607,8 @@ pre {
 		var author_id = $row.find(".comment_author").val(); // Find the text
 
 		console.log("ID", author_id);
-		$("#reportable_id").val(id);
-		$("#reportable_author").val(author_id);
+		$("#cmt_id").val(id);
+		$("#report_author").val(author_id);
 
 	});
 	$(".r-close").click(function() {

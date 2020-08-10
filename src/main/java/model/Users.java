@@ -54,9 +54,6 @@ public class Users implements Serializable {
 	@Column
 
 	private String country;
-	@Column
-
-	private String provider;
 
 	@Column
 
@@ -162,7 +159,7 @@ public class Users implements Serializable {
 
 
 	public Users(Integer id, String email, String fullname, String password, String phone, Integer age, Integer gender,
-			Integer role, String birthday, String country, String provider, String bio, String image,
+			Integer role, String birthday, String country, String bio, String image,
 			Timestamp created_at, Integer status, String block_date) {
 		super();
 		this.id = id;
@@ -175,7 +172,6 @@ public class Users implements Serializable {
 		this.role = role;
 		this.birthday = birthday;
 		this.country = country;
-		this.provider = provider;
 		this.bio = bio;
 		this.image = image;
 		this.created_at = created_at;
@@ -297,14 +293,6 @@ public class Users implements Serializable {
 
 	public void setCountry(String country) {
 		this.country = country;
-	}
-
-	public String getProvider() {
-		return provider;
-	}
-
-	public void setProvider(String provider) {
-		this.provider = provider;
 	}
 
 	public String getBio() {

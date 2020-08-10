@@ -17,12 +17,10 @@ public class Reports {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column
 
-	private String reportable_type;
 	@Column
-
-	private int reportable_id;
+	private int cmt_id;
+	
 	@Column
 
 	private int type;
@@ -31,7 +29,7 @@ public class Reports {
 	private String created_at;
 
 	@Column
-	private int reportable_author;
+	private int report_author;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
@@ -41,25 +39,24 @@ public class Reports {
 		super();
 	}
 
-	public Reports(String reportable_type, int reportable_id, int type, Users user, String created_at,
-			int reportable_author) {
+	public Reports(int cmt_id, int type, Users user, String created_at,
+			int report_author) {
 		super();
-		this.reportable_author = reportable_author;
+		this.report_author = report_author;
 		this.created_at = created_at;
-		this.reportable_type = reportable_type;
-		this.reportable_id = reportable_id;
+		this.cmt_id = cmt_id;
 		this.type = type;
 		this.user = user;
 	}
 	
 	
 
-	public int getReportable_author() {
-		return reportable_author;
+	public int getreport_author() {
+		return report_author;
 	}
 
-	public void setReportable_author(int reportable_author) {
-		this.reportable_author = reportable_author;
+	public void setreport_author(int report_author) {
+		this.report_author = report_author;
 	}
 
 	public Integer getId() {
@@ -70,20 +67,13 @@ public class Reports {
 		this.id = id;
 	}
 
-	public String getReportable_type() {
-		return reportable_type;
+
+	public int getcmt_id() {
+		return cmt_id;
 	}
 
-	public void setReportable_type(String reportable_type) {
-		this.reportable_type = reportable_type;
-	}
-
-	public int getReportable_id() {
-		return reportable_id;
-	}
-
-	public void setReportable_id(int reportable_id) {
-		this.reportable_id = reportable_id;
+	public void setcmt_id(int cmt_id) {
+		this.cmt_id = cmt_id;
 	}
 
 	public int getType() {

@@ -764,7 +764,8 @@ form label {
 }
 
 #left-area pre {
-	font-family: "Courier New", Courier, monospace;
+	font-family: "MuseoSlab500", Times, serif;
+	font-size: 14px;
 }
 
 h1,

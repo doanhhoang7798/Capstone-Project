@@ -101,7 +101,7 @@ public class StaticController {
 		try {
 			if (userDaoimpl.Update(new Users(user.current().getId(), user.current().getEmail(), name,
 					user.current().getPassword(), user.current().getPhone(), age, gender,
-					user.current().getRole(), birthday, address, user.current().getProvider(), bio, photo2,
+					user.current().getRole(), birthday, address, bio, photo2,
 					user.current().getCreated_at(), user.current().getStatus(),
 					user.current().getBlock_date()))) {
 				model.addAttribute("message2", "Cập nhập thông tin thành công.");
@@ -177,7 +177,7 @@ public class StaticController {
 				model.addAttribute("posts", postDao.pagination("user_id", cond, ofset, limit));
 				model.addAttribute("page_size", page_size(userDaoimpl.findByID(Integer.parseInt(cond)).posts.size(), limit));
 				break;
-			case "level":
+			case "main_meterial":
 				model.addAttribute("title", "Món ăn từ <span> " + cond + " </span> ");
 				break;
 			case "holiday":
