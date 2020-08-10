@@ -54,7 +54,6 @@ public class CurrentUser {
 		} else {
 			return false;
 		}
-
 	}
 
 	public int userID() {

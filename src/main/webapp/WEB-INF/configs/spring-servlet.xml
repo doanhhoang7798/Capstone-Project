@@ -40,8 +40,8 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.show_sql">false</prop>
-				 <prop key="javax.persistence.validation.mode">none</prop>
-				
+				<prop key="javax.persistence.validation.mode">none</prop>
+
 			</props>
 		</property>
 	</bean>
@@ -51,21 +51,17 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/fpt-food-development?useSSL=false" />
+			value="jdbc:mysql://localhost:3306/yummy?useSSL=false" />
 		<property name="username" value="fpt-web-development" />
 		<property name="password" value="fpt-web-development" />
 	</bean>
 
 	<context:component-scan
 		base-package="controller" />
-	<context:component-scan
-		base-package="dao" />
-	<context:component-scan
-		base-package="service" />
-		<context:component-scan
-		base-package="model" />
-		<context:component-scan
-		base-package="utils" />
+	<context:component-scan base-package="dao" />
+	<context:component-scan base-package="service" />
+	<context:component-scan base-package="model" />
+	<context:component-scan base-package="utils" />
 
 
 </beans>

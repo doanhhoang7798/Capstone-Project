@@ -77,35 +77,39 @@ public class UserController {
 		return "admin/user/block";
 	}
 
-	@GetMapping(value = "user/block/{id}")
-	public String block(ModelMap model, @PathVariable("id") int id) {
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	@GetMapping(value = "user/_block")
+	public String block(ModelMap model, @RequestParam("user_id") int u_id,@RequestParam("comment_id") int c_id) {
 
-		if (userDaoimpl.setStatus(id, 5, timestamp.toString())) {
+		if (userDaoimpl.setStatus(u_id, 5, user.timestamp.toString())) {
 
 			model.addAttribute("users", userDaoimpl.filterByStatus(5));
 
 			try {
-				twilioMessageCreator.sendSMS("Tài khoản của bạn đã bị khoá vào lúc:" + timestamp,
-						userDaoimpl.findByID(id).getPhone());
-				model.addAttribute("msg", "Khoá thành công.");
+				if (c_id != 0) {
+					commentDaoimpl.Delete(c_id);
+				}
+				
+				twilioMessageCreator.sendSMS("Tài khoản của bạn đã bị khoá vào lúc:" + user.timestamp,
+						userDaoimpl.findByID(u_id).getPhone());
+				model.addAttribute("msg", "Thao tác thành công.");
 				model.addAttribute("class_name", "msg_success");
 				return "admin/user/block";
 
 			} catch (Exception e) {
 				model.addAttribute("class_name", "msg_success");
-				model.addAttribute("msg", "Khoá thành công, không thể gửi SMS do số điện thoại chưa xác thực. ");
+				model.addAttribute("msg", "Thao tác thành công.");
 				return "admin/user/block";
 
 			}
 
 		} else {
-			model.addAttribute("msg", "Khoá thất bại.");
+			model.addAttribute("msg", "Thao tác thất bại.");
 			model.addAttribute("class_name", "msg_error");
 
 			return "admin/user/list";
 		}
 	}
+	
 
 	@GetMapping(value = "user/list/{id}")
 	public String unlock(ModelMap model, @PathVariable("id") int id) {

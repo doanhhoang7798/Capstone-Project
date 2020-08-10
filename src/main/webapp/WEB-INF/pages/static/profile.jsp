@@ -5,25 +5,6 @@
 
 <jsp:include page="layout/_header.jsp"></jsp:include>
 
-<!-- 
-<script type="text/javascript">
-	$(document).ready(function() {
-
-		$("#form_profile").submit(function(event) {
-			event.preventDefault();
-			$(".show-profile").css("display", "block");
-			$(".save-change").click(function() {
-				$("#form_profile")[0].submit();
-			});
-
-			$(".save-close").click(function() {
-				$(".show-profile").css("display", "none");
-
-			});
-		});
-	});
-</script> -->
-
 <div class="vd_content clearfix">
 	<div class="vd_content-section clearfix">
 		<div class="row">
@@ -42,21 +23,21 @@
 
 										<br>
 										<script type="text/javascript">
-									     function readURL(input) {
-									            if (input.files && input.files[0]) {
-									                var reader = new FileReader();
+											function readURL(input) {
+												if (input.files && input.files[0]) {
+													var reader = new FileReader();
 
-									                reader.onload = function (e) {
-									                    $('#blah')
-									                        .attr('src', e.target.result)
-									                        .width(200)
-									                        .height(174);
-									                };
+													reader.onload = function (e) {
+														$('#blah')
+															.attr('src', e.target.result)
+															.width(200)
+															.height(174);
+													};
 
-									                reader.readAsDataURL(input.files[0]);
-									            }
-									        }
-										
+													reader.readAsDataURL(input.files[0]);
+												}
+											}
+
 										</script>
 
 
@@ -74,19 +55,21 @@
 													</c:when>
 													<c:otherwise>
 														<img
-															style="width: 208px; height: 174px; margin-bottom: 10px"
+															style="width: 200px; height: 174px; margin-bottom: 10px"
 															id="blah" alt="example image"
 															src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
 													</c:otherwise>
 												</c:choose>
+
+
+
+
+
 											</div>
-
-
-
 											<div class="form-img-action text-center mgbt-xs-20">
 
-												<input onchange="readURL(this);" type="file" name="image"
-													style="margin: auto; width: 75px;" />
+												<input onchange="readURL(this);" type="file" name="image" accept="image/x-png,image/gif,image/jpeg"
+													style="margin: auto; width: 92px;" />
 
 											</div>
 											<br />
@@ -94,14 +77,16 @@
 												<table class="table table-striped table-hover">
 													<tbody>
 														<tr>
-															<td style="width: 55%;">Trạng thái</td>
+															<td style="width: 60%;">Trạng thái</td>
 
 															<c:choose>
 																<c:when test="${user.status=='1'}">
-																	<td><span class="label label-success">Active</span></td>
+																	<td><span class="label label-success">Active</span>
+																	</td>
 																</c:when>
 																<c:otherwise>
-																	<td><span class="label label-danger">Inactive</span></td>
+																	<td><span class="label label-danger">Inactive</span>
+																	</td>
 																</c:otherwise>
 															</c:choose>
 
@@ -110,12 +95,12 @@
 
 														<tr>
 															<td>Bài viết</td>
-															<td>0000</td>
+															<td>${ user.posts.size() }BàiViết</td>
 														</tr>
 
 														<tr>
 															<td>Ngày tham gia</td>
-															<td>${ user.getCreated_at() }</td>
+															<td>${ user.created_at.toString().split(" ")[0] }</td>
 														</tr>
 													</tbody>
 												</table>
@@ -128,8 +113,8 @@
 									<h3 class="mgbt-xs-15">Thông tin người dùng</h3>
 
 									<span id="hideMe" class="${class_name}"
-										style="font-family: Arial, sans-serif; font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">${ message2 }</span>
-									<br> <br>
+										style="font-size: larger; margin: 179px; font-weight: 900; margin-top: -10px; margin-bottom: 13px;">${
+										message2 }</span>
 									<div class="form-group">
 										<label class="col-sm-3 control-label font">Họ tên</label>
 										<div class="col-sm-9 controls">
@@ -148,10 +133,10 @@
 
 
 									<script type="text/javascript">
-							    $(document).ready(function () {
-							        ${user.getGender()} == 0 ? $("#rd_nu").prop("checked", true) : $("#rd_name").prop("checked", true);
-							    });
-							</script>
+ 										$(document).ready(function () {
+ 										'${ user.getGender() }' == 0 ? $("#rd_nu").prop("checked", true) : $("#rd_name").prop("checked", true);
+ 										});
+ 								</script>
 
 
 
@@ -177,9 +162,8 @@
 														style="margin-left: -13px;">Tuổi </label>
 												</div>
 												<div style="float: left; width: 28%;"></div>
-												<input value="${ user.getAge() }" style="width: 161px;"
-													name="age" type="number" max="80" required
-													placeholder="Tuổi" />
+												<input required value="${ user.getAge() }" style="width: 161px;"
+													name="age" type="number" min="10" max="200" placeholder="Tuổi" />
 
 											</div>
 											<!-- row -->
@@ -192,8 +176,8 @@
 										<div class="col-sm-9 controls">
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
-													<input type="date" required
-														value="${ user.getBirthday().trim()}"
+													<input type="date" value="${ user.getBirthday().trim()}"
+													 max='2010-01-01'
 														id="datepicker-normal" name="birthday"
 														class="width-40 hasDatepicker" />
 												</div>
@@ -212,7 +196,7 @@
 										<div class="col-sm-9 controls">
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
-													<input type="text" required value="${ user.getCountry() }"
+													<input type="text" value="${ user.getCountry() }"
 														name="address" placeholder=" Địa chỉ " />
 												</div>
 												<!-- col-xs-9 -->
@@ -223,33 +207,16 @@
 										<!-- col-sm-10 -->
 									</div>
 
-									<!-- Change Email -->
-									<div class="form-group">
-										<label class="col-sm-3 control-label font">Email</label>
-										<div class="col-sm-9 controls">
-											<div class="row mgbt-xs-0">
-												<div class="col-xs-9">
-													<input class="inputStyle" type="email" required
-														value="${ user.getEmail() }" name="email"
-														placeholder=" Email" />
-												</div>
-												<!-- col-xs-9 -->
 
-											</div>
-											<!-- row -->
-										</div>
-										<!-- col-sm-10 -->
-									</div>
-									<!--  -->
 									<div class="form-group">
 										<label class="col-sm-3 control-label font"> Mô tả </label>
 										<div class="col-sm-9 controls">
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
-													<textarea required name="bio"
+													<textarea name="bio"
 														placeholder=" Mô tả-
 													Giới thiệu bản thân "
-														cols="56" rows="4">${ user.getBio() }</textarea>
+														style="width: 125%" rows="4">${ user.getBio() }</textarea>
 												</div>
 												<!-- col-xs-12 -->
 
@@ -277,13 +244,12 @@
 						<hr>
 
 						<h3 class="mgbt-xs-15"
-							style="margin-top: -26px; margin: 16px 0px;">Thay đổi mật
-							khẩu</h3>
+							style="margin-top: -26px; margin: 16px 0px;">Cài đặt tài
+							khoản</h3>
 
 
 						<span id="hideMe" class="${class_name}"
-							style="font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">${message}</span>
-
+							style="font-size: larger; margin: 179px; font-weight: 900; margin-top: -10px; margin-bottom: 13px;">${message}</span>
 
 
 
@@ -292,9 +258,17 @@
 							<label class="col-sm-3 control-label font">Số điện thoại</label>
 							<div class="col-sm-9 controls">
 								<div class="row mgbt-xs-0">
-									<div class="col-xs-9">
-										<input class="inputStyle" readonly type="text"
-											placeholder="phone" value="${ user.getPhone() }">
+									<div style="width: 27%; float: left; margin-left: 15px;">
+										<input readonly type="text" placeholder="Email "
+											value="${ user.getPhone() }">
+									</div>
+									<div>
+										<label class="col-sm-3 control-label font"
+											style="margin-left: -13px;">Email</label>
+									</div>
+									<div style="float: left; width: 28%;">
+										<input readonly type="text" placeholder="Email "
+											value="${ user.getEmail() }">
 									</div>
 
 								</div>
@@ -312,9 +286,8 @@
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="password" name="password"
-												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"
-												required type="password" class="width-40"
+											<input id="password" required name="password" minlength="8"
+												maxlength="20" type="password" class="width-40"
 												placeholder="Mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->
@@ -331,8 +304,7 @@
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
 											<input id="confirm_password" type="password" minlength="8"
-												maxlength="20" required class="width-40"
-												placeholder="Mật khẩu" />
+												maxlength="20" class="width-40" placeholder="Mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->
 									</div>
@@ -343,13 +315,13 @@
 
 							<script>
 								var password = document
-										.getElementById("password"), confirm_password = document
+									.getElementById("password"), confirm_password = document
 										.getElementById("confirm_password");
 
 								function validatePassword() {
 									if (password.value != confirm_password.value) {
 										confirm_password
-												.setCustomValidity("Mật khẩu xác nhận không trùng khớp với Mật khẩu");
+											.setCustomValidity("Passwords Don't Match");
 									} else {
 										confirm_password.setCustomValidity('');
 									}
@@ -369,19 +341,6 @@
 							</button>
 
 						</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 					</div>
 					<!-- col-sm-12 -->

@@ -11,12 +11,12 @@
 	class="mdk-header-layout__content mdk-header-layout__content--fullbleed mdk-header-layout__content--scrollable page"
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
-		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0">Yummy Admin</h1>
-			<a href="${pageContext.request.contextPath}/admin/common/create"
-				class="btn btn-success ml-auto"><i class="material-icons">add</i>Viết
-				bài</a>
-		</div>
+			<div
+							class="container-fluid page__container d-flex align-items-center">
+							<h1 class="mb-0">Yummy Admin</h1>
+							<a href="${pageContext.request.contextPath}/admin/tipNutri/create" class="btn btn-success ml-auto"><i
+								class="material-icons">add</i>Viết bài</a>
+						</div>
 	</div>
 
 	<div class="container-fluid page__container">

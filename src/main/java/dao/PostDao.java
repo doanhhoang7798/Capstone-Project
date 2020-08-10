@@ -33,23 +33,6 @@ public class PostDao {
 		return list;
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Posts> filterOderByLike() {
-		Session session = this.sessionFactory.openSession();
-
-		try {
-			String sql = "select * from Posts join (SELECT count(post_id) as totals, post_id as postID From Reactions GROUP BY post_id  ORDER BY totals DESC limit 2 ) as able on Posts.Id  = able.postID where deleted_at != 'NULL'";
-			List<Posts> list = session.createSQLQuery(sql).list();
-			return list;
-
-		} catch (Exception e) {
-			System.out.println(e);
-			session.close();
-			return null;
-
-		}
-
-	}
 
 	@SuppressWarnings("unchecked")
 	public List<Posts> list(String condition) {

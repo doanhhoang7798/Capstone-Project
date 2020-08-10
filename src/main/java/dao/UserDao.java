@@ -133,6 +133,25 @@ public class UserDao {
 			session.close();
 		}
 	}
+		
+
+		public Boolean Delete(Users user) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.delete(user);
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
 
 		public Users setCurrent(String mail_phone, String key) {
 		try {
@@ -156,9 +175,6 @@ public class UserDao {
 		}
 	}
 
-
-	
-	
 		public Boolean ChangePassword(int id, String password, String code) {
 		Session ses = sessionFactory.openSession();
 
@@ -175,7 +191,6 @@ public class UserDao {
 		}
 
 	}
-	
 	
 		public Boolean setConfirmCode(int id, String code) {
 		Session ses = sessionFactory.openSession();
@@ -195,15 +210,10 @@ public class UserDao {
 	}
 
 
-	
-	
-	
 	public String encode(String clear_password) {   
 		HashCode hash = Hashing.md5()
 				.hashString(clear_password, Charsets.UTF_8);
 		String password = hash.toString() + hash.toString() + hash.toString();
 	        return password;
 	}
-
-
 }

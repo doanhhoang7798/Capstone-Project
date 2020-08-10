@@ -49,7 +49,7 @@ public class Comments {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private Users user;
+	public Users user;
 
 	@ManyToOne
 	@JoinColumn(name = "post_id")

@@ -70,48 +70,46 @@ public class Posts {
 	@Column
 
 	private int view_conter;
-	
 	@Column
 	private Timestamp created_at;
-	
-	public List<Comments> comments;
-	
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-	@OrderBy("created_at ASC")
-	
+
+	@Column
+	private String deleted_at;
+
 	public List<Comments> getComments() {
 		return comments;
 	}
-	
+
 	public void setComments(List<Comments> comments) {
 		this.comments = comments;
 	}
-	
-	@Column
-	private String deleted_at;
-	
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-	public List<Reactions> reactions;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private Users user;
-	
-	public List<Reactions> getReactions(){
+
+	public List<Reactions> getReactions() {
 		return reactions;
 	}
-	
+
 	public void setReactions(List<Reactions> reactions) {
 		this.reactions = reactions;
 	}
+
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OrderBy("created_at ASC")
+
+	public List<Comments> comments;
 	
-	
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Reactions> reactions;
+
 	public Posts() {
 		super();
 	}
 
-	public Posts(Users user_id, String video_url, String title, String overview, String making, String material, int time,
-			int ration, String kind, String level, int price, String nation, String holiday, String category,
+	public Posts(Users user_id, String video_url, String title, String overview, String making, String material,
+			int time, int ration, String kind, String level, int price, String nation, String holiday, String category,
 			String suitable, Timestamp created_at, String deleted_at) {
 		super();
 		this.user = user_id;
@@ -132,11 +130,10 @@ public class Posts {
 		this.created_at = created_at;
 		this.deleted_at = deleted_at;
 	}
-	
-	
-	public Posts(Integer id,Users user_id, String video_url, String title, String overview, String making, String material, int time,
-			int ration, String kind, String level, int price, String nation, String holiday, String category,
-			String suitable, Timestamp created_at, String deleted_at) {
+
+	public Posts(Integer id, Users user_id, String video_url, String title, String overview, String making,
+			String material, int time, int ration, String kind, String level, int price, String nation, String holiday,
+			String category, String suitable, Timestamp created_at, String deleted_at) {
 		super();
 		this.id = id;
 		this.user = user_id;
@@ -158,9 +155,6 @@ public class Posts {
 		this.deleted_at = deleted_at;
 	}
 
-	
-
-	
 	public Users getUser() {
 		return user;
 	}
@@ -176,7 +170,6 @@ public class Posts {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public String getVideo_url() {
 		return video_url;
@@ -317,9 +310,5 @@ public class Posts {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-
-	
 
 }

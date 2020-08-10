@@ -21,7 +21,7 @@ import  service.CurrentUser;
 public class PostController {
 
 	@Autowired
-	PostDao postDaoimpl = new PostDao();
+	PostDao postDaoimpl;
 
 	@Autowired
 	CurrentUser user;

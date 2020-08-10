@@ -60,12 +60,21 @@ public class StaticController {
 
 	@GetMapping(value = "/menu")
 	public String list(ModelMap model) {
-		return "static/menu";
+		try {
+			return "static/menu";
+		} catch (Exception e) {
+			return "auth/500";
+		}
 	}
 	
 	@GetMapping(value = "/contact")
 	public String contact(ModelMap model) {
-		return "static/contact";
+
+		try {
+			return "static/contact";
+		} catch (Exception e) {
+			return "auth/500";
+		}
 	}
 
 	@GetMapping(value = "/profile")
@@ -115,13 +124,7 @@ public class StaticController {
 	public String changepassword(ModelMap model, @RequestParam("password") String password) {
 
 		try {
-			if (userDaoimpl.Update(new Users(user.current().getId(), user.current().getEmail(),
-					user.current().getFullname(), password, user.current().getPhone(),
-					user.current().getAge(), user.current().getGender(), user.current().getRole(),
-					user.current().getBirthday(), user.current().getCountry(),
-					user.current().getProvider(), user.current().getBio(),
-					user.current().getImage(), user.current().getCreated_at(),
-					user.current().getStatus(), user.current().getBlock_date()))) {
+			if (userDaoimpl.ChangePassword(user.userID(), userDaoimpl.encode(password), null)) {
 				model.addAttribute("message", "Thay đổi mật khẩu thành công. ");
 				model.addAttribute("class_name", "msg_success");
 				return "static/profile";
@@ -131,7 +134,8 @@ public class StaticController {
 				return "static/profile";
 			}
 		} catch (Exception e) {
-			return "auth/500";		}
+			return "auth/500";
+		}
 
 	}
 

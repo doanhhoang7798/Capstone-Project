@@ -18,8 +18,7 @@
 				class="material-icons">add</i>Viết bài</a> -->
 
 
-			<span id="hideMe" class="${class_name}"
-				style="font-size: larger; margin-left: 709px; font-weight: 900; margin-bottom: -8px;">${ msg }</span>
+			<span id="hideMe" class="${class_name}">${ msg }</span>
 
 		</div>
 
