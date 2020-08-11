@@ -36,6 +36,7 @@ public class TipNutriController {
 		model.addAttribute("children", TipNutriDaoimpl.findByTypeKind("Dinh Dưỡng", "Dinh dưỡng cho trẻ",ofset,limit));
 		model.addAttribute("older", TipNutriDaoimpl.findByTypeKind("Dinh Dưỡng", "Dinh dưỡng cho người cao tuổi",ofset,limit));
 		model.addAttribute("sick", TipNutriDaoimpl.findByTypeKind("Dinh Dưỡng", "Chế độ ăn cho người bệnh",ofset,limit));
+		model.addAttribute("gym", TipNutriDaoimpl.findByTypeKind("Dinh Dưỡng", "Dinh dưỡng cho người tập Gym",ofset,limit));
 		return "static/nutri";
 	}
 
@@ -52,7 +53,7 @@ public class TipNutriController {
 		try {
 			model.addAttribute("record", TipNutriDaoimpl.findByID(id));
 
-			if (TipNutriDaoimpl.findByID(id).getType().equals("Mẹo hay")) {
+			if (TipNutriDaoimpl.findByID(id).getType().equalsIgnoreCase("Mẹo hay")) {
 				model.addAttribute("refer", TipNutriDaoimpl.filterByType("Mẹo hay"));
 			} else {
 				model.addAttribute("refer", TipNutriDaoimpl.filterByType("Dinh dưỡng"));

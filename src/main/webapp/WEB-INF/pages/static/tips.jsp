@@ -37,7 +37,7 @@
          <h3 class="boder_title" >
             Bí quyết nấu nướng 
          </h3>
-         <h2 style=" text-align: center; margin-top: 4%;">Chưa có bài viết nào cho mục này .
+         <h2 style=" text-align: center; margin-top: 4%;">Chưa có bài viết nào cho mục này.
          </h2>
       </div>
    </c:otherwise>
@@ -76,8 +76,7 @@
          <h3 class="boder_title" >
             Các thực phẩm kỵ nhau 
          </h3>
-         <h2 style=" text-align: center; margin-top: 4%;">Chưa
-            có bài viết nào cho mục này .
+         <h2 style=" text-align: center; margin-top: 4%;">Chưa có bài viết nào cho mục này.
          </h2>
       </div>
    </c:otherwise>
@@ -116,8 +115,7 @@
          <h3 class="boder_title">
             Mẹo hay chế biến nguyên liệu
          </h3>
-         <h2 style=" text-align: center; ">Chưa
-            có bài viết nào cho mục này .
+         <h2 style=" text-align: center; ">Chưa có bài viết nào cho mục này.
          </h2>
       </div>
    </c:otherwise>

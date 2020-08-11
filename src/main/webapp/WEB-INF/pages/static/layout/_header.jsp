@@ -136,10 +136,11 @@
 				<h3 class="head-pet">
 					<span>Yummy Tìm Kiếm </span>
 				</h3>
-				<form action="${pageContext.request.contextPath }/search"
+				<form
+					action="${pageContext.request.contextPath}/filter?category=likes&condition"
 					id="searchform">
 					<p>
-						<input type="text" name="keyword" id="s" class="field"
+						<input type="text" name="condition" id="s" class="field"
 							placeholder="Từ khóa" /> <input type="submit" id="s-submit"
 							value="" />
 					</p>

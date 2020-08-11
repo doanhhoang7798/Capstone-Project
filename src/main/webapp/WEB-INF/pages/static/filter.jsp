@@ -23,7 +23,7 @@
 							<c:forEach items="${ posts }" var="post">
 								<li>
 									<h4 style="margin-bottom: -2px;">
-										<a style="margin-bottom: -6px; color: #428bca;"
+										<a style="margin-bottom: -6px; color: #c33;"
 											href="${pageContext.request.contextPath}/filter?condition=${post.category }&category=category">${post.category }</a>
 										<i class="d-f-r">${ post.created_at.toString().split(" ")[0] }</i>
 									</h4> <a

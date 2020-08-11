@@ -48,8 +48,7 @@ public class AuthController {
 
 	@PostMapping(value = "SignUp")
 	public String SignUpProcess(Model model, @RequestParam("fullname") String name, @RequestParam("phone") String phone,
-			@RequestParam("password") String password, @RequestParam("address") String address,
-			@RequestParam("email") String email) {
+			@RequestParam("password") String password) {
 
 		if (userDaoimpl.Create(new Users(name, userDaoimpl.encode(password), phone, user.timestamp, 1, 1, 1,
 				"default-avatart.png"))) {

@@ -8,36 +8,49 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "tip/nutri")
+@Table(name = "TipNutri")
 public class TipNutri {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
+	@NotNull
+	@Size(min = 20, max = 100)
 	@Column
 	private String title;
 
+	@NotNull
+	@Size(min = 200)
 	@Column
 	private String content;
+
+	@NotNull
 
 	@Column
 	private String type;
 
+	@NotNull
 	@Column
+	@Size(min = 20, max = 255)
 	private String author;
 
+	@NotNull
 	@Column
 	private String kind;
 
 	@Column
 	private String created_at;
 
+	@NotNull
 	@Column
 	private String image;
 
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private Users user;

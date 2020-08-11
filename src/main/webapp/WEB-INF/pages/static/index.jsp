@@ -84,7 +84,7 @@
 			<c:forEach items="${ suggestions }" var="post">
 				<li>
 					<h4 style="margin-bottom: -2px;">
-						<a style="margin-bottom: -6px; color: #cc3333;" href="recipe-single-1.html">${post.category }</a>
+						<a style="margin-bottom: -6px; color: #cc3333;" href="${pageContext.request.contextPath}/filter?condition=${post.category }&category=category">${post.category }</a>
 						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${ post.created_at.toString().split(" ")[0] }
 					</h4> <a href="${pageContext.request.contextPath}/post-show/${post.id }"
 					class="img-box"> <embed id="video" wmode="transparent"

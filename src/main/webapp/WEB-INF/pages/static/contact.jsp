@@ -155,13 +155,13 @@
 							src="https://picsum.photos/130/130?image=839">
 					</div>
 					<div class="team-content">
-						<h3 class="name">Trang Luna</h3>
+						<h3 class="name">Nguyễn Thị Thúy Trang</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:trang@gmail.com?subject=Dear Trang"
+						<li><a href="mailto:Trangnttse06081@fpt.edu.vn?subject=Dear Trang"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>
@@ -174,13 +174,13 @@
 							src="https://picsum.photos/130/130?image=839">
 					</div>
 					<div class="team-content">
-						<h3 class="name">Hoang Web</h3>
+						<h3 class="name">Đỗ Anh Hoàng</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:hoang@gmail.com?subject=Dear Hoàng"
+						<li><a href="mailto:Hoangdase05956@fpt.edu.vn?subject=Dear Hoàng"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>
@@ -192,13 +192,13 @@
 							src="https://picsum.photos/130/130?image=856">
 					</div>
 					<div class="team-content">
-						<h3 class="name">Justin Duc</h3>
+						<h3 class="name">Vũ Viết Đức</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:duc@gmail.com?subject=Dear Đức"
+						<li><a href="mailto:ducvvse05830@fpt.edu.vn?subject=Dear Đức"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>
@@ -210,13 +210,13 @@
 							src="https://picsum.photos/130/130?image=836">
 					</div>
 					<div class="team-content">
-						<h3 class="name">Mary Ly</h3>
+						<h3 class="name">Lê Diệu Ly</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:ly@gmail.com?subject=Dear Ly"
+						<li><a href="mailto:Lyldse05303@fpt.edu.vn?subject=Dear Ly"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>

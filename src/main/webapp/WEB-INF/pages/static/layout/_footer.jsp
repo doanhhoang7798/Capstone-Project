@@ -64,8 +64,6 @@
 						style="font-weight: bold; margin-left: 9px; color: #c5bdbd;">Email</span>
 				</div>
 
-
-
 				<div style="text-align: center;">
 					<a><img
 						style="vertical-align: middle;; margin-left: -189px; margin-top: 4px;"

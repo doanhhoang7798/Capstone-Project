@@ -152,13 +152,13 @@ public class StaticController {
 			switch (category) {
 			case "search":
 				model.addAttribute("title", "Có " + postDao.seacrhFull(cond, 0, 10000000).size()
-						+ " kết quả cho: <span> ``" + cond + " `` </span> ");
+						+ " kết quả cho: ``" + cond + " ``");
 
 				model.addAttribute("posts", postDao.seacrhFull(cond, ofset, limit));
 				model.addAttribute("page_size", page_size(postDao.seacrhFull(cond, 0, 10000000).size(), limit));
 				break;
 			case "likes":
-				model.addAttribute("title", " Bài viết <span> đã thích  </span> ");
+				model.addAttribute("title", " Bài viết đã thích");
 				int begin = ofset ;
 				int end = (begin + limit) < mapping().size() ? (begin + limit) : ((mapping().size() - ofset) + begin );
 				if (mapping().size() == 0) {
@@ -178,22 +178,22 @@ public class StaticController {
 				model.addAttribute("page_size", page_size(userDaoimpl.findByID(Integer.parseInt(cond)).posts.size(), limit));
 				break;
 			case "main_meterial":
-				model.addAttribute("title", "Món ăn từ <span> " + cond + " </span> ");
+				model.addAttribute("title", "Món ăn từ " + cond + " ");
 				break;
 			case "holiday":
-				model.addAttribute("title", "Các món ngày <span> " + cond + " </span> ");
+				model.addAttribute("title", "Các món ngày " + cond + " ");
 				break;
 			case "category":
-				model.addAttribute("title", "Các món <span> " + cond + " </span> ");
+				model.addAttribute("title", "Các món " + cond + " ");
 				break;
 			case "kind":
-				model.addAttribute("title", "Các món <span> " + cond + " </span> ");
+				model.addAttribute("title", "Các món " + cond + "");
 				break;
 			case "nation":
-				model.addAttribute("title", "Món ăn <span> " + cond + " </span> ");
+				model.addAttribute("title", "Món ăn " + cond + "");
 				break;
 			case "suitable":
-				model.addAttribute("title", "Món ăn dành cho <span> " + cond + " </span> ");
+				model.addAttribute("title", "Món ăn dành cho " + cond + " ");
 				break;
 			default:
 				model.addAttribute("title", cond );

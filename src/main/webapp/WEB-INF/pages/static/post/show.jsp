@@ -118,7 +118,7 @@ pre {
 			<div class="info-left instructions" style="width: 100%;">
 				<div itemprop="description">
 					<h1 class="w-bot-border">
-						 <span>Giới thiệu</span>
+						<span>Giới thiệu</span>
 					</h1>
 					<pre>${ post.overview }</pre>
 					<h1 class="w-bot-border">
@@ -128,11 +128,11 @@ pre {
 					<h1 class="w-bot-border">
 						<span>Nguyên liệu & thành phần </span>
 					</h1>
-					<pre>${ post.main_meterial }</pre>
+					<pre>${ post.material_detail }</pre>
 				</div>
 				<div>
 					<h1 style="float: left;">
-						 <span id="c-count">Comment </span>( ${ post.comments.size() } ) 
+						Comment<span id="c-count"> ( ${ post.comments.size() } ) </span>
 					</h1>
 					<a class="btn btn btn-info"
 						style="float: right; margin-top: 1%; margin-right: 13%;"
@@ -186,56 +186,12 @@ pre {
 						</div>
 					</c:otherwise>
 				</c:choose>
-				<!-- ============================================== Ref Post ======================================================== -->
-				<div>
-					<h1>
-						<span id="c-count"> Comment </span>( ${ post.comments.size() } )
-					</h1>
-				</div>
-				<!-- ============================================== Create Comment ======================================================== -->
-				<span class="w-pet-border"></span>
-				<c:choose>
-					<c:when test="${user.getStatus()  == null}">
-						<h1>Vui lòng đăng nhập để bình luận.</h1>
-					</c:when>
-					<c:when test="${user.getStatus()  == 5}">
-						<h1>Tài khoản của bạn đã bị khoá chức năng bình luận.</h1>
-					</c:when>
-					<c:otherwise>
-						<div id="comment-box-display" class="container pb-cmnt-container">
-							<div class="row">
-								<div class="col-md-9">
-									<div class="panel panel-info">
-										<div class="panel-body">
-											<form class="form-inline" method="POST">
-												<textarea id="c-c-content" name="content" class="col-md-12"
-													placeholder="Write your comment here!"
-													class="pb-cmnt-textarea"></textarea>
-												<div class="btn-group">
-													<div class="btn"
-														style="background-color: #EFEFEFEF; margin-left: -20px; margin-left: -120px; margin-top: 8px;">
-														<input style="width: 20px; height: 24px;"
-															class="fa fa-picture-o fa-lg" id="c-c-image" type="file" />
-													</div>
-												</div>
-												<button class="btn btn-primary pull-right"
-													style="margin-left: -65px; position: absolute; margin-top: 9px; height: 38px;"
-													id="comment-create" type="submit">Gửi</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</c:otherwise>
-				</c:choose>
-				<!-- ============================================== Create Comment ======================================================== -->
 				<!-- ============================================== Create list ======================================================== -->
 				<c:choose>
 					<c:when test="${post.comments.size() == 0 }">
 						<div id="refresh">
 							<ol id="comment-list" class="comment-list">
-								<h1 style="font-size: 41px; text-align: center;">Chưa có
+								<h1 style="font-size: 24px; text-align: center;">Chưa có
 									bình luận cho bài viết này.</h1>
 							</ol>
 						</div>
@@ -297,7 +253,7 @@ pre {
 																			</div>
 																		</div>
 																		<button class="btn btn-info pull-right"
-																			style="right: 9%; position: absolute; margin-top: -9.3%; height: 38px;"
+																			style="right: 50%; position: absolute; margin-top: -9.3%; height: 38px;"
 																			id="c-e-${comment.id }" data-toggle="modal"
 																			data-target="#c-e-modal" type="submit">
 																			<i class="fa fa-edit"></i>
@@ -406,7 +362,7 @@ pre {
 			class="widget nostylewt Recipes_from_Recipe_Type clearfix">
 			<div class="recipes-slider-widget rt">
 				<h3 class="w-bot-border">
-					<span>Thông tin  &amp; bài viết</span>
+					<span>Thông tin &amp; bài viết</span>
 				</h3>
 				<div class="cookname">
 					<div class="img-box">
@@ -476,7 +432,7 @@ pre {
 <!-- ============================================== Comfirm diaglog ======================================================== -->
 <div class="container">
 	<div class="modal fade" id="c-e-modal" role="dialog">
-		<div class="modal-dialog" style="top: 246px;">
+		<div class="modal-dialog" style="top: 30%;">
 			<div style="padding: 8px;" class="modal-content">
 
 				<div style="padding: 8px;" class="modal-body">
@@ -495,7 +451,7 @@ pre {
 </div>
 <div class="container">
 	<div class="modal fade" id="c-d-modal" role="dialog">
-		<div class="modal-dialog" style="top: 246px;">
+		<div class="modal-dialog" style="top: 30%;">
 			<div style="padding: 8px;" class="modal-content">
 
 				<div style="padding: 8px;" class="modal-body">
@@ -517,30 +473,28 @@ pre {
 
 <div class="container">
 	<div class="modal fade" id="c-r-modal" role="dialog">
-		<div class="modal-dialog" style="top: 246px;">
+		<div class="modal-dialog" style="top: 30%;">
 			<div style="padding: 8px;" class="modal-content">
 				<form
 					action="${pageContext.request.contextPath}/report/create/${post.id}"
 					method="post">
-					<div style="padding: 8px;" class="modal-body">
-						<input type="hidden" name="reportable_id" id="reportable_id">
-						<input type="hidden" name="report_author"
-							id="report_author">
+					<div style="padding: 8px;" class="modal-body" checked>
+						<input type="hidden" name="cmt_id" id="cmt_id">
+						<input type="hidden" name="report_author" id="report_author">
 						<ul class="ks-cboxtags">
-							<li><input type="checkbox" id="checkboxFive"
-								name="type" value="1" /><label for="checkboxFive">Spam</label></li>
-							<li><input type="checkbox" id="checkboxSix"
-								name="type" value="2" /><label for="checkboxSix">Bạo
-									lực</label></li>
-							<li><input type="checkbox" id="checkboxSeven"
-								name="type" value="3" /><label for="checkboxSeven">Nội
-									dung đồi truỵ</label></li>
-							<li><input type="checkbox" id="checkboxEight"
-								name="type" value="4" /><label for="checkboxEight">Nội
-									dung khiếm nhã </label></li>
-							<li><input type="checkbox" id="checkboxNine"
-								name="type" value="5" /><label for="checkboxNine">
-									Gây hiểu nhầm hoặc lừa đảo</label></li>
+							<li><input type="checkbox" id="checkboxFive" name="type"
+								value="1" checked /><label for="checkboxFive">Spam</label></li>
+							<li><input type="checkbox" id="checkboxSix" name="type"
+								value="2"  /><label for="checkboxSix">Bạo lực</label></li>
+							<li><input type="checkbox" id="checkboxSeven" name="type"
+								value="3"  /><label for="checkboxSeven">Nội dung
+									đồi truỵ</label></li>
+							<li><input type="checkbox" id="checkboxEight" name="type"
+								value="4"  /><label for="checkboxEight">Nội dung
+									khiếm nhã </label></li>
+							<li><input type="checkbox" id="checkboxNine" name="type"
+								value="5"  /><label for="checkboxNine"> Gây hiểu
+									nhầm hoặc lừa đảo</label></li>
 						</ul>
 					</div>
 					<div class="modal-footer dialog-center">
@@ -580,6 +534,19 @@ pre {
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
+
+	function readURL2(input) {
+		$(".blah2").show();
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function(e) {
+				$(".blah2").attr("src", e.target.result).width(200).height(174);
+			};
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
 </script>
 <script type="text/javascript">
 	var isLike = "${ isLike }";
@@ -587,19 +554,26 @@ pre {
 			".icon-inline").css("color", "black ");
 	var report_mgs = "${ pageContext.request.getParameter('report_msg') }";
 	var report_style = "${ pageContext.request.getParameter('r_class_name') }";
+	var user_role = "${user.role }";
+	var user_id = "${user.id }";
+	var post_user = "${post.user.id}";
+
+	console.log("hello", "${user.role }");
+
+	$("#p-e-button").hide();
+	if (user_role == 10 || user_role == 5 || user_id == post_user) {
+		$("#p-e-button").show();
+	}
 
 	if (report_mgs == "") {
-		console.log("MSG2", "Nothing");
-		$(".report-dialog").css("display", "none");
+		$(".report-dialog").hide();
 	} else {
-		console.log("MSG2", report_mgs);
 		$("#r_msg").val(report_mgs);
-		$(".report-dialog").css({
-			margin : "166px",
-			"position" : "fixed",
-			display : "block",
-			"z-index" : " 999"
-		});
+		$(".report-dialog").show();
+		$("#r_msg").text(report_mgs);
+		setTimeout(function() {
+			$(".report-dialog").hide();
+		}, 4000);
 	}
 	$(".comment_report").click(function() {
 		var $row = $(this).closest("ol"); // Find the row
@@ -612,38 +586,37 @@ pre {
 
 	});
 	$(".r-close").click(function() {
-		$(".report-dialog").css("display", "none");
-	});
-	setInterval(function() {
-		$(".report-dialog").delay(2000);
+		$(".report-dialog").hide("slow");
 	});
 
-	$(".comment_edit")
-			.click(
+	$("#refresh")
+			.on(
+					"click",
+					".comment_edit",
 					function() {
-						console.log("CLICK EDIT")
+						console.log("CLICK EDIT");
 						var $row = $(this).closest("ol");
 						var id = $row.find(".comment_id").val();
-						var afterId = $('#afterId').val();
-						if (afterId == id) {
-							$(".open-update_" + id).css("display", "block");
-							$(".show_content_" + id).css("display", "none");
-							$('#afterId').val(id);
+						var afterId = $("#afterId").val();
 
+						if (afterId == id) {
+							$(".open-update_" + id).show();
+							$(".show_content_" + id).hide();
+							$("#afterId").val(id);
 						} else {
-							$(".open-update_" + afterId).css("display", "none");
-							$(".show_content_" + afterId).css("display",
-									"block");
-							$(".open-update_" + id).css("display", "block");
-							$(".show_content_" + id).css("display", "none");
-							$('#afterId').val(id);
+							$(".open-update_" + afterId).hide();
+							$(".show_content_" + afterId).show();
+							$(".open-update_" + id).show();
+							$(".show_content_" + id).hide();
+							$("#afterId").val(id);
 						}
 
 						$("#c-e-" + id)
 								.click(
 										function(evt) {
-											console.log("CLICK SEND DATA", id)
+											console.log("CLICK SEND DATA", id);
 											evt.preventDefault();
+
 											var fileNull = new File([ "" ],
 													"filename");
 											var file = $("#c-e-image-" + id)
@@ -664,9 +637,9 @@ pre {
 
 											$("#c-e-confirm")
 													.click(
-															function() {
+															function(evt) {
 																console
-																		.log("CLICK CONFIRM CHANGE")
+																		.log("CLICK CONFIRM CHANGE");
 																$
 																		.ajax({
 																			type : "POST",
@@ -678,139 +651,169 @@ pre {
 																			success : function(
 																					data) {
 																				console
-																						.log("EDIT SUCCESS")
+																						.log("EDIT SUCCESS");
 																				isLike == "true" ? (isLike = "false")
-																						: (isLike = "true")
-																				$(
-																						"#refresh")
-																						.load(
-																								location.href
-																										+ " #refresh");
-																			},
-																			error : function(
-																					data) {
-																				alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-																			},
-																		});
-															});
-										});
-					});
+																						: (isLike = "true");
+																				$("#c-count")
+																		.html(
+																				"( "
+																						+ data
+																						+ " )");
+																$(
+																		"#sub-comment")
+																		.html(
+																				data
+																						+ " bình luận ");
 
-	$(".comment_delete")
-			.click(
-					function() {
-						var $row = $(this).closest("ol"); // Find the row
-						var id = $row.find(".comment_id").val(); // Find the text
-						console.log("ID", id);
-						var c_user = $("#c_user_" + id).val();
+																setTimeout(
+																		function() {
+																			$(
+																					"#refresh")
+																					.load(
+																							" #refresh");
+																		},
+																		800);
+															},
+															error : function(
+																	data) {
+																alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+															},
+														});
+											});
+						});
+	});
 
-						var c_user = $("#c_user_" + id).val();
+$("#refresh")
+.on(
+	"click",
+	".comment_delete",
+	function() {
+		var $row = $(this).closest("ol");
+		var id = $row.find(".comment_id").val();
+		var formData = new FormData();
+		formData.append("c_user", $("#c_user_" + id).val());
 
-						var formData = new FormData();
-
-						formData.append("c_user", c_user);
-
-						$("#c-d-confirm")
-								.click(
-										function() {
-											$
-													.ajax({
-														type : "POST",
-														data : formData,
-														cache : false,
-														contentType : false,
-														processData : false,
-														url : "${pageContext.request.contextPath}/comment/delete/"
-																+ id,
-														success : function(data) {
-															$("#c-count")
-																	.html(
-																			"( "
-																					+ data
-																					+ " )");
-															$("#refresh")
-																	.load(
-																			location.href
-																					+ " #refresh");
-														},
-														error : function(data) {
-															alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-														},
-													});
-										});
-					});
-
-	$("#comment-create")
-			.click(
-					function(evt) {
-
-						evt.preventDefault();
-
-						if ($("#c-c-image").prop("files")[0] == null
-								&& $('#c-c-content').text() == "") {
-							document.getElementById('c-c-content')
-									.setCustomValidity(
-											"This field cannot be left blank");
-						} else {
-							console.log("PASSS VALIDATE")
-							var fileNull = new File([ "" ], "filename");
-							var file = $("#c-c-image").prop("files")[0] == undefined ? fileNull
-									: $("#c-c-image").prop("files")[0];
-
-							var content = $("#c-c-content").val();
-							var formData = new FormData();
-							formData.append("image", file);
-							formData.append("content", content);
+		$("#c-d-confirm")
+				.click(
+						function() {
 							$
 									.ajax({
 										type : "POST",
-										url : "${pageContext.request.contextPath}/comment/create/${post.id}",
 										data : formData,
 										cache : false,
 										contentType : false,
 										processData : false,
-										success : function(data) {
-											$("#c-c-content").val("");
-											$("#c-count").html(
-													"( " + data + " )");
-											$("#refresh")
-													.load(
-															location.href
-																	+ " #refresh");
+										url : "${pageContext.request.contextPath}/comment/delete/"
+												+ id,
+										success : function(
+												data) {
+											$("#c-count")
+													.html(
+															"( "
+																	+ data
+																	+ " )");
+											$(
+													"#sub-comment")
+													.html(
+															data
+																	+ " bình luận ");
+
+											setTimeout(
+													function() {
+														$(
+																"#refresh")
+																.load(
+																		" #refresh");
+													}, 800);
 										},
-										error : function(data) {
-											alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+										error : function(
+												data) {
+											console
+													.log(" Lỗi hệ thống, vui lòng thử lại sau!");
 										},
 									});
-						}
+						});
+	});
 
+$("#comment-create")
+.click(
+	function(evt) {
+		evt.preventDefault();
+
+		if ($("#c-c-image").prop("files")[0] == null
+				&& $("#c-c-content").val() == "") {
+			document
+					.getElementById("c-c-content")
+					.setCustomValidity(
+							"This field cannot be left blank");
+		} else {
+			console.log("PASSS VALIDATE");
+
+			var formData = new FormData();
+			formData.append("image", $("#c-c-image").prop(
+					"files")[0] == undefined ? new File(
+					[ "" ], "filename") : $("#c-c-image")
+					.prop("files")[0]);
+			formData.append("content", $("#c-c-content")
+					.val());
+			$
+					.ajax({
+						type : "POST",
+						url : "${pageContext.request.contextPath}/comment/create/${post.id}",
+						data : formData,
+						cache : false,
+						contentType : false,
+						processData : false,
+						success : function(data) {
+							$("#c-c-content").val('');
+							$('#c-c-image').val('');
+							$(".blah2").val('');
+							$("#c-count").html(
+									"( " + data + " )");
+							$("#sub-comment").html(
+									data + " bình luận ");
+							$(".blah2").hide();
+							setTimeout(function() {
+								$("#refresh").load(
+										" #refresh");
+
+							}, 200);
+						},
+						error : function(data) {
+							alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+						},
 					});
+		}
+	});
 
-	$("#send-like")
-			.click(
-					function() {
-						isLike == "true" ? (isLike = "false")
-								: (isLike = "true");
-						isLike == "false" ? $(".icon-inline").css("color",
-								"black ") : $(".icon-inline").css("color",
-								"firebrick ");
+$("#send-like")
+.click(
+	function() {
+		isLike == "true" ? (isLike = "false")
+				: (isLike = "true");
+		isLike == "false" ? $(".icon-inline").css("color",
+				"black ") : $(".icon-inline").css("color",
+				"firebrick ");
 
-						$
-								.ajax({
-									type : "POST",
-									contentType : "application/json; charset=utf-8",
-									data : JSON.stringify("Create-Reaction"),
-									dataType : "json",
-									url : "${pageContext.request.contextPath}/reaction/${post.id}",
-									success : function(data) {
-										$("#like-data").html(
-												data + "&nbsp; Lượt thích");
-									},
-									error : function(data) {
-										alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-									},
-								});
-					});
+		$
+				.ajax({
+					type : "POST",
+					contentType : "application/json; charset=utf-8",
+					data : JSON
+							.stringify("Create-Reaction"),
+					dataType : "json",
+					url : "${pageContext.request.contextPath}/reaction/${post.id}",
+					success : function(data) {
+						$("#like-data").html(
+								data + "&nbsp; Lượt thích");
+						$("#couter_like").html(
+								data + "&nbsp; Lượt thích");
+					},
+					error : function(data) {
+						alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+					},
+				});
+	});
 </script>
 </div>
 <jsp:include page="../layout/_footer.jsp"></jsp:include>

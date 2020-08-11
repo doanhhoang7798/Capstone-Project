@@ -24,20 +24,23 @@
 										<br>
 										<script type="text/javascript">
 											function readURL(input) {
-												if (input.files && input.files[0]) {
+												if (input.files
+														&& input.files[0]) {
 													var reader = new FileReader();
 
-													reader.onload = function (e) {
+													reader.onload = function(e) {
 														$('#blah')
-															.attr('src', e.target.result)
-															.width(200)
-															.height(174);
+																.attr(
+																		'src',
+																		e.target.result)
+																.width(200)
+																.height(174);
 													};
 
-													reader.readAsDataURL(input.files[0]);
+													reader
+															.readAsDataURL(input.files[0]);
 												}
 											}
-
 										</script>
 
 
@@ -68,7 +71,8 @@
 											</div>
 											<div class="form-img-action text-center mgbt-xs-20">
 
-												<input onchange="readURL(this);" type="file" name="image" accept="image/x-png,image/gif,image/jpeg"
+												<input onchange="readURL(this);" type="file" name="image"
+													accept="image/x-png,image/gif,image/jpeg"
 													style="margin: auto; width: 92px;" />
 
 											</div>
@@ -91,11 +95,6 @@
 															</c:choose>
 
 
-														</tr>
-
-														<tr>
-															<td>Bài viết</td>
-															<td>${ user.posts.size() }BàiViết</td>
 														</tr>
 
 														<tr>
@@ -133,10 +132,21 @@
 
 
 									<script type="text/javascript">
- 										$(document).ready(function () {
- 										'${ user.getGender() }' == 0 ? $("#rd_nu").prop("checked", true) : $("#rd_name").prop("checked", true);
- 										});
- 								</script>
+										$(document)
+												.ready(
+														function() {
+															'${ user.getGender() }' == 0 ? $(
+																	"#rd_nu")
+																	.prop(
+																			"checked",
+																			true)
+																	: $(
+																			"#rd_name")
+																			.prop(
+																					"checked",
+																					true);
+														});
+									</script>
 
 
 
@@ -162,8 +172,9 @@
 														style="margin-left: -13px;">Tuổi </label>
 												</div>
 												<div style="float: left; width: 28%;"></div>
-												<input required value="${ user.getAge() }" style="width: 161px;"
-													name="age" type="number" min="10" max="200" placeholder="Tuổi" />
+												<input value="${ user.getAge() }" style="width: 161px;"
+													name="age" type="number" min="10" max="200"
+													placeholder="Tuổi" />
 
 											</div>
 											<!-- row -->
@@ -177,8 +188,7 @@
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
 													<input type="date" value="${ user.getBirthday().trim()}"
-													 max='2010-01-01'
-														id="datepicker-normal" name="birthday"
+														max='2010-01-01' id="datepicker-normal" name="birthday"
 														class="width-40 hasDatepicker" />
 												</div>
 												<!-- col-xs-12 -->
@@ -207,6 +217,21 @@
 										<!-- col-sm-10 -->
 									</div>
 
+									<div class="form-group">
+										<label class="col-sm-3 control-label font">Email</label>
+										<div class="col-sm-9 controls">
+											<div class="row mgbt-xs-0">
+												<div class="col-xs-9">
+													<input type="email" value="${ user.getEmail() }"
+														name="email" placeholder="Email" />
+												</div>
+												<!-- col-xs-9 -->
+
+											</div>
+											<!-- row -->
+										</div>
+										<!-- col-sm-10 -->
+									</div>
 
 									<div class="form-group">
 										<label class="col-sm-3 control-label font"> Mô tả </label>
@@ -252,23 +277,13 @@
 							style="font-size: larger; margin: 179px; font-weight: 900; margin-top: -10px; margin-bottom: 13px;">${message}</span>
 
 
-
-
 						<div class="form-group" style="margin-top: 19px">
 							<label class="col-sm-3 control-label font">Số điện thoại</label>
 							<div class="col-sm-9 controls">
 								<div class="row mgbt-xs-0">
-									<div style="width: 27%; float: left; margin-left: 15px;">
+									<div class="col-xs-9">
 										<input readonly type="text" placeholder="Email "
 											value="${ user.getPhone() }">
-									</div>
-									<div>
-										<label class="col-sm-3 control-label font"
-											style="margin-left: -13px;">Email</label>
-									</div>
-									<div style="float: left; width: 28%;">
-										<input readonly type="text" placeholder="Email "
-											value="${ user.getEmail() }">
 									</div>
 
 								</div>
@@ -315,13 +330,13 @@
 
 							<script>
 								var password = document
-									.getElementById("password"), confirm_password = document
+										.getElementById("password"), confirm_password = document
 										.getElementById("confirm_password");
 
 								function validatePassword() {
 									if (password.value != confirm_password.value) {
 										confirm_password
-											.setCustomValidity("Passwords Don't Match");
+												.setCustomValidity("Passwords Don't Match");
 									} else {
 										confirm_password.setCustomValidity('');
 									}

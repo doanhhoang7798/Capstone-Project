@@ -22,13 +22,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial">
                Thịt lợn </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial"
@@ -41,13 +35,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial">
                Thịt gia cầm </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial"
@@ -60,13 +48,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial">
                Thịt Bò </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt bò&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial"
@@ -79,12 +61,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial">
                Rau Đậu </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial">...
-               Xem thêm </a>
-            </p>
+           
          </li>
          <li>
             <a
@@ -98,13 +75,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Hải Sản&category=main_meterial">
                Hải sản </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial"
@@ -117,13 +88,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial">
                Trứng </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                   </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial"
@@ -136,13 +101,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial">
                Bún-Phở-Miến </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial"
@@ -155,13 +114,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial">
                Cơm-Xôi-Cháo </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial">...
-               Xem thêm </a>
-            </p>
-         </li>
+                     </li>
       </ul>
    </div>
    
@@ -183,13 +136,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Kho-Om&category=kind">
                Kho-Om </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Kho-Om&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Nướng&category=kind"
@@ -202,13 +149,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Nướng&category=kind">
                Nướng </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Nướng&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Chiên-Rán&category=kind"
@@ -221,13 +162,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Chiên-Rán&category=kind">
                Chiên-Rán </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Chiên+Rán&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Canh-Súp&category=kind"
@@ -240,13 +175,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Canh-Súp&category=kind">
                Canh-Súp </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Canh-Súp&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Luộc-Hầm-Hấp&category=kind"
@@ -259,13 +188,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Luộc-Hầm-Hấp&category=kind">
                Luộc-Hầm-Hấp </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Luộc-Hầm-Hấp&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Rang-Xào&category=kind"
@@ -278,13 +201,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Rang-Xào&category=kind">Rang-Xào
                </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Rang-Xào&category=kind">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
       </ul>
    </div>
    <div id="whats-hot">
@@ -305,13 +222,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Việt Nam&category=nation">
                Việt Nam </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Việt Nam&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Châu Âu&category=nation"
@@ -324,13 +235,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Châu Âu&category=nation">
                Các Nước Châu Âu </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Châu Âu&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Trung Quốc&category=nation"
@@ -343,13 +248,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Trung Quốc&category=nation">
                Trung Quốc </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trung Quốc&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Nhật Bản&category=nation"
@@ -362,13 +261,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Nhật Bản&category=nation">
                Nhật Bản </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Nhật Bản&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                     </li>
       </ul>
    </div>
    <div id="whats-hot">
@@ -389,13 +282,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Tết nguyên đán&category=holiday">
                Tết nguyên đán </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Tết nguyên đán&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Trung thu&category=holiday"
@@ -408,13 +295,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Trung thu&category=holiday">
                Trung thu </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trung thu&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Mâm cỗ&category=holiday"
@@ -427,13 +308,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Mâm cỗ&category=holiday">
                Mâm cỗ </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Mâm cỗ&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                     </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Sinh nhật&category=holiday"
@@ -446,13 +321,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Sinh nhật&category=holiday">Sinh
                nhật </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Sinh nhật&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                     </li>
       </ul>
    </div>
    <div id="whats-hot">
@@ -473,13 +342,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Món chính&category=category">
                Món chính </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Món chính&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                    </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Món chay&category=category"
@@ -492,13 +355,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Món chay&category=category">
                Món chay </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Món chay&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                     </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Đồ uống&category=category"
@@ -511,12 +368,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Đồ uống&category=category">
                Đồ uống </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Đồ uống&category=nation">...
-               Xem thêm </a>
-            </p>
+           
          </li>
          <li>
             <a
@@ -530,13 +382,7 @@
                   href="${pageContext.request.contextPath}/filter?condition=Ăn sáng&category=category">
                Ăn sáng </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Ăn sáng&category=nation">...
-               Xem thêm </a>
-            </p>
-         </li>
+                   </li>
          <li>
             <a
                href="${pageContext.request.contextPath}/filter?condition=Ăn vặt&category=category"
@@ -549,12 +395,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Ăn vặt&category=category">
                Ăn vặt </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Ăn vặt&category=nation">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -568,12 +408,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Khai vị&category=category">
                Khai vị </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Khai vị&category=nation">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -587,12 +421,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Salad&category=category">
                Salad </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Salad&category=nation">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -606,12 +434,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Bánh&category=category">
                Bánh </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Bánh&category=nation">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -625,18 +447,12 @@
                   href="${pageContext.request.contextPath}/filter?condition=Lẩu&category=category">
                Lẩu </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Lẩu&category=nation">...
-               Xem thêm </a>
-            </p>
          </li>
       </ul>
    </div>
    <div id="whats-hot">
       <h3 class="boder_title">
-         Thực đơn <span> phù hợp </span>
+         Thực đơn phù hợp
       </h3>
       <span class="w-pet-border"></span>
       <ul class="cat-list clearfix">
@@ -652,12 +468,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Người gầy&category=suitable">
                Người gầy </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Người gầy&category=suitable">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -671,12 +481,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Người béo phì&category=suitable">
                Người béo </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Người béo phì&category=suitable">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -690,12 +494,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Người tập GYM&category=suitable">
                Người tập GYM </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Người tập GYM&category=suitable">...
-               Xem thêm </a>
-            </p>
          </li>
          <li>
             <a
@@ -709,12 +507,6 @@
                   href="${pageContext.request.contextPath}/filter?condition=Gia đình&category=suitable">
                Gia đình </a>
             </h4>
-            <p>
-               Quis sed mid elit, risus aliquet placerat. Pid et, vel phasellus
-               augue a ultrices, natoque <a
-                  href="${pageContext.request.contextPath}/filter?condition=Gia đình&category=suitable">...
-               Xem thêm </a>
-            </p>
          </li>
       </ul>
    </div>

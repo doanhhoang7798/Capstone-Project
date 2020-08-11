@@ -8,8 +8,9 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.*;
-
+import model.Comments;
+import model.TipNutri;
+import model.Posts;
 
 @Transactional
 @Repository
@@ -37,8 +38,8 @@ public class TipNutriDao {
 	@SuppressWarnings("unchecked")
 	public List<Posts> filterByType(String type) {
 		Session session = sessionFactory.openSession();
-		List<Posts> list = session.createQuery("FROM Commons where  type= '" + type + "' ORDER BY created_at desc")
-				.setMaxResults(6).list();
+		List<Posts> list = session.createQuery("FROM TipNutri where  type= '" + type + "' ORDER BY created_at desc")
+				.setMaxResults(5).list();
 		return list;
 	}
 
@@ -51,46 +52,9 @@ public class TipNutriDao {
 			System.out.println(e);
 			return null;
 		}
-	}
-	
-	public boolean Create(TipNutri TipNutri) {
-		Session session = sessionFactory.openSession();
-		try {
-			session.getTransaction().begin();
-			session.save(TipNutri);
-			session.getTransaction().commit();
 
-			return true;
-		} catch (Exception e) {
-			System.out.println(e);
-			if (session.getTransaction() != null) {
-				session.getTransaction().rollback();
-			}
-			return false;
-		} finally {
-			session.close();
-		}
 	}
-	
-	public boolean Update(TipNutri TipNutri) {
-		Session session = sessionFactory.openSession();
-		try {
-			session.getTransaction().begin();
-			session.update(TipNutri);
-			session.getTransaction().commit();
 
-			return true;
-		} catch (Exception e) {
-			System.out.println(e);
-			if (session.getTransaction() != null) {
-				session.getTransaction().rollback();
-			}
-			return false;
-		} finally {
-			session.close();
-		}
-	}
-	
 	public Boolean Delete(int id) {
 		Session session = sessionFactory.openSession();
 		TipNutri TipNutri = (TipNutri) session.get(TipNutri.class, id);
@@ -109,4 +73,43 @@ public class TipNutriDao {
 			session.close();
 		}
 	}
+
+	public boolean Update(TipNutri TipNutri) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.update(TipNutri);
+			session.getTransaction().commit();
+
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
+
+	public boolean Create(TipNutri TipNutri) {
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.save(TipNutri);
+			session.getTransaction().commit();
+
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
+	}
+
 }
