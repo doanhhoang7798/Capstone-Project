@@ -45,109 +45,7 @@
 
 	<div class="container page__container">
 
-		<div class="card-header card-header-large bg-white "
-			style="width: 100%; margin: 16px 0px; height: 50px;">
-
-			<div class="role" style="margin-top: -17px; text-align: center;">
-				<h3 class="mb-0" style="font-weight: 800;">Phân quyền người
-					dùng :</h3>
-			</div>
-
-			<form
-				action="${pageContext.request.contextPath}/admin/user/edit/${user_detail.getId()}"
-				method="post" id="form_role">
-				<div class="role" style="margin-top: -12px;">
-
-					<input style="margin-top: 7px" type="radio" id="rd_user"
-						value="1" name="role"> <span
-						class="badge badge-secondary center user_role">User</span>
-						<input style="margin-top: 7px" type="radio" id="rd_user"
-						value="5" name="role"> <span
-						class="badge badge-warning center user_role">Mod</span>
-						 <input
-						style="margin-left: 10px" type="radio" value="10" id="rd_admin"
-						name="role"> <span class="badge badge-primary center user_role">Admin</span>
-					<button style="margin-top: -6px; margin-left: 133px;"
-						class="btn btn-success" data-toggle="modal"
-						data-target="#confirm-delete">
-						<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
-						Cập nhập
-					</button>
-				</div>
-
-			</form>
-			
-			<script type="text/javascript">
-							$(document).ready(function() {
-								var role = ${ user_detail.getRole()};	
-								role == 10?  $("#rd_admin").prop("checked", true) : $("#rd_user").prop("checked", true); 
-							});
-							</script>
-
-
-			<script type="text/javascript">
-				$(document).ready(function() {
-							
-						var role_name = $("input[type='radio'][name='role']:checked").val() == 1 ? 'User' : 'Admin'	
-						var message =  $('#fullname').val() + ' : '+ role_name+ ' ?'
-					$('#modal_name').text(message );
-
-
-					$("#form_role").submit(function(event) {
-						event.preventDefault();
-						$(".save-change").click(function() {
-							$("#form_role")[0].submit();
-						});
-
-						$(".save-close-pass").click(function() {
-							$(".show-password").css("display", "none");
-
-						});
-					});
-				});
-			</script>
-
-
-
-
-			<div class="modal fade" id="confirm-delete" tabindex="-1"
-				role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div style="top: 25%;" class="modal-dialog">
-					<div style="border-radius: 10px" class="modal-content">
-
-						<div
-							style="padding: 10px 40px 10px 20px; background-color: #1367c9; border-top-left-radius: 10px; border-top-right-radius: 10px;"
-							class="modal-header">
-
-							<h2
-								style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-								class="modal-title" id="myModalLabel">Xác phân quyền</h2>
- 
-						</div>
-
-
-						<div class="modal-body"> 
-
-							<p style="text-align: center; font-size: 19px;">Đặt quyền người dùng </p>
-							<p
-								style="text-align: center; font-style: italic; font-weight: bold;"
-								id="modal_name"></p>
-							<p class="debug-url"></p>
-						</div>
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-basic" data-dismiss="modal">Huỷ</button>
-							<button type="submit" id="confirm_url" style="margin-right: 40%"
-								class="btn btn-danger save-change">Xác nhận</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-		</div>
-
+	
 			<div class="card card-form" style="margin-top: 10px;">
 				<div class="row no-gutters">
 					<div class="col-lg-4 card-body">
@@ -180,13 +78,8 @@
 									</tr>
 
 									<tr>
-										<td>Bài viết</td>
-										<td>0000</td>
-									</tr>
-
-									<tr>
 										<td>Ngày tham gia</td>
-										<td>Jan 07, 2014</td>
+										<td>${ user.created_at.toString().split(" ")[0] }</td>
 									</tr>
 								</tbody>
 							</table>

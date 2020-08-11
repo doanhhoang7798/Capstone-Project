@@ -21,17 +21,17 @@ public class ReportDao {
 	public List<Object> list() {
 		Session session = sessionFactory.openSession();
 		List<Object> list = session.createQuery(
-				"SELECT r.id, c.content, r.type, u.fullname, r.created_at, r.reportable_author   from Reports as r, Users as u, Comments as c  WHERE r.reportable_author = u.id AND r.reportable_id = c.id")
+				"SELECT r.id, c.content, r.type, u.fullname, r.created_at, r.report_author   from Reports as r, Users as u, Comments as c  WHERE r.report_author = u.id AND r.cmt_id = c.id")
 				.list();
 		return list;
 	}
 	
 	
 	@SuppressWarnings("unchecked")
-	public List<Object> reported(int user_id, int reportable_id) {
+	public List<Object> reported(int user_id, int cmt_id) {
 		Session session = sessionFactory.openSession();
 		List<Object> list = session.createQuery(
-				"from Reports r WHERE r.user = "+user_id+" AND r.reportable_id = "+reportable_id+ "")
+				"from Reports r WHERE r.user = "+user_id+" AND r.cmt_id = "+cmt_id+ "")
 				.list();
 		return list;
 	}
@@ -51,7 +51,7 @@ public class ReportDao {
 	public List<Users> waring() {
 		Session session = sessionFactory.openSession();
 		List<Users> list = session.createSQLQuery(
-				"select u.id, u.fullname, u.phone, u.image, r.totals , r.type, r.c_id, u.status from Users u join ( select reportable_author as r_user,ANY_VALUE(reportable_id) as c_id, count(*) as totals,group_concat(type) as type from Reports group by reportable_author) r  on u.id =  r .r_user  where r.totals >= 5 and u.status = 1")
+				"select u.id, u.fullname, u.phone, u.image, r.totals , r.type, r.c_id, u.status from Users u join ( select report_author as r_user,ANY_VALUE(cmt_id) as c_id, count(*) as totals,group_concat(type) as type from Reports group by report_author) r  on u.id =  r .r_user  where r.totals >= 5 and u.status = 1")
 				.list();
 		return list;
 	}
@@ -61,7 +61,7 @@ public class ReportDao {
 
 		try {
 			session.getTransaction().begin();
-			Query query = session.createQuery("delete from Reports where reportable_author= '" + user_id + "'");
+			Query query = session.createQuery("delete from Reports where report_author= '" + user_id + "'");
 			query.executeUpdate();
 			session.getTransaction().commit();
 			return true;
