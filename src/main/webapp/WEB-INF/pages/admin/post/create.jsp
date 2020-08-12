@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<jsp:include page="../layout/_header.jsp"></jsp:include>
+<jsp:include page="../../static/layout/_header.jsp"></jsp:include>
 
 <style>
 select {
@@ -15,7 +15,7 @@ select option {
 }
 
 .space-left {
-	margin-left: 71px;
+	margin-left: 40px;
 }
 
 input {
@@ -34,13 +34,14 @@ input {
 			<form action="post-create" method="POST">
 
 
-				<h3 style="font-size: 30px; text-align: center; margin: 30px 0px;"
+				<h3
+					style="color: #c33; font-size: 30px; text-align: center; margin: 30px 0px;"
 					class="single-post-title">Tạo bài viết mới</h3>
 
 
 
 				<input name="title" style="width: 100%; color: #888;" minlength="15"
-					required maxlength="150" placeholder="Nhập tiêu đề bài viết !!" />
+					required maxlength="150" placeholder="Nhập tiêu đề bài viết !!!" />
 				<br> <br> <br>
 				<div class="post-53 post category-barbeque" style="width: 100%;">
 					<div class="blog-div with20">
@@ -51,6 +52,7 @@ input {
 							<option value="30">30 Phút</option>
 							<option value="45">45 Phút</option>
 							<option value="60">60 Phút</option>
+							<option value="70">Trên 60 Phút</option>
 						</select>
 					</div>
 
@@ -61,18 +63,21 @@ input {
 							<option value="2">2 Phần</option>
 							<option value="3">3 Phần</option>
 							<option value="4">4 Phần</option>
+							<option value="5">Trên 4 Phần</option>
 						</select>
 					</div>
 
 					<div class="blog-div with20">
 						<h3 style="text-align: center; margin-left: 51px;">Cách thức</h3>
 						<select class="dropdown" name="kind">
+							<option value="Other">Other</option>
 							<option value="Nướng">Nướng</option>
 							<option value="Kho-Om">Kho-Om</option>
 							<option value="Chiên-Rán">Chiên-Rán</option>
 							<option value="Canh-Súp">Canh-Súp</option>
 							<option value="Luộc-Hầm/Hấp">Luộc-Hầm-Hấp</option>
 							<option value="Xào-Rang-Rim">Xào-Rang-Rim</option>
+
 						</select>
 					</div>
 
@@ -81,7 +86,8 @@ input {
 					<div class="blog-div with20">
 						<h3 style="text-align: center; margin-left: 51px;">Nguyên
 							liệu chính</h3>
-						<select class="dropdown" name="main_meterial" name="" class="space-left">
+						<select name="main_material" class="space-left dropdown">
+							<option value="Other">Other</option>
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>
 							<option value="Thịt gia cầm">Thịt gia cầm</option>
@@ -90,6 +96,7 @@ input {
 							<option value="Trứng">Trứng</option>
 							<option value="Bún-Phở-Miến">Bún-Phở-Miến</option>
 							<option value="Cơm-Xôi-Cháo">Cơm-Xôi-Cháo</option>
+
 
 						</select>
 					</div>
@@ -118,26 +125,32 @@ input {
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Xuất xứ</h3>
 					<select class="dropdown" name="nation" class="space-left">
+						<option value="Other">Other</option>
 						<option value="Việt Nam">Việt Nam</option>
 						<option value="Nhật Bản">Nhật Bản</option>
 						<option value="Châu Âu">Châu Âu</option>
 						<option value="Trung Quốc">Trung Quốc</option>
+						<option value="Thái Lan">Thái Lan</option>
+
 					</select>
 				</div>
 
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Ngày lễ/Kỉ niệm</h3>
 					<select class="dropdown" name="holiday" class="space-left">
+						<option value="Other">Other</option>
 						<option value="Sinh nhật">Sinh nhật</option>
 						<option value="Trung thu">Trung Thu</option>
 						<option value="Mâm cỗ">Mâm cỗ</option>
 						<option value="Tết nguyên đán">Tết nguyên đán</option>
+
 					</select>
 				</div>
 
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Thể loại</h3>
 					<select class="dropdown" name="category" class="space-left">
+						<option value="Other">Other</option>
 						<option value="Bánh">Bánh</option>
 						<option value="Lẩu">Lẩu</option>
 						<option value="Salad">Salad</option>
@@ -147,37 +160,39 @@ input {
 						<option value="Món chay">Món chay</option>
 						<option value="Món chính">Món chính</option>
 						<option value="Đồ uống">Đồ uống</option>
+
 					</select>
 				</div>
 
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Phù hợp</h3>
 					<select class="dropdown" name="suitable" name="" class="space-left">
+						<option value="Other">Other</option>
 						<option value="Gia đình">Gia đình</option>
 						<option value="Người gầy">Người gầy</option>
 						<option value="Người béo phì">Người béo phì</option>
 						<option value="Người tập GYM">Người tập GYM</option>
+
 					</select>
 				</div>
 
 				<h1 class="w-bot-border">
-					Giới <span> thiệu</span>
+					<span>Giới thiệu</span>
 				</h1>
 				<textarea name="overview" cols="110" rows="9" required
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">
-					Nguyên <span>liệu </span>
+					<span> Nguyên liệu </span>
 				</h1>
 				<textarea name="material_detail" cols="110" rows="9" required
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">
-					Cách <span>làm </span>
+					<span>Cách làm </span>
 				</h1>
 				<textarea name="making" cols="110" rows="9" required
 					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea"></textarea>
-				
 		</div>
 		<!-- end of post div -->
 
@@ -208,4 +223,4 @@ input {
 
 
 
-<jsp:include page="../layout/_footer.jsp"></jsp:include>
+<jsp:include page="../../static/layout/_footer.jsp"></jsp:include>

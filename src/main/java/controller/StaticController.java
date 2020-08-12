@@ -177,7 +177,7 @@ public class StaticController {
 				model.addAttribute("posts", postDao.pagination("user_id", cond, ofset, limit));
 				model.addAttribute("page_size", page_size(userDaoimpl.findByID(Integer.parseInt(cond)).posts.size(), limit));
 				break;
-			case "main_meterial":
+			case "main_material":
 				model.addAttribute("title", "Món ăn từ " + cond + " ");
 				break;
 			case "holiday":

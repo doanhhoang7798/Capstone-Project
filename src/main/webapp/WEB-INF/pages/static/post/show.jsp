@@ -35,6 +35,10 @@ pre {
 <div id="content" class="clearfix ">
 	<div id="left-area" style="width: 600px;" class="clearfix">
 		<!-- Starting Default Loop -->
+		<script>
+		
+		debugger
+		</script>
 		<h1 class="title fn">${post.title }</h1>
 		<span class="published">2013-02-06</span>
 		<!-- Recipe Categorization Information -->
@@ -44,8 +48,8 @@ pre {
 				rel="tag">${ post.nation } </a>
 			</li>
 			<li>Nguyên liệu: <a
-				href="${pageContext.request.contextPath}/filter?condition=${ post.main_meterial }&category=main_meterial"
-				rel="tag">${ post.main_meterial } </a>
+				href="${pageContext.request.contextPath}/filter?condition=${ post.main_material }&category=main_material"
+				rel="tag">${ post.main_material} </a>
 			</li>
 			<li>Thể loại: <a
 				href="${pageContext.request.contextPath}/filter?condition=${ post.category }&category=category"

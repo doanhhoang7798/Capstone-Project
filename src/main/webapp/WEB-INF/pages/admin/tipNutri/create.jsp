@@ -55,7 +55,7 @@
                      <label for="exampleInputEmail1">Tác giả </label> <input required
                         maxlength="255" minlength="20" type="text" class="form-control"
                         id="author" name="author"
-                        placeholder="nhập tác giả, nguồn bài viết ..." />
+                        placeholder="Nhập tác giả, nguồn bài viết ..." />
                   </div>
                </div>
                <div class="col">
@@ -69,7 +69,7 @@
                   <div class="form-group">
                      <label for="fname">Tiêu đề</label> <input maxlength="100"
                         minlength="20" required id="title" type="text"
-                        class="form-control" placeholder="nhập tiêu đề bài viết .... "
+                        class="form-control" placeholder="Nhập tiêu đề bài viết .... "
                         name="title" />
                   </div>
                </div>
@@ -77,7 +77,7 @@
             <div class="form-group">
                <label for="desc">Nội dung</label>
                <textarea id="content" name="content" required minlength="200"
-                  rows="15" class="form-control" placeholder="Bio / description ..."></textarea>
+                  rows="15" class="form-control" placeholder="Nội dung-Chi tiết bài viết..."></textarea>
             </div>
             <button type="reset" class="btn btn-secondary">Quay lại</button>
             <button type="submit" id="submit" class="btn btn-primary">Viết
@@ -109,7 +109,8 @@
                .append(
                    '<option class="nutri" value="Dinh dưỡng cho trẻ">Dinh dưỡng cho trẻ </option>',
                    ' <option class="nutri" value="Chế độ ăn cho người bệnh">Chế độ ăn cho người bệnh </option>',
-                   '<option class="nutri" value="Dinh dưỡng cho người cao tuổi">Dinh dưỡng cho người cao tuổi </option>'
+                   '<option class="nutri" value="Dinh dưỡng cho người cao tuổi">Dinh dưỡng cho người cao tuổi </option>',
+                   '<option class="nutri" value="Dinh dưỡng cho người tập Gym">Dinh dưỡng cho người tập Gym</option>'
                );
        }
    });

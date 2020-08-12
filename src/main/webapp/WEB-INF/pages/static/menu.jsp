@@ -12,106 +12,106 @@
       <ul class="cat-list clearfix">
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static/images/category/thit_lon.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_material">
                Thịt lợn </a>
             </h4>
                     </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/thit_gicam.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt gia cầm&category=main_material">
                Thịt gia cầm </a>
             </h4>
                     </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/thit_bo.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material">
                Thịt Bò </a>
             </h4>
                     </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/rau_dau.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Rau đậu&category=main_material">
                Rau Đậu </a>
             </h4>
            
          </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Hải sản&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/haisan.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Hải Sản&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Hải Sản&category=main_material">
                Hải sản </a>
             </h4>
                     </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/trung.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Trứng&category=main_material">
                Trứng </a>
             </h4>
                    </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/bun.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material">
                Bún-Phở-Miến </a>
             </h4>
                     </li>
          <li>
             <a
-               href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial"
+               href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_material"
                class="img-box"> <img style="height: 145px;"
                src="${pageContext.request.contextPath}/resources/static//images/category/xoi.jpg"
                class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
             </a>
             <h4>
                <a
-                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_meterial">
+                  href="${pageContext.request.contextPath}/filter?condition=Cơm-Xôi-Cháo&category=main_material">
                Cơm-Xôi-Cháo </a>
             </h4>
                      </li>

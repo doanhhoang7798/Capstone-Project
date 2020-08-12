@@ -54,12 +54,12 @@ public class PostController {
 
 	}
 
-	@GetMapping(value = "post-edit/{id}")
+	@GetMapping(value = "/admin/post-edit/{id}")
 	public String edit(ModelMap model, @PathVariable("id") int id) {
 
 		if (user.isAdminOrMod() | user.userID() == postDaoimpl.findByID(id).getUser().getId()) {
 			model.addAttribute("post", postDaoimpl.findByID(id));
-			return "static/post/edit";
+			return "admin/post/edit";
 		} else {
 			return "auth/401";
 
@@ -67,25 +67,25 @@ public class PostController {
 
 	}
 
-	@GetMapping(value = "/post-create")
+	@GetMapping(value = "admin/post-create")
 	public String nEw(ModelMap model) {
 
 		if (user.exist()) {
-			return "static/post/create";
+			return "admin/post/create";
 		} else {
 			return "auth/sign-in";
 		}
 
 	}
 	
-	@PostMapping(value = "/post-create")
+	@PostMapping(value = "admin//post-create")
 	public String create(ModelMap model, @RequestParam("video_url") String video_url,
 			@RequestParam("title") String title, @RequestParam("overview") String overview,
 			@RequestParam("making") String making, @RequestParam("ration") int ration,
-			@RequestParam("kind") String kind, @RequestParam("level") String level,
+			@RequestParam("kind") String kind, @RequestParam("main_material") String main_material,
 			@RequestParam("nation") String nation, @RequestParam("holiday") String holiday,
 			@RequestParam("category") String category, @RequestParam("suitable") String suitable,
-			@RequestParam("price") int price, @RequestParam("material") String material,
+			@RequestParam("price") int price, @RequestParam("material_detail") String material_detail,
 			@RequestParam("time") int time) {
 
 		try {
@@ -94,11 +94,10 @@ public class PostController {
 
 				String url = "https://www.youtube.com/v/" + video_url.split("v=")[1];
 
-				int id = postDaoimpl.Create(new Posts(userDaoimpl.findByID(user.userID()), url, title,
-						overview, making, material, time, ration, kind, level, price, nation, holiday, category,
-						suitable, user.timestamp, "NULL"));
-
-				return "redirect: post-show/" + id + "";
+				int id = postDaoimpl.Create(new Posts(url, title, overview, making, material_detail, time, ration, kind, 
+						main_material, price, nation, holiday, category, suitable, 0, user.timestamp, "NULL", userDaoimpl.findByID(user.userID())));
+			
+				return "redirect: FPT-Food_Development/post-show/" + id + "";
 			} else {
 				return "auth/401";
 			}
@@ -112,10 +111,10 @@ public class PostController {
 	public String update(ModelMap model, @PathVariable("id") int post_id, @RequestParam("video_url") String video_url,
 			@RequestParam("title") String title, @RequestParam("overview") String overview,
 			@RequestParam("making") String making, @RequestParam("ration") int ration,
-			@RequestParam("kind") String kind, @RequestParam("level") String level,
+			@RequestParam("kind") String kind, @RequestParam("main_material") String main_material,
 			@RequestParam("nation") String nation, @RequestParam("holiday") String holiday,
 			@RequestParam("category") String category, @RequestParam("suitable") String suitable,
-			@RequestParam("price") int price, @RequestParam("material") String material, @RequestParam("time") int time,
+			@RequestParam("price") int price, @RequestParam("material_detail") String material_detail, @RequestParam("time") int time,
 			@RequestParam("user_id") int user_id, HttpServletRequest request) {
 
 		try {
@@ -123,8 +122,8 @@ public class PostController {
 				String parent = "https://www.youtube.com/v/";
 				String url = video_url.contains(parent) ? video_url : parent + video_url.split("v=")[1];
 				postDaoimpl.Update(
-						new Posts(post_id, userDaoimpl.findByID(user_id), url, title, overview, making, material, time,
-								ration, kind, level, price, nation, holiday, category, suitable, user.timestamp, "NULL"));
+						new Posts(post_id, userDaoimpl.findByID(user_id), url, title, overview, making, material_detail, time,
+								ration, kind, main_material, price, nation, holiday, category, suitable, user.timestamp, "NULL"));
 
 				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";
 

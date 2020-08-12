@@ -103,7 +103,7 @@
 
 							<td scope="row">${ post_detail.id }</td>
 							<td style="width: 400px;" class="full_name">${ post_detail.title }</td>
-							<td>${ post_detail.view_conter }đãxem</td>
+							<td>${ post_detail.view_conter } đã xem</td>
 							<td>${post_detail.user.fullname }</td>
 
 

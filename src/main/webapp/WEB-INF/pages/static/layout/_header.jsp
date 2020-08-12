@@ -87,7 +87,7 @@
 								<c:when test="${user.getImage()  == null}">
 									<li style="margin-left: 250px;"><img class="image_profile"
 										style="margin-top: 3px; width: 35px; height: 35px;"
-										src='${pageContext.request.contextPath}/resources/images/null_img.png' />
+										src="${pageContext.request.contextPath}/resources/images/heart.png" />
 									</li>
 								</c:when>
 								<c:otherwise>
@@ -102,8 +102,9 @@
 									<li style="background: none;"><a
 										href="${pageContext.request.contextPath}/profile"
 										style="color: rgb(255, 255, 255);">Cá nhân</a></li>
-									<li><a href="typography.html"
-										style="color: rgb(255, 255, 255);">Bài viết yêu thích</a></li>
+									<li><a
+										href="${pageContext.request.contextPath}/filter?condition=${user.email }&category=likes">Bài
+											viết yêu thích</a></li>
 									<c:choose>
 										<c:when test="${ user.getRole() == 10 }">
 											<li><a

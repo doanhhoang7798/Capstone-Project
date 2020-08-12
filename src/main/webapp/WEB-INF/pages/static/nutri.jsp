@@ -32,7 +32,7 @@
                   </li>
                </c:forEach>
             </ul>
-         <a href="${pageContext.request.contextPath }/filter?condition=Dinh dưỡng cho trẻ&category=Dinh dưỡng" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+         <a href="${pageContext.request.contextPath }/filter?condition=Dinh dưỡng cho trẻ&category=Dinh dưỡng" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
             
          </div>
       </c:when>
@@ -83,7 +83,7 @@
                   </li>
                </c:forEach>
             </ul>
-            <a href="${pageContext.request.contextPath }/filter?condition=Dinh Dưỡng cho người cao tuổi&category=Dinh dưỡng" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+            <a href="${pageContext.request.contextPath }/filter?condition=Dinh Dưỡng cho người cao tuổi&category=Dinh dưỡng" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
          </div>
       </c:when>
       <c:otherwise>
@@ -122,7 +122,7 @@
                   </li>
                </c:forEach>
             </ul>
-              <a href="${pageContext.request.contextPath }/filter?condition=Chế độ ăn cho người bệnh&category=Dinh dưỡng" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+              <a href="${pageContext.request.contextPath }/filter?condition=Chế độ ăn cho người bệnh&category=Dinh dưỡng" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
             
          </div>
       </c:when>
@@ -163,7 +163,7 @@
                   </li>
                </c:forEach>
             </ul>
-              <a href="${pageContext.request.contextPath }/filter?condition=Dinh dưỡng cho người tập Gym&category=Dinh dưỡng" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+              <a href="${pageContext.request.contextPath }/filter?condition=Dinh dưỡng cho người tập Gym&category=Dinh dưỡng" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
             
          </div>
       </c:when>

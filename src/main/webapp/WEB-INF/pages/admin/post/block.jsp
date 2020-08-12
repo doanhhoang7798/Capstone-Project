@@ -104,7 +104,7 @@
 
 							<td scope="row">${ post_detail.id }</td>
 							<td style="width: 400px;" class="full_name">${ post_detail.title }</td>
-							<td>${ post_detail.view_conter }đãxem</td>
+							<td>${ post_detail.view_conter } đã xem</td>
 							<td>${post_detail.user.fullname }</td>
 
 
@@ -116,10 +116,6 @@
 
 
 							<td>
-
-								<button class="btn btn-primary">
-									<span class="menu-icon"><i class="fa fa-edit"></i></span>
-								</button>
 
 								<button class="btn btn-warning use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/post/block/${post_detail.id}"

@@ -28,7 +28,7 @@
                </li>
             </c:forEach>
          </ul>
-       <a href="${pageContext.request.contextPath }/filter?condition=Bí quyết nấu nướng&category=Mẹo hay" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+       <a href="${pageContext.request.contextPath }/filter?condition=Bí quyết nấu nướng&category=Mẹo hay" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
          
       </div>
    </c:when>
@@ -67,7 +67,7 @@
                </li>
             </c:forEach>
          </ul>
-        <a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kỵ nhau&category=Mẹo hay" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+        <a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kỵ nhau&category=Mẹo hay" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
          
       </div>
    </c:when>
@@ -106,7 +106,7 @@
                </li>
             </c:forEach>
          </ul>
-       <a href="${pageContext.request.contextPath }/filter?condition=Mẹo hay chế biến nguyên liệu&category=Mẹo hay" class="readmore" style="color: rgb(255, 255, 255);">Xem thêm »»</a>
+       <a href="${pageContext.request.contextPath }/filter?condition=Mẹo hay chế biến nguyên liệu&category=Mẹo hay" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
          
       </div>
    </c:when>

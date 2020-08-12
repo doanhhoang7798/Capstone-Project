@@ -91,17 +91,12 @@
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Bị báo cáo  </th>
+						<th class="table-th" scope="col">Người bị báo cáo  </th>
 						
 						<th class="table-th" scope="col"> Bình luận  </th>
 						
 						<th class="table-th" scope="col">Loại báo  cáo </th>
 						<th class="table-th" scope="col">Ngày báo cáo   </th>
-						
-						
-						<th class="table-th" scope="col">Thao tác</th>
-
-
 
 					</tr>
 				</thead>
@@ -114,7 +109,7 @@
 							<td class="c_comment"  scope="row">${ report[1] }</td>
 							<c:choose>
 						         <c:when test = "${report[2] == 1}">
-									<td class="full_name" scope="row"></td>
+									<td class="full_name" scope="row">Spam</td>
 						         </c:when>
 						         
 						          <c:when test = "${report[2] == 2}">
@@ -134,17 +129,6 @@
 						         </c:otherwise>
 						      </c:choose>
 						     <td scope="row">${ report[4].toString().split(" ")[0] }</td>
-						      
-						
-							<td>
-							
-							
-								<button class="btn btn-danger use-block" id="test"
-									data-href="${pageContext.request.contextPath}/admin/report/delete/${ report[5] }"
-									data-toggle="modal" data-target="#confirm-delete">
-									<i class="fa fa-trash"></i>
-								</button> 
-							</td>
 
 						</tr>
 					</c:forEach>

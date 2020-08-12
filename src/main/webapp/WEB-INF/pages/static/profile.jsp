@@ -64,10 +64,6 @@
 													</c:otherwise>
 												</c:choose>
 
-
-
-
-
 											</div>
 											<div class="form-img-action text-center mgbt-xs-20">
 
@@ -96,7 +92,18 @@
 
 
 														</tr>
-
+														<tr>
+															<td>Bình luận</td>
+															<td>${user.comments.size()}</td>
+														</tr>
+														<tr>
+															<td>Tương tác</td>
+															<td>${user.reactions.size()}</td>
+														</tr>
+														<tr>
+															<td>Báo cáo</td>
+															<td>${user.reports.size()  }</td>
+														</tr>
 														<tr>
 															<td>Ngày tham gia</td>
 															<td>${ user.created_at.toString().split(" ")[0] }</td>
@@ -109,11 +116,9 @@
 								</div>
 								<div class="col-sm-9">
 
-									<h3 class="mgbt-xs-15">Thông tin người dùng</h3>
-
+									<h3 class="mgbt-xs-15">Thông tin cá nhân</h3>
 									<span id="hideMe" class="${class_name}"
-										style="font-size: larger; margin: 179px; font-weight: 900; margin-top: -10px; margin-bottom: 13px;">${
-										message2 }</span>
+										style="font-family: Arial, sans-serif; font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">${ message2 }</span>
 									<div class="form-group">
 										<label class="col-sm-3 control-label font">Họ tên</label>
 										<div class="col-sm-9 controls">
@@ -172,7 +177,7 @@
 														style="margin-left: -13px;">Tuổi </label>
 												</div>
 												<div style="float: left; width: 28%;"></div>
-												<input value="${ user.getAge() }" style="width: 161px;"
+												<input value="${ user.getAge() }" style="width: 173px;"
 													name="age" type="number" min="10" max="200"
 													placeholder="Tuổi" />
 
@@ -233,6 +238,7 @@
 										<!-- col-sm-10 -->
 									</div>
 
+
 									<div class="form-group">
 										<label class="col-sm-3 control-label font"> Mô tả </label>
 										<div class="col-sm-9 controls">
@@ -268,13 +274,14 @@
 
 						<hr>
 
-						<h3 class="mgbt-xs-15"
-							style="margin-top: -26px; margin: 16px 0px;">Cài đặt tài
-							khoản</h3>
+						<h3 class="mgbt-xs-15">Cài đặt tài khoản</h3>
 
 
 						<span id="hideMe" class="${class_name}"
-							style="font-size: larger; margin: 179px; font-weight: 900; margin-top: -10px; margin-bottom: 13px;">${message}</span>
+							style="font-family: Arial, sans-serif; font-size: larger; margin: 168px; font-weight: normal; margin-top: -10px; margin-bottom: 13px;">
+							${message}</span>
+
+
 
 
 						<div class="form-group" style="margin-top: 19px">
@@ -282,10 +289,9 @@
 							<div class="col-sm-9 controls">
 								<div class="row mgbt-xs-0">
 									<div class="col-xs-9">
-										<input readonly type="text" placeholder="Email "
-											value="${ user.getPhone() }">
+										<input readonly type="text" name="email"
+											placeholder="${ user.getPhone() }" />
 									</div>
-
 								</div>
 								<!-- row -->
 							</div>

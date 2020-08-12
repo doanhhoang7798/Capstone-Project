@@ -26,38 +26,36 @@ public class Posts {
 	private Integer id;
 
 	@Column
-
 	private String video_url;
+	
 	@Column
-
 	private String title;
+	
 	@Column
-
 	private String overview;
+	
 	@Column
-
 	private String making;
+	
 	@Column
-
 	private String material_detail;
+	
 	@Column
-
 	private int time;
+	
 	@Column
-
 	private int ration;
+	
 	@Column
-
 	private String kind;
+	
+	@Column				   
+	private String main_material;
 	@Column
-
-	private String main_meterial;
-	@Column
-
 	private int price;
 	@Column
-
 	private String nation;
+	
 	@Column
 
 	private String holiday;
@@ -108,11 +106,12 @@ public class Posts {
 		super();
 	}
 
-	public Posts(Users user_id, String video_url, String title, String overview, String making, String material_detail,
-			int time, int ration, String kind, String main_meterial, int price, String nation, String holiday, String category,
-			String suitable, Timestamp created_at, String deleted_at) {
+
+	public Posts( String video_url, String title, String overview, String making, String material_detail,
+			int time, int ration, String kind, String main_material, int price, String nation, String holiday,
+			String category, String suitable, int view_conter, Timestamp created_at, String deleted_at, Users user
+			) {
 		super();
-		this.user = user_id;
 		this.video_url = video_url;
 		this.title = title;
 		this.overview = overview;
@@ -121,18 +120,21 @@ public class Posts {
 		this.time = time;
 		this.ration = ration;
 		this.kind = kind;
-		this.main_meterial = main_meterial;
+		this.main_material = main_material;
 		this.price = price;
 		this.nation = nation;
 		this.holiday = holiday;
 		this.category = category;
 		this.suitable = suitable;
+		this.view_conter = view_conter;
 		this.created_at = created_at;
 		this.deleted_at = deleted_at;
+		this.user = user;
+	
 	}
 
 	public Posts(Integer id, Users user_id, String video_url, String title, String overview, String making,
-			String material_detail, int time, int ration, String kind, String main_meterial, int price, String nation, String holiday,
+			String material_detail, int time, int ration, String kind, String main_material, int price, String nation, String holiday,
 			String category, String suitable, Timestamp created_at, String deleted_at) {
 		super();
 		this.id = id;
@@ -145,7 +147,7 @@ public class Posts {
 		this.time = time;
 		this.ration = ration;
 		this.kind = kind;
-		this.main_meterial = main_meterial;
+		this.main_material = main_material;
 		this.price = price;
 		this.nation = nation;
 		this.holiday = holiday;
@@ -203,11 +205,11 @@ public class Posts {
 		this.making = making;
 	}
 
-	public String getmaterial_detail() {
+	public String getMaterial_detail() {
 		return material_detail;
 	}
 
-	public void setmaterial_detail(String material_detail) {
+	public void setMaterial_detail(String material_detail) {
 		this.material_detail = material_detail;
 	}
 
@@ -235,12 +237,14 @@ public class Posts {
 		this.kind = kind;
 	}
 
-	public String getmain_meterial() {
-		return main_meterial;
+
+
+	public String getMain_material() {
+		return main_material;
 	}
 
-	public void setmain_meterial(String main_meterial) {
-		this.main_meterial = main_meterial;
+	public void setMain_material(String main_material) {
+		this.main_material = main_material;
 	}
 
 	public int getPrice() {

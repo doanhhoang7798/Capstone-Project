@@ -73,7 +73,7 @@ public class ReportController {
 
 	@PostMapping(value = "report/create/{id}")
 	public String reportComment(ModelMap model, HttpServletRequest request, @PathVariable("id") int post_id,
-			@RequestParam("cmt_id") int cmt_id, @RequestParam("type") int type, @RequestParam("report_author") int report_author) {
+			@RequestParam("cmt_id") int cmt_id, @RequestParam("report_type") int type, @RequestParam("report_author") int report_author) {
 		try {
 			
 			if (user.exist() && reportDaoimpl.reported(user.userID(), cmt_id).size() == 0) {

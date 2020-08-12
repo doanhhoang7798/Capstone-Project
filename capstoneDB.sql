@@ -38,7 +38,7 @@ CREATE TABLE `posts` (
   `time` int NOT NULL,
   `ration` int NOT NULL,
   `kind` varchar(255) NOT NULL,
-  `main_meterial` varchar(255) NOT NULL,
+  `main_material` varchar(255) NOT NULL,
   `price` int NOT NULL,
   `nation` varchar(255) NOT NULL,
   `holiday` varchar(255) NOT NULL,
