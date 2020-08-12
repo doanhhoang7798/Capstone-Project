@@ -70,7 +70,7 @@ input {
 					<div class="blog-div with20">
 						<h3 style="text-align: center; margin-left: 51px;">Cách thức</h3>
 						<select class="dropdown" name="kind">
-							<option value="Other">Other</option>
+							<option value="Có cách nấu khác">Cách nấu khác</option>
 							<option value="Nướng">Nướng</option>
 							<option value="Kho-Om">Kho-Om</option>
 							<option value="Chiên-Rán">Chiên-Rán</option>
@@ -87,7 +87,7 @@ input {
 						<h3 style="text-align: center; margin-left: 51px;">Nguyên
 							liệu chính</h3>
 						<select name="main_material" class="space-left dropdown">
-							<option value="Other">Other</option>
+							<option value="Nguyên liệu khác">Nguyên liệu khác</option>
 							<option value="Thịt bò">Thịt bò</option>
 							<option value="Thịt lợn">Thịt lợn</option>
 							<option value="Thịt gia cầm">Thịt gia cầm</option>
@@ -125,7 +125,7 @@ input {
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Xuất xứ</h3>
 					<select class="dropdown" name="nation" class="space-left">
-						<option value="Other">Other</option>
+						<option value="Các nước khác">Các nước khác</option>
 						<option value="Việt Nam">Việt Nam</option>
 						<option value="Nhật Bản">Nhật Bản</option>
 						<option value="Châu Âu">Châu Âu</option>
@@ -138,7 +138,7 @@ input {
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Ngày lễ/Kỉ niệm</h3>
 					<select class="dropdown" name="holiday" class="space-left">
-						<option value="Other">Other</option>
+						<option value="Ngày lễ khác">Ngày lễ khác</option>
 						<option value="Sinh nhật">Sinh nhật</option>
 						<option value="Trung thu">Trung Thu</option>
 						<option value="Mâm cỗ">Mâm cỗ</option>
@@ -150,7 +150,6 @@ input {
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Thể loại</h3>
 					<select class="dropdown" name="category" class="space-left">
-						<option value="Other">Other</option>
 						<option value="Bánh">Bánh</option>
 						<option value="Lẩu">Lẩu</option>
 						<option value="Salad">Salad</option>
@@ -167,7 +166,7 @@ input {
 				<div class="blog-div with30">
 					<h3 style="text-align: center;">Phù hợp</h3>
 					<select class="dropdown" name="suitable" name="" class="space-left">
-						<option value="Other">Other</option>
+						<option value="Đối tượng khác">Đối tượng khác</option>
 						<option value="Gia đình">Gia đình</option>
 						<option value="Người gầy">Người gầy</option>
 						<option value="Người béo phì">Người béo phì</option>

@@ -82,43 +82,35 @@
 								href="${pageContext.request.contextPath}/authorized/SignUp"
 								style="color: rgb(255, 255, 255);">Đăng ký </a>
 						</c:when>
+
+
 						<c:otherwise>
-							<c:choose>
-								<c:when test="${user.getImage()  == null}">
-									<li style="margin-left: 250px;"><img class="image_profile"
-										style="margin-top: 3px; width: 35px; height: 35px;"
-										src="${pageContext.request.contextPath}/resources/images/heart.png" />
-									</li>
-								</c:when>
-								<c:otherwise>
-									<li style="margin-left: 250px;"><img class="image_profile"
-										style="margin-top: 3px; width: 35px; height: 35px;"
-										src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
-									</li>
-								</c:otherwise>
-							</c:choose>
-							<li><a style="color: rgb(255, 255, 255);">${ user.getFullname().split(" ")[0] }</a>
+							<li class="space_right"><a style="color: rgb(255, 255, 255)">
+									<img class="image_profile"
+									src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
+									${ user.getFullname().split(" ")[0] }
+							</a>
 								<ul class="sub-menu" style="display: none;">
 									<li style="background: none;"><a
-										href="${pageContext.request.contextPath}/profile"
-										style="color: rgb(255, 255, 255);">Cá nhân</a></li>
+										href="${pageContext.request.contextPath}/filter?condition=${ user.id }&category=user_id">Cá
+											nhân</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/filter?condition=${user.email }&category=likes">Bài
 											viết yêu thích</a></li>
 									<c:choose>
-										<c:when test="${ user.getRole() == 10 }">
-											<li><a
-												href="${pageContext.request.contextPath}/admin/Dashboard"
-												style="color: rgb(255, 255, 255);">Admin</a></li>
+										<c:when test="${ user.getRole() != 1 }">
+											<li><a id="manage"
+												href="${pageContext.request.contextPath}/admin/Dashboard">Admin</a></li>
 										</c:when>
 										<c:otherwise>
 											<li></li>
 										</c:otherwise>
 									</c:choose>
-									<li><a href="${pageContext.request.contextPath}/SignOut"
-										style="color: rgb(255, 255, 255);">Đăng xuất</a></li>
+									<li><a href="${pageContext.request.contextPath}/SignOut">Đăng
+											xuất</a></li>
 								</ul></li>
 						</c:otherwise>
+
 					</c:choose>
 
 				</ul>

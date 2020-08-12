@@ -85,7 +85,7 @@
 				<li>
 					<h4 style="margin-bottom: -2px;">
 						<a style="margin-bottom: -6px; color: #cc3333;" href="${pageContext.request.contextPath}/filter?condition=${post.category }&category=category">${post.category }</a>
-						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ${ post.created_at.toString().split(" ")[0] }
+						<i class="d-f-r">${ post.created_at.toString().split(" ")[0] }</i >
 					</h4> <a href="${pageContext.request.contextPath}/post-show/${post.id }"
 					class="img-box"> <embed id="video" wmode="transparent"
 							title="#caption_${post.id }" src="${post.video_url }"
