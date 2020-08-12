@@ -172,21 +172,11 @@
 													</span>
 
 												</div>
-												<div>
-													<label class="col-sm-3 control-label font"
-														style="margin-left: -13px;">Tuổi </label>
-												</div>
-												<div style="float: left; width: 28%;"></div>
-												<input value="${ user.getAge() }" style="width: 173px;"
-													name="age" type="number" min="10" max="200"
-													placeholder="Tuổi" />
-
-											</div>
+					
 											<!-- row -->
 										</div>
 										<!-- col-sm-10 -->
 									</div>
-
 									<div class="form-group">
 										<label class="col-sm-3 control-label font">Ngày sinh</label>
 										<div class="col-sm-9 controls">
@@ -274,7 +264,7 @@
 
 						<hr>
 
-						<h3 class="mgbt-xs-15">Cài đặt tài khoản</h3>
+						<h3 class="mgbt-xs-15">Đổi mật khẩu</h3>
 
 
 						<span id="hideMe" class="${class_name}"

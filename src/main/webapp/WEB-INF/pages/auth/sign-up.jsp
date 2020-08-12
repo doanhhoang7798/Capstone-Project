@@ -37,9 +37,10 @@
                      </div>
                      <div class="wrap-input100 validate-input"
                      data-validate="Username is required">
-                     <input class="input100" type="tel" required pattern="^(03|09)+([0-9]{8})" name="phone">
+                     <input class="input100" type="tel" pattern="^(03|05|07|08|09)+([0-9]{8})" name="phone">
                      <span class="focus-input100"></span>
                      </div>
+                
                      
     
                   <div class="p-b-10 p-l-20">
@@ -60,6 +61,7 @@
                         type="email" maxlength="20" required
                         name="cf_password"> <span class="focus-input100"></span>
                   </div>
+                  <span class="txt2" style="color: #c33;margin-left: 15%;" >Mật khẩu phải gồm ít nhất 1 chữ in hóa, 1 chữ in thường và 1 chữ số</span>
                   <div class="container-login100-form-btn m-t-17">
                      <input class="login100-form-btn" name="submit" type="submit" value="Đăng ký" >
                   </div>
@@ -70,6 +72,8 @@
                 	    var confirm_password = document.getElementById("confirm_password");
 
                 	    var fullname = document.getElementById("fullname");
+                	    
+                	    var phone = document.getElementById("phone");
 
                 	    // Validate field Fullname 
                 	    if (fullname.value.length == 0) {
@@ -83,6 +87,13 @@
                 	        fullname.setCustomValidity('');
                 	    }
 
+                	    if (phone.value.length == 0) {
+                	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
+                	    } else if (phone.value.length != 10) {
+                	    	phone.setCustomValidity("Số điện thoại gồm 10 chữ số");
+                	    } else {
+                	    	phone.setCustomValidity('');
+                	    }
 
                 	    // Validate field Password 
                 	    if (password.value.length == 0) {
@@ -111,6 +122,7 @@
                 	
                 	
                   </script>
+                  
                   <div class="w-full text-center p-t-30">
                      <span class="txt2">Bạn đã có tài khoản ? </span> <a
                         href="${pageContext.request.contextPath}/authorized/SignIn"

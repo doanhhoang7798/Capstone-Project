@@ -30,7 +30,7 @@
                </a>
             </li>
          </ul>
-         <div class="sidebar-heading">Trị người dùng</div>
+         <div class="sidebar-heading">Quản trị người dùng</div>
          <div class="sidebar-block p-0">
             <ul class="sidebar-menu mt-0">
                <li class="sidebar-menu-item"><a class="sidebar-menu-button"
@@ -47,12 +47,6 @@
                </li>
                <li class="sidebar-menu-item"><a class="sidebar-menu-button"
                   href="student-course-purchase.html"> </a></li>
-               <li class="sidebar-menu-item"><a class="sidebar-menu-button"
-                  href="${pageContext.request.contextPath}/profile"> <i
-                  class="sidebar-menu-icon sidebar-menu-icon--left material-icons">settings</i>
-                  <span class="sidebar-menu-text">Thông tin</span>
-                  </a>
-               </li>
             </ul>
          </div>
          <div class="sidebar-heading">Quản trị bài viết</div>

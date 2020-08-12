@@ -95,11 +95,12 @@ public class StaticController {
 	public String profileEditProcess(HttpSession session, ModelMap model, @RequestParam("image") MultipartFile image,
 			@RequestParam("gender") int gender, @RequestParam("age") int age, @RequestParam("name") String name,
 			@RequestParam("birthday") String birthday, @RequestParam("address") String address,
+			@RequestParam("email") String email,
 			@RequestParam("bio") String bio) {
 		String photo = UploadConfig.uploadImage(model, image);
 		String photo2 = photo.equals("") ? user.current().getImage() : photo;
 		try {
-			if (userDaoimpl.Update(new Users(user.current().getId(), user.current().getEmail(), name,
+			if (userDaoimpl.Update(new Users(user.current().getId(), email , name,
 					user.current().getPassword(), user.current().getPhone(), age, gender,
 					user.current().getRole(), birthday, address, bio, photo2,
 					user.current().getCreated_at(), user.current().getStatus(),
@@ -181,7 +182,7 @@ public class StaticController {
 				model.addAttribute("title", "Món ăn từ " + cond + " ");
 				break;
 			case "holiday":
-				model.addAttribute("title", "Các món ngày " + cond + " ");
+				model.addAttribute("title", "Các món dùng trong " + cond + " ");
 				break;
 			case "category":
 				model.addAttribute("title", "Các món " + cond + " ");

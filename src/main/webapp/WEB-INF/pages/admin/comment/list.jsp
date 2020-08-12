@@ -107,11 +107,7 @@
 									data-href="${pageContext.request.contextPath}/admin/comment/delete/${ comment.id }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-trash"></i>
-								</button> <a class="btn btn-info"
-								href="${pageContext.request.contextPath}/admin/"> <span
-									class="menu-icon"><i class="fa fa-eye"></i></span>
-							</a>
-							</td>
+								</button> 							</td>
 
 						</tr>
 					</c:forEach>

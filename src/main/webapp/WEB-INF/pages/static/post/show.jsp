@@ -281,9 +281,6 @@ pre {
 																data-target="#c-r-modal">|Report|</a>
 														</c:otherwise>
 													</c:choose>
-
-
-
 												</c:otherwise>
 											</c:choose>
 										</div>

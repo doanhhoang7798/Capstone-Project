@@ -7,8 +7,8 @@
 		style="display: none; margin-left: -82px; position: fixed; z-index: 999; top: 40%;; bottom: 50%; left: 55%; transform: translate(-50%, -50%);"
 		role="document">
 		<div class="modal-content">
-			<div class="modal-header" style="background-color: #68aa10;">
-				<h5 class="modal-title">Modal title</h5>
+			<div class="modal-header" style="background-color: #c33; color: #ffc72c;">
+				<h5 class="modal-title" style="font-size: 20px">Xác nhận</h5>
 
 			</div>
 			<div class="modal-body">
@@ -33,8 +33,8 @@
 		style="display: none; margin-left: -82px; position: fixed; z-index: 999; top: 40%;; bottom: 50%; left: 55%; transform: translate(-50%, -50%);"
 		role="document">
 		<div class="modal-content">
-			<div class="modal-header" style="background-color: #68aa10;">
-				<h5 class="modal-title">Modal title</h5>
+			<div class="modal-header" style="background-color: #c33; color: #ffc72c;">
+				<h5 class="modal-title" style="font-size: 20px">Xác nhận</h5>
 
 			</div>
 			<div class="modal-body">

@@ -118,15 +118,38 @@
 
 			<!-- 			<div style="border: 5px double #565556; border-radius: 20px;">
  -->
-			<p style="padding: 19px; text-align: justify;">Shirayuki bẩm sinh
-				đã có mái tóc màu đỏ táo rất đẹp và hiếm.Cô bị một hoàng tử nổi
-				tiếng ngu ngốc,Raji, bắt làm phi tần. Shirayuki bẩm sinh đã có mái
-				tóc màu đỏ táo rất đẹp và hiếm.Cô bị một hoàng tử nổi tiếng ngu
-				ngốc,Raji, bắt làm phi tần. Shirayuki bẩm sinh đã có mái tóc màu đỏ
-				táo rất đẹp và hiếm.Cô bị một hoàng tử nổi tiếng ngu ngốc,Raji, bắt
-				làm phi tần. Shirayuki bẩm sinh đã có mái tóc màu đỏ táo rất đẹp và
-				hiếm.Cô bị một hoàng tử nổi tiếng ngu ngốc,Raji, bắt làm phi tần.</p>
+			<p style="padding: 19px; text-align: justify;">Yummy được tạo nên
+				với mong muốn có thể giúp cho người nội trợ và những người có đam mê
+				nấu ăn sẽ trở nên dễ dàng hơn trong việc nấu ăn hàng ngày của mình.
+				Từ công việc chuẩn bị các nguyên liệu, phải chọn món ăn hàng ngày
+				hoặc lựa chọn những thiết bị dùng bếp sẽ trở nên dễ dàng hơn.</p>
 
+			<p style="padding: 19px; text-align: justify;">Bạn có thể tìm
+				kiếm công thức các món ăn ưa thích một cách nhanh chóng hơn với công
+				cụ tìm kiếm của yummy. Bạn có thể tìm kiếm theo tên, theo nguyên
+				liệu, theo mục đích, theo chế độ dinh dưỡng(gym, người cao
+				tuổi,...).</p>
+
+			<p style="padding: 19px; text-align: justify;">Nấu một món ngon
+				trở nên dễ dàng hơn với yummy. Yummy sẽ cố gắng từng ngày một với
+				mong muốn tạo ra một sản phẩm có thể giúp cho những đầu bếp bình
+				thường nhất nấu được một món ăn ngon nhất. Chúng tôi chắc chắn rằng
+				bạn sẽ cảm thấy rất vui khi được tự nấu cho một ai đó thưởng thức.
+				Và cảm nhận thành quả của mình đã làm ra.</p>
+
+			<p style="padding: 19px; text-align: justify;">Bạn sẽ trở thành
+				những chuyên gia nấu ăn nhờ những công thức từ các đầu bếp chuyên
+				nghiệp. Một ngày nào đó bạn sẽ trở nên nổi tiếng với chính những "bí
+				kíp" nấu ăn mà bạn đã tạo ra và chia sẻ chúng. Chúng tôi tin rằng
+				bạn sẽ trở thành một đầu bếp chuyên nghiệp trong tương lai.</p>
+
+			<p style="padding: 19px; text-align: justify;">Hơn nữa, bạn sẽ dễ
+				dàng tìm được những người bạn có cùng đam nấu nướng và ăn uống. Bạn
+				có thể kết nối và chia sẻ kinh nghiệm về nấu ăn cho nhau. Mong muốn
+				có thể tạo được một sân chơi thật sự cho người đam mê ẩm thực, đam
+				mê nấu nướng. Bạn có thể đưa ra những ý kiến riêng của bản thân về
+				những bài viết trên yummy ở dưới phần bình luận để tăng thêm sự
+				khách quan.</p>
 			<!-- 			</div>
  -->
 
@@ -161,7 +184,8 @@
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:Trangnttse06081@fpt.edu.vn?subject=Dear Trang"
+						<li><a
+							href="mailto:Trangnttse06081@fpt.edu.vn?subject=Dear Trang"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>
@@ -180,7 +204,8 @@
 					<ul class="social">
 						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
-						<li><a href="mailto:Hoangdase05956@fpt.edu.vn?subject=Dear Hoàng"
+						<li><a
+							href="mailto:Hoangdase05956@fpt.edu.vn?subject=Dear Hoàng"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
 				</div>

@@ -123,7 +123,7 @@
 
 							<th scope="row">${ user_detail.id }</th>
 							<td class="full_name">${ user_detail.fullname }</td>
-							<td>${ user.phone }</td>
+							<td>${ user_detail.phone }</td>
 
 							<td><c:choose>
 									<c:when test="${user_detail.role=='10'}">

@@ -115,7 +115,7 @@
 
 
 							<td><a class="btn btn-primary"
-								href="${pageContext.request.contextPath}/post-edit/${post_detail.id}">
+								href="${pageContext.request.contextPath}/admin/post-edit/${post_detail.id}">
 									<span class="menu-icon"><i class="fa fa-edit"></i></span>
 							</a>
 
