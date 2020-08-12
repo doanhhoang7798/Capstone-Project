@@ -126,7 +126,7 @@
 									</ul>
 								</div>							
 			
-								<div class="dropdown">
+								<div class="dropdown" style="margin-right: 8%; background-color: #c33">
 									<a href="${pageContext.request.contextPath}/admin/post-create" class="btn btn-success ml-auto"><i
 								class="material-icons">add</i>Viết bài</a>
 								</div>

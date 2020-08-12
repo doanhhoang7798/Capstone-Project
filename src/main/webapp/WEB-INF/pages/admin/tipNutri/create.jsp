@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                      <label for="exampleInputEmail1">Tác giả </label> <input required
-                        maxlength="255" minlength="20" type="text" class="form-control"
+                        maxlength="255" minlength="10" type="text" class="form-control"
                         id="author" name="author"
                         placeholder="Nhập tác giả, nguồn bài viết ..." />
                   </div>
@@ -68,7 +68,7 @@
                   </div>
                   <div class="form-group">
                      <label for="fname">Tiêu đề</label> <input maxlength="100"
-                        minlength="20" required id="title" type="text"
+                        minlength="10" required id="title" type="text"
                         class="form-control" placeholder="Nhập tiêu đề bài viết .... "
                         name="title" />
                   </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="form-group">
                <label for="desc">Nội dung</label>
-               <textarea id="content" name="content" required minlength="200"
+               <textarea id="content" name="content" required minlength="50"
                   rows="15" class="form-control" placeholder="Nội dung-Chi tiết bài viết..."></textarea>
             </div>
             <button type="reset" class="btn btn-secondary">Quay lại</button>
