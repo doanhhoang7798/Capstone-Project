@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<jsp:include page="../layout/_header.jsp"></jsp:include>
-
+<jsp:include page="../../static/layout/_header.jsp"></jsp:include>
 <style>
 select {
 	margin-left: 46px;
@@ -32,7 +31,7 @@ input {
 		<div class="post-53 post category-barbeque" id="post-53">
 
 			<form
-				action="${pageContext.request.contextPath}/post-edit/${post.id}"
+				action="${pageContext.request.contextPath}/admin/post-edit/${post.id}"
 				method="POST">
 
 
@@ -283,4 +282,4 @@ input {
 
 
 
-<jsp:include page="../layout/_footer.jsp"></jsp:include>
+<jsp:include page="../../static/layout/_footer.jsp"></jsp:include>

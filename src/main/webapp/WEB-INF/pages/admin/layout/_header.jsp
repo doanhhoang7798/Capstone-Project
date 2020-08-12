@@ -124,58 +124,11 @@
 
 
 									</ul>
-								</div>
-
-								
-								<ul class="nav navbar-nav d-none d-md-flex">
-									<li class="nav-item dropdown"><a href="#notifications_menu"
-											class="nav-link dropdown-toggle" data-toggle="dropdown" data-caret="false">
-											<i
-												class="material-icons nav-icon navbar-notifications-indicator">notifications</i>
-										</a>
-										<div id="notifications_menu"
-											class="dropdown-menu dropdown-menu-right navbar-notifications-menu">
-											<div class="dropdown-item d-flex align-items-center py-2">
-												<span
-													class="flex navbar-notifications-menu__title m-0">Notifications</span>
-												<a href="javascript:void(0)" class="text-muted"><small>Clear
-														all</small></a>
-											</div>
-											<div class="navbar-notifications-menu__content ps"
-												data-perfect-scrollbar="">
-												<div class="py-2">
-													<div class="dropdown-item d-flex">
-														<div class="mr-3">
-															<div class="avatar avatar-xs">
-																<img src="" alt="Avatar"
-																	class="avatar-img rounded-circle" />
-															</div>
-														</div>
-
-													</div>
-
-
-
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="nav-item"><a href="#events-drawer" data-toggle="sidebar"
-											class="nav-link d-flex align-items-center"> <i
-												class="material-icons nav-icon">event_note</i>
-										</a></li>
-									<li class="nav-item nav-item-circle"><a href="#"
-											class="nav-link d-flex align-items-center navbar-circle-link">
-											<span class="rounded-circle"> <span
-													class="material-icons text-primary">flag</span>
-											</span>
-										</a></li>
-								</ul>
-
+								</div>							
+			
 								<div class="dropdown">
-									<a href="#" data-toggle="dropdown" data-caret="false"
-										class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar"
-										aria-expanded="false"> </a>
+									<a href="${pageContext.request.contextPath}/admin/post-create" class="btn btn-success ml-auto"><i
+								class="material-icons">add</i>Viết bài</a>
 								</div>
 							</div>
 						</div>

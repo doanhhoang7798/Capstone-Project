@@ -14,9 +14,7 @@
 						<div
 							class="container-fluid page__container d-flex align-items-center">
 							<h1 class="mb-0">Yummy Admin</h1>
-							<a href="${pageContext.request.contextPath}/admin/common/create" class="btn btn-success ml-auto"><i
-								class="material-icons">add</i>Viết bài</a>
-						</div>
+							</div>
 					</div>
 
 					<div class="container-fluid page__container">

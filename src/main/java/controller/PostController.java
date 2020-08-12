@@ -78,7 +78,7 @@ public class PostController {
 
 	}
 	
-	@PostMapping(value = "admin//post-create")
+	@PostMapping(value = "admin/post-create")
 	public String create(ModelMap model, @RequestParam("video_url") String video_url,
 			@RequestParam("title") String title, @RequestParam("overview") String overview,
 			@RequestParam("making") String making, @RequestParam("ration") int ration,
@@ -97,7 +97,7 @@ public class PostController {
 				int id = postDaoimpl.Create(new Posts(url, title, overview, making, material_detail, time, ration, kind, 
 						main_material, price, nation, holiday, category, suitable, 0, user.timestamp, "NULL", userDaoimpl.findByID(user.userID())));
 			
-				return "redirect: FPT-Food_Development/post-show/" + id + "";
+				return "redirect: /FPT-Food_Development/post-show/" + id + "";
 			} else {
 				return "auth/401";
 			}
@@ -107,7 +107,7 @@ public class PostController {
 
 	}
 
-	@PostMapping(value = "/post-edit/{id}")
+	@PostMapping(value = "admin/post-edit/{id}")
 	public String update(ModelMap model, @PathVariable("id") int post_id, @RequestParam("video_url") String video_url,
 			@RequestParam("title") String title, @RequestParam("overview") String overview,
 			@RequestParam("making") String making, @RequestParam("ration") int ration,
@@ -125,7 +125,7 @@ public class PostController {
 						new Posts(post_id, userDaoimpl.findByID(user_id), url, title, overview, making, material_detail, time,
 								ration, kind, main_material, price, nation, holiday, category, suitable, user.timestamp, "NULL"));
 
-				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";
+				return "redirect: /FPT-Food_Development/post-show/" + post_id + "";
 
 			} else {
 				return "auth/401";

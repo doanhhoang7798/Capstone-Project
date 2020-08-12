@@ -124,16 +124,6 @@ pre {
 				</h1>
 				<pre>${ post.material_detail }</pre>
 			</div>
-			<div>
-				<h1 style="float: left;">
-					Comment <span id="c-count"> ( ${ post.comments.size() } ) </span>
-				</h1>
-				<a class="btn btn btn-info"
-					style="float: right; margin-top: 1%; margin-right: 13%;"
-					id="p-e-button"
-					href="${pageContext.request.contextPath}/post-edit/${post.id}"><i
-					class="fa fa-edit" aria-hidden="true"></i> Sửa </a>
-			</div>
 			<span class="w-pet-border"></span>
 			<c:choose>
 				<c:when test="${user.getStatus()  == null}">
