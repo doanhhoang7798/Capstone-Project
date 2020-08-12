@@ -513,7 +513,7 @@
    
    	<div class="bot-ads-area">
             <div class="ads-642x79">
-                <a href="#"><img src="${pageContext.request.contextPath}/resources/static//images/top.png" alt="Recipe Ads"></a>
+                <a href="#"><img src="${pageContext.request.contextPath}/resources/static/images/top.png" alt="Recipe Ads"></a>
             </div>
         </div>
    </div>

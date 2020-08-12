@@ -178,7 +178,7 @@
 							src="https://picsum.photos/130/130?image=839">
 					</div>
 					<div class="team-content">
-						<h3 class="name">Nguyễn Thị Thúy Trang</h3>
+						<h3 class="name">Ng Thúy Trang</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
