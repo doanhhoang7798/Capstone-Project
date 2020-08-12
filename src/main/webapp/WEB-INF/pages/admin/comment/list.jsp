@@ -96,7 +96,7 @@
 						<tr>
 
 							<td scope="row">${ comment.id }</td>
-							<td class="full_name">${ comment.content }</td>
+							<td style="max-width:600px;word-wrap:break-word;" class="full_name">${ comment.content }</td>
 							<td>${ comment.created_at.toString().split(" ")[0] }</td>
 							<td class="c_post">${ comment.post.title }</td>
 							<td><img

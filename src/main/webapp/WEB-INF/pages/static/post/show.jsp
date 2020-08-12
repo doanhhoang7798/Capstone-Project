@@ -12,6 +12,26 @@
 		no-repeat;
 }
 
+#c-c-image {
+	padding: 27px 0 0 0;
+	height: 20px;
+	box-sizing: border-box;
+	background:
+		url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698648-icon-130-cloud-upload-512.png')
+		center center no-repeat #e4e4e4;
+	background-size: 20px 20px;
+}
+
+.image-icon {
+	padding: 27px 0 0 0;
+	height: 20px;
+	box-sizing: border-box;
+	background:
+		url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698648-icon-130-cloud-upload-512.png')
+		center center no-repeat #e4e4e4;
+	background-size: 20px 20px;
+}
+
 pre {
 	white-space: pre-wrap;
 }
@@ -35,10 +55,7 @@ pre {
 <div id="content" class="clearfix ">
 	<div id="left-area" style="width: 600px;" class="clearfix">
 		<!-- Starting Default Loop -->
-		<script>
-		
-		debugger
-		</script>
+
 		<h1 class="title fn">${post.title }</h1>
 		<span class="published">2013-02-06</span>
 		<!-- Recipe Categorization Information -->
@@ -139,28 +156,39 @@ pre {
 								<div class="panel panel-info">
 									<div class="panel-body">
 										<form class="form-inline" id="f-c-c" method="POST">
-											<textarea id="c-c-content" name="content" class="col-md-12"
-												placeholder="Viết bình luận của bạn!"
-												class="pb-cmnt-textarea"></textarea>
-											<div class="btn-group">
-												<div class="btn"
-													style="background-color: #EFEFEFEF; margin-left: -20px; margin-left: -120px; margin-top: 8px;">
-													<input onchange="readURL2(this);"
-														style="width: 17px; height: 24px;"
-														class="fas fa-cloud-upload-alt" id="c-c-image" type="file" />
+
+											<div class="col-md-12">
+												<div class="col-md-11">
+													<textarea id="c-c-content" name="content" class="col-md-12"
+														placeholder="Viết bình luận của bạn!"></textarea>
+												</div>
+												<div class="col-md-1" style="height: 55px;">
+
+													<input onchange="readURL2(this);" type="file" class="btn"
+														style="width: 40px; height: 27px; background-size: 20px 20px; margin-bottom: 3px;"
+														id="c-c-image">
 													<button class="btn btn-primary pull-right"
-														style="margin-left: 65%; position: absolute; margin-top: -76.5%; height: 38px;"
+														style="position: absolute; height: 27px;"
 														id="comment-create" type="submit">
 														<i class="fas fa-paper-plane"></i>
 													</button>
+
+
+
 												</div>
 											</div>
-											<c:choose>
-												<c:when test="${ comment.image_url == null}">
-													<img class="blah2"
-														style="margin-top: 10px; margin-left: 42px;" src="">
-												</c:when>
-											</c:choose>
+
+											<img class="blah2"
+												style="margin-top: 10px; margin-left: 42px;" src="">
+
+
+										</form>
+										<c:choose>
+											<c:when test="${ comment.image_url == null}">
+												<img class="blah2"
+													style="margin-top: 10px; margin-left: 42px;" src="">
+											</c:when>
+										</c:choose>
 										</form>
 									</div>
 								</div>
@@ -197,7 +225,7 @@ pre {
 										</a>
 										<div style="margin-left: 12%;" class="comment">
 											<p class="show_content_${comment.id }"
-												style="display: display: block">${comment.content }</p>
+												style="max-width:800px;word-wrap:break-word">${comment.content }</p>
 											<c:choose>
 												<c:when test="${ comment.image_url.isEmpty() }">
 													<img class="show_content_${comment.id }"
@@ -221,25 +249,31 @@ pre {
 																<!-- ============================================== Edit comment  ======================================================== -->
 																<form class="form-inline" method="POST"
 																	enctype="multipart/form-data">
-																	<textarea id="c-e-content-${comment.id}"
-																		style="height: 10%;" name="content" class="col-md-12"
-																		placeholder="Viết bình luận của bạn!"
-																		class="pb-cmnt-textarea">${comment.content }</textarea>
-																	<div class="btn-group">
-																		<div class="btn"
-																			style="background-color: #EFEFEFEF; margin-left: -110px; margin-top: 10px;">
-																			<input style="width: 17px; height: 24px;"
-																				id="c-e-image-${comment.id }"
-																				class="fas fa-cloud-upload-alt"
+																	<div class="col-md-12">
+																		<div class="col-md-11">
+																			<textarea id="c-e-content-${comment.id}"
+																				style="height: 10%;" name="content"
+																				class="col-md-12"
+																				placeholder="Viết bình luận của bạn!"
+																				class="pb-cmnt-textarea">${comment.content }</textarea>
+																		</div>
+																		<div class="col-md-1">
+
+																			<input
+																				style="width: 40px; height: 27px; background-size: 20px 20px; margin-bottom: 3px; border-radius: 4px;"
+
+																				id="c-e-image-${comment.id }" class="image-icon"
 																				onchange="readURL(this);" type="file" />
+																		<button class="btn btn-info pull-right"
+																			style="position: absolute; height: 27px;"
+																			id="c-e-${comment.id }" data-toggle="modal"
+																			data-target="#c-e-modal" type="submit">
+																			<i class="fa fa-edit"></i>
+																		</button>
 																		</div>
 																	</div>
-																	<button class="btn btn-info pull-right"
-																		style="right: 11%; position: absolute; margin-top: -12%; height: 38px;"
-																		id="c-e-${comment.id }" data-toggle="modal"
-																		data-target="#c-e-modal" type="submit">
-																		<i class="fa fa-edit"></i>
-																	</button>
+
+
 																	<c:choose>
 																		<c:when test="${ comment.image_url == null}">
                                        HAHAH
@@ -309,7 +343,7 @@ pre {
 	<div id="sidebar" style="width: 288px;">
 		<div class="widget fav-recipes nostylewt">
 			<h3 class="w-bot-border">
-				<span> Món liên quan</span> 
+				<span> Món liên quan</span>
 			</h3>
 			<div class="tabed">
 				<ul class="tabs clearfix">
@@ -372,7 +406,7 @@ pre {
 		<div
 			class="widget nostylewt Weekly_Special_Widget wk-special clearfix">
 			<h2 class="w-bot-border">
-				<span>Bài viết mới</span> 
+				<span>Bài viết mới</span>
 			</h2>
 			<c:forEach items="${ news }" var="item">
 				<div class="img-box for-all">
@@ -444,9 +478,8 @@ pre {
 						action="${pageContext.request.contextPath}/report/create/${post.id}"
 						method="post">
 						<div style="padding: 8px;" class="modal-body checked">
-							<input type="hidden" name="cmt_id" id="cmt_id">
-							<input type="hidden" name="report_author"
-								id="report_author">
+							<input type="hidden" name="cmt_id" id="cmt_id"> <input
+								type="hidden" name="report_author" id="report_author">
 							<ul class="ks-cboxtags">
 								<li><input type="checkbox" id="checkboxFive"
 									name="report_type" value="1" checked /><label
