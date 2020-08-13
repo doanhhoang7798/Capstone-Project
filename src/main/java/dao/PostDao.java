@@ -25,6 +25,14 @@ public class PostDao {
 				.setMaxResults(4).list();
 		return list;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Posts> filterDes(String condition, int ofset, int limit) {
+		Session session = sessionFactory.openSession();
+		List<Posts> list = session.createQuery("FROM Posts where deleted_at = 'NULL' ORDER BY " + condition + " desc")
+				.setFirstResult(ofset).setMaxResults(limit).list();
+		return list;
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<Posts> all() {

@@ -106,6 +106,7 @@
 				</li>
 			</c:forEach>
 		</ul>
+		<a href="${pageContext.request.contextPath }/filter?condition=created_at&category=new" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
 	</div>
 	<!-- end of whats-hot div -->
 </div>

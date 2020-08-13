@@ -37,7 +37,7 @@
                      </div>
                      <div class="wrap-input100 validate-input"
                      data-validate="Username is required">
-                     <input class="input100" type="tel" pattern="^(03|05|07|08|09)+([0-9]{8})" name="phone">
+                     <input class="input100" type="tel" pattern="^(03|05|07|08|09)+([0-9]{8})" required name="phone">
                      <span class="focus-input100"></span>
                      </div>
                 

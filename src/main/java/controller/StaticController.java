@@ -50,8 +50,8 @@ public class StaticController {
 	public String index(Model model, HttpSession session) {
 		try {
 			session.setAttribute("user", user.current());
-			model.addAttribute("slides", postDao.filterHomePage("created_at"));
-			model.addAttribute("suggestions", postDao.filterHomePage("view_conter"));
+			model.addAttribute("slides", postDao.filterHomePage("view_conter"));
+			model.addAttribute("suggestions", postDao.filterHomePage("created_at"));
 			return "static/index";
 		} catch (Exception e) {
 			return "auth/500";
@@ -93,7 +93,7 @@ public class StaticController {
 
 	@PostMapping(value = "/edit-profile")
 	public String profileEditProcess(HttpSession session, ModelMap model, @RequestParam("image") MultipartFile image,
-			@RequestParam("gender") int gender, @RequestParam("age") int age, @RequestParam("name") String name,
+			@RequestParam("gender") int gender, @RequestParam("name") String name,
 			@RequestParam("birthday") String birthday, @RequestParam("address") String address,
 			@RequestParam("email") String email,
 			@RequestParam("bio") String bio) {
@@ -101,7 +101,7 @@ public class StaticController {
 		String photo2 = photo.equals("") ? user.current().getImage() : photo;
 		try {
 			if (userDaoimpl.Update(new Users(user.current().getId(), email , name,
-					user.current().getPassword(), user.current().getPhone(), age, gender,
+					user.current().getPassword(), user.current().getPhone(), 20, gender,
 					user.current().getRole(), birthday, address, bio, photo2,
 					user.current().getCreated_at(), user.current().getStatus(),
 					user.current().getBlock_date()))) {
@@ -173,10 +173,10 @@ public class StaticController {
 
 				break;
 
-			case "user_id":
-				model.addAttribute("s_user", userDaoimpl.findByID(Integer.parseInt(cond)));
-				model.addAttribute("posts", postDao.pagination("user_id", cond, ofset, limit));
-				model.addAttribute("page_size", page_size(userDaoimpl.findByID(Integer.parseInt(cond)).posts.size(), limit));
+			case "new":
+				model.addAttribute("title", "Các bài viết mới nhất");
+				model.addAttribute("posts", postDao.filterDes(cond, ofset, limit));
+				model.addAttribute("page_size", page_size(postDao.filterDes(cond, 0, 10000000).size(), limit));
 				break;
 			case "main_material":
 				model.addAttribute("title", "Món ăn từ " + cond + " ");
@@ -207,13 +207,13 @@ public class StaticController {
 						page_size(TipNutriDaoimpl.findByTypeKind(category, cond, 0, 10000000).size(), limit));
 			}
 			
-			else if (!category.equals("likes") && !category.equals("search") && !category.equals("user_id")) {
+			else if (!category.equals("likes") && !category.equals("search") && !category.equals("new")) {
 				model.addAttribute("posts", postDao.pagination(category, cond, ofset, limit));
 				model.addAttribute("page_size",
 						page_size(postDao.pagination(category, cond, 0, 10000000).size(), limit));
 			}
 
-			String page_return =  category.equals("user_id") ? "static/viewer" : "static/filter";
+			String page_return =  "static/filter";
 			return page_return;
 		} catch (Exception e) {
 			return "auth/500";

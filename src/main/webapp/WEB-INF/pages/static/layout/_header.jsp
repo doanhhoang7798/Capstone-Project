@@ -92,7 +92,7 @@
 							</a>
 								<ul class="sub-menu" style="display: none;">
 									<li style="background: none;"><a
-										href="${pageContext.request.contextPath}/filter?condition=${ user.id }&category=user_id">Cá
+										href="${pageContext.request.contextPath}/profile">Cá
 											nhân</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/filter?condition=${user.email }&category=likes">Bài

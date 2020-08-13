@@ -51,7 +51,7 @@ public class AuthController {
 			@RequestParam("password") String password) {
 
 		if (userDaoimpl.Create(new Users(name, userDaoimpl.encode(password), phone, user.timestamp, 1, 1, 1,
-				"default-avatart.png"))) {
+				"null_img.png"))) {
 
 			try {
 				twilioMessageCreator.sendSMS("Đăng ký tài khoản thành công. Chào mừng bạn tham gia cùng Yummy. ",
