@@ -82,7 +82,11 @@ public class StaticController {
 
 		try {
 			if (user.exist()) {
+<<<<<<< HEAD
 				System.out.println("ton tai user!");
+=======
+				System.out.println("Now the output is redirected!");
+>>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
 				System.out.println(user.current().getEmail());
 
 				return "static/profile";
@@ -97,9 +101,15 @@ public class StaticController {
 	@PostMapping(value = "/edit-profile")
 	public String profileEditProcess(HttpSession session, ModelMap model, 
 			@RequestParam("image") MultipartFile image,
+<<<<<<< HEAD
 			@RequestParam("gender") int gender,
 			@RequestParam("name") String name,
 			@RequestParam("birthday") String birthday,
+=======
+			@RequestParam("gender") int gender, 
+			@RequestParam("name") String name,
+			@RequestParam("birthday") String birthday, 
+>>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
 			@RequestParam("address") String address,
 			@RequestParam("email") String email,
 			@RequestParam("bio") String bio) {
@@ -116,7 +126,11 @@ public class StaticController {
 				model.addAttribute("class_name", "msg_success");
 			}
 			System.out.println("Now the output is redirected!");
+<<<<<<< HEAD
 			System.out.println(user.current().getEmail());
+=======
+			System.out.println(user.current());
+>>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
 
 			session.setAttribute("user", user.current());
 			return "static/profile";
