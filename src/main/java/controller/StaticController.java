@@ -82,6 +82,9 @@ public class StaticController {
 
 		try {
 			if (user.exist()) {
+				System.out.println("Now the output is redirected!");
+				System.out.println(user.current().getEmail());
+
 				return "static/profile";
 			} else {
 				return "auth/sign-in";
@@ -92,9 +95,12 @@ public class StaticController {
 	}
 
 	@PostMapping(value = "/edit-profile")
-	public String profileEditProcess(HttpSession session, ModelMap model, @RequestParam("image") MultipartFile image,
-			@RequestParam("gender") int gender, @RequestParam("name") String name,
-			@RequestParam("birthday") String birthday, @RequestParam("address") String address,
+	public String profileEditProcess(HttpSession session, ModelMap model, 
+			@RequestParam("image") MultipartFile image,
+			@RequestParam("gender") int gender, 
+			@RequestParam("name") String name,
+			@RequestParam("birthday") String birthday, 
+			@RequestParam("address") String address,
 			@RequestParam("email") String email,
 			@RequestParam("bio") String bio) {
 		String photo = UploadConfig.uploadImage(model, image);
@@ -111,6 +117,8 @@ public class StaticController {
 				model.addAttribute("message2", "Cập nhập thông tin thất bại.");
 				model.addAttribute("class_name", "msg_success");
 			}
+			System.out.println("Now the output is redirected!");
+			System.out.println(user.current());
 
 			session.setAttribute("user", user.current());
 			return "static/profile";
