@@ -25,7 +25,7 @@
 	width: 100%;
 	height: 0;
 	border-radius: 50%;
-	background-color: #1369ce;
+	background-color: #ffc72c;
 	position: absolute;
 	bottom: 135%;
 	right: 0;
@@ -44,7 +44,7 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	background-color: #1369ce;
+	background-color: #ffc72c;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -75,7 +75,7 @@
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: #1369ce;
+	background-color: #ffc72c;
 	position: absolute;
 	bottom: -100px;
 	left: 0;
@@ -100,16 +100,17 @@
 }
 
 .our-team .social li a:hover {
-	color: #1369ce;
-	background-color: #f7f5ec;
+	color: #fff;
+	background-color: #c33;
 }
 </style>
 <jsp:include page="layout/_header.jsp"></jsp:include>
 
 <div id="content" class="clearfix" style="width: 100%;">
+
 	<div id="left-area" class="clearfix" style="width: 91%;">
 		<div class="post-53 post category-barbeque" id="post-53">
-			<h1 style="font-size: 40px; text-align: center; margin: 30px 0px;"
+			<h1 style="color: #c33; font-size: 40px; text-align: center; margin: 30px 0px;"
 				class="single-post-title">- Yummy & Câu chuyện của chúng ta -</h1>
 			<br>
 
@@ -126,12 +127,12 @@
 
 			<p style="padding: 19px; text-align: justify;">Bạn có thể tìm
 				kiếm công thức các món ăn ưa thích một cách nhanh chóng hơn với công
-				cụ tìm kiếm của yummy. Bạn có thể tìm kiếm theo tên, theo nguyên
-				liệu, theo mục đích, theo chế độ dinh dưỡng(gym, người cao
+				cụ tìm kiếm của Yummy. Bạn có thể tìm kiếm theo tên, theo nguyên
+				liệu, theo mục đích, theo chế độ dinh dưỡng (gym, người cao
 				tuổi,...).</p>
 
 			<p style="padding: 19px; text-align: justify;">Nấu một món ngon
-				trở nên dễ dàng hơn với yummy. Yummy sẽ cố gắng từng ngày một với
+				trở nên dễ dàng hơn với Yummy. Yummy sẽ cố gắng từng ngày một với
 				mong muốn tạo ra một sản phẩm có thể giúp cho những đầu bếp bình
 				thường nhất nấu được một món ăn ngon nhất. Chúng tôi chắc chắn rằng
 				bạn sẽ cảm thấy rất vui khi được tự nấu cho một ai đó thưởng thức.
@@ -148,7 +149,7 @@
 				có thể kết nối và chia sẻ kinh nghiệm về nấu ăn cho nhau. Mong muốn
 				có thể tạo được một sân chơi thật sự cho người đam mê ẩm thực, đam
 				mê nấu nướng. Bạn có thể đưa ra những ý kiến riêng của bản thân về
-				những bài viết trên yummy ở dưới phần bình luận để tăng thêm sự
+				những bài viết trên Yummy ở dưới phần bình luận để tăng thêm sự
 				khách quan.</p>
 			<!-- 			</div>
  -->
@@ -164,7 +165,8 @@
 
 
 
-	<h1 style="font-size: 30px; text-align: center; margin-bottom: 45px;"
+	<h1
+		style="font-size: 30px; text-align: center; margin-bottom: 45px; margin-left: 0;"
 		class="single-post-title">Đồng sáng lập</h1>
 
 
@@ -175,15 +177,15 @@
 				<div class="our-team">
 					<div class="picture">
 						<img class="img-fluid"
-							src="https://picsum.photos/130/130?image=839">
+							src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-1/79279911_628458811020028_2522879612329918464_n.jpg?_nc_cat=109&_nc_sid=dbb9e7&_nc_ohc=5aaCKGxEqosAX9m9-82&_nc_ht=scontent.fhan5-1.fna&oh=9e04bb721c2bd23b4c2402bdf2923b71&oe=5F5A063A">
 					</div>
 					<div class="team-content">
 						<h3 class="name">Ng Thúy Trang</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
-						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
-						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
+						<li><a onClick="openFacebookTrang()"
+							class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a
 							href="mailto:Trangnttse06081@fpt.edu.vn?subject=Dear Trang"
 							class="fab fa-google" aria-hidden="true"></a></li>
@@ -195,15 +197,15 @@
 				<div class="our-team">
 					<div class="picture">
 						<img class="img-fluid"
-							src="https://picsum.photos/130/130?image=839">
+							src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.0-0/p206x206/19437549_835172129983266_8144884002029286437_n.jpg?_nc_cat=108&_nc_sid=7aed08&_nc_ohc=RU8VS2Gv0wwAX8Msz6J&_nc_ht=scontent.fhan5-5.fna&_nc_tp=6&oh=7c6ced9bd6a3c7fa5a2d1d8b853287ac&oe=5F594CAC">
 					</div>
 					<div class="team-content">
 						<h3 class="name">Đỗ Anh Hoàng</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
-						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
-						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
+						<li><a onClick="openFacebookHoang()"
+							class="fab fa-facebook-f" aria-hidden="true"></a></li>
 						<li><a
 							href="mailto:Hoangdase05956@fpt.edu.vn?subject=Dear Hoàng"
 							class="fab fa-google" aria-hidden="true"></a></li>
@@ -214,15 +216,15 @@
 				<div class="our-team">
 					<div class="picture">
 						<img class="img-fluid"
-							src="https://picsum.photos/130/130?image=856">
+							src="${pageContext.request.contextPath}/resources/DucVV.PNG">
 					</div>
 					<div class="team-content">
 						<h3 class="name">Vũ Viết Đức</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
-						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
-						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
+						<li><a onClick="openFacebookDuc()" class="fab fa-facebook-f"
+							aria-hidden="true"></a></li>
 						<li><a href="mailto:ducvvse05830@fpt.edu.vn?subject=Dear Đức"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
@@ -232,15 +234,15 @@
 				<div class="our-team">
 					<div class="picture">
 						<img class="img-fluid"
-							src="https://picsum.photos/130/130?image=836">
+							src="https://scontent.fhan5-5.fna.fbcdn.net/v/t1.0-9/s960x960/116043771_3275070916052238_4630418638727898909_o.jpg?_nc_cat=101&_nc_sid=85a577&_nc_ohc=M-3EtoDjfEcAX8MzUQt&_nc_ht=scontent.fhan5-5.fna&_nc_tp=7&oh=e01c8ded28d89c3695dd9eb81b18cb20&oe=5F5C0514">
 					</div>
 					<div class="team-content">
 						<h3 class="name">Lê Diệu Ly</h3>
 						<h4 class="title">Web Developer</h4>
 					</div>
 					<ul class="social">
-						<li><a href="" class="fab fa-facebook-f" aria-hidden="true"></a></li>
-						<li><a href="" class="fab fa-twitter" aria-hidden="true"></a></li>
+						<li><a onClick="openFacebookLy()" class="fab fa-facebook-f"
+							aria-hidden="true"></a></li>
 						<li><a href="mailto:Lyldse05303@fpt.edu.vn?subject=Dear Ly"
 							class="fab fa-google" aria-hidden="true"></a></li>
 					</ul>
@@ -249,7 +251,25 @@
 		</div>
 	</div>
 
-
+	<script>
+		function openFacebookLy() {
+			window.open(
+					'https://www.facebook.com/profile.php?id=100006480854669',
+					'_blank');
+		}
+		function openFacebookHoang() {
+			window.open('https://www.facebook.com/harlen7777', '_blank');
+		}
+		function openFacebookTrang() {
+			window.open('https://www.facebook.com/thuytrang.nguyenthi.3158652',
+					'_blank');
+		}
+		function openFacebookDuc() {
+			window.open(
+					'https://www.facebook.com/profile.php?id=100008776422751',
+					'_blank');
+		}
+	</script>
 
 
 </div>

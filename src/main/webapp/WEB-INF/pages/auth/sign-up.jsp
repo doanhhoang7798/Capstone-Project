@@ -37,13 +37,13 @@
                      </div>
                      <div class="wrap-input100 validate-input"
                      data-validate="Username is required">
-                     <input class="input100" type="tel" pattern="^(03|05|07|08|09)+([0-9]{8})" required name="phone">
+                     <input class="input100" type="tel" pattern="^(03|05|07|08|09)+([0-9]{8})" required name="phone" id="phone">
                      <span class="focus-input100"></span>
                      </div>
                 
                      
     
-                  <div class="p-b-10 p-l-20">
+                  <div class="p-b-10 p-l-20"> 
                      <span class="txt1">Mật khẩu </span>
                   </div>
                   <div class="wrap-input100 validate-input"
@@ -86,7 +86,8 @@
                 	    } else {
                 	        fullname.setCustomValidity('');
                 	    }
-
+                	  	console.log(fullname + 'full name');
+                	  	console.log(phone);
                 	    if (phone.value.length == 0) {
                 	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
                 	    } else if (phone.value.length != 10) {

@@ -4,9 +4,9 @@
 <style>
 .rate-box {
 	width: 100%;
-	height: 22%;
+	height: 27%;
 	padding: 5px 20px 0 30px;
-	margin: 0 0 25px;
+	margin: -20px 0 25px;
 	background:
 		url(${pageContext.request.contextPath}/resources/static/images/rate-box-bg.png)
 		no-repeat;
@@ -34,6 +34,7 @@
 
 pre {
 	white-space: pre-wrap;
+	word-break: break-word;
 }
 </style>
 <jsp:include page="../layout/_header.jsp"></jsp:include>
@@ -128,18 +129,18 @@ pre {
 		<span class="w-pet-border"></span>
 		<div class="info-left instructions" style="width: 100%;">
 			<div itemprop="description">
-				<h1 class="w-bot-border">
+				<h1 class="w-bot-border" >
 					<span> Giới thiệu</span>
 				</h1>
-				<pre>${ post.overview }</pre>
+				<pre style="word-break: break-word;">${ post.overview }</pre>
 				<h1 class="w-bot-border">
 					<span>Cách làm </span>
 				</h1>
-				<pre>${ post.making }</pre>
+				<pre style="word-break: break-word;">${ post.making }</pre>
 				<h1 class="w-bot-border">
 					<span>Nguyên liệu & thành phần </span>
 				</h1>
-				<pre>${ post.material_detail }</pre>
+				<pre style="word-break: break-word;">${ post.material_detail }</pre>
 			</div>
 			<span class="w-pet-border"></span>
 			<c:choose>
@@ -183,13 +184,7 @@ pre {
 
 
 										</form>
-										<c:choose>
-											<c:when test="${ comment.image_url == null}">
-												<img class="blah2"
-													style="margin-top: 10px; margin-left: 42px;" src="">
-											</c:when>
-										</c:choose>
-										</form>
+										
 									</div>
 								</div>
 							</div>
@@ -379,22 +374,22 @@ pre {
 		<div id="recipes-from-recipe-type-2"
 			class="widget nostylewt Recipes_from_Recipe_Type clearfix">
 			<div class="recipes-slider-widget rt">
-				<h3 class="w-bot-border">
+				<h2 class="w-bot-border">
 					<span>Thông tin &amp; bài viết</span>
-				</h3>
+				</h2>
 				<div style="" class="rate-box">
-					<h6>Lượt thích</h6>
+					<h4>Lượt thích</h4>
 					<p id="output"></p>
 					<p class="status">
 						<i class="fa fa-heart " aria-hidden="true"></i>&nbsp;&nbsp;<span
 							id="couter_like">${ post.reactions.size()} lượt thích </span>
 					</p>
-					<h6>Lượt xem</h6>
+					<h4>Lượt xem</h4>
 					<p class="status">
 						<i class="fa fa-eye" aria-hidden="true"></i>&nbsp; &nbsp;<span>${post.view_conter }
 							lượt xem </span>
 					</p>
-					<h6>Bình luận</h6>
+					<h4>Bình luận</h4>
 					<p class="status">
 						<i class="fa fa-comment" aria-hidden="true"></i>&nbsp;&nbsp;<span
 							id="sub-comment">${post.comments.size() } bình luận </span>

@@ -8,6 +8,12 @@
 		match-schema="dbo" match-name="posts" />
 	<table-filter match-catalog="fpt-web-development"
 		match-schema="dbo" match-name="reactions" />
+	<table-filter match-catalog="fpt-web-development"
+		match-schema="dbo" match-name="comments" />
+	<table-filter match-catalog="fpt-web-development"
+		match-schema="dbo" match-name="reports" />
+	<table-filter match-catalog="fpt-web-development"
+		match-schema="dbo" match-name="tipNutri" />
 
 
 </hibernate-reverse-engineering> 

@@ -87,7 +87,8 @@
 						<a style="margin-bottom: -6px; color: #cc3333;" href="${pageContext.request.contextPath}/filter?condition=${post.category }&category=category">${post.category }</a>
 						<i class="d-f-r">${ post.created_at.toString().split(" ")[0] }</i >
 					</h4> <a href="${pageContext.request.contextPath}/post-show/${post.id }"
-					class="img-box"> <embed id="video" wmode="transparent"
+					class="img-box"> 
+					<embed id="video" wmode="transparent"
 							title="#caption_${post.id }" src="${post.video_url }"
 							type="application/x-shockwave-flash" width="216" height="135"
 							loop="true" title="Adobe Flash Player"></embed>
