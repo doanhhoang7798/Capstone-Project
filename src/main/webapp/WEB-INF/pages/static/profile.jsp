@@ -124,8 +124,9 @@
 										<div class="col-sm-9 controls">
 											<div class="row mgbt-xs-0">
 												<div class="col-xs-9">
-													<input required value="${ user.getFullname() }" name="name"
-														type="text" placeholder="Họ tên " />
+													<input id="name" style="width: 132%;" required type="text"
+														value="${ user.getFullname() }" name="name"
+														placeholder=" Họ tên " />
 												</div>
 												<!-- col-xs-9 -->
 
@@ -172,86 +173,133 @@
 													</span>
 
 												</div>
-					
-											<!-- row -->
-										</div>
-										<!-- col-sm-10 -->
-									</div>
-									<div class="form-group">
-										<label class="col-sm-3 control-label font">Ngày sinh</label>
-										<div class="col-sm-9 controls">
-											<div class="row mgbt-xs-0">
-												<div class="col-xs-9">
-													<input type="date" value="${ user.getBirthday().trim()}"
-														max='2010-01-01' id="datepicker-normal" name="birthday"
-														class="width-40 hasDatepicker" />
-												</div>
-												<!-- col-xs-12 -->
 
+												<!-- row -->
 											</div>
-											<!-- row -->
+											<!-- col-sm-10 -->
 										</div>
-										<!-- col-sm-10 -->
-									</div>
-									<!-- form-group -->
+										<div class="form-group">
+											<label class="col-sm-3 control-label font">Ngày sinh</label>
+											<div class="col-sm-9 controls">
+												<div class="row mgbt-xs-0">
+													<div class="col-xs-9">
+														<input type="date" value="${ user.getBirthday().trim()}"
+															max='2010-01-01' id="datepicker-normal" name="birthday"
+															class="width-40 hasDatepicker" />
+													</div>
+													<!-- col-xs-12 -->
 
-
-									<div class="form-group">
-										<label class="col-sm-3 control-label font">Địa chỉ</label>
-										<div class="col-sm-9 controls">
-											<div class="row mgbt-xs-0">
-												<div class="col-xs-9">
-													<input type="text" value="${ user.getCountry() }"
-														name="address" placeholder=" Địa chỉ " />
 												</div>
-												<!-- col-xs-9 -->
-
+												<!-- row -->
 											</div>
-											<!-- row -->
+											<!-- col-sm-10 -->
 										</div>
-										<!-- col-sm-10 -->
-									</div>
+										<!-- form-group -->
 
-									<div class="form-group">
-										<label class="col-sm-3 control-label font">Email</label>
-										<div class="col-sm-9 controls">
-											<div class="row mgbt-xs-0">
-												<div class="col-xs-9">
-													<input type="email" value="${ user.getEmail() }"
-														name="email" placeholder="Email" />
+
+										<div class="form-group">
+											<label class="col-sm-3 control-label font">Địa chỉ</label>
+											<div class="col-sm-9 controls">
+												<div class="row mgbt-xs-0">
+													<div class="col-xs-9">
+														<input type="text" value="${ user.getCountry() }"
+															id="address" name="address" placeholder=" Địa chỉ " />
+													</div>
+													<!-- col-xs-9 -->
+
 												</div>
-												<!-- col-xs-9 -->
-
+												<!-- row -->
 											</div>
-											<!-- row -->
+											<!-- col-sm-10 -->
 										</div>
-										<!-- col-sm-10 -->
-									</div>
+										<!-- form-group -->
 
 
-									<div class="form-group">
-										<label class="col-sm-3 control-label font"> Mô tả </label>
-										<div class="col-sm-9 controls">
-											<div class="row mgbt-xs-0">
-												<div class="col-xs-9">
-													<textarea name="bio"
-														placeholder=" Mô tả-
-													Giới thiệu bản thân "
-														style="width: 125%" rows="4">${ user.getBio() }</textarea>
+										<div class="form-group">
+											<label class="col-sm-3 control-label font">Email</label>
+											<div class="col-sm-9 controls">
+												<div class="row mgbt-xs-0">
+													<div class="col-xs-9">
+														<input type="email" value="${ user.getEmail()}"
+															name="email" placeholder=" Email của bạn " />
+													</div>
+													<!-- col-xs-9 -->
+
 												</div>
-												<!-- col-xs-12 -->
-
+												<!-- row -->
 											</div>
-											<!-- row -->
+											<!-- col-sm-10 -->
 										</div>
-										<!-- col-sm-10 -->
-									</div>
+										<!-- form-group -->
 
-									<button type="submit" style="margin-left: 364px;"
-										class="btn btn-primary">
-										<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
-										Cập nhập
-									</button>
+										<div class="form-group">
+											<label class="col-sm-3 control-label font"> Mô tả </label>
+											<div class="col-sm-9 controls">
+												<div class="row mgbt-xs-0">
+													<div class="col-xs-9">
+														<textarea name="bio" id="bio"
+															placeholder=" Mô tả - Giới thiệu bản thân "
+															style="width: 125%" rows="6">${ user.getBio() }</textarea>
+													</div>
+													<!-- col-xs-12 -->
+
+												</div>
+												<!-- row -->
+											</div>
+											<!-- col-sm-10 -->
+										</div>
+
+										<button name="psubmit" type="submit"
+											style="margin-left: 364px;" class="btn btn-primary">
+											<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
+											Cập nhật
+										</button>
+										<script>
+											function validateUser() {
+												var fullname = document
+														.getElementById("name");
+												var address = document
+														.getElementById("address");
+												var bio = document
+														.getElementById("bio");
+
+												// Validate field Fullname 
+												if (fullname.value.length == 0) {
+													fullname
+															.setCustomValidity("Họ tên không được bỏ trống.");
+												} else if (fullname.value.length < 3) {
+													fullname
+															.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
+
+												} else if (fullname.value.length > 40) {
+													fullname
+															.setCustomValidity(" Họ và tên tối đa 40 kí tự.");
+												} else {
+													fullname
+															.setCustomValidity('');
+												}
+
+												// Validate field address 
+												if (address.value.length > 60) {
+													address
+															.setCustomValidity("Địa chỉ tối đa 60 kí tự");
+												} else {
+													address
+															.setCustomValidity('');
+												}
+
+												// Validate field bio 
+												if (bio.value.length > 250) {
+													bio
+															.setCustomValidity("Mô tả bản thân bằng tối đa 200 kí tự");
+												} else {
+													bio.setCustomValidity('');
+												}
+
+											}
+											document
+													.getElementsByName("psubmit")[0].onclick = validateUser;
+										</script>
 						</form>
 
 
@@ -297,9 +345,9 @@
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="password" required name="password" minlength="8"
-												maxlength="20" type="password" class="width-40"
-												placeholder="Mật khẩu" />
+											<input id="password" required name="password"
+												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+												type="password" class="width-40" placeholder="Mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->
 									</div>
@@ -309,13 +357,12 @@
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-3 control-label font">Xác nhận mật
-									khẩu</label>
+								<label class="col-sm-3 control-label font">Xác nhận mật khẩu</label>
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="confirm_password" type="password" minlength="8"
-												maxlength="20" class="width-40" placeholder="Mật khẩu" />
+											<input id="confirm_password" type="password" 
+												class="width-40" placeholder="Xác nhận mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->
 									</div>
@@ -323,33 +370,47 @@
 								</div>
 								<!-- col-sm-10 -->
 							</div>
-
+							<button name="submit" type="submit" style="margin-right: 14px;"
+								class="btn btn-primary vd_bg-green col-md-offset-7">
+								<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
+								Đổi mật khẩu
+							</button>
 							<script>
-								var password = document
-										.getElementById("password"), confirm_password = document
-										.getElementById("confirm_password");
-
 								function validatePassword() {
+									var password = document
+											.getElementById("password");
+
+									var confirm_password = document
+											.getElementById("confirm_password");
+
+									// Validate field Password 
+									if (password.value.length == 0) {
+										password
+												.setCustomValidity("Mật khẩu không được bỏ trống.");
+									} else if (password.value.length < 8) {
+										password
+												.setCustomValidity("Mật khẩu tối thiểu 8 kí tự.");
+
+									} else if (password.value.length > 20) {
+										password
+												.setCustomValidity("Mật khẩu tối đa 20 kí tự.");
+
+									} else {
+										password.setCustomValidity('');
+									}
+
+									// Validate field Password, Confirm Password match.
 									if (password.value != confirm_password.value) {
 										confirm_password
-												.setCustomValidity("Passwords Don't Match");
+												.setCustomValidity("Xác nhận mật khẩu không khớp ");
 									} else {
 										confirm_password.setCustomValidity('');
 									}
 								}
 
-								password.onchange = validatePassword;
-								confirm_password.onkeyup = validatePassword;
+								document.getElementsByName("submit")[0].onclick = validatePassword;
 							</script>
 
-
-
-
-							<button type="submit" style="margin-right: 14px;"
-								class="btn btn-primary vd_bg-green col-md-offset-7">
-								<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
-								Đổi mật khẩu
-							</button>
 
 						</form>
 

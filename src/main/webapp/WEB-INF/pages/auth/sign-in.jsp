@@ -149,11 +149,11 @@
 					action="user-signin" method="post">
 
 					<div class="p-b-10 p-l-20">
-						<span class="txt1">Số điện thoại hoặc Email </span>
+						<span class="txt1">Số điện thoại </span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
-						<input class="input100" type="text" required
+						<input id="phone" class="input100" type="text" required
 							name="txtphone"> <span class="focus-input100"></span>
 					</div>
 
@@ -166,9 +166,9 @@
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Password is required">
-						<input class="input100" minlength="8" maxlength="20"
-							type="password" required name="txtpass"> <span
-							class="focus-input100"></span>
+						<input id="password" class="input100"
+							pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password"
+							required name="txtpass"> <span class="focus-input100"></span>
 					</div>
 
 					<div id="Msg" style="margin-left: 100px; margin-top: 14px;"
@@ -181,10 +181,40 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button type="submit" class="login100-form-btn">Đăng nhập
-						</button>
+						<input class="login100-form-btn" name="submit" type="submit"
+							value="Đăng nhập">
 					</div>
+					<script>
+                  function validatePassword() {
+                	    var password = document.getElementById("password");
+               	    
+                	    var phone = document.getElementById("phone");
 
+                	    if (phone.value.length == 0) {
+                	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
+                	    } else if (phone.value.length != 10) {
+                	    	phone.setCustomValidity("Số điện thoại phải 10 chữ số");
+                	    } else {
+                	    	phone.setCustomValidity('');
+                	    }
+
+                	    // Validate field Password 
+                	    if (password.value.length == 0) {
+                	        password.setCustomValidity("Mật khẩu không được bỏ trống.");
+                	    } else if (password.value.length < 8) {
+                	        password.setCustomValidity("Mật khẩu tối thiểu 8 kí tự.");
+
+                	    } else if (password.value.length > 20) {
+                	        password.setCustomValidity("Mật khẩu tối đa 20 kí tự.");    	        
+                	    } else {
+                	        password.setCustomValidity('');
+                	    }
+
+
+                	}
+
+                	document.getElementsByName("submit")[0].onclick = validatePassword;
+                    </script>
 					<div class="w-full text-center p-t-30">
 						<span class="txt2"> Bạn chưa có tài khoản? </span> <a
 							href="${pageContext.request.contextPath}/authorized/SignUp"

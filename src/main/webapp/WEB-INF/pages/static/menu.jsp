@@ -97,7 +97,7 @@
 						Cơm-Xôi-Cháo </a>
 				</h4></li>
 			<li><a
-				href="${pageContext.request.contextPath}/filter?condition=Khác&category=main_material"
+				href="${pageContext.request.contextPath}/filter?condition=Nguyên liệu khác&category=main_material"
 				class="img-box"> <img style="height: 145px;"
 					src="${pageContext.request.contextPath}/resources/static//images/category/OtherThitLon.png"
 					class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
@@ -183,7 +183,7 @@
 					</a>
 				</h4></li>
 			<li><a
-				href="${pageContext.request.contextPath}/filter?condition=Khác&category=kind"
+				href="${pageContext.request.contextPath}/filter?condition=Có cách nấu khác&category=kind"
 				class="img-box"> <img style="height: 145px;"
 					src="${pageContext.request.contextPath}/resources/static//images/category/othercachnau.png"
 					class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
@@ -240,7 +240,7 @@
 			</a>
 				<h4>
 					<a
-						href="${pageContext.request.contextPath}/filter?condition=Thái Lan&category=nation">
+						href="${pageContext.request.contextPath}/filter?condition=Nhật Bản&category=nation">
 						Nhật Bản </a>
 				</h4></li>
 			<li><a
@@ -255,7 +255,7 @@
 						Thái Lan </a>
 				</h4></li>
 			<li><a
-				href="${pageContext.request.contextPath}/filter?condition=Khác&category=nation"
+				href="${pageContext.request.contextPath}/filter?condition=Các nước khác&category=nation"
 				class="img-box"> <img style="height: 145px;"
 					src="${pageContext.request.contextPath}/resources/static//images/category/otherNation.png"
 					class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
@@ -316,7 +316,7 @@
 						nhật </a>
 				</h4></li>
 			<li><a
-				href="${pageContext.request.contextPath}/filter?condition=Khác&category=holiday"
+				href="${pageContext.request.contextPath}/filter?condition=Ngày lễ khác&category=holiday"
 				class="img-box"> <img style="height: 145px;"
 					src="${pageContext.request.contextPath}/resources/static//images/category/otherlehoi.png"
 					class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />
@@ -484,7 +484,7 @@
 						Gia đình </a>
 				</h4></li>
 			<li><a
-				href="${pageContext.request.contextPath}/filter?condition=Khác&category=suitable"
+				href="${pageContext.request.contextPath}/filter?condition=Đối tượng khác&category=suitable"
 				class="img-box"> <img style="height: 145px;"
 					src="${pageContext.request.contextPath}/resources/static//images/category/otherphuhop.png"
 					class="attachment-recipe-4column-thumb wp-post-image" alt="accor_2" />

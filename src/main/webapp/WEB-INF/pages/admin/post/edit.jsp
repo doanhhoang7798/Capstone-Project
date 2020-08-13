@@ -127,7 +127,7 @@ input {
 					<div class="blog-div with20 kind">
 						<h3 style="text-align: center; margin-left: 51px;">Cách thức</h3>
 						<select class="dropdown" name="kind">
-							<option value="Có cách nấu khác">Cách nấu khác</option>
+							<option value="Có cách nấu khác">Có cách nấu khác</option>
 							<option value="Nướng">Nướng</option>
 							<option value="Kho/Om">Kho/Om</option>
 							<option value="Chiên/Rán">Chiên/Rán</option>

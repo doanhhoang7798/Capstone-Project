@@ -49,7 +49,7 @@
                   <div class="wrap-input100 validate-input"
                      data-validate="Username is required">
                      <input id="password" class="input100" type="password" type="email"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20" required name="password"> <span
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required name="password"> <span
                         class="focus-input100"></span>
                   </div>
                   <div class="p-b-10 p-l-20">
@@ -58,7 +58,7 @@
                   <div class="wrap-input100 validate-input"
                      data-validate="Username is required">
                      <input id="confirm_password" class="input100" type="password" 
-                        type="email" maxlength="20" required
+                        type="email" required
                         name="cf_password"> <span class="focus-input100"></span>
                   </div>
                   <span class="txt2" style="color: #c33;margin-left: 15%;" >Mật khẩu phải gồm ít nhất 1 chữ in hóa, 1 chữ in thường và 1 chữ số</span>
@@ -86,12 +86,11 @@
                 	    } else {
                 	        fullname.setCustomValidity('');
                 	    }
-                	  	console.log(fullname + 'full name');
-                	  	console.log(phone);
+
                 	    if (phone.value.length == 0) {
                 	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
                 	    } else if (phone.value.length != 10) {
-                	    	phone.setCustomValidity("Số điện thoại gồm 10 chữ số");
+                	    	phone.setCustomValidity("Số điện thoại phải 10 chữ số");
                 	    } else {
                 	    	phone.setCustomValidity('');
                 	    }
