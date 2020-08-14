@@ -40,8 +40,8 @@ input {
 					class="single-post-title">Sửa bài viết</h3>
 
 				<input type="hidden" name="user_id" value="${ post.user.id }" /> <input
-					name="title" style="width: 100%; color: #888;" minlength="15"
-					required maxlength="150" value="${ post.title }"
+					name="title" style="width: 100%; color: #888;" minlength="5"
+					required maxlength="50" value="${ post.title }"
 					placeholder="Nhập tiêu đề bài viết !!" /> <br> <br> <br>
 				<div class="post-53 post category-barbeque" style="width: 100%;">
 
@@ -156,7 +156,7 @@ input {
 					</div>
 					<div class="blog-div with20">
 						<h3 style="text-align: center;">Giá thành</h3>
-						<input type="number" required max="1000" value="${post.price}"
+						<input type="number" required max="10000" value="${post.price}"
 							style="width: 100px; margin-left: 32px; height: 11px;"
 							name="price" />
 					</div>
@@ -238,20 +238,20 @@ input {
 				<h1 class="w-bot-border">
 					<span> Giới thiệu</span>
 				</h1>
-				<textarea name="overview" cols="110" rows="9" required
+				<textarea name="overview" cols="128" rows="9" required minlength="5" maxlength="200" 
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea">${post.overview}</textarea>
 				<h1 class="w-bot-border">
 					<span> Nguyên liệu </span>
 				</h1>
-				<textarea name="material_detail" cols="110" rows="9" required
+				<textarea name="material_detail" cols="128" rows="9" required minlength="5" maxlength="1000"
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea">${post.material_detail}</textarea>
 
 				<h1 class="w-bot-border">
 					<span> Cách làm </span>
 				</h1>
-				<textarea name="making" cols="110" rows="9" required
+				<textarea name="making" cols="128" rows="9" required minlength="5" maxlength="10000"
 					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea">${post.making}</textarea>
 		</div>
 		<!-- end of post div -->

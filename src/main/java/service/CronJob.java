@@ -30,7 +30,6 @@ public class CronJob {
 			SimpleDateFormat fomart = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 			Date block_date = fomart.parse(user.getBlock_date());
 			Date unlock_date = new Date(block_date.getTime() + (1000 * 60 * 60 * 24));
-
 			if ((fomart.format(today)).equals(fomart.format(unlock_date))) {
 				userDaoimpl.setStatus(user.getId(), 1, null);
 				reportDaoimpl.deleteMany(user.getId());

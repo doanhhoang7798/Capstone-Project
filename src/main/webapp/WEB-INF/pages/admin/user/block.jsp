@@ -145,11 +145,8 @@
 									data-href="${pageContext.request.contextPath}/admin/user/list/${user_detail.id }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-unlock"></i>
-								</button> <a class="btn btn-success"
+								</button> <a class="btn btn-info"
 								href="${pageContext.request.contextPath}/admin/user/show/${user_detail.id}">
-									<span class="menu-icon"><i class="fa fa-cog"></i></span>
-							</a> <a class="btn btn-info"
-								href="${pageContext.request.contextPath}/filter?condition=${ user_detail.id }&category=user_id">
 									<span class="menu-icon"><i class="fa fa-eye"></i></span>
 							</a>
 							</td>

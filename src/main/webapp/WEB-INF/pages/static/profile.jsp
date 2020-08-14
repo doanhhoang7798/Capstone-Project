@@ -52,13 +52,13 @@
 													<c:when test="${user.getImage()  == null}">
 
 														<img
-															style="width: 200px; height: 174px; margin-bottom: 10px"
+															style="width: 210px; height: 210px; margin-bottom: 10px"
 															id="blah" alt="example image"
 															src="${pageContext.request.contextPath }/resources/images/null_img.png" />
 													</c:when>
 													<c:otherwise>
 														<img
-															style="width: 200px; height: 174px; margin-bottom: 10px"
+															style="width: 210px; height: 210px; margin-bottom: 10px"
 															id="blah" alt="example image"
 															src="${pageContext.request.contextPath }/resources/${user.getImage()}" />
 													</c:otherwise>
@@ -69,7 +69,7 @@
 
 												<input onchange="readURL(this);" type="file" name="image"
 													accept="image/x-png,image/gif,image/jpeg"
-													style="margin: auto; width: 92px;" />
+													style="margin: auto; width: 73px;" />
 
 											</div>
 											<br />
@@ -184,7 +184,7 @@
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
 														<input type="date" value="${ user.getBirthday().trim()}"
-															max='2010-01-01' id="datepicker-normal" name="birthday"
+															max='2011-01-01' id="datepicker-normal" name="birthday"
 															class="width-40 hasDatepicker" />
 													</div>
 													<!-- col-xs-12 -->
@@ -220,7 +220,7 @@
 											<div class="col-sm-9 controls">
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
-														<input type="email" value="${ user.getEmail()}"
+														<input type="email" value="${user.getEmail()}"
 															name="email" placeholder=" Email của bạn " />
 													</div>
 													<!-- col-xs-9 -->
@@ -271,9 +271,9 @@
 													fullname
 															.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
 
-												} else if (fullname.value.length > 40) {
+												} else if (fullname.value.length > 30) {
 													fullname
-															.setCustomValidity(" Họ và tên tối đa 40 kí tự.");
+															.setCustomValidity(" Họ và tên tối đa 30 kí tự.");
 												} else {
 													fullname
 															.setCustomValidity('');
@@ -327,7 +327,7 @@
 							<div class="col-sm-9 controls">
 								<div class="row mgbt-xs-0">
 									<div class="col-xs-9">
-										<input readonly type="text" name="email"
+										<input readonly type="text" name="phone"
 											placeholder="${ user.getPhone() }" />
 									</div>
 								</div>
@@ -357,12 +357,13 @@
 							</div>
 
 							<div class="form-group">
-								<label class="col-sm-3 control-label font">Xác nhận mật khẩu</label>
+								<label class="col-sm-3 control-label font">Xác nhận mật
+									khẩu</label>
 								<div class="col-sm-9 controls">
 									<div class="row mgbt-xs-0">
 										<div class="col-xs-9">
-											<input id="confirm_password" type="password" 
-												class="width-40" placeholder="Xác nhận mật khẩu" />
+											<input id="confirm_password" type="password" class="width-40"
+												placeholder="Xác nhận mật khẩu" />
 										</div>
 										<!-- col-xs-12 -->
 									</div>
@@ -370,7 +371,7 @@
 								</div>
 								<!-- col-sm-10 -->
 							</div>
-							<button name="submit" type="submit" style="margin-right: 14px;"
+							<button name="submit" type="submit" style="margin-left: 364px;"
 								class="btn btn-primary vd_bg-green col-md-offset-7">
 								<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
 								Đổi mật khẩu
@@ -391,9 +392,9 @@
 										password
 												.setCustomValidity("Mật khẩu tối thiểu 8 kí tự.");
 
-									} else if (password.value.length > 20) {
+									} else if (password.value.length > 15) {
 										password
-												.setCustomValidity("Mật khẩu tối đa 20 kí tự.");
+												.setCustomValidity("Mật khẩu tối đa 15 kí tự.");
 
 									} else {
 										password.setCustomValidity('');

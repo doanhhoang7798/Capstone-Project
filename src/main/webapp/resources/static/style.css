@@ -378,6 +378,7 @@ ul>li:last-child ul {
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
+	text-align-last: center;
 	height: 28px;
 	width: 150px;
 	background: #f2f2f2;

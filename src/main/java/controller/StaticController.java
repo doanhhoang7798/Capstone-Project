@@ -50,8 +50,8 @@ public class StaticController {
 	public String index(Model model, HttpSession session) {
 		try {
 			session.setAttribute("user", user.current());
-			model.addAttribute("slides", postDao.filterHomePage("view_conter"));
-			model.addAttribute("suggestions", postDao.filterHomePage("created_at"));
+			model.addAttribute("slides", postDao.filterHomePage("created_at"));
+			model.addAttribute("suggestions", postDao.filterHomePage("view_conter"));
 			return "static/index";
 		} catch (Exception e) {
 			return "auth/500";
@@ -82,13 +82,6 @@ public class StaticController {
 
 		try {
 			if (user.exist()) {
-<<<<<<< HEAD
-				System.out.println("ton tai user!");
-=======
-				System.out.println("Now the output is redirected!");
->>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
-				System.out.println(user.current().getEmail());
-
 				return "static/profile";
 			} else {
 				return "auth/sign-in";
@@ -101,15 +94,9 @@ public class StaticController {
 	@PostMapping(value = "/edit-profile")
 	public String profileEditProcess(HttpSession session, ModelMap model, 
 			@RequestParam("image") MultipartFile image,
-<<<<<<< HEAD
 			@RequestParam("gender") int gender,
 			@RequestParam("name") String name,
 			@RequestParam("birthday") String birthday,
-=======
-			@RequestParam("gender") int gender, 
-			@RequestParam("name") String name,
-			@RequestParam("birthday") String birthday, 
->>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
 			@RequestParam("address") String address,
 			@RequestParam("email") String email,
 			@RequestParam("bio") String bio) {
@@ -117,20 +104,15 @@ public class StaticController {
 		String photo2 = photo.equals("") ? user.current().getImage() : photo;
 		try {
 			if (userDaoimpl.Update(new Users(user.current().getId(), email, name, user.current().getPassword(),
-					user.current().getPhone(), 20, gender, user.current().getRole(), birthday, address, bio, photo2,
+					user.current().getPhone(), gender, user.current().getRole(), birthday, address, bio, photo2,
 					user.current().getCreated_at(), user.current().getStatus(), user.current().getBlock_date()))) {
-				model.addAttribute("message2", "Cập nhập thông tin thành công.");
+				model.addAttribute("message2", "Cập nhật thông tin thành công.");
 				model.addAttribute("class_name", "msg_success");
 			} else {
-				model.addAttribute("message2", "Cập nhập thông tin thất bại.");
+				model.addAttribute("message2", "Cập nhật thông tin thất bại.");
 				model.addAttribute("class_name", "msg_success");
 			}
-			System.out.println("Now the output is redirected!");
-<<<<<<< HEAD
-			System.out.println(user.current().getEmail());
-=======
-			System.out.println(user.current());
->>>>>>> fcb408e262199140f8f3fa4888b39e997db4d578
+
 
 			session.setAttribute("user", user.current());
 			return "static/profile";
@@ -192,7 +174,7 @@ public class StaticController {
 				break;
 
 			case "new":
-				model.addAttribute("title", "Các bài viết mới nhất");
+				model.addAttribute("title", "Các bài viết được xem nhiều nhất");
 				model.addAttribute("posts", postDao.filterDes(cond, ofset, limit));
 				model.addAttribute("page_size", page_size(postDao.filterDes(cond, 0, 10000000).size(), limit));
 				break;

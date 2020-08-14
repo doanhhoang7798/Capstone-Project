@@ -149,7 +149,7 @@
 					action="user-signin" method="post">
 
 					<div class="p-b-10 p-l-20">
-						<span class="txt1">Số điện thoại </span>
+						<span class="txt1">Số điện thoại hoặc email</span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
@@ -179,33 +179,22 @@
 
 						</div>
 					</div>
-
+				
 					<div class="container-login100-form-btn m-t-17">
-						<input class="login100-form-btn" name="submit" type="submit"
-							value="Đăng nhập">
+						<button name="submit" class="login100-form-btn">Đăng nhập</button>
 					</div>
 					<script>
                   function validatePassword() {
                 	    var password = document.getElementById("password");
                	    
-                	    var phone = document.getElementById("phone");
-
-                	    if (phone.value.length == 0) {
-                	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
-                	    } else if (phone.value.length != 10) {
-                	    	phone.setCustomValidity("Số điện thoại phải 10 chữ số");
-                	    } else {
-                	    	phone.setCustomValidity('');
-                	    }
-
                 	    // Validate field Password 
                 	    if (password.value.length == 0) {
                 	        password.setCustomValidity("Mật khẩu không được bỏ trống.");
                 	    } else if (password.value.length < 8) {
                 	        password.setCustomValidity("Mật khẩu tối thiểu 8 kí tự.");
 
-                	    } else if (password.value.length > 20) {
-                	        password.setCustomValidity("Mật khẩu tối đa 20 kí tự.");    	        
+                	    } else if (password.value.length > 15) {
+                	        password.setCustomValidity("Mật khẩu tối đa 15 kí tự.");    	        
                 	    } else {
                 	        password.setCustomValidity('');
                 	    }

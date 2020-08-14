@@ -93,7 +93,7 @@
          <ul class="cat-list clearfix">
             <c:forEach items="${tips1}" var="item">
                <li>
-                  <a href="${pageContext.request.contextPath}/readmore/${ item.id }" class="img-box"> <img
+                  <a href="${pageContext.request.contextPath}/readmore/${ item.id }" class="img-box"> <img style="width: 214px; height: 139px;"
                      src="${pageContext.request.contextPath}/resources/${ item.image }"
                      class="attachment-recipe-4column-thumb wp-post-image"
                      alt="7a0a46455c4ec56a5a02c097374fc513" />

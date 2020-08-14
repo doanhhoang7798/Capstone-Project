@@ -92,8 +92,7 @@
 							</a>
 								<ul class="sub-menu" style="display: none;">
 									<li style="background: none;"><a
-										href="${pageContext.request.contextPath}/profile">Cá
-											nhân</a></li>
+										href="${pageContext.request.contextPath}/profile">Cá nhân</a></li>
 									<li><a
 										href="${pageContext.request.contextPath}/filter?condition=${user.email }&category=likes">Bài
 											viết yêu thích</a></li>
@@ -139,10 +138,12 @@
 					</p>
 				</form>
 				<p class="statement">
-					<span class="fireRed">Một số gợi ý:</span> <a href="#">Thịt bò</a>
-					, <a href="#">Thịt gà</a> , <a href="#">Bánh ngọt</a> , <a href="#">Cá</a>
-					, <a href="#">Mẹo hay</a> , <a href="#">Pizzas</a>, <a href="#">Khoai
-						tây</a>, <a href="#">Phở</a>
+					<span class="fireRed">Một số gợi ý:</span> <a href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material">Thịt bò</a>
+					, <a href="${pageContext.request.contextPath}/filter?condition=thịt+gà">Thịt gà</a> , <a href="${pageContext.request.contextPath}/filter?condition=bánh+ngọt">Bánh ngọt</a> , 
+					<a href="${pageContext.request.contextPath}/filter?condition=cá">Cá</a>
+					, <a href="${pageContext.request.contextPath}/filter?condition=pizzas">Pizzas</a>, 
+					<a href="${pageContext.request.contextPath}/filter?condition=khoai+tây">Khoai
+						tây</a>, <a href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material">Phở</a>
 
 				</p>
 			</div>

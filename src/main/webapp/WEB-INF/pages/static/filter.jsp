@@ -57,7 +57,7 @@
 						<c:forEach items="${ posts }" var="post">
 
 							<li>
-								 <a href="${pageContext.request.contextPath}/readmore/${ post.id }" class="img-box"> <img
+								 <a href="${pageContext.request.contextPath}/readmore/${ post.id }" class="img-box"> <img style="width: 214px; height: 139px;"
 									src="${pageContext.request.contextPath }/resources/${post.image }"
 									class="attachment-recipe-4column-thumb wp-post-image"
 									>

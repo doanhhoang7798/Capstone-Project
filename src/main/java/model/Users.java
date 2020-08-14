@@ -38,10 +38,6 @@ public class Users implements Serializable {
 	@Column
 	private String phone;
 	
-
-	@Column
-	private Integer age;
-
 	@Column
 	private Integer gender;
 
@@ -158,7 +154,7 @@ public class Users implements Serializable {
 	}
 
 
-	public Users(Integer id, String email, String fullname, String password, String phone, Integer age, Integer gender,
+	public Users(Integer id, String email, String fullname, String password, String phone, Integer gender,
 			Integer role, String birthday, String country, String bio, String image,
 			Timestamp created_at, Integer status, String block_date) {
 		super();
@@ -167,7 +163,6 @@ public class Users implements Serializable {
 		this.fullname = fullname;
 		this.password = password;
 		this.phone = phone;
-		this.age = age;
 		this.gender = gender;
 		this.role = role;
 		this.birthday = birthday;
@@ -253,14 +248,6 @@ public class Users implements Serializable {
 
 	public void setStatus(Integer status) {
 		this.status = status;
-	}
-
-	public Integer getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
 	}
 
 	public Integer getGender() {

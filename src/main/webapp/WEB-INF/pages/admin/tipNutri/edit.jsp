@@ -41,7 +41,7 @@
 						<div class="form-group">
 							<input onchange="readURL(this);" type="file"
 								accept="image/x-png,image/gif,image/jpeg" name="image"
-								style="margin-top: -19px; width: 101px;" />
+								style="margin-top: -19px; width: 81px;" />
 						</div>
 					</div>
 					<div class="col">
@@ -54,7 +54,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Tác giả </label> <input
+							<label for="exampleInputEmail1">Tác giả </label> <input maxlength="50" minlength="5"
 								type="text" class="form-control" id="exampleInputEmail1"
 								name="author" value="${record.author }"
 								placeholder="nhập tác giả, nguồn bài viết ..." />
@@ -63,19 +63,33 @@
 					<div class="col">
 						<div class="form-group">
 							<label for="lname"> Thể loại</label> <select id="kind"
-								name="kind" class="form-control">
+								name="kind" class="form-control"> 
+								<option class="tip" value="Mẹo hay chế biến nguyên liệu">Mẹo
+									hay chế biến nguyên liệu</option>
+								<option class="tip" value="Bí quyết nấu nướng">Bí quyết
+									nấu nướng</option>
+								<option class="tip" value="Các thực phẩm kị nhau">Các
+									thực phẩm kị nhau</option>
+								<option class="nutri" value="Dinh dưỡng cho trẻ">Dinh
+									dưỡng cho trẻ</option>
+								<option class="nutri" value="Chế độ ăn cho người bệnh">Chế
+									độ ăn cho người bệnh</option>
+								<option class="nutri" value="Dinh dưỡng cho người cao tuổi">Dinh
+									dưỡng cho người cao tuổi</option>
+								<option class="nutri" value="Dinh dưỡng cho người tập Gym">Dinh
+									dưỡng cho người tập Gym</option>
 
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="fname">Tiêu đề</label> <input id="fname" type="text"
+							<label for="fname">Tiêu đề</label> <input id="fname" type="text" maxlength="50" minlength="5"
 								class="form-control" value="${record.title }" name="title" />
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="desc">Nội dung</label>
-					<textarea id="desc" name="content" rows="15" class="form-control"
+					<textarea id="desc" name="content" rows="15" class="form-control" minlength="50" maxlength="10000"
 						placeholder="Bio / description ..."> ${record.content }</textarea>
 				</div>
 				<a href="${pageContext.request.contextPath}/admin/tipNutri/list"
@@ -86,25 +100,19 @@
 		</form>
 
 		<script type="text/javascript">
-		  $(".type option").each(function () {
-              if ($(this).val() == "${record.type}") {
-                  $(this).prop("selected", true);
-              }
-          });
+			$(".type option").each(function() {
+				if ($(this).val() == "${record.type}") {
+					$(this).prop("selected", true);
+				}
+			});
 
-          $(".kind option").each(function () {
-              if ($(this).val() == "${record.kind}") {
-                  $(this).prop("selected", true);
-              }
-          });
-		
-		
-			$("#kind")
-					.empty()
-					.append(
-							'<option class="tip"  value="Mẹo hay chế biến nguyên liệu">Mẹo hay chế biến nguyên liệu </option>',
-							'<option class="tip" value="Bí quyết nấu nướng">Bí quyết nấu nướng </option>',
-							'<option class="tip" value="Các thực phẩm kị nhau">Các thực phẩm kị nhau </option>');
+			$(".kind option").each(function() {
+				if ($(this).val() == "${record.kind}") {
+					$(this).prop("selected", true);
+				}
+			});
+
+
 			$("#type")
 					.on(
 							"change",

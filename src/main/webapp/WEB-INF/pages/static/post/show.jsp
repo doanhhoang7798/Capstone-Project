@@ -134,13 +134,13 @@ pre {
 				</h1>
 				<pre style="word-break: break-word;">${ post.overview }</pre>
 				<h1 class="w-bot-border">
-					<span>Cách làm </span>
-				</h1>
-				<pre style="word-break: break-word;">${ post.making }</pre>
-				<h1 class="w-bot-border">
 					<span>Nguyên liệu & thành phần </span>
 				</h1>
 				<pre style="word-break: break-word;">${ post.material_detail }</pre>
+				<h1 class="w-bot-border">
+					<span>Cách làm </span>
+				</h1>
+				<pre style="word-break: break-word;">${ post.making }</pre>				
 			</div>
 			<span class="w-pet-border"></span>
 			<c:choose>

@@ -39,7 +39,7 @@
                   <div class="form-group">
                      <input id="image-chose" required onchange="readURL(this);"
                         type="file" accept="image/x-png,image/gif,image/jpeg"
-                        name="image" style="margin-top: -19px; width: 101px;" />
+                        name="image" style="margin-top: -19px; width: 81px;" />
                   </div>
                </div>
                <div class="col">
@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                      <label for="exampleInputEmail1">Tác giả </label> <input required
-                        maxlength="255" minlength="10" type="text" class="form-control"
+                        maxlength="50" minlength="5" type="text" class="form-control"
                         id="author" name="author"
                         placeholder="Nhập tác giả, nguồn bài viết ..." />
                   </div>
@@ -67,8 +67,8 @@
                      </select>
                   </div>
                   <div class="form-group">
-                     <label for="fname">Tiêu đề</label> <input maxlength="100"
-                        minlength="10" required id="title" type="text"
+                     <label for="fname">Tiêu đề</label> <input maxlength="50"
+                        minlength="5" required id="title" type="text"
                         class="form-control" placeholder="Nhập tiêu đề bài viết .... "
                         name="title" />
                   </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="form-group">
                <label for="desc">Nội dung</label>
-               <textarea id="content" name="content" required minlength="50"
+               <textarea id="content" name="content" required minlength="50" maxlength="10000"
                   rows="15" class="form-control" placeholder="Nội dung-Chi tiết bài viết..."></textarea>
             </div>
             <button type="reset" class="btn btn-secondary">Quay lại</button>

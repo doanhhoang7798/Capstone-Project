@@ -29,7 +29,7 @@ public class CurrentUser {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-		String key = auth.getName().contains("@") ? "email" : "phone";
+		String key = "phone";
 
 		Users CurrentUser = userDaoimpl.setCurrent(auth.getName(), key);
 

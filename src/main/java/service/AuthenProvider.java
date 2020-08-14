@@ -26,7 +26,7 @@ public class AuthenProvider implements AuthenticationProvider {
 		String username = authentication.getName();
         String password = authentication.getCredentials().toString();
         
-        String key = username.contains("@") ? "email" : "phone";
+        String key = "phone";
      
         if (userDaoiplm.checkLogin(username, userDaoiplm.encode(password), key) != null ) {
             List<GrantedAuthority> grantedAuths = new ArrayList<>();

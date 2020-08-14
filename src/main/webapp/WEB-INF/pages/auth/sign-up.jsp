@@ -62,9 +62,11 @@
                         name="cf_password"> <span class="focus-input100"></span>
                   </div>
                   <span class="txt2" style="color: #c33;margin-left: 15%;" >Mật khẩu phải gồm ít nhất 1 chữ in hóa, 1 chữ in thường và 1 chữ số</span>
+
+                  
                   <div class="container-login100-form-btn m-t-17">
-                     <input class="login100-form-btn" name="submit" type="submit" value="Đăng ký" >
-                  </div>
+						<button name="submit" class="login100-form-btn">Đăng ký</button>
+					</div>
                   <script>
                   function validatePassword() {
                 	    var password = document.getElementById("password");
@@ -81,8 +83,8 @@
                 	    } else if (fullname.value.length < 3) {
                 	        fullname.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
 
-                	    } else if (fullname.value.length > 40) {
-                	        fullname.setCustomValidity(" Họ và tên tối đa 40 kí tự.");
+                	    } else if (fullname.value.length > 30) {
+                	        fullname.setCustomValidity(" Họ và tên tối đa 30 kí tự.");
                 	    } else {
                 	        fullname.setCustomValidity('');
                 	    }
@@ -101,8 +103,8 @@
                 	    } else if (password.value.length < 8) {
                 	        password.setCustomValidity("Mật khẩu tối thiểu 8 kí tự.");
 
-                	    } else if (password.value.length > 20) {
-                	        password.setCustomValidity("Mật khẩu tối đa 20 kí tự.");
+                	    } else if (password.value.length > 15) {
+                	        password.setCustomValidity("Mật khẩu tối đa 15 kí tự.");
                 	        
                 	   
                 	    } else {
