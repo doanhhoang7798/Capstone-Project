@@ -128,22 +128,50 @@
 				<h3 class="head-pet">
 					<span>Yummy Tìm Kiếm </span>
 				</h3>
-				<form
+				<form onsubmit="return validateForm()" 
 					action="${pageContext.request.contextPath}/filter?category=likes&condition"
 					id="searchform">
 					<p>
-						<input type="text" name="condition" id="s" class="field"
-							placeholder="Từ khóa" /> <input type="submit" id="s-submit"
-							value="" />
+						<input type="text" name="condition" id="s" class="field" required
+							minlength="2" placeholder="Từ khóa" /> <input type="submit"
+							name="s-submit" id="s-submit" value="" />
 					</p>
+					<script>
+											function validateForm() {
+												var search = document
+														.getElementById("s");
+												if (search.value.trim().length == 0) {
+													search
+															.setCustomValidity("Điền từ khóa tìm kiếm");
+												} else if (search.value.trim().length == 1) {
+													search
+															.setCustomValidity(" Từ khóa phải dài hơn 1 kí tự");
+												} else {
+													search
+															.setCustomValidity('');
+												}
+												}
+												document
+												.getElementsByName("s-submit")[0].onclick = validateForm;
+									</script>
 				</form>
 				<p class="statement">
-					<span class="fireRed">Một số gợi ý:</span> <a href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material">Thịt bò</a>
-					, <a href="${pageContext.request.contextPath}/filter?condition=thịt+gà">Thịt gà</a> , <a href="${pageContext.request.contextPath}/filter?condition=bánh+ngọt">Bánh ngọt</a> , 
-					<a href="${pageContext.request.contextPath}/filter?condition=cá">Cá</a>
-					, <a href="${pageContext.request.contextPath}/filter?condition=pizzas">Pizzas</a>, 
-					<a href="${pageContext.request.contextPath}/filter?condition=khoai+tây">Khoai
-						tây</a>, <a href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material">Phở</a>
+					<span class="fireRed">Một số gợi ý:</span> <a
+						href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material">Thịt
+						bò</a> , <a
+						href="${pageContext.request.contextPath}/filter?condition=thịt+gà">Thịt
+						gà</a> , <a
+						href="${pageContext.request.contextPath}/filter?condition=bánh+ngọt">Bánh
+						ngọt</a> , <a
+						href="${pageContext.request.contextPath}/filter?condition=cá">Cá</a>
+					, <a
+						href="${pageContext.request.contextPath}/filter?condition=pizzas">Pizzas</a>,
+					<a
+						href="${pageContext.request.contextPath}/filter?condition=khoai+tây">Khoai
+						tây</a>, <a
+						href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material">Phở</a>
 
 				</p>
+
+
 			</div>

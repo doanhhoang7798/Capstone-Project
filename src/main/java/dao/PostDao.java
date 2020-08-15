@@ -161,10 +161,10 @@ public class PostDao {
 	public List<Posts> seacrhFull(String keyword, int ofset, int limit) {
 		Session session = sessionFactory.openSession();
 		List<Posts> list = session
-				.createQuery("from Posts where title like '%" + keyword + "%' or kind like '%" + keyword
-						+ "%' or created_at like '%" + keyword + "%' or main_material like '%" + keyword
-						+ "%' or  nation like '%" + keyword + "%' or holiday like '%" + keyword
-						+ "%'  or category like '%" + keyword + "%'  or suitable like '%" + keyword + "%'")
+				.createQuery("from Posts where title like '" + keyword.trim() + "%' or kind like '" + keyword.trim()
+						+ "%' or created_at like '" + keyword.trim() + "%' or main_material like '" + keyword.trim()
+						+ "%' or  nation like '" + keyword.trim() + "%' or holiday like '"+ keyword.trim()
+						+ "%'  or category like '" + keyword.trim() + "%'  or suitable like '" + keyword.trim() + "%'")
 				.setFirstResult(ofset).setMaxResults(limit).list();
 		return list;
 	}
