@@ -272,7 +272,6 @@ pre {
 
 																	<c:choose>
 																		<c:when test="${ comment.image_url == null}">
-                                       HAHAH
                                     </c:when>
 																		<c:otherwise>
 																			<img class="blah" style="margin-top: 10px;"
@@ -453,7 +452,7 @@ pre {
 			<div class="modal-dialog" style="top: 30%;">
 				<div style="padding: 8px;" class="modal-content">
 					<div style="padding: 8px;" class="modal-body">
-						<h3 style="text-align: center; color: black;">Bạn có chắc
+						<h3 style="text-align: center; color: black;">Bạn chắc
 							chắn muốn xoá bình luận này ?</h3>
 					</div>
 					<div class="modal-footer dialog-center">
