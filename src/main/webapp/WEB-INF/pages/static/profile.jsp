@@ -371,7 +371,7 @@
 								</div>
 								<!-- col-sm-10 -->
 							</div>
-							<button name="submit" type="submit" style="margin-left: 364px;"
+							<button name="asubmit" type="submit" style="margin-left: 364px;"
 								class="btn btn-primary vd_bg-green col-md-offset-7">
 								<span class="menu-icon"><i class="fa fa-fw fa-check"></i></span>
 								Đổi mật khẩu
@@ -409,7 +409,7 @@
 									}
 								}
 
-								document.getElementsByName("submit")[0].onclick = validatePassword;
+								document.getElementsByName("asubmit")[0].onclick = validatePassword;
 							</script>
 
 

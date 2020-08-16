@@ -135,7 +135,7 @@
 				<h3 class="boder_title">${ title }</h3>
 
 				<h1 style="font-size: 41px; text-align: center; margin-top: 15%;">Chưa
-					có bài viết nào cho mục này .</h1>
+					có bài viết nào cho mục này.</h1>
 
 			</div>
 

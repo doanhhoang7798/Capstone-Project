@@ -130,7 +130,7 @@ public class StaticController {
 				model.addAttribute("class_name", "msg_success");
 				return "static/profile";
 			} else {
-				model.addAttribute("message", "Thay đổi mật khẩu không thành công, vui lòng thử lại . ");
+				model.addAttribute("message", "Thay đổi mật khẩu không thành công, vui lòng thử lại. ");
 				model.addAttribute("class_name", "msg_error");
 				return "static/profile";
 			}

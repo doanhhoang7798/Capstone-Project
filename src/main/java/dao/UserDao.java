@@ -153,10 +153,10 @@ public class UserDao {
 		}
 	}
 
-		public Users setCurrent(String mail_phone, String key) {
+		public Users setCurrent(String phone, String key) {
 		try {
 			Session session = sessionFactory.openSession();
-			Users user = (Users) session.createQuery("FROM Users WHERE " + key + " ='" + mail_phone + "'").uniqueResult();
+			Users user = (Users) session.createQuery("FROM Users WHERE " + key + " ='" + phone + "'").uniqueResult();
 			return user;
 		} catch (Exception e) {
 			System.out.println(e);

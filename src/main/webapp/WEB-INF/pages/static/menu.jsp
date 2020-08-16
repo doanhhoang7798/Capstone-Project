@@ -312,7 +312,7 @@
 			</a>
 				<h4>
 					<a
-						href="${pageContext.request.contextPath}/filter?condition=Khác&category=holiday">Sinh
+						href="${pageContext.request.contextPath}/filter?condition=Sinh nhật&category=holiday">Sinh
 						nhật </a>
 				</h4></li>
 			<li><a

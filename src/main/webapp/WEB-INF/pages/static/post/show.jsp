@@ -129,7 +129,7 @@ pre {
 		<span class="w-pet-border"></span>
 		<div class="info-left instructions" style="width: 100%;">
 			<div itemprop="description">
-				<h1 class="w-bot-border" >
+				<h1 class="w-bot-border">
 					<span> Giới thiệu</span>
 				</h1>
 				<pre style="word-break: break-word;">${ post.overview }</pre>
@@ -140,15 +140,17 @@ pre {
 				<h1 class="w-bot-border">
 					<span>Cách làm </span>
 				</h1>
-				<pre style="word-break: break-word;">${ post.making }</pre>				
+				<pre style="word-break: break-word;">${ post.making }</pre>
 			</div>
 			<span class="w-pet-border"></span>
 			<c:choose>
 				<c:when test="${user.getStatus()  == null}">
-					<h1>Vui lòng đăng nhập để bình luận .</h1>
+					<h1 style="margin-left: 123px;"> Vui lòng đăng nhập để bình
+						luận.</h1>
 				</c:when>
 				<c:when test="${user.getStatus()  == 5}">
-					<h1>Tài khoản của bạn đã bị khoá chức năng bình luận.</h1>
+					<h1 style="margin-left: 23px;">Tài khoản của bạn đã bị khóa
+						chức năng bình luận.</h1>
 				</c:when>
 				<c:otherwise>
 					<div id="comment-box-display" class="container pb-cmnt-container">
@@ -184,7 +186,7 @@ pre {
 
 
 										</form>
-										
+
 									</div>
 								</div>
 							</div>
@@ -220,7 +222,7 @@ pre {
 										</a>
 										<div style="margin-left: 12%;" class="comment">
 											<p class="show_content_${comment.id }"
-												style="max-width:800px;word-wrap:break-word">${comment.content }</p>
+												style="max-width: 800px; word-wrap: break-word">${comment.content }</p>
 											<c:choose>
 												<c:when test="${ comment.image_url.isEmpty() }">
 													<img class="show_content_${comment.id }"
@@ -256,15 +258,14 @@ pre {
 
 																			<input
 																				style="width: 40px; height: 27px; background-size: 20px 20px; margin-bottom: 3px; border-radius: 4px;"
-
 																				id="c-e-image-${comment.id }" class="image-icon"
 																				onchange="readURL(this);" type="file" />
-																		<button class="btn btn-info pull-right"
-																			style="position: absolute; height: 27px;"
-																			id="c-e-${comment.id }" data-toggle="modal"
-																			data-target="#c-e-modal" type="submit">
-																			<i class="fa fa-edit"></i>
-																		</button>
+																			<button class="btn btn-info pull-right"
+																				style="position: absolute; height: 27px;"
+																				id="c-e-${comment.id }" data-toggle="modal"
+																				data-target="#c-e-modal" type="submit">
+																				<i class="fa fa-edit"></i>
+																			</button>
 																		</div>
 																	</div>
 
@@ -357,7 +358,7 @@ pre {
 										href="${pageContext.request.contextPath}/post-show/${ item.id}">${ item.title}</a>
 								</h5>
 								<p class="rate">
-								<p>
+									<p>
 									${item.reactions.size()  } lượt thích <span>//</span> ${ item.view_conter }
 									lượt xem
 								</p></li>
@@ -541,277 +542,414 @@ pre {
 			}
 		}
 	</script>
-	<script type="text/javascript">
-		var isLike = "${ isLike }";
-		isLike == "true" ? $(".icon-inline").css("color", "firebrick ") : $(
-				".icon-inline").css("color", "black ");
-		var report_mgs = "${ pageContext.request.getParameter('report_msg') }";
-		var report_style = "${ pageContext.request.getParameter('r_class_name') }";
+									<script type="text/javascript">
+										var isLike = "${ isLike }";
+										isLike == "true" ? $(".icon-inline")
+												.css("color", "firebrick ")
+												: $(".icon-inline").css(
+														"color", "black ");
+										var report_mgs = "${ pageContext.request.getParameter('report_msg') }";
+										var report_style = "${ pageContext.request.getParameter('r_class_name') }";
 
-		var user_role = "${user.role }";
-		var user_id = "${user.id }";
-		var post_user = "${post.user.id}";
+										var user_role = "${user.role }";
+										var user_id = "${user.id }";
+										var post_user = "${post.user.id}";
 
-		console.log("hello", "${user.role }");
+										console.log("hello", "${user.role }");
 
-		$("#p-e-button").hide();
-		if (user_role == 10 || user_role == 5 || user_id == post_user) {
-			$("#p-e-button").show();
-		}
+										$("#p-e-button").hide();
+										if (user_role == 10 || user_role == 5
+												|| user_id == post_user) {
+											$("#p-e-button").show();
+										}
 
-		if (report_mgs == "") {
-			$(".report-dialog").hide();
-		} else {
-			$("#r_msg").val(report_mgs);
-			$(".report-dialog").show();
-			$("#r_msg").text(report_mgs);
-			setTimeout(function() {
-				$(".report-dialog").hide();
-			}, 4000);
-		}
-		$(".comment_report").click(function() {
-			var $row = $(this).closest("ol"); // Find the row
-			var id = $row.find(".comment_id").val(); // Find the text
-			var author_id = $row.find(".comment_author").val(); // Find the text
+										if (report_mgs == "") {
+											$(".report-dialog").hide();
+										} else {
+											$("#r_msg").val(report_mgs);
+											$(".report-dialog").show();
+											$("#r_msg").text(report_mgs);
+											setTimeout(function() {
+												$(".report-dialog").hide();
+											}, 4000);
+										}
+										$(".comment_report").click(
+												function() {
+													var $row = $(this).closest(
+															"ol"); // Find the row
+													var id = $row.find(
+															".comment_id")
+															.val(); // Find the text
+													var author_id = $row.find(
+															".comment_author")
+															.val(); // Find the text
 
-			console.log("ID", author_id);
-			$("#cmt_id").val(id);
-			$("#report_author").val(author_id);
-		});
-		$(".r-close").click(function() {
-			$(".report-dialog").hide("slow");
-		});
-
-		$("#refresh")
-				.on(
-						"click",
-						".comment_edit",
-						function() {
-							console.log("CLICK EDIT");
-							var $row = $(this).closest("ol");
-							var id = $row.find(".comment_id").val();
-							var afterId = $("#afterId").val();
-
-							if (afterId == id) {
-								$(".open-update_" + id).show();
-								$(".show_content_" + id).hide();
-								$("#afterId").val(id);
-							} else {
-								$(".open-update_" + afterId).hide();
-								$(".show_content_" + afterId).show();
-								$(".open-update_" + id).show();
-								$(".show_content_" + id).hide();
-								$("#afterId").val(id);
-							}
-
-							$("#c-e-" + id)
-									.click(
-											function(evt) {
-												console.log("CLICK SEND DATA",
-														id);
-												evt.preventDefault();
-
-												var fileNull = new File([ "" ],
-														"filename");
-												var file = $("#c-e-image-" + id)
-														.prop("files")[0] == undefined ? fileNull
-														: $("#c-e-image-" + id)
-																.prop("files")[0];
-												var content = $(
-														"#c-e-content-" + id)
-														.val();
-												var c_user = $("#c_user_" + id)
-														.val();
-
-												var formData = new FormData();
-
-												formData.append("c_user",
-														c_user);
-												formData.append("c_id", id);
-												formData.append("image", file);
-												formData.append("content",
-														content);
-
-												$("#c-e-confirm")
-														.click(
-																function(evt) {
-																	console
-																			.log("CLICK CONFIRM CHANGE");
-																	$
-																			.ajax({
-																				type : "POST",
-																				url : "${pageContext.request.contextPath}/comment/edit/${post.id}",
-																				data : formData,
-																				cache : false,
-																				contentType : false,
-																				processData : false,
-																				success : function(
-																						data) {
-																					console
-																							.log("EDIT SUCCESS");
-																					isLike == "true" ? (isLike = "false")
-																							: (isLike = "true");
-																					$(
-																							"#c-count")
-																							.html(
-																									"( "
-																											+ data
-																											+ " )");
-																					$(
-																							"#sub-comment")
-																							.html(
-																									data
-																											+ " bình luận ");
-
-																					setTimeout(
-																							function() {
-																								$(
-																										"#refresh")
-																										.load(
-																												" #refresh");
-																							},
-																							800);
-																				},
-																				error : function(
-																						data) {
-																					alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-																				},
-																			});
-																});
-											});
-						});
-
-		$("#refresh")
-				.on(
-						"click",
-						".comment_delete",
-						function() {
-							var $row = $(this).closest("ol");
-							var id = $row.find(".comment_id").val();
-							var formData = new FormData();
-							formData.append("c_user", $("#c_user_" + id).val());
-
-							$("#c-d-confirm")
-									.click(
-											function() {
-												$
-														.ajax({
-															type : "POST",
-															data : formData,
-															cache : false,
-															contentType : false,
-															processData : false,
-															url : "${pageContext.request.contextPath}/comment/delete/"
-																	+ id,
-															success : function(
-																	data) {
-																$("#c-count")
-																		.html(
-																				"( "
-																						+ data
-																						+ " )");
-																$(
-																		"#sub-comment")
-																		.html(
-																				data
-																						+ " bình luận ");
-
-																setTimeout(
-																		function() {
-																			$(
-																					"#refresh")
-																					.load(
-																							" #refresh");
-																		}, 800);
-															},
-															error : function(
-																	data) {
-																console
-																		.log(" Lỗi hệ thống, vui lòng thử lại sau!");
-															},
-														});
-											});
-						});
-
-		$("#comment-create")
-				.click(
-						function(evt) {
-							evt.preventDefault();
-
-							if ($("#c-c-image").prop("files")[0] == null
-									&& $("#c-c-content").val() == "") {
-								document
-										.getElementById("c-c-content")
-										.setCustomValidity(
-												"This field cannot be left blank");
-							} else {
-								console.log("PASSS VALIDATE");
-
-								var formData = new FormData();
-								formData.append("image", $("#c-c-image").prop(
-										"files")[0] == undefined ? new File(
-										[ "" ], "filename") : $("#c-c-image")
-										.prop("files")[0]);
-								formData.append("content", $("#c-c-content")
-										.val());
-								$
-										.ajax({
-											type : "POST",
-											url : "${pageContext.request.contextPath}/comment/create/${post.id}",
-											data : formData,
-											cache : false,
-											contentType : false,
-											processData : false,
-											success : function(data) {
-												$("#c-c-content").val('');
-												$('#c-c-image').val('');
-												$(".blah2").val('');
-												$("#c-count").html(
-														"( " + data + " )");
-												$("#sub-comment").html(
-														data + " bình luận ");
-												$(".blah2").hide();
-												setTimeout(function() {
-													$("#refresh").load(
-															" #refresh");
-
-												}, 200);
-											},
-											error : function(data) {
-												alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-											},
+													console
+															.log("ID",
+																	author_id);
+													$("#cmt_id").val(id);
+													$("#report_author").val(
+															author_id);
+												});
+										$(".r-close").click(function() {
+											$(".report-dialog").hide("slow");
 										});
-							}
-						});
 
-		$("#send-like")
-				.click(
-						function() {
-							isLike == "true" ? (isLike = "false")
-									: (isLike = "true");
-							isLike == "false" ? $(".icon-inline").css("color",
-									"black ") : $(".icon-inline").css("color",
-									"firebrick ");
+										$("#refresh")
+												.on(
+														"click",
+														".comment_edit",
+														function() {
+															console
+																	.log("CLICK EDIT");
+															var $row = $(this)
+																	.closest(
+																			"ol");
+															var id = $row
+																	.find(
+																			".comment_id")
+																	.val();
+															var afterId = $(
+																	"#afterId")
+																	.val();
 
-							$
-									.ajax({
-										type : "POST",
-										contentType : "application/json; charset=utf-8",
-										data : JSON
-												.stringify("Create-Reaction"),
-										dataType : "json",
-										url : "${pageContext.request.contextPath}/reaction/${post.id}",
-										success : function(data) {
-											$("#like-data").html(
-													data + "&nbsp; Lượt thích");
-											$("#couter_like").html(
-													data + "&nbsp; Lượt thích");
-										},
-										error : function(data) {
-											alert(" Lỗi hệ thống, vui lòng thử lại sau!");
-										},
-									});
-						});
-	</script>
-</div>
+															if (afterId == id) {
+																$(
+																		".open-update_"
+																				+ id)
+																		.show();
+																$(
+																		".show_content_"
+																				+ id)
+																		.hide();
+																$("#afterId")
+																		.val(id);
+															} else {
+																$(
+																		".open-update_"
+																				+ afterId)
+																		.hide();
+																$(
+																		".show_content_"
+																				+ afterId)
+																		.show();
+																$(
+																		".open-update_"
+																				+ id)
+																		.show();
+																$(
+																		".show_content_"
+																				+ id)
+																		.hide();
+																$("#afterId")
+																		.val(id);
+															}
+
+															$("#c-e-" + id)
+																	.click(
+																			function(
+																					evt) {
+																				console
+																						.log(
+																								"CLICK SEND DATA",
+																								id);
+																				evt
+																						.preventDefault();
+
+																				var fileNull = new File(
+																						[ "" ],
+																						"filename");
+																				var file = $(
+																						"#c-e-image-"
+																								+ id)
+																						.prop(
+																								"files")[0] == undefined ? fileNull
+																						: $(
+																								"#c-e-image-"
+																										+ id)
+																								.prop(
+																										"files")[0];
+																				var content = $(
+																						"#c-e-content-"
+																								+ id)
+																						.val();
+																				var c_user = $(
+																						"#c_user_"
+																								+ id)
+																						.val();
+
+																				var formData = new FormData();
+
+																				formData
+																						.append(
+																								"c_user",
+																								c_user);
+																				formData
+																						.append(
+																								"c_id",
+																								id);
+																				formData
+																						.append(
+																								"image",
+																								file);
+																				formData
+																						.append(
+																								"content",
+																								content);
+
+																				$(
+																						"#c-e-confirm")
+																						.click(
+																								function(
+																										evt) {
+																									console
+																											.log("CLICK CONFIRM CHANGE");
+																									$
+																											.ajax({
+																												type : "POST",
+																												url : "${pageContext.request.contextPath}/comment/edit/${post.id}",
+																												data : formData,
+																												cache : false,
+																												contentType : false,
+																												processData : false,
+																												success : function(
+																														data) {
+																													console
+																															.log("EDIT SUCCESS");
+																													isLike == "true" ? (isLike = "false")
+																															: (isLike = "true");
+																													$(
+																															"#c-count")
+																															.html(
+																																	"( "
+																																			+ data
+																																			+ " )");
+																													$(
+																															"#sub-comment")
+																															.html(
+																																	data
+																																			+ " bình luận ");
+
+																													setTimeout(
+																															function() {
+																																$(
+																																		"#refresh")
+																																		.load(
+																																				" #refresh");
+																															},
+																															800);
+																												},
+																												error : function(
+																														data) {
+																													alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+																												},
+																											});
+																								});
+																			});
+														});
+
+										$("#refresh")
+												.on(
+														"click",
+														".comment_delete",
+														function() {
+															var $row = $(this)
+																	.closest(
+																			"ol");
+															var id = $row
+																	.find(
+																			".comment_id")
+																	.val();
+															var formData = new FormData();
+															formData
+																	.append(
+																			"c_user",
+																			$(
+																					"#c_user_"
+																							+ id)
+																					.val());
+
+															$("#c-d-confirm")
+																	.click(
+																			function() {
+																				$
+																						.ajax({
+																							type : "POST",
+																							data : formData,
+																							cache : false,
+																							contentType : false,
+																							processData : false,
+																							url : "${pageContext.request.contextPath}/comment/delete/"
+																									+ id,
+																							success : function(
+																									data) {
+																								$(
+																										"#c-count")
+																										.html(
+																												"( "
+																														+ data
+																														+ " )");
+																								$(
+																										"#sub-comment")
+																										.html(
+																												data
+																														+ " bình luận ");
+
+																								setTimeout(
+																										function() {
+																											$(
+																													"#refresh")
+																													.load(
+																															" #refresh");
+																										},
+																										800);
+																							},
+																							error : function(
+																									data) {
+																								console
+																										.log(" Lỗi hệ thống, vui lòng thử lại sau!");
+																							},
+																						});
+																			});
+														});
+
+										$("#comment-create")
+												.click(
+														function(evt) {
+															evt
+																	.preventDefault();
+
+															if ($("#c-c-image")
+																	.prop(
+																			"files")[0] == null
+																	&& $(
+																			"#c-c-content")
+																			.val() == "") {
+																document
+																		.getElementById(
+																				"c-c-content")
+																		.setCustomValidity(
+																				"This field cannot be left blank");
+															} else {
+																console
+																		.log("PASSS VALIDATE");
+
+																var formData = new FormData();
+																formData
+																		.append(
+																				"image",
+																				$(
+																						"#c-c-image")
+																						.prop(
+																								"files")[0] == undefined ? new File(
+																						[ "" ],
+																						"filename")
+																						: $(
+																								"#c-c-image")
+																								.prop(
+																										"files")[0]);
+																formData
+																		.append(
+																				"content",
+																				$(
+																						"#c-c-content")
+																						.val());
+																$
+																		.ajax({
+																			type : "POST",
+																			url : "${pageContext.request.contextPath}/comment/create/${post.id}",
+																			data : formData,
+																			cache : false,
+																			contentType : false,
+																			processData : false,
+																			success : function(
+																					data) {
+																				$(
+																						"#c-c-content")
+																						.val(
+																								'');
+																				$(
+																						'#c-c-image')
+																						.val(
+																								'');
+																				$(
+																						".blah2")
+																						.val(
+																								'');
+																				$(
+																						"#c-count")
+																						.html(
+																								"( "
+																										+ data
+																										+ " )");
+																				$(
+																						"#sub-comment")
+																						.html(
+																								data
+																										+ " bình luận ");
+																				$(
+																						".blah2")
+																						.hide();
+																				setTimeout(
+																						function() {
+																							$(
+																									"#refresh")
+																									.load(
+																											" #refresh");
+
+																						},
+																						200);
+																			},
+																			error : function(
+																					data) {
+																				alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+																			},
+																		});
+															}
+														});
+
+										$("#send-like")
+												.click(
+														function() {
+															isLike == "true" ? (isLike = "false")
+																	: (isLike = "true");
+															isLike == "false" ? $(
+																	".icon-inline")
+																	.css(
+																			"color",
+																			"black ")
+																	: $(
+																			".icon-inline")
+																			.css(
+																					"color",
+																					"firebrick ");
+
+															$
+																	.ajax({
+																		type : "POST",
+																		contentType : "application/json; charset=utf-8",
+																		data : JSON
+																				.stringify("Create-Reaction"),
+																		dataType : "json",
+																		url : "${pageContext.request.contextPath}/reaction/${post.id}",
+																		success : function(
+																				data) {
+																			$(
+																					"#like-data")
+																					.html(
+																							data
+																									+ "&nbsp; Lượt thích");
+																			$(
+																					"#couter_like")
+																					.html(
+																							data
+																									+ "&nbsp; Lượt thích");
+																		},
+																		error : function(
+																				data) {
+																			alert(" Lỗi hệ thống, vui lòng thử lại sau!");
+																		},
+																	});
+														});
+									</script></div>
 <jsp:include page="../layout/_footer.jsp"></jsp:include>

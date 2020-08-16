@@ -149,7 +149,7 @@
 					action="user-signin" method="post">
 
 					<div class="p-b-10 p-l-20">
-						<span class="txt1">Số điện thoại hoặc email</span>
+						<span class="txt1">Số điện thoại</span>
 					</div>
 					<div class="wrap-input100 validate-input"
 						data-validate="Username is required">
