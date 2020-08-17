@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Full_tests" verbose="1">
+	<test name="TestNG">
+		<classes>
+			<class name="unit.Common"></class>
+			<class name="unit.SignUp"></class>
+		</classes>
+	</test> 
+	<test name="Selenium">
+		<classes>
+			<class name="selenium.Common"></class>
+			<class name="selenium.User"></class>
+			<class name="selenium.SignIn"></class>
+		</classes>
+	</test>
+</suite>
+
+
+
+
+
+
+
+
+
+
+
+
+
