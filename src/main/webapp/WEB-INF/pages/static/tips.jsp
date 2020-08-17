@@ -48,7 +48,7 @@
    <c:when test="${tips3.size() != 0}">
       <div id="whats-hot">
          <h3 class="boder_title" >
-            Các thực phẩm kỵ nhau 
+            Các thực phẩm kị nhau 
          </h3>
          <span class="w-pet-border"></span>
          <ul class="cat-list clearfix">
@@ -67,7 +67,7 @@
                </li>
             </c:forEach>
          </ul>
-        <a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kỵ nhau&category=Mẹo hay" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
+        <a href="${pageContext.request.contextPath }/filter?condition=Các thực phẩm kị nhau&category=Mẹo hay" class="readmore" style="background-color: #c33; color: #ffc72e;">Xem thêm »»</a>
          
       </div>
    </c:when>

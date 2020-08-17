@@ -183,7 +183,7 @@
 											<div class="col-sm-9 controls">
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
-														<input type="date" value="${ user.getBirthday().trim()}"
+														<input type="date" value="${ user.getBirthday().trim()}" min='1870-01-01'
 															max='2011-01-01' id="datepicker-normal" name="birthday"
 															class="width-40 hasDatepicker" />
 													</div>

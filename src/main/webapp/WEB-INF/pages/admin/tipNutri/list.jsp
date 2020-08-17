@@ -115,7 +115,7 @@
 									<i class="fa fa-trash"></i>
 								</button> <a class="btn btn-info"
 								href="${pageContext.request.contextPath}/admin/tipNutri/edit/${tipNutri.id}">
-									<span class="menu-icon"><i class="fa fa-eye"></i></span>
+									<span class="menu-icon"><i class="fa fa-edit"></i></span>
 							</a>
 							</td>
 

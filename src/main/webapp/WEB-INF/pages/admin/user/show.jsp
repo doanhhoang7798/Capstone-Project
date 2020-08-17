@@ -208,7 +208,7 @@
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
 														<input type="text" value="${ user_detail.getCountry() }" readonly style="text-align: center;"
-															id="address" name="address" placeholder=" Địa chỉ " />
+															id="address" name="address"/>
 													</div>
 													<!-- col-xs-9 -->
 
@@ -226,7 +226,7 @@
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
 														<input type="email" value="${user_detail.getEmail()}" readonly style="text-align: center;"
-															name="email" placeholder=" Email của bạn " />
+															name="email"/>
 													</div>
 													<!-- col-xs-9 -->
 
@@ -243,7 +243,6 @@
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
 														<textarea name="bio" id="bio" readonly
-															placeholder=" Mô tả - Giới thiệu bản thân "
 															style="width: 125%" rows="6">${ user_detail.getBio() }</textarea>
 													</div>
 													<!-- col-xs-12 -->

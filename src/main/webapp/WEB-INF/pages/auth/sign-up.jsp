@@ -92,7 +92,7 @@
                 	    if (phone.value.length == 0) {
                 	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
                 	    } else if (phone.value.length != 10) {
-                	    	phone.setCustomValidity("Số điện thoại phải 10 chữ số");
+                	    	phone.setCustomValidity("Số điện thoại phải gồm 10 chữ số");
                 	    } else {
                 	    	phone.setCustomValidity('');
                 	    }
