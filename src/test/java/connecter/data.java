@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class data {
 	public static WebDriver driver;
 
-	public static String username = "0327272745";
-	public static String password = "Anhnam999";
+	public static String username = "0984936057";
+	public static String password = "Abc123456";
 
 	public static String login_page = "http://localhost:8080/FPT-Food_Development/authorized/SignIn";
 	public static String driver_path = "C:/Users/vuvie/Desktop/chromedriver.exe";

@@ -1,17 +1,13 @@
 package unit;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertNull;
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 import java.util.Date;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
+import javax.validation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -22,8 +18,8 @@ import dao.CommentDao;
 import dao.PostDao;
 import dao.UserDao;
 import model.Comments;
-import model.Posts;
-
+@Test
+@ContextConfiguration(locations = { "../connecter/spring-servlet.xml" })
 public class Comment extends AbstractTestNGSpringContextTests{
 	@Autowired(required = true)
 	CommentDao commentDao;
@@ -31,7 +27,6 @@ public class Comment extends AbstractTestNGSpringContextTests{
 	
 	@Autowired(required = true)
 	PostDao postDao;
-	Posts posts;
 	
 	@Autowired(required = true)
 	UserDao userDao;
