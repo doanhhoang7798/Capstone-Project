@@ -142,7 +142,7 @@ public class StaticController {
 
 	@GetMapping(value = "filter")
 	public String filter(ModelMap model, HttpServletRequest request, @RequestParam("condition") String cond,
-			@RequestParam(value = "category", defaultValue = "search") String category,
+			@RequestParam(name = "category") String category,
 			@RequestParam(name = "page", defaultValue = "1") int page) {
 
 		int limit = 12;

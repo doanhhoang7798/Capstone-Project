@@ -135,6 +135,7 @@
 						<input type="text" name="condition" id="s" class="field" required
 							minlength="2" placeholder="Từ khóa" /> <input type="submit"
 							name="s-submit" id="s-submit" value="" />
+						<input type="hidden" name="category" value="search" />
 					</p>
 					<script>
 						function validateForm() {

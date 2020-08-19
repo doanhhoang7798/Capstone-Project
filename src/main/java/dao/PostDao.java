@@ -160,13 +160,22 @@ public class PostDao {
 	@SuppressWarnings("unchecked")
 	public List<Posts> seacrhFull(String keyword, int ofset, int limit) {
 		Session session = sessionFactory.openSession();
-		List<Posts> list = session
-				.createQuery("from Posts where title like '%" + keyword.trim() + "%' or kind like '%" + keyword.trim()
-						+ "%' or created_at like '%" + keyword.trim() + "%' or main_material like '%" + keyword.trim()
-						+ "%' or  nation like '%" + keyword.trim() + "%' or holiday like '%"+ keyword.trim()
-						+ "%'  or category like '%" + keyword.trim() + "%'  or suitable like '%" + keyword.trim() + "%'")
-				.setFirstResult(ofset).setMaxResults(limit).list();
+		String sql = "from Posts where " + buid_query(keyword, "title") + buid_query(keyword, "main_material")
+		+ buid_query(keyword, "nation") + buid_query(keyword, "holiday")
+		+ buid_query(keyword, "category") + buid_query(keyword, "suitable").trim().substring(0,buid_query(keyword, "suitable").length() - 5)
+		+ "";
+		List<Posts> list = session.createQuery(sql).setFirstResult(ofset).setMaxResults(limit).list();
 		return list;
 	}
+	
+	public String buid_query(String params, String column) {
+		String keyword = " ";
+		for (String i : params.split(" ")) {
+			keyword = column + " like " + "'%" + i + "%'" + " or " + keyword;
+		}
+		return keyword;
+	}
+	
+	 //title like 'Nam' or title like 'Hoafi' or title like 'Phamj' or  
 
 }
