@@ -303,11 +303,11 @@ pre {
 														<c:when test="${ user.getFullname() == null}">
 
 															<a class="comment_report cmt-inline"
-																href="${pageContext.request.contextPath}/authorized/SignIn">|Report|</a>
+																href="${pageContext.request.contextPath}/authorized/SignIn">|Báo cáo|</a>
 														</c:when>
 														<c:otherwise>
 															<a class="comment_report cmt-inline" data-toggle="modal"
-																data-target="#c-r-modal">|Report|</a>
+																data-target="#c-r-modal">|Báo cáo|</a>
 														</c:otherwise>
 													</c:choose>
 												</c:otherwise>

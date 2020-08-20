@@ -67,7 +67,7 @@
                </li>
             </ul>
          </div>
-         <div class="sidebar-heading">Quản trị trương tác</div>
+         <div class="sidebar-heading">Quản trị tương tác</div>
          <div class="sidebar-block p-0">
             <ul class="sidebar-menu mt-0">
                <li class="sidebar-menu-item"><a class="sidebar-menu-button"
