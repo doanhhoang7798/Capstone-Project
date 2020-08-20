@@ -7,18 +7,29 @@ import org.openqa.selenium.WebDriver;
 public class data {
 	public static WebDriver driver;
 
-	public static String username = "0984936057";
-	public static String password = "Abc123456";
+	public static String username = "Le Dieu Ly";
+	public static String password = "Dieuly5498";
+	public static String phone = "0384838666";
+	public static String email = "lyldse053@gmail.com";
+	public static String country = "FPT";
+	public static String image = "C:/Users/Le Dieu Ly/Desktop/LeDieuLy_05041998.png";
 
 	public static String login_page = "http://localhost:8080/FPT-Food_Development/authorized/SignIn";
-	public static String driver_path = "C:/Users/vuvie/Desktop/chromedriver.exe";
+	public static String driver_path =  "C:/Users/Le Dieu Ly/Desktop/chromedriver";
 	
+	public static String characters_2 = "AA";
+	public static String characters_3 = "AAA";
+	public static String characters_7 = "AAAAAAA";
 	public static String characters_9 = "AAAAAAAAA";
 	public static String characters_10 = "AAAAAAAAAA";
+	public static String characters_11 = "AAAAAAAAAAA";
+	public static String characters_19 = "AAAAAAAAAAAAAAAAAAA";
+	public static String characters_20 = "AAAAAAAAAAAAAAAAAAAA";
+	public static String characters_21 = "AAAAAAAAAAAAAAAAAAAAA";
+	public static String characters_40 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	public static String characters_41 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String characters_50 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String characters_51 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-	public static String characters_20 = "AAAAAAAAAAAAAAAAAAAA";
-	public static String characters_19 = "AAAAAAAAAAAAAAAAAAA";
 	public static String characters_101 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String characters_100 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String characters_200 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -26,12 +37,26 @@ public class data {
 	public static String characters_255 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String characters_256 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
+	public static String number_9 = "123456789";
+	public static String number_10 = "1234567890";
+	public static String number_11 = "12345678910";
+	
+	public static String number_9_03 = "031234567";
+	public static String number_9_09 = "091234567";
+	public static String number_11_03 = "03123456789";
+	public static String number_11_09 = "09123456789";
+	
+	public static String characters_9_03 = "03AAAAAAA";
+	public static String characters_9_09 = "09AAAAAAA";
+	public static String characters_11_03 = "03AAAAAAAAA";
+	public static String characters_11_09 = "09AAAAAAAAA";
+	
 	
 	public static String title = "AAAAAAAAAAAAAAAAAAAAAA";
 	public static String author = "AAAAAAAAAAAAAAAAAAAAAAA";
 	public static String content = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String created_at = (new Date()).toString();
-	public static String image = "C:/Users/vuvie/Desktop/ronaldo.jpg";
+//	public static String image = "C:/Users/vuvie/Desktop/ronaldo.jpg";
 	public static String kind = "Dinh dưỡng cho trẻ";
 	public static String type = "Dinh dưỡng";
 	public static String video_url = "https://youtu.be/IsZRZZOHNfo";

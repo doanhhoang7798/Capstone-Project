@@ -31,8 +31,8 @@
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/fpt-food-development?useSSL=false" />
-		<property name="username" value="yummy-fpt_development" />
-		<property name="password" value="yummy-fpt_development" />
+		<property name="username" value="fpt-web-development" />
+		<property name="password" value="fpt-web-development" />
 		
 	</bean>
 
