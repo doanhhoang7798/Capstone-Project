@@ -30,7 +30,7 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/fpt-food-development?useSSL=false" />
+			value="jdbc:mysql://localhost:3306/yummy?useSSL=false" />
 		<property name="username" value="fpt-web-development" />
 		<property name="password" value="fpt-web-development" />
 		

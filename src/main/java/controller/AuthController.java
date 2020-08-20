@@ -61,7 +61,7 @@ public class AuthController {
 				model.addAttribute("class_name", "msg_success");
 			} catch (Exception e) {
 				model.addAttribute("class_name", "msg_success");
-				model.addAttribute("Msg", "Đăng ký thành công, không thể gửi SMS do số điện thoại chưa xác thực. ");
+				model.addAttribute("Msg", "Đăng ký thành công.");
 			}
 
 		} else {
@@ -90,7 +90,7 @@ public class AuthController {
 	public String genarate_code(ModelMap model, @RequestParam("phone") String phone, HttpServletRequest request,
 			HttpSession session) {
 
-//		try {
+		try {
 			int number = user.random.nextInt(900000) + 100000;
 			String code_exp = String.valueOf(number) + "--" + user.fomart.format(user.now);
 			userDaoimpl.setConfirmCode(userDaoimpl.findByPhone(phone).getId(), code_exp);
@@ -101,12 +101,12 @@ public class AuthController {
 			return "redirect: " + request.getContextPath() + "/authorized/verification?phone="
 					+ userDaoimpl.findByPhone(phone).getPhone() + "";
 
-//		} catch (Exception e) {
-//			model.addAttribute("class_name", "msg_error");
-//			model.addAttribute("Msg", "Tài khoản không tồn tại. ");
-//			return "auth/forgot";
-//
-//		}
+		} catch (Exception e) {
+			model.addAttribute("class_name", "msg_error");
+			model.addAttribute("Msg", "Tài khoản không tồn tại. ");
+			return "auth/forgot";
+
+		}
 
 	}
 	

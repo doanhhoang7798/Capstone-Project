@@ -1,4 +1,4 @@
-package unit;
+package junit;
 
 import static org.testng.Assert.*;
 

@@ -1,5 +1,6 @@
 package utils;
 //
+
 //import java.io.File;
 //import java.sql.Timestamp;
 //
@@ -47,21 +48,44 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.multipart.MultipartFile;
+
 @Service
 public class UploadConfig {
 	@Autowired
 	ServletContext ctx;
 	public Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
 	public String uploadImage(ModelMap map, MultipartFile image) {
 		if (image.isEmpty()) {
 			System.out.println("File Erorr");
 			return null;
 		} else {
 			try {
-				String rename_image = timestamp + " " + image.getOriginalFilename();
-				String server_path = ctx.getRealPath("/resources/") + rename_image;
-				image.transferTo(new File(server_path));
-				System.out.println("Excuted Upload" + server_path);
+				//
+				String foler_path = ctx.getRealPath("/resources/");
+
+				//
+				String image_path = image.getOriginalFilename();
+
+				//
+				String rename_image = timestamp.hashCode() + image.getOriginalFilename();
+
+				image.transferTo(new File(foler_path + image_path));
+
+				File oldfile = new File(foler_path + image_path);
+
+				File newfile = new File(foler_path + rename_image);
+
+				oldfile.createNewFile();
+
+				boolean flag = oldfile.renameTo(newfile);
+				if (flag) {
+					System.out.println("File renamed successfully");
+				} else {
+					System.out.println("Rename operation failed");
+				}
+
+				System.out.println("Excuted Upload "+ foler_path + rename_image);
 				return rename_image;
 			} catch (Exception e) {
 				return null;
