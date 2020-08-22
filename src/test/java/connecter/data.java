@@ -12,6 +12,7 @@ public class data {
 	public static String phone = "0384838666";
 	public static String email = "lyldse053@gmail.com";
 	public static String country = "FPT";
+	public static String birthday = "1995-08-14";
 	public static String image = "C:/Users/Le Dieu Ly/Desktop/LeDieuLy_05041998.png";
 
 	public static String login_page = "http://localhost:8080/FPT-Food_Development/authorized/SignIn";

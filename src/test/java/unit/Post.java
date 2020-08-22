@@ -1,4 +1,4 @@
-package junit;
+package unit;
 
 import static org.testng.Assert.assertEquals;
 
