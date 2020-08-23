@@ -264,14 +264,14 @@
 														.getElementById("bio");
 
 												// Validate field Fullname 
-												if (fullname.value.length == 0) {
+												if (fullname.value.trim().length == 0) {
 													fullname
 															.setCustomValidity("Họ tên không được bỏ trống.");
-												} else if (fullname.value.length < 3) {
+												} else if (fullname.value.trim().length < 3) {
 													fullname
 															.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
 
-												} else if (fullname.value.length > 30) {
+												} else if (fullname.value.trim().length > 30) {
 													fullname
 															.setCustomValidity(" Họ và tên tối đa 30 kí tự.");
 												} else {
@@ -280,7 +280,7 @@
 												}
 
 												// Validate field address 
-												if (address.value.length > 60) {
+												if (address.value.trim().length > 60) {
 													address
 															.setCustomValidity("Địa chỉ tối đa 60 kí tự");
 												} else {
@@ -289,7 +289,7 @@
 												}
 
 												// Validate field bio 
-												if (bio.value.length > 250) {
+												if (bio.value.trim().length > 250) {
 													bio
 															.setCustomValidity("Mô tả bản thân bằng tối đa 200 kí tự");
 												} else {

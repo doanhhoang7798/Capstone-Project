@@ -95,7 +95,7 @@ public class TipNutriController {
 		try {
 			if (user.isAdminOrMod()) {
 				if (tipNutriDaoimpl
-						.Update(new TipNutri(id, title, content, type, author, user.timestamp.toString(), kind, path_img,user.current()))) {
+						.Update(new TipNutri(id, title, content, type, author, user.timestamp.toString(), kind, path,user.current()))) {
 					model.addAttribute("msg", "Thao tác thành công.");
 					model.addAttribute("class_name", "msg_success");
 

@@ -128,7 +128,7 @@ public class UserController {
 			} catch (Exception e) {
 				model.addAttribute("users", userDaoimpl.filterByStatus(1));
 				model.addAttribute("class_name", "msg_success");
-				model.addAttribute("msg", "Huỷ khoá thành công, không thể gửi SMS do số điện thoại chưa xác thực. ");
+				model.addAttribute("msg", "Huỷ khoá thành công. ");
 				return "admin/user/list";
 
 			}

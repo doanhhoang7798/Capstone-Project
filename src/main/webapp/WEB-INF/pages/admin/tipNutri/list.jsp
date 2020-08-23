@@ -13,9 +13,9 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0">Mẹo hay & Dinh dưỡng</h1>
+			<h1 class="mb-0" style="margin-left: -3%; width: 80%">Mẹo hay & Dinh dưỡng</h1>
 					
-					<span id="hideMe" class="${class_name}">${ msg }</span>
+					<span id="hideMe" class="${class_name}" style=" margin-left: 10%; width: 22%">${ msg }</span>
 
 
 		</div>

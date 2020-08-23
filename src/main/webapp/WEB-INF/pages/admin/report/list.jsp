@@ -13,7 +13,7 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0"> Báo cáo  </h1>
+			<h1 class="mb-0" style="margin-left: -3%;"> Báo cáo  </h1>
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a> -->
 

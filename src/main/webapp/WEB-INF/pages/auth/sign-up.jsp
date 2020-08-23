@@ -78,20 +78,20 @@
                 	    var phone = document.getElementById("phone");
 
                 	    // Validate field Fullname 
-                	    if (fullname.value.length == 0) {
+                	    if (fullname.value.trim().length == 0) {
                 	        fullname.setCustomValidity("Họ tên không được bỏ trống.");
-                	    } else if (fullname.value.length < 3) {
+                	    } else if (fullname.value.trim().length < 3) {
                 	        fullname.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
 
-                	    } else if (fullname.value.length > 30) {
+                	    } else if (fullname.value.trim().length > 30) {
                 	        fullname.setCustomValidity(" Họ và tên tối đa 30 kí tự.");
                 	    } else {
                 	        fullname.setCustomValidity('');
                 	    }
 
-                	    if (phone.value.length == 0) {
+                	    if (phone.value.trim().length == 0) {
                 	    	phone.setCustomValidity("Số điện thoại không được bỏ trống.");
-                	    } else if (phone.value.length != 10) {
+                	    } else if (phone.value.trim().length != 10) {
                 	    	phone.setCustomValidity("Số điện thoại phải gồm 10 chữ số");
                 	    } else {
                 	    	phone.setCustomValidity('');

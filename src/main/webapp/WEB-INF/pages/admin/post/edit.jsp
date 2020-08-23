@@ -40,7 +40,7 @@ input {
 					class="single-post-title">Sửa bài viết</h3>
 
 				<input type="hidden" name="user_id" value="${ post.user.id }" /> <input
-					name="title" style="width: 100%; color: #888;" minlength="5"
+					name="title" style="width: 100%; color: #888;" minlength="5" id="title"
 					required maxlength="50" value="${ post.title }"
 					placeholder="Nhập tiêu đề bài viết !!" /> <br> <br> <br>
 				<div class="post-53 post category-barbeque" style="width: 100%;">
@@ -158,7 +158,7 @@ input {
 						<h3 style="text-align: center;">Giá thành</h3>
 						<input type="number" required max="10000" value="${post.price}"
 							style="width: 100px; margin-left: 32px; height: 11px;"
-							name="price" />
+							name="price"  id="price" />
 					</div>
 				</div>
 
@@ -238,20 +238,20 @@ input {
 				<h1 class="w-bot-border">
 					<span> Giới thiệu</span>
 				</h1>
-				<textarea name="overview" cols="128" rows="9" required minlength="5" maxlength="200" 
+				<textarea id="overview" name="overview" cols="128" rows="9" required minlength="5" maxlength="200" 
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea">${post.overview}</textarea>
 				<h1 class="w-bot-border">
 					<span> Nguyên liệu </span>
 				</h1>
-				<textarea name="material_detail" cols="128" rows="9" required minlength="5" maxlength="1000"
+				<textarea id="material"  name="material_detail" cols="128" rows="9" required minlength="5" maxlength="1000"
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!"
 					class="pb-cmnt-textarea">${post.material_detail}</textarea>
 
 				<h1 class="w-bot-border">
 					<span> Cách làm </span>
 				</h1>
-				<textarea name="making" cols="128" rows="9" required minlength="5" maxlength="10000"
+				<textarea id="making" name="making" cols="128" rows="9" required minlength="5" maxlength="10000"
 					placeholder="Chia sẻ cách làm của bạn !! " class="pb-cmnt-textarea">${post.making}</textarea>
 		</div>
 		<!-- end of post div -->
@@ -264,13 +264,96 @@ input {
 			<div class="reply" style="margin-left: 353px;">
 
 
-				<button class="btn btn btn-success"
+				<button class="btn btn btn-success" name="submit"
 					style="height: 49px; margin-left: 50px; line-height: 38px; width: 108px;"
 					aria-label="Reply to admin">Cập nhập</button>
 			</div>
 
 
 		</div>
+		
+						<script>
+			function validatePost() {
+				var title = document.getElementById("title");
+				var price = document.getElementById("price");
+				var video_url = document.getElementById("input");
+				var overview = document.getElementById("overview");
+				var making = document.getElementById("making");
+				var material = document.getElementById("material");
+
+				// Validate field Title 
+				if (title.value.trim().length == 0) {
+					title.setCustomValidity("Tiêu đề không được bỏ trống.");
+				} else if (title.value.length < 5) {
+					title.setCustomValidity("Tiêu đề tối thiểu 5 kí tự.");
+
+				} else if (title.value.trim().length > 50) {
+					title.setCustomValidity("Tiêu đề tối đa 50 kí tự.");
+				} else {
+					title.setCustomValidity('');
+				}
+				
+				// Validate field price 
+				if (price.value == 0) {
+					price.setCustomValidity("Giá thành không được bỏ trống.");
+				} else if (price.value < 0) {
+					price.setCustomValidity("Giá thành phải lớn hơn 0");
+
+				} else if (price.value > 10000) {
+					price.setCustomValidity("Giá thành tối đa 10000");
+				} else {
+					price.setCustomValidity('');
+				}
+				
+				// Validate field video_url 
+				if (video_url.value.trim().length == 0) {
+					video_url.setCustomValidity("Link video không được bỏ trống");
+				} else if (video_url.trim().value < 0) {
+					video_url.setCustomValidity("Link video phải bắt đầu bằng https:// hoặc http://");
+				} else {
+					video_url.setCustomValidity('');
+				}
+				
+				// Validate field overview 
+				if (overview.value.trim().length == 0) {
+					overview.setCustomValidity("Mô tả không được bỏ trống.");
+				} else if (overview.value.trim().length < 5) {
+					overview.setCustomValidity("Mô tả tối thiểu 5 kí tự.");
+
+				} else if (overview.value.trim().length > 500) {
+					overview.setCustomValidity("Mô tả tối đa 500 kí tự.");
+				} else {
+					overview.setCustomValidity('');
+				}
+				
+				// Validate field making 
+				if (making.value.trim().length == 0) {
+					making.setCustomValidity("Cách làm không được bỏ trống.");
+				} else if (making.value.trim().length < 5) {
+					making.setCustomValidity("Cách làm tối thiểu 5 kí tự.");
+
+				} else if (making.value.trim().length > 10000) {
+					making.setCustomValidity("Cách làm tối đa 10000 kí tự.");
+				} else {
+					making.setCustomValidity('');
+				}
+				
+				// Validate field material 
+				if (material.value.trim().length == 0) {
+					material.setCustomValidity("Nguyên liệu không được bỏ trống.");
+				} else if (material.value.trim().length < 5) {
+					material.setCustomValidity("Nguyên liệu tối thiểu 5 kí tự.");
+
+				} else if (material.value.trim().length > 1000) {
+					material.setCustomValidity("Nguyên liệu tối đa 1000 kí tự.");
+				} else {
+					material.setCustomValidity('');
+				}
+
+			}
+
+			document.getElementsByName("submit")[0].onclick = validatePost;
+		</script>
 
 		</form>
 

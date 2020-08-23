@@ -94,10 +94,71 @@
 				</div>
 				<a href="${pageContext.request.contextPath}/admin/tipNutri/list"
 					id="cancel" class="btn btn-secondary">Quay lại</a>
-				<button type="submit" id="submit" class="btn btn-info">Cập
-					nhập</button>
+				<button type="submit" id="submit" name="Tipsubmit"
+					class="btn btn-info">Cập nhật</button>
 			</div>
-		</form>
+						<script>
+				function validatePost() {
+					var title = document.getElementById("fname");
+					var author = document.getElementById("exampleInputEmail1");
+					var content = document.getElementById("desc");
+					var image = document.getElementById("blah");
+					var button = document.getElementById("image-chose");
+
+					// Validate field Title 
+					if (title.value.trim().length == 0) {
+						title.setCustomValidity("Tiêu đề không được bỏ trống.");
+					} else if (title.value.trim().length < 5) {
+						title.setCustomValidity("Tiêu đề tối thiểu 5 kí tự.");
+
+					} else if (title.value.trim().length > 50) {
+						title.setCustomValidity("Tiêu đề tối đa 50 kí tự.");
+					} else {
+						title.setCustomValidity('');
+					}
+
+					// Validate field author 
+					if (author.value.trim().length == 0) {
+						author
+								.setCustomValidity("Tên tác giả không được bỏ trống.");
+					} else if (author.value.trim().length < 5) {
+						author
+								.setCustomValidity("Tên tác giả tối thiểu 5 kí tự.");
+
+					} else if (author.value.trim().length > 50) {
+						author
+								.setCustomValidity("Tên tác giả tối đa 50 kí tự.");
+					} else {
+						author.setCustomValidity('');
+					}
+
+					// Validate field content 
+					if (content.value.trim().length == 0) {
+						content
+								.setCustomValidity("Nội dung không được bỏ trống.");
+					} else if (content.value.trim().length < 50) {
+						content
+								.setCustomValidity("Nội dung tối thiểu 50 kí tự.");
+
+					} else if (content.value.trim().length > 10000) {
+						content
+								.setCustomValidity("Nội dung tối đa 10 000 kí tự.");
+					} else {
+						content.setCustomValidity('');
+					}
+
+					// Validate field image 
+					if (image.value.trim().length == 0) {
+						button.setCustomValidity("Vui lòng chọn 1 ảnh");
+					} else {
+						button.setCustomValidity('');
+					}
+
+				}
+
+				document.getElementsByName("Tipsubmit")[0].onclick = validatePost;
+			</script>
+	</form>
 
 		<script type="text/javascript">
 			$(".type option").each(function() {
@@ -135,6 +196,7 @@
 								}
 							});
 		</script>
+		
 	</div>
 </div>
 <jsp:include page="../layout/_footer.jsp"></jsp:include>
