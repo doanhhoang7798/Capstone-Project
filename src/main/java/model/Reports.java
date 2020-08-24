@@ -23,7 +23,7 @@ public class Reports {
 	
 	@Column
 
-	private int type;
+	private String type;
 
 	@Column
 	private String created_at;
@@ -39,7 +39,7 @@ public class Reports {
 		super();
 	}
 
-	public Reports(int cmt_id, int type, Users user, String created_at,
+	public Reports(int cmt_id, String type, Users user, String created_at,
 			int report_author) {
 		super();
 		this.report_author = report_author;
@@ -76,11 +76,11 @@ public class Reports {
 		this.cmt_id = cmt_id;
 	}
 
-	public int getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(int type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 

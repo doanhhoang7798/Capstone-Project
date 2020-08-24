@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
 <jsp:include page="../layout/_header.jsp"></jsp:include>
@@ -13,12 +14,12 @@
 	style="padding-top: 60px;">
 	<div class="page__heading border-bottom">
 		<div class="container-fluid page__container d-flex align-items-center">
-			<h1 class="mb-0" style="margin-left: -3%;"> Báo cáo  </h1>
+			<h1 class="mb-0" style="margin-left: -3%;">Báo cáo</h1>
 			<!-- 	<a href="quiz-edit.html" class="btn btn-success ml-auto"><i
 				class="material-icons">add</i>Viết bài</a> -->
 
 
-						<span id="hideMe" class="${class_name}">${ msg }</span>
+			<span id="hideMe" class="${class_name}">${ msg }</span>
 
 
 		</div>
@@ -39,7 +40,7 @@
 
 					<h2
 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-						class="modal-title" id="myModalLabel">Xác nhận </h2>
+						class="modal-title" id="myModalLabel">Xác nhận</h2>
 
 				</div>
 
@@ -67,15 +68,15 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".use-block").click(function() {
-			    var $row = $(this).closest("tr");    // Find the row
-			    var name = $row.find(".full_name").text(); // Find the text
-			    var comment = $row.find(".c_comment").text(); // Find the text
+				var $row = $(this).closest("tr"); // Find the row
+				var name = $row.find(".full_name").text(); // Find the text
+				var comment = $row.find(".c_comment").text(); // Find the text
 				thisdata = $(this).attr('data-href');
 				$("#confirm_url").attr("href", thisdata);
-			    $('#c_report').text("Xoá báo cáo: " +name+ " ?");
+				$('#c_report').text("Xoá báo cáo: " + name + " ?");
 
-			    $('#modal_name').text("Bình luận: " + comment );
-			    
+				$('#modal_name').text("Bình luận: " + comment);
+
 			});
 		});
 	</script>
@@ -91,12 +92,12 @@
 				<thead>
 					<tr>
 						<th class="table-th" scope="col">#</th>
-						<th class="table-th" scope="col">Người bị báo cáo  </th>
-						
-						<th class="table-th" scope="col"> Bình luận  </th>
-						
-						<th class="table-th" scope="col">Loại báo  cáo </th>
-						<th class="table-th" scope="col">Ngày báo cáo   </th>
+						<th class="table-th" scope="col">Người bị báo cáo</th>
+
+						<th class="table-th" scope="col">Bình luận</th>
+
+						<th class="table-th" scope="col">Loại báo cáo</th>
+						<th class="table-th" scope="col">Ngày báo cáo</th>
 
 					</tr>
 				</thead>
@@ -106,29 +107,29 @@
 
 							<td scope="row">${ report[0] }</td>
 							<td scope="row">${ report[3] }</td>
-							<td class="c_comment"  scope="row">${ report[1] }</td>
-							<c:choose>
-						         <c:when test = "${report[2] == 1}">
-									<td class="full_name" scope="row">Spam</td>
-						         </c:when>
-						         
-						          <c:when test = "${report[2] == 2}">
-									<td class="full_name" scope="row">Bạo lực </td>
-						         </c:when>
-						         
-						        <c:when test = "${report[2] == 3}">
-									<td class="full_name" scope="row">Nội dung đồi truỵ  </td>
-						         </c:when>
-						         <c:when test = "${report[2] == 4}">
-									<td  class="full_name" scope="row">Nội dung khiếm nhã  </td>
-						         </c:when>
-						      
-						         
-						         <c:otherwise>
-									<td class="full_name" scope="row">Gây hiểu nhâm, lừ đảo  </td>
-						         </c:otherwise>
-						      </c:choose>
-						     <td scope="row">${ report[4].toString().split(" ")[0] }</td>
+							<td class="c_comment" scope="row">${ report[1] }</td>
+							<td class="full_name"><c:forEach
+									items="${report[2].split(',') }" begin="0"
+									end="${fn:length(report[2].split(',')) }" var="i">
+									<c:choose>
+										<c:when test="${ i == 1}">
+											<p>Spam</p>
+										</c:when>
+										<c:when test="${ i  == 2}">
+											<p>Bạo lực</p>
+										</c:when>
+										<c:when test="${ i  == 3}">
+											<p>Nội dung đồi truỵ</p>
+										</c:when>
+										<c:when test="${ i  == 4}">
+											<p>Nội dung khiếm nhã</p>
+										</c:when>
+										<c:otherwise>
+											<p>Gây hiểu nhâm, lừ đảo</p>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach></td>
+							<td scope="row">${ report[4].toString().split(" ")[0] }</td>
 
 						</tr>
 					</c:forEach>

@@ -73,12 +73,16 @@ public class ReportController {
 
 	@PostMapping(value = "report/create/{id}")
 	public String reportComment(ModelMap model, HttpServletRequest request, @PathVariable("id") int post_id,
-			@RequestParam("cmt_id") int cmt_id, @RequestParam("report_type") int type, @RequestParam("report_author") int report_author) {
+			@RequestParam("cmt_id") int cmt_id, @RequestParam("report_type") String [] type, @RequestParam("report_author") int report_author) {
 		try {
+			String type1 = "";
+			for (String i : type) {
+				type1 += i + ",";
+			}
 			
 			if (user.exist() && reportDaoimpl.reported(user.userID(), cmt_id).size() == 0) {
 				if (reportDaoimpl.Create(
-						new Reports(cmt_id, type, user.current(), user.timestamp.toString(), report_author ))) {
+						new Reports(cmt_id, type1.substring(0, type1.length() - 1), user.current(), user.timestamp.toString(), report_author ))) {
 					model.addAttribute("report_msg", "Báo cáo được gửi thành công..");
 				}
 				return "redirect: " + request.getContextPath() + "/post-show/" + post_id + "";

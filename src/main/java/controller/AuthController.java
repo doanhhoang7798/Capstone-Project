@@ -91,19 +91,27 @@ public class AuthController {
 			HttpSession session) {
 
 		try {
-			int number = user.random.nextInt(900000) + 100000;
-			String code_exp = String.valueOf(number) + "--" + user.fomart.format(user.now);
-			userDaoimpl.setConfirmCode(userDaoimpl.findByPhone(phone).getId(), code_exp);
-			String smString = "Bạn vừa kích hoạt tính năng quên mật khẩu,: " + String.valueOf(number)
-					+ " là mã thức của bạn. LƯU Ý: Thời gian hiệu lực là 4 phút";
-			twilioMessageCreator.sendSMS(smString, phone);
-			session.setAttribute("send_phone", phone);
-			return "redirect: " + request.getContextPath() + "/authorized/verification?phone="
-					+ userDaoimpl.findByPhone(phone).getPhone() + "";
+			if(userDaoimpl.checkUser(phone)) {
+				int number = user.random.nextInt(900000) + 100000;
+				String code_exp = String.valueOf(number) + "--" + user.fomart.format(user.now);
+				userDaoimpl.setConfirmCode(userDaoimpl.findByPhone(phone).getId(), code_exp);
+				String smString = "Bạn vừa kích hoạt tính năng quên mật khẩu,: " + String.valueOf(number)
+						+ " là mã thức của bạn. LƯU Ý: Thời gian hiệu lực là 4 phút";
+				twilioMessageCreator.sendSMS(smString, phone);
+				session.setAttribute("send_phone", phone);
+				return "redirect: " + request.getContextPath() + "/authorized/verification?phone="
+				+ userDaoimpl.findByPhone(phone).getPhone() + "";
+			} else {
+				model.addAttribute("class_name", "msg_error");
+				model.addAttribute("Msg", " Tài khoản không tồn tại . ");
+				return "auth/forgot";
+			
+		}
+		
 
 		} catch (Exception e) {
 			model.addAttribute("class_name", "msg_error");
-			model.addAttribute("Msg", "Tài khoản không tồn tại. ");
+			model.addAttribute("Msg", " Lỗi hệ thống. ");
 			return "auth/forgot";
 
 		}

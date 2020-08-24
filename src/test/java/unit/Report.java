@@ -67,7 +67,7 @@ public class Report extends AbstractTestNGSpringContextTests{
 	
 	@Test(description = "Only input column type.", groups = "report validate", priority = 3)
 	public void comment_validate_3() {
-		reports.setType(1);
+		reports.setType("1");
 		boolean result = reportDao.Create(reports);
 		assertFalse(result);		
 	}
@@ -81,25 +81,25 @@ public class Report extends AbstractTestNGSpringContextTests{
 	
 	@Test(description = "Leave column comment id and other column input correctly", groups = "report validate", priority = 5)
 	public void comment_validate_5() {
-		boolean result = reportDao.Create(new Reports(0, 1, userDao.all().get(0), timestamp.toString(), 2));
+		boolean result = reportDao.Create(new Reports(0, "1", userDao.all().get(0), timestamp.toString(), 2));
 		assertTrue(result);		
 	}
 	
 	@Test(description = "Leave column user id blank and other column input correctly .", groups = "report validate", priority = 6)
 	public void comment_validate_6() {
-		boolean result = reportDao.Create(new Reports(1, 1, null, timestamp.toString(), 2));
+		boolean result = reportDao.Create(new Reports(1,"1", null, timestamp.toString(), 2));
 		assertFalse(result);
 	}
 	
 	@Test(description = "Leave column type blank and other column input correctly.", groups = "report validate", priority = 7)
 	public void comment_validate_7() {
-		boolean result = reportDao.Create(new Reports(1, 0, userDao.all().get(0), timestamp.toString(), 2));
+		boolean result = reportDao.Create(new Reports(1, "1", userDao.all().get(0), timestamp.toString(), 2));
 		assertTrue(result);			
 	}
 	
 	@Test(description = "Leave column report author id blank and other column input correctly .", groups = "report validate", priority = 8)
 	public void comment_validate_8() {
-		boolean result = reportDao.Create(new Reports(1, 1, userDao.all().get(0), timestamp.toString(), 0));
+		boolean result = reportDao.Create(new Reports(1, "1", userDao.all().get(0), timestamp.toString(), 0));
 		assertTrue(result);			
 	}
 	

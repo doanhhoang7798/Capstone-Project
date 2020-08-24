@@ -224,9 +224,8 @@ pre {
 											<p class="show_content_${comment.id }"
 												style="max-width: 800px; word-wrap: break-word">${comment.content }</p>
 											<c:choose>
-												<c:when test="${ comment.image_url.isEmpty() }">
-													<img class="show_content_${comment.id }"
-														style="display: none;" src="">
+												<c:when test="${ comment.image_url == null }">
+													.
 												</c:when>
 												<c:otherwise>
 													<img class="show_content_${comment.id }"
@@ -508,11 +507,6 @@ pre {
 	<input type="hidden" id="afterId">
 	<!-- ============================================== Comfirm diaglog ======================================================== -->
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$("input:checkbox").click(function() {
-				$("input:checkbox").not(this).prop("checked", false);
-			});
-		});
 
 		function readURL(input) {
 			if (input.files && input.files[0]) {

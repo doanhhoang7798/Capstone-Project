@@ -58,16 +58,14 @@ public class UploadConfig {
 	public String uploadImage(ModelMap map, MultipartFile image) {
 		if (image.isEmpty()) {
 			System.out.println("File Erorr");
-			return null;
+			return "";
 		} else {
 			try {
 				//
 				String foler_path = ctx.getRealPath("/resources/");
 
-				//
 				String image_path = image.getOriginalFilename();
 
-				//
 				String rename_image = timestamp.hashCode() + image.getOriginalFilename();
 
 				image.transferTo(new File(foler_path + image_path));
@@ -78,17 +76,11 @@ public class UploadConfig {
 
 				oldfile.createNewFile();
 
-				boolean flag = oldfile.renameTo(newfile);
-				if (flag) {
-					System.out.println("File renamed successfully");
-				} else {
-					System.out.println("Rename operation failed");
-				}
+				oldfile.renameTo(newfile);
 
-				System.out.println("Excuted Upload "+ foler_path + rename_image);
 				return rename_image;
 			} catch (Exception e) {
-				return null;
+				return "";
 			}
 		}
 	}

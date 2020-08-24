@@ -77,7 +77,7 @@ CREATE TABLE `reports` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `cmt_id` int,
   `user_id` int NOT NULL,
-  `type` int,
+  `type` varchar(15),
   `report_author` int,
   `created_at` varchar(255),
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE

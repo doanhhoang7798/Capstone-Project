@@ -88,14 +88,15 @@ public class TipNutriController {
 			@RequestParam("title") String title, @RequestParam("content") String content,
 			@RequestParam("type") String type, @RequestParam("kind") String kind,
 			@RequestParam("image") MultipartFile image) {
+		
 		String path = UploadConfig.uploadImage(model, image);
-		String path_img = path.equals("") ? tipNutriDaoimpl.findByID(id).getImage() : path;
+		String image_url = path.equals("") ? tipNutriDaoimpl.findByID(id).getImage() : path;
+		
 
 
 		try {
 			if (user.isAdminOrMod()) {
-				if (tipNutriDaoimpl
-						.Update(new TipNutri(id, title, content, type, author, user.timestamp.toString(), kind, path,user.current()))) {
+				if (tipNutriDaoimpl.Update(new TipNutri(id, title, content, type, author, user.timestamp.toString(), kind, image_url,user.current()))) {
 					model.addAttribute("msg", "Thao tác thành công.");
 					model.addAttribute("class_name", "msg_success");
 

@@ -174,6 +174,18 @@ public class UserDao {
 			return null;
 		}
 	}
+		
+		
+		public boolean checkUser(String phone) {
+			try {
+				Session session = sessionFactory.openSession();
+				Users user = (Users) session.createQuery("FROM Users WHERE phone ='" + phone + "'").uniqueResult();
+				user.getId();
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		}
 
 		public Boolean ChangePassword(int id, String password, String code) {
 		Session ses = sessionFactory.openSession();
