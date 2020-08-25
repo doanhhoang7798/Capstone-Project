@@ -26,7 +26,7 @@ public class CurrentUser {
 	UserDao userDaoimpl;
 
 	public Users current() {
-
+		// check mail or phone
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 		String key = "phone";
