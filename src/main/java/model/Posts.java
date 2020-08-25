@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "posts")
@@ -28,15 +30,23 @@ public class Posts {
 	@Column
 	private String video_url;
 	
+	@NotNull
+	@Size(min = 5, max = 50)
 	@Column
 	private String title;
 	
+	@NotNull
+	@Size(min = 5, max = 500)
 	@Column
 	private String overview;
 	
+	@NotNull
+	@Size(min = 5, max = 10000)
 	@Column
 	private String making;
 	
+	@NotNull
+	@Size(min = 5, max = 1000)
 	@Column
 	private String material_detail;
 	
@@ -51,6 +61,9 @@ public class Posts {
 	
 	@Column				   
 	private String main_material;
+	
+	@NotNull
+	@Size(min = 0, max = 10000)
 	@Column
 	private int price;
 	@Column
