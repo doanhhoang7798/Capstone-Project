@@ -36,7 +36,7 @@ public class TipNutri {
 
 	@NotNull
 	@Column
-//	@Size(min = 20, max = 255)
+	@Size(min = 20, max = 255)
 	private String author;
 
 	@NotNull
