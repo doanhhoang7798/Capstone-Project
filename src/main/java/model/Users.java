@@ -12,6 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Length;
 
 
 @Entity
@@ -28,13 +32,19 @@ public class Users implements Serializable {
 	@Column
 	private String email;
 
+	@NotNull
+	@Size(min = 3, max = 40)
 	@Column
 	private String fullname;
+	
+	@NotNull
+	@Size(min = 8, max = 20)
 	@Column
 
 	private String password;
-	
 
+	@NotNull
+	@Length(min = 10, max = 10)
 	@Column
 	private String phone;
 	
