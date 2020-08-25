@@ -158,7 +158,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_15() {
 		user.setFullname(data.characters_2);
 		user.setPhone(data.phone);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "size must be between 3 and 40");		
@@ -168,7 +167,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_16() {
 		user.setFullname(data.characters_41);
 		user.setPhone(data.phone);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "size must be between 3 and 40");		
@@ -178,7 +176,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_17() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_9);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");
@@ -188,7 +185,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_18() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_9);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");
@@ -198,7 +194,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_19() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_9_03);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");
@@ -208,7 +203,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_20() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_9_09);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");	
@@ -218,7 +212,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_21() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_9_03);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");
@@ -228,7 +221,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_22() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_9_09);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");
@@ -240,7 +232,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_23() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_11);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -250,7 +241,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_24() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_11);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -260,7 +250,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_25() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_11_03);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -270,7 +259,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_26() {
 		user.setFullname(data.username);
 		user.setPhone(data.number_11_09);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -280,7 +268,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_27() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_11_03);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -290,7 +277,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_28() {
 		user.setFullname(data.username);
 		user.setPhone(data.characters_11_09);
-		user.setEmail(data.email);
 		user.setPassword(data.password);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "length must be between 10 and 10");		
@@ -302,7 +288,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_29() {
 		user.setFullname(data.username);
 		user.setPhone(data.phone);
-		user.setEmail(data.email);
 		user.setPassword(data.characters_7);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "size must be between 8 and 20");		
@@ -312,7 +297,6 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 	public void user_validate_30() {
 		user.setFullname(data.username);
 		user.setPhone(data.phone);
-		user.setEmail(data.email);
 		user.setPassword(data.characters_21);
 		Set<ConstraintViolation<Users>> constraintViolations = validator.validate(user);
 		assertEquals(constraintViolations.iterator().next().getMessage(), "size must be between 8 and 20");		
