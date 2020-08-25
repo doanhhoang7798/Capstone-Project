@@ -1,10 +1,12 @@
 package connecter;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 import org.openqa.selenium.WebDriver;
 
 public class data {
+	public static Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	public static WebDriver driver;
 
 	public static String username = "Le Dieu Ly";
@@ -12,7 +14,6 @@ public class data {
 	public static String phone = "0384838666";
 	public static String email = "lyldse053@gmail.com";
 	public static String country = "FPT";
-	public static String birthday = "1995-08-14";
 	public static String image = "C:/Users/Le Dieu Ly/Desktop/LeDieuLy_05041998.png";
 
 	public static String login_page = "http://localhost:8080/FPT-Food_Development/authorized/SignIn";
@@ -65,5 +66,12 @@ public class data {
 	public static String overview = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String material_detail = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 	public static String making = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-
+	public static int time = 30;
+	public static int ration = 4;
+	public static String nation = "Việt Nam";
+	public static String holiday = "Tết Nguyên Đán";
+	public static String category = "Món chính";
+	public static String suitable = "Gia đình";
+	public static String main_material = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	public static int view_conter = 0;
 }
