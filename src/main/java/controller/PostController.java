@@ -39,12 +39,16 @@ public class PostController {
 	@GetMapping(value = "/post-show/{id}")
 	public String show(ModelMap model, @PathVariable("id") int id) {
 		try {
+			
 			postDaoimpl.viewCount(id);
+			//check user exist
 			boolean checkLike = user.exist() ? (reactionDaoimpl.isLike(user.userID(), id) == null ? false : true) : false;
 			model.addAttribute("isLike", checkLike);
+			// 4 latest posts
 			model.addAttribute("news",postDaoimpl.filterHomePage("created_at"));
 			
 			model.addAttribute("post", postDaoimpl.findByID(id));
+			// 4 post for a related item
 			model.addAttribute("refer", postDaoimpl.refer(postDaoimpl.findByID(id).getKind()));
 			return "static/post/show";
 
