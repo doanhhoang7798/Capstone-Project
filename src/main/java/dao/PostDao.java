@@ -131,7 +131,7 @@ public class PostDao {
 			if (session.getTransaction() != null) {
 				session.getTransaction().rollback();
 			}
-			return null;
+			return 0;
 		} finally {
 			session.close();
 		}
