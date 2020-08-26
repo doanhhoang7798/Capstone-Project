@@ -200,9 +200,130 @@ public class EditProfile extends AbstractTestNGSpringContextTests {
 				data.birthday, null, data.characters_20, data.image, timestamp, 1, null));
 		assertTrue(result);
 	}
-
-	@Test(description = "Input all colum", groups = "user validate", priority = 31)
+	
+	@Test(description = "Leave column image, user name and email blank and other column input correctly", groups = "user validate", priority = 24)
+	public void user_validate_24() {
+		boolean result = userDao.Update(new Users(1, null, null, data.password, data.phone, 1, 1,
+				data.birthday, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, user name and dob blank and other column input correctly", groups = "user validate", priority = 25)
+	public void user_validate_25() {
+		boolean result = userDao.Update(new Users(1, data.email, null, data.password, data.phone, 1, 1,
+				null, data.country, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, user name and address blank and other column input correctly", groups = "user validate", priority = 26)
+	public void user_validate_26() {
+		boolean result = userDao.Update(new Users(1, data.email, null, data.password, data.phone, 1, 1,
+				data.birthday, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, user name and bio blank and other column input correctly", groups = "user validate", priority = 27)
+	public void user_validate_27() {
+		boolean result = userDao.Update(new Users(1, data.email, null, data.password, data.phone, 1, 1,
+				data.birthday, data.country, null, null, timestamp, 1, null));
+		assertFalse(result);
+	}
+	
+	@Test(description = "Leave column image, dob and email blank and other column input correctly", groups = "user validate", priority = 28)
+	public void user_validate_28() {
+		boolean result = userDao.Update(new Users(1, null, data.username, data.password, data.phone, 1, 1,
+				null, data.country, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, dob and password blank and other column input correctly", groups = "user validate", priority = 29)
+	public void user_validate_29() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, null, data.phone, 1, 1,
+				null, data.country, data.characters_20, null, timestamp, 1, null));
+		assertFalse(result);
+	}
+	
+	@Test(description = "Leave column image, dob and phone blank and other column input correctly", groups = "user validate", priority = 30)
+	public void user_validate_30() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, null, 1, 1,
+				null, data.country, data.characters_20, null, timestamp, 1, null));
+		assertFalse(result);
+	}
+	
+	@Test(description = "Leave column image, dob and address blank and other column input correctly", groups = "user validate", priority = 31)
 	public void user_validate_31() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, data.phone, 1, 1,
+				null, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, email and password blank and other column input correctly", groups = "user validate", priority = 32)
+	public void user_validate_32() {
+		boolean result = userDao.Update(new Users(1, null, data.username, data.password, data.phone, 1, 1,
+				null, data.country, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, email and phone blank and other column input correctly", groups = "user validate", priority = 33)
+	public void user_validate_33() {
+		boolean result = userDao.Update(new Users(1, null, data.username, data.password, null, 1, 1,
+				data.birthday, data.country, data.characters_20, null, timestamp, 1, null));
+		assertFalse(result);
+	}
+	
+	@Test(description = "Leave column image, email and address blank and other column input correctly", groups = "user validate", priority = 34)
+	public void user_validate_34() {
+		boolean result = userDao.Update(new Users(1, null, data.username, data.password, data.phone, 1, 1,
+				data.birthday, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, email and bio blank and other column input correctly", groups = "user validate", priority = 35)
+	public void user_validate_35() {
+		boolean result = userDao.Update(new Users(1, null, data.username, data.password, data.phone, 1, 1,
+				data.birthday, data.country, null, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, address and bio blank and other column input correctly", groups = "user validate", priority = 36)
+	public void user_validate_36() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, data.phone, 1, 1,
+				data.birthday, null, null, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, address and phone blank and other column input correctly", groups = "user validate", priority = 37)
+	public void user_validate_37() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, null, 1, 1,
+				data.birthday, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+	@Test(description = "Leave column image, address and password blank and other column input correctly", groups = "user validate", priority = 38)
+	public void user_validate_38() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, null, data.phone, 1, 1,
+				data.birthday, null, data.characters_20, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+	
+
+//------------------------------
+	@Test(description = "Leave column image, and bio blank and other column input correctly", groups = "user validate", priority = 39)
+	public void user_validate_39() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, data.phone, 1, 1,
+				data.birthday, data.country, null, null, timestamp, 1, null));
+		assertTrue(result);
+	}
+
+	@Test(description = "Leave column user dob and address blank and other column input correctly", groups = "user validate", priority = 40)
+	public void user_validate_40() {
+		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, data.phone, 1, 1,
+				data.birthday, null, data.characters_20, data.image, timestamp, 1, null));
+		assertTrue(result);
+	}
+
+	@Test(description = "Input all colum", groups = "user validate", priority = 41)
+	public void user_validate_41() {
 		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, data.phone, 1, 1,
 				data.birthday, data.country, data.characters_20, data.image, timestamp, 1, null));
 		assertTrue(result);
