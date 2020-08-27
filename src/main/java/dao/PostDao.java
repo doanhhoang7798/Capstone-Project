@@ -176,6 +176,5 @@ public class PostDao {
 		return keyword;
 	}
 	
-	 //title like 'Nam' or title like 'Hoafi' or title like 'Phamj' or  
 
 }
