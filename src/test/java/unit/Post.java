@@ -215,7 +215,7 @@ public class Post extends AbstractTestNGSpringContextTests{
 		int result = postDao.Create(new Posts(data.video_url, data.title, data.overview, data.making, data.material_detail, 
 				0, data.ration, data.kind, data.main_material, data.price, data.nation, data.holiday, data.category,
 				data.suitable, data.view_conter,data.timestamp, null, userDao.all().get(0)));
-		assertEquals(0, result);
+		assertEquals(0, result);		
 	}
 	
 	@Test(description = "Leave column ration blank and other column input correctly.", groups = "post validate", priority = 21)
@@ -285,7 +285,7 @@ public class Post extends AbstractTestNGSpringContextTests{
 	@Test(description = "input column title 3 characters and other column input correctly.", groups = "post validate", priority = 28)
 	public void post_validate_28() {
 		post.setVideo_url(data.video_url);
-		post.setTitle(data.characters_3);
+		post.setTitle(null);
 		post.setOverview(data.overview);
 		post.setMaking(data.making);
 		post.setMaterial_detail(data.material_detail);
