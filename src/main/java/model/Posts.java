@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -31,7 +32,7 @@ public class Posts {
 	private String video_url;
 	
 	@NotNull
-	@Size(min = 5, max = 50)
+	//@Size(min = 5, max = 50)
 	@Column
 	private String title;
 	
@@ -84,6 +85,7 @@ public class Posts {
 	@Column
 	private Timestamp created_at;
 
+	@NotNull
 	@Column
 	private String deleted_at;
 
