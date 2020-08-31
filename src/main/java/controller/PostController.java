@@ -101,7 +101,7 @@ public class PostController {
 				int id = postDaoimpl.Create(new Posts(url, title, overview, making, material_detail, time, ration, kind, 
 						main_material, price, nation, holiday, category, suitable, 0, user.timestamp, "NULL", userDaoimpl.findByID(user.userID())));
 			
-				return "redirect: /YummyProject/post-show/" + id + "";
+				return "redirect: /Yummy/post-show/" + id + "";
 			} else {
 				return "auth/401";
 			}
@@ -129,7 +129,7 @@ public class PostController {
 						new Posts(post_id, userDaoimpl.findByID(user_id), url, title, overview, making, material_detail, time,
 								ration, kind, main_material, price, nation, holiday, category, suitable, user.timestamp, "NULL"));
 
-				return "redirect: /YummyProject/post-show/" + post_id + "";
+				return "redirect: /Yummy/post-show/" + post_id + "";
 
 			} else {
 				return "auth/401";
