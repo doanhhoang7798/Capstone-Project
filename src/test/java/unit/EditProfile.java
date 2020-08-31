@@ -205,21 +205,21 @@ public class EditProfile extends AbstractTestNGSpringContextTests {
 	public void user_validate_24() {
 		boolean result = userDao.Update(new Users(1, null, null, data.password, data.phone, 1, 1,
 				data.birthday, null, data.characters_20, null, timestamp, 1, null));
-		assertTrue(result);
+		assertFalse(result);
 	}
 	
 	@Test(description = "Leave column image, user name and dob blank and other column input correctly", groups = "user validate", priority = 25)
 	public void user_validate_25() {
 		boolean result = userDao.Update(new Users(1, data.email, null, data.password, data.phone, 1, 1,
 				null, data.country, data.characters_20, null, timestamp, 1, null));
-		assertTrue(result);
+		assertFalse(result);
 	}
 	
 	@Test(description = "Leave column image, user name and address blank and other column input correctly", groups = "user validate", priority = 26)
 	public void user_validate_26() {
 		boolean result = userDao.Update(new Users(1, data.email, null, data.password, data.phone, 1, 1,
 				data.birthday, null, data.characters_20, null, timestamp, 1, null));
-		assertTrue(result);
+		assertFalse(result);
 	}
 	
 	@Test(description = "Leave column image, user name and bio blank and other column input correctly", groups = "user validate", priority = 27)
@@ -296,14 +296,14 @@ public class EditProfile extends AbstractTestNGSpringContextTests {
 	public void user_validate_37() {
 		boolean result = userDao.Update(new Users(1, data.email, data.username, data.password, null, 1, 1,
 				data.birthday, null, data.characters_20, null, timestamp, 1, null));
-		assertTrue(result);
+		assertFalse(result);
 	}
 	
 	@Test(description = "Leave column image, address and password blank and other column input correctly", groups = "user validate", priority = 38)
 	public void user_validate_38() {
 		boolean result = userDao.Update(new Users(1, data.email, data.username, null, data.phone, 1, 1,
 				data.birthday, null, data.characters_20, null, timestamp, 1, null));
-		assertTrue(result);
+		assertFalse(result);
 	}
 	
 
