@@ -178,19 +178,19 @@ input {
 				<h1 class="w-bot-border">
 					<span>Giới thiệu</span>
 				</h1>
-				<textarea  id="overview" name="overview" cols="128" rows="9" required minlength="5" maxlength="500" 
+				<textarea  id="overview" name="overview" cols="127" rows="9" required minlength="5" maxlength="500" 
 					placeholder="Mô tả - Giới thiệu về món ăn của bạn !! "
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">
 					<span> Nguyên liệu </span>
 				</h1>
-				<textarea id="material" name="material_detail" cols="128" rows="9" required minlength="5" maxlength="1000"
+				<textarea id="material" name="material_detail" cols="127" rows="9" required minlength="5" maxlength="1000"
 					placeholder="Cách loại nguyên liệu cần chuẩn bị !!!"
 					class="pb-cmnt-textarea"></textarea>
 				<h1 class="w-bot-border">
 					<span>Cách làm </span>
 				</h1>
-				<textarea id="making" name="making" cols="128" rows="9" required minlength="5" maxlength="10000"
+				<textarea id="making" name="making" cols="127" rows="9" required minlength="5" maxlength="10000"
 					placeholder="Chia sẻ cách làm của bạn !!! " class="pb-cmnt-textarea"></textarea>
 		</div>
 		<!-- end of post div -->
