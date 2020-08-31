@@ -224,8 +224,8 @@ pre {
 											<p class="show_content_${comment.id }"
 												style="max-width: 800px; word-wrap: break-word">${comment.content }</p>
 											<c:choose>
-												<c:when test="${ comment.image_url == null }">
-													.
+												<c:when test="${ comment.image_url == '' }">
+													
 												</c:when>
 												<c:otherwise>
 													<img class="show_content_${comment.id }"
