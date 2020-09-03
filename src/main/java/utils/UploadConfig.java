@@ -62,21 +62,23 @@ public class UploadConfig {
 		} else {
 			try {
 				//
-				String foler_path = ctx.getRealPath("/resources/");
+				String folder_path = ctx.getRealPath("/resources/");
 
 				String image_path = image.getOriginalFilename();
 
 				String rename_image = timestamp.hashCode() + image.getOriginalFilename();
 
-				image.transferTo(new File(foler_path + image_path));
+				image.transferTo(new File(folder_path + image_path));
 
-				File oldfile = new File(foler_path + image_path);
+				File oldfile = new File(folder_path + image_path);
 
-				File newfile = new File(foler_path + rename_image);
+				File newfile = new File(folder_path + rename_image);
 
 				oldfile.createNewFile();
 
 				oldfile.renameTo(newfile);
+				
+				System.out.print("===========Image_Path: "+ folder_path + rename_image);
 
 				return rename_image;
 			} catch (Exception e) {

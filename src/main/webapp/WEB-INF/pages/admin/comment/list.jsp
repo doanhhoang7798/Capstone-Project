@@ -90,24 +90,34 @@
 						<th class="table-th" scope="col">Thao tác</th>
 					</tr>
 				</thead>
-				
+
 				<tbody>
 					<c:forEach items="${comments}" var="comment">
 						<tr>
 
 							<td scope="row">${ comment.id }</td>
-							<td style="max-width:600px;word-wrap:break-word;" class="full_name">${ comment.content }</td>
+							<td style="max-width: 600px; word-wrap: break-word;"
+								class="full_name">${ comment.content }</td>
 							<td>${ comment.created_at.toString().split(" ")[0] }</td>
 							<td class="c_post">${ comment.post.title }</td>
-							<td><img
-								src="${pageContext.request.contextPath}/resources/${ comment.image_url }"></td>
+							<td><c:choose>
+									<c:when test="${ comment.image_url == '' }">
+
+									</c:when>
+									<c:otherwise>
+										<img
+											src="${pageContext.request.contextPath}/resources/${ comment.image_url }">
+									</c:otherwise>
+								</c:choose></td>
+
 							<td>
 
 								<button class="btn btn-danger use-block" id="test"
 									data-href="${pageContext.request.contextPath}/admin/comment/delete/${ comment.id }"
 									data-toggle="modal" data-target="#confirm-delete">
 									<i class="fa fa-trash"></i>
-								</button> 							</td>
+								</button>
+							</td>
 
 						</tr>
 					</c:forEach>

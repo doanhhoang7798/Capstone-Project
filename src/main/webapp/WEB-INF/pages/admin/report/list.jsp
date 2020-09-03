@@ -125,7 +125,7 @@
 											<p>Nội dung khiếm nhã</p>
 										</c:when>
 										<c:otherwise>
-											<p>Gây hiểu nhâm, lừ đảo</p>
+											<p>Gây hiểu nhâm, lừa đảo</p>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach></td>
