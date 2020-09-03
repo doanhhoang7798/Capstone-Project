@@ -316,7 +316,7 @@ public class SignUp extends AbstractTestNGSpringContextTests {
 		user.setRole(1);
 		user.setImage(data.image);
 		boolean result = userDao.Create(user);
-		assertTrue(result);
+		assertFalse(result);
 	}
 
 
