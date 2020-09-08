@@ -8,6 +8,7 @@
 		<h3 class="boder_title">Nguyên liệu</h3>
 		<span class="w-pet-border"></span>
 		<ul class="cat-list clearfix">
+
 			<li><a
 				href="${pageContext.request.contextPath}/filter?condition=Thịt lợn&category=main_material"
 				class="img-box"> <img style="height: 145px;"
@@ -190,8 +191,8 @@
 			</a>
 				<h4>
 					<a
-						href="${pageContext.request.contextPath}/filter?condition=Có cách nấu khác&category=kind">Có cách nấu khác
-					</a>
+						href="${pageContext.request.contextPath}/filter?condition=Có cách nấu khác&category=kind">Có
+						cách nấu khác </a>
 				</h4></li>
 		</ul>
 	</div>
@@ -323,8 +324,8 @@
 			</a>
 				<h4>
 					<a
-						href="${pageContext.request.contextPath}/filter?condition=Ngày lễ khác&category=holiday">Ngày lễ khác
-					</a>
+						href="${pageContext.request.contextPath}/filter?condition=Ngày lễ khác&category=holiday">Ngày
+						lễ khác </a>
 				</h4></li>
 		</ul>
 	</div>

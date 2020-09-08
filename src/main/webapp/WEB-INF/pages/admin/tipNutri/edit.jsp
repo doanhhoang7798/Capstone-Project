@@ -41,7 +41,7 @@
 						<div class="form-group">
 							<input onchange="readURL(this);" type="file"
 								accept="image/x-png,image/gif,image/jpeg" name="image"
-								style="margin-top: -19px; width: 81px;" />
+								style="margin-top: -19px; width: 101px;" />
 						</div>
 					</div>
 					<div class="col">

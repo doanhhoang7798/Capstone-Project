@@ -69,7 +69,7 @@
 
 												<input onchange="readURL(this);" type="file" name="image"
 													accept="image/x-png,image/gif,image/jpeg"
-													style="margin: auto; width: 73px;" />
+													style="margin: auto; width: 91px;" />
 
 											</div>
 											<br />
@@ -183,9 +183,9 @@
 											<div class="col-sm-9 controls">
 												<div class="row mgbt-xs-0">
 													<div class="col-xs-9">
-														<input type="date" value="${ user.getBirthday().trim()}" min='1870-01-01'
-															max='2011-01-01' id="datepicker-normal" name="birthday"
-															class="width-40 hasDatepicker" />
+														<input type="date" value="${ user.getBirthday().trim()}"
+															min='1870-01-01' max='2011-01-01' id="datepicker-normal"
+															name="birthday" class="width-40 hasDatepicker" />
 													</div>
 													<!-- col-xs-12 -->
 
@@ -267,11 +267,13 @@
 												if (fullname.value.trim().length == 0) {
 													fullname
 															.setCustomValidity("Họ tên không được bỏ trống.");
-												} else if (fullname.value.trim().length < 3) {
+												} else if (fullname.value
+														.trim().length < 3) {
 													fullname
 															.setCustomValidity(" Họ và tên tối thiểu 3 kí tự.");
 
-												} else if (fullname.value.trim().length > 30) {
+												} else if (fullname.value
+														.trim().length > 30) {
 													fullname
 															.setCustomValidity(" Họ và tên tối đa 30 kí tự.");
 												} else {
