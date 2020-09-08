@@ -157,16 +157,16 @@
 					<span class="fireRed">Một số gợi ý:</span> <a
 						href="${pageContext.request.contextPath}/filter?condition=Thịt Bò&category=main_material">Thịt
 						bò</a>, <a
-						href="${pageContext.request.contextPath}/filter?condition=Gà   ">Thịt
+						href="${pageContext.request.contextPath}/filter?condition=Gà&s-submit=&category=search   ">Thịt
 						gà</a>, <a
-						href="${pageContext.request.contextPath}/filter?condition=bánh">Bánh
+						href="${pageContext.request.contextPath}/filter?condition=bánh&s-submit=&category=search">Bánh
 						ngọt</a>, <a
-						href="${pageContext.request.contextPath}/filter?condition=cá">Cá</a>, <a
+						href="${pageContext.request.contextPath}/filter?condition=cá&s-submit=&category=search">Cá</a>, <a
 						href="${pageContext.request.contextPath}/filter?condition=Bún-Phở-Miến&category=main_material">Phở</a>,
 					<a
-						href="${pageContext.request.contextPath}/filter?condition=Gia+đình">Gia
+						href="${pageContext.request.contextPath}/filter?condition=Gia đình&category=suitable">Gia
 						đình</a>, <a
-						href="${pageContext.request.contextPath}/filter?condition=Việt+Nam">Việt Nam</a>,...
+						href="${pageContext.request.contextPath}/filter?condition=Việt Nam&category=nation">Việt Nam</a>,...
 				</p>
 
 
