@@ -145,7 +145,7 @@ pre {
 			<span class="w-pet-border"></span>
 			<c:choose>
 				<c:when test="${user.getStatus()  == null}">
-					<h1 style="margin-left: 123px;"> Vui lòng đăng nhập để bình
+					<h1 style="margin-left: 123px;">Vui lòng đăng nhập để bình
 						luận.</h1>
 				</c:when>
 				<c:when test="${user.getStatus()  == 5}">
@@ -225,7 +225,7 @@ pre {
 												style="max-width: 800px; word-wrap: break-word">${comment.content }</p>
 											<c:choose>
 												<c:when test="${ comment.image_url == '' }">
-													
+
 												</c:when>
 												<c:otherwise>
 													<img class="show_content_${comment.id }"
@@ -271,7 +271,7 @@ pre {
 
 																	<c:choose>
 																		<c:when test="${ comment.image_url == null}">
-                                    </c:when>
+																		</c:when>
 																		<c:otherwise>
 																			<img class="blah" style="margin-top: 10px;"
 																				src="${pageContext.request.contextPath}/resources/${ comment.image_url }">
@@ -302,7 +302,8 @@ pre {
 														<c:when test="${ user.getFullname() == null}">
 
 															<a class="comment_report cmt-inline"
-																href="${pageContext.request.contextPath}/authorized/SignIn">|Báo cáo|</a>
+																href="${pageContext.request.contextPath}/authorized/SignIn">|Báo
+																cáo|</a>
 														</c:when>
 														<c:otherwise>
 															<a class="comment_report cmt-inline" data-toggle="modal"
@@ -356,7 +357,7 @@ pre {
 										href="${pageContext.request.contextPath}/post-show/${ item.id}">${ item.title}</a>
 								</h5>
 								<p class="rate">
-									<p>
+								<p>
 									${item.reactions.size()  } lượt thích <span>//</span> ${ item.view_conter }
 									lượt xem
 								</p></li>
@@ -451,8 +452,8 @@ pre {
 			<div class="modal-dialog" style="top: 30%;">
 				<div style="padding: 8px;" class="modal-content">
 					<div style="padding: 8px;" class="modal-body">
-						<h3 style="text-align: center; color: black;">Bạn chắc
-							chắn muốn xoá bình luận này ?</h3>
+						<h3 style="text-align: center; color: black;">Bạn chắc chắn
+							muốn xoá bình luận này ?</h3>
 					</div>
 					<div class="modal-footer dialog-center">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Huỷ
@@ -474,10 +475,11 @@ pre {
 						<div style="padding: 8px;" class="modal-body checked">
 							<input type="hidden" name="cmt_id" id="cmt_id"> <input
 								type="hidden" name="report_author" id="report_author">
+								
 							<ul class="ks-cboxtags">
 								<li><input type="checkbox" id="checkboxFive"
-									name="report_type" value="1" checked /><label
-									for="checkboxFive">Spam</label></li>
+									name="report_type" value="1" checked />
+									<label for="checkboxFive">Spam</label></li>									
 								<li><input type="checkbox" id="checkboxSix"
 									name="report_type" value="2" /><label for="checkboxSix">Bạo
 										lực</label></li>
@@ -486,10 +488,18 @@ pre {
 										dung đồi truỵ</label></li>
 								<li><input type="checkbox" id="checkboxEight"
 									name="report_type" value="4" /><label for="checkboxEight">Nội
-										dung khiếm nhã </label></li>
+										dung bị cấm</label></li>
 								<li><input type="checkbox" id="checkboxNine"
-									name="report_type" value="5" /><label for="checkboxNine">
-										Gây hiểu nhầm hoặc lừa đảo</label></li>
+									name="report_type" value="5" /><label for="checkboxNine">Gây 
+									    hiểu nhầm hoặc lừa đảo</label></li>
+									    
+								<li><input type="checkbox" id="checkboxTen"
+									name="report_type" value="6" /><label for="checkboxTen">
+										Xúc phạm</label></li>
+								<li><input type="checkbox" id="checkboxEleven"
+									name="report_type" value="7" /><label for="checkboxEleven">
+										Khác</label></li>
+
 							</ul>
 						</div>
 						<div class="modal-footer dialog-center">
@@ -535,7 +545,7 @@ pre {
 			}
 		}
 	</script>
-									<script type="text/javascript">
+	<script type="text/javascript">
 										var isLike = "${ isLike }";
 										isLike == "true" ? $(".icon-inline")
 												.css("color", "firebrick ")
@@ -944,5 +954,6 @@ pre {
 																		},
 																	});
 														});
-									</script></div>
+									</script>
+</div>
 <jsp:include page="../layout/_footer.jsp"></jsp:include>

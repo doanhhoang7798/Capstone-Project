@@ -29,39 +29,39 @@
 
 
 
-	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div style="top: 25%;" class="modal-dialog">
-			<div style="border-radius: 10px" class="modal-content">
+<!-- 	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" -->
+<!-- 		aria-labelledby="myModalLabel" aria-hidden="true"> -->
+<!-- 		<div style="top: 25%;" class="modal-dialog"> -->
+<!-- 			<div style="border-radius: 10px" class="modal-content"> -->
 
-				<div
-					style="padding: 10px 40px 10px 20px; background-color: #212529; border-top-left-radius: 10px; border-top-right-radius: 10px;"
-					class="modal-header">
+<!-- 				<div -->
+<!-- 					style="padding: 10px 40px 10px 20px; background-color: #212529; border-top-left-radius: 10px; border-top-right-radius: 10px;" -->
+<!-- 					class="modal-header"> -->
 
-					<h2
-						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
-						class="modal-title" id="myModalLabel">Xác nhận</h2>
+<!-- 					<h2 -->
+<!-- 						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;" -->
+<!-- 						class="modal-title" id="myModalLabel">Xác nhận</h2> -->
 
-				</div>
+<!-- 				</div> -->
 
 
-				<div class="modal-body">
+<!-- 				<div class="modal-body"> -->
 
-					<p id="c_report" style="text-align: center; font-size: 19px;"></p>
-					<p
-						style="text-align: center; font-style: italic; font-weight: bold;"
-						id="modal_name"></p>
-					<p class="debug-url"></p>
-				</div>
+<!-- 					<p id="c_report" style="text-align: center; font-size: 19px;"></p> -->
+<!-- 					<p -->
+<!-- 						style="text-align: center; font-style: italic; font-weight: bold;" -->
+<!-- 						id="modal_name"></p> -->
+<!-- 					<p class="debug-url"></p> -->
+<!-- 				</div> -->
 
-				<div class="modal-footer">
-					<button type="button" class="btn btn-basic" data-dismiss="modal">Huỷ</button>
-					<a id="confirm_url" href="" style="margin-right: 40%"
-						class="btn btn-danger btn-ok">Xác nhận</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<!-- 				<div class="modal-footer"> -->
+<!-- 					<button type="button" class="btn btn-basic" data-dismiss="modal">Huỷ</button> -->
+<!-- 					<a id="confirm_url" href="" style="margin-right: 40%" -->
+<!-- 						class="btn btn-danger btn-ok">Xác nhận</a> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
 
 
@@ -122,10 +122,16 @@
 											<p>Nội dung đồi truỵ</p>
 										</c:when>
 										<c:when test="${ i  == 4}">
-											<p>Nội dung khiếm nhã</p>
+											<p>Nội dung bị cấm</p>
+										</c:when>
+										<c:when test="${ i  == 5}">
+											<p>Gây hiểu nhầm hoặc lừa đảo</p>
+										</c:when>
+										<c:when test="${ i  == 6}">
+											<p>Xúc phạm</p>
 										</c:when>
 										<c:otherwise>
-											<p>Gây hiểu nhâm, lừa đảo</p>
+											<p>Khác</p>
 										</c:otherwise>
 									</c:choose>
 								</c:forEach></td>
