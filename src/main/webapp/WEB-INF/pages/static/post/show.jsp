@@ -270,7 +270,7 @@ pre {
 
 
 																	<c:choose>
-																		<c:when test="${ comment.image_url == null}">
+																		<c:when test="${ comment.image_url == ''}">
 																		</c:when>
 																		<c:otherwise>
 																			<img class="blah" style="margin-top: 10px;"
